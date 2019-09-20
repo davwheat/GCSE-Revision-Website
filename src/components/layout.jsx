@@ -13,9 +13,8 @@ import "typeface-poppins"
 import { createMuiTheme } from "@material-ui/core/styles"
 import { ThemeProvider } from "@material-ui/styles"
 
-import "./FirebaseAnalytics"
-
 import Header from "./header"
+import { Box } from "@material-ui/core"
 
 const theme = createMuiTheme({
   typography: {
@@ -26,6 +25,14 @@ const theme = createMuiTheme({
       "Arial",
       "sans-serif",
     ].join(","),
+    h1: {
+      fontSize: 64,
+      fontWeight: "bold",
+    },
+    h2: {
+      fontSize: 48,
+      fontWeight: "bold",
+    },
   },
 })
 
@@ -52,11 +59,14 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          &copy; {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Box
+          component="footer"
+          fontWeight="fontWeightMedium"
+          textAlign="center"
+        >
+          &copy; {new Date().getFullYear()} -{" "}
+          <a href="https://github.com/davwheat">davwheat</a>
+        </Box>
       </div>
     </ThemeProvider>
   )
