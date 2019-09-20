@@ -13,6 +13,8 @@ import "typeface-poppins"
 import { createMuiTheme } from "@material-ui/core/styles"
 import { ThemeProvider } from "@material-ui/styles"
 
+import "./FirebaseAnalytics"
+
 import Header from "./header"
 
 const theme = createMuiTheme({
