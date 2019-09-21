@@ -49,8 +49,8 @@ const useStyles = makeStyles(theme => ({
   list: {
     width: 250,
   },
-  fullList: {
-    width: "auto",
+  navbar: {
+    minWidth: 250,
   },
 }))
 
@@ -109,7 +109,7 @@ const MakeAppBar = ({ title }) => {
         disableDiscovery={iOS}
       >
         <nav
-          className={classes.fullList}
+          className={classes.navbar}
           role="presentation"
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}

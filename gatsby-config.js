@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `GCSE Revision`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Free GCSE Revision`,
+    description: `A free revision tool for GCSE students.`,
     author: `@davwheat`,
   },
   plugins: [
