@@ -10,18 +10,30 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "typeface-poppins"
-import { createMuiTheme } from "@material-ui/core/styles"
-import { ThemeProvider } from "@material-ui/styles"
 
 import Header from "./header"
-import { Box } from "@material-ui/core"
+import { Box, createMuiTheme, MuiThemeProvider, Paper } from "@material-ui/core"
+
+import GitHubIcon from "mdi-react/GithubCircleIcon"
+
+import Link from "./Link"
+
+import "./layout.css"
+import { Body2 } from "./EasyText"
 
 const theme = createMuiTheme({
+  palette: {
+    type: "dark",
+    primary: {
+      main: "#FF9800",
+    },
+  },
   typography: {
     fontFamily: [
       "Poppins",
       "Roboto",
       '"Helvetica Neue"',
+      '"Segoe UI"',
       "Arial",
       "sans-serif",
     ].join(","),
@@ -48,7 +60,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <ThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -59,16 +71,30 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <Box
-          component="footer"
-          fontWeight="fontWeightMedium"
-          textAlign="center"
-        >
-          &copy; {new Date().getFullYear()} -{" "}
-          <a href="https://github.com/davwheat">davwheat</a>
-        </Box>
       </div>
-    </ThemeProvider>
+      <Paper
+        component="footer"
+        style={{
+          position: "fixed",
+          bottom: 0,
+          padding: theme.spacing(1.5),
+          paddingBottom: theme.spacing(1.75),
+          width: "100vw",
+        }}
+        elevation={4}
+      >
+        <Box textAlign="center">
+          <Body2>
+            &copy; {new Date().getFullYear()}
+            {"   "}|{"   "}
+            <Link to="https://github.com/davwheat">
+              <GitHubIcon size={20} className="footer-icon" />
+              davwheat
+            </Link>
+          </Body2>
+        </Box>
+      </Paper>
+    </MuiThemeProvider>
   )
 }
 

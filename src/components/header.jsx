@@ -1,27 +1,39 @@
 import PropTypes from "prop-types"
 import React from "react"
 
-import { makeStyles } from "@material-ui/core/styles"
-import AppBar from "@material-ui/core/AppBar"
-import Toolbar from "@material-ui/core/Toolbar"
-import Typography from "@material-ui/core/Typography"
-import IconButton from "@material-ui/core/IconButton"
-
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
-import Button from "@material-ui/core/Button"
-import List from "@material-ui/core/List"
-import Divider from "@material-ui/core/Divider"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemIcon from "@material-ui/core/ListItemIcon"
-import ListItemText from "@material-ui/core/ListItemText"
-
 import {
-  MenuOutlined as MenuIcon,
-  InboxOutlined as InboxIcon,
-  MailOutlined as MailIcon,
-} from "@material-ui/icons"
+  makeStyles,
+  AppBar,
+  Toolbar,
+  IconButton,
+  SwipeableDrawer,
+  List,
+  Divider,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from "@material-ui/core"
+
+import { H6 } from "./EasyText"
+import Link from "./Link"
+
+import MenuIcon from "mdi-react/HamburgerMenuIcon"
+
+import HomeIcon from "mdi-react/HomeOutlineIcon"
+import EnglishIcon from "mdi-react/BookOutlineIcon"
+import MathsIcon from "mdi-react/CalculatorIcon"
+import AboutIcon from "mdi-react/AboutOutlineIcon"
 
 import CssBaseline from "@material-ui/core/CssBaseline"
+
+const MenuItems = [
+  [{ text: "Home", icon: <HomeIcon />, href: "/" }],
+  [
+    { text: "English", icon: <EnglishIcon />, href: "/subjects/english" },
+    { text: "Maths", icon: <MathsIcon />, href: "/subjects/maths" },
+  ],
+  [{ text: "About Us", icon: <AboutIcon />, href: "/about-us" }],
+]
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,6 +65,7 @@ const Header = ({ siteTitle, pageTitle }) => (
 
 const MakeAppBar = ({ title }) => {
   const classes = useStyles()
+
   const [state, setState] = React.useState({
     isDrawerOpen: false,
   })
@@ -84,9 +97,7 @@ const MakeAppBar = ({ title }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            {title}
-          </Typography>
+          <H6 className={classes.title}>{title}</H6>
         </Toolbar>
       </AppBar>
 
@@ -103,27 +114,24 @@ const MakeAppBar = ({ title }) => {
           onClick={toggleDrawer(false)}
           onKeyDown={toggleDrawer(false)}
         >
-          <List>
-            {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-            {["All mail", "Trash", "Spam"].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
+          {MenuItems.map((groups, i) => (
+            <>
+              <List>
+                {groups.map(items => (
+                  <ListItem
+                    component={Link}
+                    to={items.href}
+                    button
+                    key={items.text}
+                  >
+                    <ListItemIcon>{items.icon}</ListItemIcon>
+                    <ListItemText primary={items.text} />
+                  </ListItem>
+                ))}
+              </List>
+              {i + 1 !== MenuItems.length ? <Divider /> : null}
+            </>
+          ))}
         </nav>
       </SwipeableDrawer>
     </div>
