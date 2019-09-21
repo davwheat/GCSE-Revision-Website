@@ -31,8 +31,30 @@ const useStyles = makeStyles(theme => ({
 const subjects = [
   {
     name: "English",
-    description: "",
+    description: `We offer many helpful English revision
+    tools, such as: mini language mocks, essay planning
+    tips, quote memorising tools and literature knowledge
+    organisers. We're always looking to add more to the
+    table!`,
     url: "/subjects/english",
+  },
+  {
+    name: "Maths",
+    description: `Our site provides useful tips and tricks to
+    help you make the most of your calculator as well as maths
+    quizzes and articles on harder topics.`,
+    url: null,
+    unreleased: true,
+  },
+  {
+    name: "Computer Science",
+    description: `Computer science is made easier with out site.
+    With useful suggestions for converting between hex, decimal
+    and binary as well as an interactive bitmap editor, there's
+    nothing else you'll need to revise (...except your brain and an
+      internet-enabled device).`,
+    url: null,
+    unreleased: true,
   },
 ]
 
@@ -67,14 +89,15 @@ const IndexPage = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Link
-                  button
-                  to={subject.url}
-                  size="medium"
-                  color="primary"
-                >
-                  Share
-                </Link>
+                {subject.unreleased === true ? (
+                  <Button color="primary" disabled>
+                    Coming soon!
+                  </Button>
+                ) : (
+                  <Link button to={subject.url} size="medium" color="primary">
+                    Share
+                  </Link>
+                )}
               </CardActions>
             </Card>
           </Grid>
