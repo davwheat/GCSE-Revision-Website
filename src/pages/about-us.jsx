@@ -30,6 +30,12 @@ const AboutPage = () => (
       while using the site, or any other issues, submit a bug report via the
       'Feedback' button from the menu on the left side of the page.
     </P>
+
+    <P paragraph>Enjoy your revision!</P>
+
+    <P paragraph>
+      <Link to="/">Go home</Link>
+    </P>
   </Layout>
 )
 
