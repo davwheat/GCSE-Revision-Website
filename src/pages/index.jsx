@@ -91,11 +91,11 @@ const IndexPage = () => {
               <CardActions>
                 {subject.unreleased === true ? (
                   <Button color="primary" disabled>
-                    Coming soon!
+                    Coming soon
                   </Button>
                 ) : (
                   <Link button to={subject.url} size="medium" color="primary">
-                    Share
+                    Start revising!
                   </Link>
                 )}
               </CardActions>
