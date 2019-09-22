@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 // window.fetch polyfill
 import "whatwg-fetch"
@@ -18,8 +19,10 @@ import {
   Divider,
   Box,
   Container,
+  Chip,
 } from "@material-ui/core"
 import { Skeleton } from "@material-ui/lab"
+import { green as Green } from "@material-ui/core/colors"
 
 import ExpandIcon from "mdi-react/ExpandMoreIcon"
 
@@ -202,6 +205,10 @@ const WordOfTheDay = () => {
                 "{stateWord["meaning"][firstSpeechPart][0]["example"]}"
                 <br />
               </P2>
+              <Synonyms
+                words={stateWord["meaning"][firstSpeechPart][0]["synonyms"]}
+              />
+
               {stateWord["meaning"][firstSpeechPart].map((meaning, i) => {
                 if (i === 0) return null
                 return (
@@ -215,6 +222,7 @@ const WordOfTheDay = () => {
                       "{meaning["example"]}"
                       <br />
                     </P2>
+                    <Synonyms words={meaning["synonyms"]} />
                   </>
                 )
               })}
@@ -246,6 +254,55 @@ const WordOfTheDay = () => {
       </CardActions>
     </Card>
   )
+}
+
+const Synonyms = props => {
+  const { words } = props
+  console.log(words)
+
+  const theme = useTheme()
+  const [expanded, setExpanded] = React.useState(false)
+
+  const synonymStyles = makeStyles({
+    chip: {
+      margin: theme.spacing(0.5),
+      height: 24,
+      fontSize: 13,
+      lineHeight: 13,
+    },
+    indent: {
+      paddingLeft: theme.spacing(3),
+    },
+    green: {
+      color: Green[400],
+      fontSize: 13,
+    },
+  })
+
+  const classes = synonymStyles()
+
+  return (
+    <P2 paragraph className={clsx(classes.indent, classes.green)}>
+      Similar:{" "}
+      {words.map((word, i) => {
+        if (i > 10) return null
+        console.log(word)
+
+        return (
+          <Chip
+            key={word}
+            label={word}
+            className={classes.chip}
+            variant="outlined"
+          />
+        )
+      })}
+    </P2>
+  )
+}
+
+Synonyms.propTypes = {
+  words: PropTypes.array.isRequired,
 }
 
 export default WordOfTheDay
