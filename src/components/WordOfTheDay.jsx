@@ -91,8 +91,9 @@ const WordOfTheDay = () => {
 
   const classes = wotdStyles()
 
-  if (stateWord == null) {
-    fetchPolyfill(MakeUrl(wordOfTheDay))
+  if (stateWord == null && window !== undefined) {
+    window
+      .fetch(MakeUrl(wordOfTheDay))
       .then(response => {
         return response.json()
       })
