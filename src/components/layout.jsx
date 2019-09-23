@@ -20,12 +20,16 @@ import Link from "./Link"
 
 import "./layout.css"
 import { Body2 } from "./EasyText"
+import { lightBlue, orange } from "@material-ui/core/colors"
 
 const theme = createMuiTheme({
   palette: {
     type: "dark",
     primary: {
-      main: "#FF9800",
+      main: orange[500],
+    },
+    secondary: {
+      main: lightBlue[400],
     },
   },
   typography: {
