@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 // window.fetch polyfill
-import "whatwg-fetch"
+import { fetch as fetchPolyfill } from "whatwg-fetch"
 
 import clsx from "clsx"
 
@@ -92,8 +92,7 @@ const WordOfTheDay = () => {
   const classes = wotdStyles()
 
   if (stateWord == null) {
-    window
-      .fetch(MakeUrl(wordOfTheDay))
+    fetchPolyfill(MakeUrl(wordOfTheDay))
       .then(response => {
         return response.json()
       })
