@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 // window.fetch polyfill
-import { fetch as fetchPolyfill } from "whatwg-fetch"
+import "whatwg-fetch"
 
 import clsx from "clsx"
 
