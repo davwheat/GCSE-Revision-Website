@@ -44,62 +44,14 @@ const WordOfTheDay = () => {
   const rngWordIndex = Math.floor(rng * wordCount)
   const wordOfTheDay = AllWords[rngWordIndex]
 
-  //
-  //   {
-  //     word: "rife",
-  //     phonetic: "/rʌɪf/",
-  //     origin:
-  //       "Late Old English rȳfe, probably from Old Norse rīfr ‘acceptable’.",
-  //     meaning: {
-  //       adjective: [
-  //         {
-  //           definition:
-  //             "(especially of something undesirable) of common occurrence; widespread.",
-  //           example: "male chauvinism was rife in medicine",
-  //           synonyms: [
-  //             "widespread",
-  //             "general",
-  //             "common",
-  //             "universal",
-  //             "extensive",
-  //             "ubiquitous",
-  //             "global",
-  //             "omnipresent",
-  //             "everywhere",
-  //             "present everywhere",
-  //             "pandemic",
-  //             "epidemic",
-  //             "endemic",
-  //             "inescapable",
-  //             "insidious",
-  //             "prevalent",
-  //             "penetrating",
-  //             "pervading",
-  //             "pervasive",
-  //             "permeating",
-  //             "immanent",
-  //           ],
-  //         },
-  //       ],
-  //       adverb: [
-  //         {
-  //           definition: "In an unchecked or widespread manner.",
-  //           example: "speculation ran rife that he was an arms dealer",
-  //         },
-  //       ],
-  //     },
-  //   }
-  //
-
   function handleExpand() {
     setExpanded(!expanded)
   }
 
   const wotdStyles = makeStyles({
     card: {
-      maxWidth: "75vw",
-      minWidth: 400,
-      width: "max-content",
+      maxWidth: "92.5vw",
+      width: 650,
       display: "block",
       margin: theme.spacing(2) + "px auto",
     },
@@ -373,9 +325,6 @@ const Synonyms = props => {
         <Chip
           key="expandSynonyms"
           className={classes.chip}
-          color="primary"
-          variant="outlined"
-          clickable
           size="small"
           label={!expanded ? "More" : "Less"}
           deleteIcon={<CustomSynonymExpandIcon expanded={expanded} />}
