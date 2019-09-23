@@ -91,7 +91,7 @@ const WordOfTheDay = () => {
 
   const classes = wotdStyles()
 
-  if (stateWord == null && window !== undefined) {
+  if (stateWord == null && typeof window !== undefined) {
     window
       .fetch(MakeUrl(wordOfTheDay))
       .then(response => {
