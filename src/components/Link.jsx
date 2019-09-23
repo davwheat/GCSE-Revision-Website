@@ -22,13 +22,13 @@ const Link = props => {
       console.log("LOL: " + to)
 
       return (
-        <Button href={to} {...newprops} target="_blank">
+        <Button href={to} {...newprops} target="_blank" rel="noopener">
           {children}
         </Button>
       )
     } else {
       return (
-        <MatLink href={to} {...newprops} target="_blank">
+        <MatLink href={to} {...newprops} target="_blank" rel="noopener">
           {children}
         </MatLink>
       )
