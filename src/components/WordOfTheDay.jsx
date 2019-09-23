@@ -16,19 +16,19 @@ import {
   CardContent,
   Collapse,
   IconButton,
-  Divider,
   Box,
-  Container,
   Chip,
+  Tooltip,
 } from "@material-ui/core"
 import { Skeleton } from "@material-ui/lab"
-import { green as Green } from "@material-ui/core/colors"
 
 import ExpandIcon from "mdi-react/ExpandMoreIcon"
 
-import { H5, H6, P, P2, H4 } from "./EasyText"
+import { P, P2, H4 } from "./EasyText"
 
 import SeededRandom from "seedrandom"
+
+import "./WordOfTheDay.css"
 
 const MakeUrl = word =>
   "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + word
@@ -97,8 +97,11 @@ const WordOfTheDay = () => {
 
   const wotdStyles = makeStyles({
     card: {
-      minWidth: 500,
-      width: "min-content",
+      maxWidth: "75vw",
+      minWidth: 400,
+      width: "max-content",
+      display: "block",
+      margin: theme.spacing(2) + "px auto",
     },
     bullet: {
       display: "inline-block",
@@ -107,7 +110,6 @@ const WordOfTheDay = () => {
     },
     pos: {
       fontSize: 15,
-      marginBottom: 12,
     },
     expand: {
       transform: "rotate(0deg)",
@@ -125,6 +127,7 @@ const WordOfTheDay = () => {
     },
     speechPart: {
       fontStyle: "italic",
+      marginTop: 12,
     },
     indent: {
       paddingLeft: theme.spacing(3),
@@ -188,7 +191,7 @@ const WordOfTheDay = () => {
         ) : (
           <>
             <H4 component="h3">{stateWord["word"]}</H4>
-            <P className={classes.pos} color="textSecondary">
+            <P className={classes.pos} color="primary">
               {stateWord["phonetic"]}
             </P>
             <P component="h4" className={classes.speechPart} gutterBottom>
@@ -205,24 +208,67 @@ const WordOfTheDay = () => {
                 "{stateWord["meaning"][firstSpeechPart][0]["example"]}"
                 <br />
               </P2>
-              <Synonyms
-                words={stateWord["meaning"][firstSpeechPart][0]["synonyms"]}
-              />
+              {stateWord["meaning"][firstSpeechPart][0]["synonyms"] ? (
+                <Synonyms
+                  words={stateWord["meaning"][firstSpeechPart][0]["synonyms"]}
+                />
+              ) : null}
 
               {stateWord["meaning"][firstSpeechPart].map((meaning, i) => {
                 if (i === 0) return null
                 return (
                   <>
-                    <P2 variant="body2">{meaning["definition"]}</P2>
+                    <P2 variant="body2" className={classes.indent}>
+                      {meaning["definition"]}
+                    </P2>
                     <P2
                       variant="body2"
-                      color="textSecondary"
-                      className={classes.exampleText}
+                      className={clsx(classes.exampleText, classes.indent)}
                     >
                       "{meaning["example"]}"
                       <br />
                     </P2>
-                    <Synonyms words={meaning["synonyms"]} />
+                    {meaning["synonyms"] ? (
+                      <Synonyms words={meaning["synonyms"]} />
+                    ) : null}
+                  </>
+                )
+              })}
+
+              {allSpeechParts.map(speechPart => {
+                if (speechPart === firstSpeechPart) return null
+
+                return (
+                  <>
+                    <P
+                      component="h4"
+                      className={classes.speechPart}
+                      gutterBottom
+                    >
+                      {speechPart}
+                    </P>
+                    {stateWord["meaning"][speechPart].map((meaning, i) => {
+                      return (
+                        <>
+                          <P2 variant="body2" className={classes.indent}>
+                            {meaning["definition"]}
+                          </P2>
+                          <P2
+                            variant="body2"
+                            className={clsx(
+                              classes.exampleText,
+                              classes.indent
+                            )}
+                          >
+                            "{meaning["example"]}"
+                            <br />
+                          </P2>
+                          {meaning["synonyms"] ? (
+                            <Synonyms words={meaning["synonyms"]} />
+                          ) : null}
+                        </>
+                      )
+                    })}
                   </>
                 )
               })}
@@ -231,26 +277,28 @@ const WordOfTheDay = () => {
         )}
       </CardContent>
       <CardActions disableSpacing>
-        {stateWord === null ? (
-          <IconButton
-            className={classes.expand}
-            aria-expanded={false}
-            aria-label="show more"
-          >
-            <ExpandIcon />
-          </IconButton>
-        ) : (
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpand}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandIcon />
-          </IconButton>
-        )}
+        <Tooltip title="See more">
+          {stateWord === null ? (
+            <IconButton
+              className={classes.expand}
+              aria-expanded={false}
+              aria-label="show more"
+            >
+              <ExpandIcon />
+            </IconButton>
+          ) : (
+            <IconButton
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded,
+              })}
+              onClick={handleExpand}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandIcon />
+            </IconButton>
+          )}
+        </Tooltip>
       </CardActions>
     </Card>
   )
@@ -265,40 +313,109 @@ const Synonyms = props => {
 
   const synonymStyles = makeStyles({
     chip: {
-      margin: theme.spacing(0.5),
-      height: 24,
-      fontSize: 13,
-      lineHeight: 13,
+      margin: theme.spacing(0.35),
     },
     indent: {
       paddingLeft: theme.spacing(3),
     },
-    green: {
-      color: Green[400],
-      fontSize: 13,
+    synonymTitle: {
+      fontSize: 14,
     },
   })
 
   const classes = synonymStyles()
 
-  return (
-    <P2 paragraph className={clsx(classes.indent, classes.green)}>
-      Similar:{" "}
-      {words.map((word, i) => {
-        if (i > 10) return null
-        console.log(word)
+  const handleExpandToggle = () => {
+    setExpanded(!expanded)
+  }
 
-        return (
-          <Chip
-            key={word}
-            label={word}
-            className={classes.chip}
-            variant="outlined"
-          />
-        )
-      })}
+  return (
+    <P2
+      paragraph
+      color="primary"
+      className={clsx(classes.indent, classes.synonymTitle)}
+    >
+      Synonyms{" "}
+      {!expanded ? (
+        <>
+          {words.map((word, i) => {
+            if (!expanded && i > 1 && words.length > 3) return null
+
+            console.log(word)
+
+            return (
+              <Chip
+                component="span"
+                key={word}
+                label={word}
+                size="small"
+                className={classes.chip}
+                variant="outlined"
+              />
+            )
+          })}{" "}
+        </>
+      ) : (
+        <>
+          {words.map(word => (
+            <Chip
+              component="span"
+              key={word}
+              label={word}
+              size="small"
+              className={classes.chip}
+              variant="outlined"
+            />
+          ))}
+        </>
+      )}
+      {words.length > 3 ? (
+        <Chip
+          key="expandSynonyms"
+          className={classes.chip}
+          color="primary"
+          variant="outlined"
+          clickable
+          size="small"
+          label={!expanded ? "More" : "Less"}
+          deleteIcon={<CustomSynonymExpandIcon expanded={expanded} />}
+          onDelete={handleExpandToggle}
+          onClick={handleExpandToggle}
+        />
+      ) : null}
     </P2>
   )
+}
+
+const CustomSynonymExpandIcon = props => {
+  const theme = useTheme()
+
+  const classes = makeStyles({
+    expand: {
+      transform: "rotate(0deg)",
+      marginLeft: "auto",
+      transition: theme.transitions.create("transform", {
+        duration: theme.transitions.duration.shortest,
+      }),
+    },
+    expandOpen: {
+      transform: "rotate(180deg)",
+    },
+  })()
+
+  const { expanded } = props
+
+  return (
+    <ExpandIcon
+      className={clsx(classes.expand, {
+        [classes.expandOpen]: expanded,
+      })}
+    />
+  )
+}
+
+CustomSynonymExpandIcon.propTypes = {
+  expanded: PropTypes.bool.isRequired,
 }
 
 Synonyms.propTypes = {

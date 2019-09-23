@@ -1,0 +1,3 @@
+.MuiCollapse-wrapperInner > *:last-child {
+  margin-bottom: 0;
+}
