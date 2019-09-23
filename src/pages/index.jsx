@@ -37,14 +37,15 @@ const subjects = [
     organisers. We're always looking to add more to the
     table!`,
     url: "/subjects/english",
+    unreleased: false,
   },
   {
     name: "Maths",
     description: `Our site provides useful tips and tricks to
     help you make the most of your calculator as well as maths
     quizzes and articles on harder topics.`,
-    url: null,
-    unreleased: true,
+    url: "/subjects/maths",
+    unreleased: false,
   },
   {
     name: "Computer Science",
