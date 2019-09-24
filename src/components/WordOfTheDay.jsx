@@ -30,11 +30,6 @@ import SeededRandom from "seedrandom"
 
 import "./WordOfTheDay.css"
 
-exports.onClientEntry = () => {
-  // Don't need to do anything here, but if you don't
-  // export something, the fetch polyfill import won't work.
-}
-
 const MakeUrl = word =>
   "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + word
 
@@ -96,7 +91,7 @@ const WordOfTheDay = () => {
 
   const classes = wotdStyles()
 
-  if (stateWord == null && typeof window !== undefined) {
+  if (stateWord == null && typeof window !== "undefined") {
     window
       .fetch(MakeUrl(wordOfTheDay))
       .then(response => {
