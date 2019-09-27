@@ -25,12 +25,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#303030`,
+        name: `GCSE Revision Website`,
+        short_name: `GCSE Revision`,
+        start_url: `/?utm_source=pwa`,
+        background_color: `#ae5c2d`,
         theme_color: `#ff9800`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
