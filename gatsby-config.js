@@ -14,10 +14,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-copy-files",
       options: {
-        name: `audio`,
-        path: `${__dirname}/audio`,
+        source: `${__dirname}/src/public`,
+        destination: "",
       },
     },
     `gatsby-transformer-sharp`,
