@@ -86,7 +86,7 @@ const MakeAppBar = ({ title }) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             edge="start"
