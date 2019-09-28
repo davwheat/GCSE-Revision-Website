@@ -1,4 +1,9 @@
 # GCSE Revision Website
+<p align="center">
+![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=davwheat/GCSE-Revision-Website)
+![CI Status](https://github.com/davwheat/GCSE-Revision-Website/workflows/Build/badge.svg)
+</p>
+
 
 ## Introduction
 
