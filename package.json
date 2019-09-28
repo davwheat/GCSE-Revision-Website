@@ -18,7 +18,7 @@
     "gatsby-plugin-remove-console": "0.0.2",
     "gatsby-plugin-sharp": "^2.2.24",
     "gatsby-source-filesystem": "^2.1.24",
-    "gatsby-transformer-sharp": "^2.2.15",
+    "gatsby-transformer-sharp": "^2.2.19",
     "howler": "^2.1.2",
     "mdi-react": "^6.1.0",
     "prop-types": "^15.7.2",
