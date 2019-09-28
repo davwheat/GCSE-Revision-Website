@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import { Howl, Howler } from "howler"
+
 // window.fetch polyfill
 import "whatwg-fetch"
 
@@ -23,12 +25,15 @@ import {
 import { Skeleton } from "@material-ui/lab"
 
 import ExpandIcon from "mdi-react/ExpandMoreIcon"
+import SpeakIcon from "mdi-react/VolumeHighIcon"
 
 import { P, P2, H4 } from "./EasyText"
 
 import SeededRandom from "seedrandom"
 
 import "./WordOfTheDay.css"
+
+import { Words } from "../audio"
 
 const MakeUrl = word =>
   "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + word
@@ -44,8 +49,23 @@ const WordOfTheDay = () => {
   const rngWordIndex = Math.floor(rng * wordCount)
   const wordOfTheDay = AllWords[rngWordIndex]
 
+  let isPlaying = false
+
   function handleExpand() {
     setExpanded(!expanded)
+  }
+
+  function speakWord() {
+    if (typeof window !== "undefined" && !isPlaying) {
+      isPlaying = true
+      let sound = new Howl({
+        src: [Words[wordOfTheDay]],
+        onend: () => {
+          isPlaying = false
+        },
+      })
+      sound.play()
+    }
   }
 
   const wotdStyles = makeStyles({
@@ -229,6 +249,13 @@ const WordOfTheDay = () => {
         )}
       </CardContent>
       <CardActions disableSpacing>
+        {stateWord === null ? null : (
+          <Tooltip title="Hear aloud">
+            <IconButton aria-label="hear aloud" onClick={speakWord}>
+              <SpeakIcon />
+            </IconButton>
+          </Tooltip>
+        )}
         <Tooltip title="See more">
           {stateWord === null ? (
             <IconButton
