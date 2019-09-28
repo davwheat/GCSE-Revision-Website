@@ -38,7 +38,7 @@
   },
   "plugins": ["react", "react-hooks"],
   "rules": {
-    "indent": ["warn", 2],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/boolean-prop-naming": "warn",
