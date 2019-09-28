@@ -9,14 +9,10 @@ jobs:
 
     steps:
       - name: Check for skip
-        if: "! contains(github.event.head_commit.message, '[ci skip]')"
+        if: "contains(github.event.head_commit.message, '[ci skip]')"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
-          echo "${{ github.event.head_commit.message }}"
-          echo "$GITHUB_CONTEXT"
-      - name: Show Event
-        run: cat ${GITHUB_EVENT_PATH}
+        run: return 1
 
   build:
     name: node ${{ matrix.node_version }}; ${{ matrix.os }}
