@@ -1,6 +1,11 @@
 name: Build
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+    - master
+    - development
+  pull_request
 
 jobs:
   skip_ci_test:
