@@ -12,6 +12,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "typeface-poppins"
+import "typeface-work-sans"
 
 import Header from "./header"
 import { Box, createMuiTheme, MuiThemeProvider, Paper } from "@material-ui/core"
@@ -37,6 +38,7 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: [
       "Poppins",
+      '"Work Sans"',
       "Roboto",
       '"Helvetica Neue"',
       '"Segoe UI"',
@@ -45,11 +47,73 @@ const theme = createMuiTheme({
     ].join(","),
     h1: {
       fontSize: 64,
-      fontWeight: "bold",
+      fontWeight: "600",
+      fontFamily: [
+        '"Work Sans"',
+        "Poppins",
+        "Roboto",
+        '"Helvetica Neue"',
+        '"Segoe UI"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
     },
     h2: {
       fontSize: 48,
       fontWeight: "bold",
+      fontFamily: [
+        '"Work Sans"',
+        "Poppins",
+        "Roboto",
+        '"Helvetica Neue"',
+        '"Segoe UI"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
+    },
+    h3: {
+      fontFamily: [
+        '"Work Sans"',
+        "Poppins",
+        "Roboto",
+        '"Helvetica Neue"',
+        '"Segoe UI"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
+    },
+    h4: {
+      fontFamily: [
+        '"Work Sans"',
+        "Poppins",
+        "Roboto",
+        '"Helvetica Neue"',
+        '"Segoe UI"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
+    },
+    h5: {
+      fontFamily: [
+        '"Work Sans"',
+        "Poppins",
+        "Roboto",
+        '"Helvetica Neue"',
+        '"Segoe UI"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
+    },
+    h6: {
+      fontFamily: [
+        "Poppins",
+        '"Work Sans"',
+        "Roboto",
+        '"Helvetica Neue"',
+        '"Segoe UI"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
     },
   },
 })
