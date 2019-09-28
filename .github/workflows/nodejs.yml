@@ -5,7 +5,10 @@ on:
     branches:
     - master
     - development
-  pull_request
+  pull_request:
+    branches:
+    - master
+    - development
 
 jobs:
   skip_ci_test:
