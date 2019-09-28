@@ -51,10 +51,11 @@
     "react/forbid-prop-types": "warn",
     "react/no-danger": "error",
     "react/no-children-prop": "warn",
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
+    "react/jsx-boolean-value": ["warn", "never"],
     "react/jsx-closing-bracket-location": "warn",
     "react/jsx-closing-tag-location": "warn",
-    "react/jsx-boolean-value": ["warn", "never"]
+    "react/jsx-key": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   }
 }
