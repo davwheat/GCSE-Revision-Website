@@ -1,3 +1,9 @@
+code,
+pre,
+.monospace-font {
+  font-family: "Fira Mono", "Fira Code", "Consolas", monospace;
+}
+
 html,
 body,
 #___gatsby,

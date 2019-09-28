@@ -13,6 +13,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import "typeface-poppins"
 import "typeface-work-sans"
+import "typeface-fira-mono"
 
 import Header from "./header"
 import { Box, createMuiTheme, MuiThemeProvider, Paper } from "@material-ui/core"
