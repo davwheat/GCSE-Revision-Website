@@ -5,10 +5,16 @@ on:
     branches:
     - master
     - development
+    - feature/*
+    - hotfix/*
+    - release/*
   pull_request:
     branches:
     - master
     - development
+    - feature/*
+    - hotfix/*
+    - release/*
 
 jobs:
   skip_ci_test:
