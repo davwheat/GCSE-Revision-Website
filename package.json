@@ -35,7 +35,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "eslint": "^6.4.0",
+    "eslint": "^6.5.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.1.1",
     "firebase-tools": "^7.4.0",
