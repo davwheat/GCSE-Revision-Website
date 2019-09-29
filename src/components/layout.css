@@ -1,3 +1,28 @@
+code,
+pre,
+.monospace-font {
+  font-family: "Fira Mono", "Fira Code", "Consolas", monospace;
+}
+
+code {
+  display: inline-block;
+  background: rgba(128, 128, 128, 0.45);
+  padding: 2px 4px;
+  border: 1px solid rgba(128, 128, 128, 0.85);
+  border-radius: 6px;
+  line-height: 1;
+  margin: 0 1.5px;
+}
+
+pre {
+  display: block;
+  background: rgba(128, 128, 128, 0.45);
+  padding: 2px 4px;
+  border: 1px solid rgba(128, 128, 128, 0.85);
+  border-radius: 6px;
+  line-height: 1;
+}
+
 html,
 body,
 #___gatsby,
