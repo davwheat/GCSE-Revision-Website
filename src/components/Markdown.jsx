@@ -7,7 +7,6 @@ import PropTypes from "prop-types"
 
 import ReactMarkdown from "react-markdown/with-html"
 
-import Link from "./Link"
 import {
   Paper,
   Divider,
@@ -18,9 +17,39 @@ import {
   TableRow,
   TableCell,
   withStyles,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Checkbox,
 } from "@material-ui/core"
-import { P, H2, H3, H4, H5, H6, Subtitle1 } from "./EasyText"
+
+import Lowlight from "react-lowlight"
+
+// Load any languages you want to use
+// (see https://github.com/isagalaev/highlight.js/tree/master/src/languages)
+import js from "highlight.js/lib/languages/javascript"
+import py from "highlight.js/lib/languages/python"
+import cs from "highlight.js/lib/languages/cs"
+import xml from "highlight.js/lib/languages/xml"
+import md from "highlight.js/lib/languages/markdown"
+import php from "highlight.js/lib/languages/php"
+import css from "highlight.js/lib/languages/css"
+
+import "highlight.js/styles/monokai-sublime.css"
+
+import Link from "./Link"
+import GImage from "./image"
+import { P, H2, H3, H4, H5, H6, Subtitle1, P1 } from "./EasyText"
 import Quote from "./Blockquote"
+
+Lowlight.registerLanguage("js", js)
+Lowlight.registerLanguage("py", py)
+Lowlight.registerLanguage("cs", cs)
+Lowlight.registerLanguage("xml", xml)
+Lowlight.registerLanguage("md", md)
+Lowlight.registerLanguage("php", php)
+Lowlight.registerLanguage("css", css)
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -61,12 +90,8 @@ let row = 0
 
 function markdownRenderers(theme) {
   return {
-    root: props => {
-      return <article children={props.children} />
-    },
-    paragraph: props => {
-      return <P paragraph children={props.children} />
-    },
+    root: props => <article children={props.children} />,
+    paragraph: props => <P paragraph children={props.children} />,
     thematicBreak: props => (
       <Divider
         variant="middle"
@@ -92,7 +117,6 @@ function markdownRenderers(theme) {
     tableHead: props => <TableHead children={props.children} />,
     tableBody: props => <TableBody children={props.children} />,
     tableRow: props => {
-      console.log(props)
       row++
       return (
         <TableRow
@@ -103,15 +127,56 @@ function markdownRenderers(theme) {
         />
       )
     },
-    tableCell: props => {
+    tableCell: props => (
+      <StyledTableCell
+        align={props.align ? props.align : "left"}
+        children={props.children}
+      />
+    ),
+    image: props => <GImage filename={props.src} alt={props.alt} />,
+    heading: props => HeadingLevelToComponent(props.level, props),
+    inlineCode: props => <code>{props.children}</code>,
+    code: props => <Lowlight value={props.children} />,
+    list: props => {
+      const { ordered } = props
       return (
-        <StyledTableCell
-          align={props.align ? props.align : "left"}
-          children={props.children}
-        />
+        <List
+          component={ordered ? "ol" : "ul"}
+          style={{
+            width: "max-content",
+            minWidth: "50%",
+            maxWidth: "100%",
+            marginBottom: theme.spacing(2),
+            backgroundColor: theme.palette.background.paper,
+          }}
+        >
+          {props.children}
+        </List>
       )
     },
-    heading: props => HeadingLevelToComponent(props.level, props),
+    listItem: props => {
+      console.log(props)
+      const { children, index, checked, ordered } = props
+      return (
+        <ListItem component="li" button style={{ cursor: "unset" }}>
+          {ordered ? (
+            <ListItemIcon>
+              {checked !== true ? (
+                <P1 display="inline">{index + 1}.</P1>
+              ) : (
+                <Checkbox
+                  edge="start"
+                  checked={checked}
+                  disabled
+                  tabIndex={-1}
+                />
+              )}
+            </ListItemIcon>
+          ) : null}
+          <ListItemText primary={children} />
+        </ListItem>
+      )
+    },
   }
 }
 

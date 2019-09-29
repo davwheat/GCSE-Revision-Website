@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Link as MatLink, Button } from "@material-ui/core"
 import { Link as GatsbyLink } from "gatsby"
 
+// eslint-disable-next-line react/display-name
 const AdapterLink = React.forwardRef((props, ref) => (
   <GatsbyLink
     style={{ textDecoration: "none !important" }}
