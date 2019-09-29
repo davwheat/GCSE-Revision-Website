@@ -4,9 +4,17 @@ module.exports = {
     title: `Free GCSE Revision`,
     description: `A free revision tool for GCSE students.`,
     author: `@davwheat`,
+    siteUrl: "https://gcse-revision-site.firebaseapp.com",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/src/articles`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,8 +22,27 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+              withWebp: true,
+              backgroundColor: "#303030",
+              useMozJpeg: true,
+              defaultQuality: 85,
+              showCaptions: true,
+              linkImagesToOriginal: true,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
