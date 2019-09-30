@@ -20,8 +20,6 @@ const Link = props => {
     to.startsWith("//")
   ) {
     if (button === true) {
-      console.log("LOL: " + to)
-
       return (
         <Button href={to} {...newprops} target="_blank" rel="noopener">
           {children}
