@@ -59,7 +59,7 @@ jobs:
           CI: true
 
       - name: Firebase deploy
-        if: github.event_name == 'push' && matrix.node_version == 10
+        if: github.event_name == 'push' && matrix.node_version == 10 && github.ref == 'refs/heads/master'
         run: |
           echo "$GITHUB_CONTEXT"
           ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
