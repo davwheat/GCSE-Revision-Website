@@ -8,7 +8,6 @@ import {
   makeStyles,
   Card,
   CardActions,
-  CardMedia,
   CardContent,
   CardActionArea,
   Button,

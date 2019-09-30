@@ -1,7 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
+import PropTypes, { string } from "prop-types"
 
-import { Howl, Howler } from "howler"
+import { Howl } from "howler"
 
 // window.fetch polyfill
 import "whatwg-fetch"
@@ -120,12 +120,9 @@ const WordOfTheDay = () => {
       .then(json => {
         setStateWord(json[0])
       })
-      .catch(ex => {
-        console.error(ex)
+      .catch(() => {
         setStateWord(undefined)
       })
-  } else {
-    console.log(stateWord)
   }
 
   let allSpeechParts =
@@ -177,7 +174,8 @@ const WordOfTheDay = () => {
                 variant="body2"
                 className={clsx(classes.exampleText, classes.indent)}
               >
-                "{stateWord["meaning"][firstSpeechPart][0]["example"]}"
+                &quot;{stateWord["meaning"][firstSpeechPart][0]["example"]}
+                &quot;
                 <br />
               </P2>
               {stateWord["meaning"][firstSpeechPart][0]["synonyms"] ? (
@@ -197,7 +195,7 @@ const WordOfTheDay = () => {
                       variant="body2"
                       className={clsx(classes.exampleText, classes.indent)}
                     >
-                      "{meaning["example"]}"
+                      &quot;{meaning["example"]}&quot;
                       <br />
                     </P2>
                     {meaning["synonyms"] ? (
@@ -219,7 +217,7 @@ const WordOfTheDay = () => {
                     >
                       {speechPart}
                     </P>
-                    {stateWord["meaning"][speechPart].map((meaning, i) => {
+                    {stateWord["meaning"][speechPart].map(meaning => {
                       return (
                         <>
                           <P2 variant="body2" className={classes.indent}>
@@ -232,7 +230,7 @@ const WordOfTheDay = () => {
                               classes.indent
                             )}
                           >
-                            "{meaning["example"]}"
+                            &quot;{meaning["example"]}&quot;
                             <br />
                           </P2>
                           {meaning["synonyms"] ? (
@@ -320,8 +318,6 @@ const Synonyms = props => {
           {words.map((word, i) => {
             if (!expanded && i > 1 && words.length > 3) return null
 
-            console.log(word)
-
             return (
               <Chip
                 component="span"
@@ -395,7 +391,7 @@ CustomSynonymExpandIcon.propTypes = {
 }
 
 Synonyms.propTypes = {
-  words: PropTypes.array.isRequired,
+  words: PropTypes.arrayOf(PropTypes.shape(string)),
 }
 
 export default WordOfTheDay
