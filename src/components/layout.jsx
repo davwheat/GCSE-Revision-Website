@@ -11,7 +11,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import "typeface-poppins"
+import "@openfonts/lexend-deca_all"
 import "typeface-work-sans"
 import "typeface-fira-mono"
 
@@ -40,7 +40,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: [
-      "Poppins",
+      "Lexend Deca",
       '"Work Sans"',
       "Roboto",
       '"Helvetica Neue"',
@@ -53,7 +53,7 @@ const theme = createMuiTheme({
       fontWeight: "600",
       fontFamily: [
         '"Work Sans"',
-        "Poppins",
+        "Lexend Deca",
         "Roboto",
         '"Helvetica Neue"',
         '"Segoe UI"',
@@ -66,7 +66,7 @@ const theme = createMuiTheme({
       fontWeight: "bold",
       fontFamily: [
         '"Work Sans"',
-        "Poppins",
+        "Lexend Deca",
         "Roboto",
         '"Helvetica Neue"',
         '"Segoe UI"',
@@ -77,7 +77,7 @@ const theme = createMuiTheme({
     h3: {
       fontFamily: [
         '"Work Sans"',
-        "Poppins",
+        "Lexend Deca",
         "Roboto",
         '"Helvetica Neue"',
         '"Segoe UI"',
@@ -88,7 +88,7 @@ const theme = createMuiTheme({
     h4: {
       fontFamily: [
         '"Work Sans"',
-        "Poppins",
+        "Lexend Deca",
         "Roboto",
         '"Helvetica Neue"',
         '"Segoe UI"',
@@ -99,7 +99,7 @@ const theme = createMuiTheme({
     h5: {
       fontFamily: [
         '"Work Sans"',
-        "Poppins",
+        "Lexend Deca",
         "Roboto",
         '"Helvetica Neue"',
         '"Segoe UI"',
@@ -109,7 +109,7 @@ const theme = createMuiTheme({
     },
     h6: {
       fontFamily: [
-        "Poppins",
+        "Lexend Deca",
         '"Work Sans"',
         "Roboto",
         '"Helvetica Neue"',
@@ -117,6 +117,18 @@ const theme = createMuiTheme({
         "Arial",
         "sans-serif",
       ].join(","),
+    },
+    button: {
+      fontFamily: [
+        "Lexend Deca",
+        '"Work Sans"',
+        "Roboto",
+        '"Helvetica Neue"',
+        '"Segoe UI"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
+      letterSpacing: 1,
     },
   },
 })

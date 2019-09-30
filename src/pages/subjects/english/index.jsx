@@ -2,15 +2,21 @@ import React from "react"
 
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
-
 import { H1, H6, H3 } from "../../../components/EasyText"
-// import Link from "../../../components/Link"
+import Link from "../../../components/Link"
+
 import WordOfTheDay from "../../../components/WordOfTheDay"
+import { Divider } from "@material-ui/core"
+import NavigateBeforeIcon from "mdi-react/NavigateBeforeIcon"
 
 const SubjectsEnglishPage = () => {
   return (
     <Layout>
       <SEO title="English" />
+      <Link button color="primary" to="/">
+        <NavigateBeforeIcon /> Go back
+      </Link>
+      <Divider variant="middle" style={{ marginBottom: 24, marginTop: 16 }} />
       <H1 gutterBottom>English</H1>
       <H6 component="p" paragraph>
         We offer many helpful English revision tools, such as: mini language

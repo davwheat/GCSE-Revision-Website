@@ -75,19 +75,17 @@ const IndexPage = () => {
         {subjects.map(subject => (
           <Grid item xs={12} sm={12} md={6} key={subject.name}>
             <Card className={classes.card}>
-              <CardActionArea>
-                {/* <CardMedia
+              {/* <CardMedia
                   className={classes.media}
                   image="/static/images/cards/contemplative-reptile.jpg"
                   title="Contemplative Reptile"
                 /> */}
-                <CardContent>
-                  <H5 gutterBottom component="h3">
-                    {subject.name}
-                  </H5>
-                  <P2 color="textSecondary">{subject.description}</P2>
-                </CardContent>
-              </CardActionArea>
+              <CardContent>
+                <H5 gutterBottom component="h3">
+                  {subject.name}
+                </H5>
+                <P2 color="textSecondary">{subject.description}</P2>
+              </CardContent>
               <CardActions>
                 {subject.unreleased === true ? (
                   <Button color="primary" disabled>
