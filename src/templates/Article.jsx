@@ -8,8 +8,6 @@ import { H1, Subtitle1 } from "../components/EasyText"
 import { useTheme } from "@material-ui/core"
 
 const Article = props => {
-  // console.log(typeof props.data)
-
   const post = props.data.markdownRemark
 
   const theme = useTheme()

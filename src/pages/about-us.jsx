@@ -28,7 +28,7 @@ const AboutPage = () => (
       </Link>
       . If you ever find any problems with the content on the site, any bugs
       while using the site, or any other issues, submit a bug report via the
-      'Feedback' button from the menu on the left side of the page.
+      &apos;Feedback&apos; button from the menu on the left side of the page.
     </P>
 
     <P paragraph>Enjoy your revision!</P>

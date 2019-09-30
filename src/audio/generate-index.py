@@ -11,7 +11,7 @@ def GetFileName(f):
 try:
     deleteFile(path.join(path.abspath(path.dirname(__file__)), "index.jsx"))
 except FileNotFoundError:
-    ""
+    pass
 
 Files = []
 
