@@ -174,6 +174,7 @@ const WordOfTheDay = () => {
                   "Arial",
                   "sans-serif",
                 ].join(","),
+                letterSpacing: -1.5,
               }}
             >
               {stateWord["word"]}
