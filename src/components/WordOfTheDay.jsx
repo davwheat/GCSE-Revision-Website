@@ -283,8 +283,7 @@ const WordOfTheDay = () => {
 
 const Synonyms = props => {
   const { words } = props
-  console.log(words)
-
+  
   const theme = useTheme()
   const [expanded, setExpanded] = React.useState(false)
 

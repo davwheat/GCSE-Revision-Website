@@ -155,7 +155,6 @@ function markdownRenderers(theme) {
       )
     },
     listItem: props => {
-      console.log(props)
       const { children, index, checked, ordered } = props
       return (
         <ListItem component="li" button style={{ cursor: "unset" }}>
