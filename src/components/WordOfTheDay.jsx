@@ -3,6 +3,8 @@ import PropTypes, { string } from "prop-types"
 
 import { Howl } from "howler"
 
+import "@openfonts/lexend-exa_all"
+
 // window.fetch polyfill
 import "whatwg-fetch"
 
@@ -159,7 +161,23 @@ const WordOfTheDay = () => {
           </Box>
         ) : (
           <>
-            <H4 component="h3">{stateWord["word"]}</H4>
+            <H4
+              component="h3"
+              style={{
+                fontFamily: [
+                  "Lexend Exa",
+                  "Lexend Deca",
+                  '"Work Sans"',
+                  "Roboto",
+                  '"Helvetica Neue"',
+                  '"Segoe UI"',
+                  "Arial",
+                  "sans-serif",
+                ].join(","),
+              }}
+            >
+              {stateWord["word"]}
+            </H4>
             <P className={classes.pos} color="primary">
               {stateWord["phonetic"]}
             </P>
@@ -283,7 +301,7 @@ const WordOfTheDay = () => {
 
 const Synonyms = props => {
   const { words } = props
-  
+
   const theme = useTheme()
   const [expanded, setExpanded] = React.useState(false)
 
