@@ -1,4 +1,3 @@
-/* eslint-disable react/no-children-prop */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/display-name */
 
@@ -24,6 +23,10 @@ import {
   Checkbox,
 } from "@material-ui/core"
 
+import "katex/dist/katex.min.css"
+import TeX from "@matejmazur/react-katex"
+import RemarkMathPlugin from "remark-math"
+
 import Lowlight from "react-lowlight"
 
 // Load any languages you want to use
@@ -40,7 +43,7 @@ import "highlight.js/styles/monokai-sublime.css"
 
 import Link from "./Link"
 import GImage from "./image"
-import { P, H2, H3, H4, H5, H6, Subtitle1, P1 } from "./EasyText"
+import { P, H2, H3, H4, H5, H6, P1, Subtitle2 } from "./EasyText"
 import Quote from "./Blockquote"
 
 Lowlight.registerLanguage("js", js)
@@ -68,21 +71,49 @@ const HeadingLevelToComponent = (level, props) => {
   // Start with H2 because H1 is generated automatically from the title in the MD doc
   switch (level) {
     case 1:
-      return <H2 gutterBottom children={props.children} />
+      return (
+        <H2 gutterBottom style={{ marginTop: 32 }}>
+          {props.children}
+        </H2>
+      )
     case 2:
-      return <H3 gutterBottom children={props.children} />
+      return (
+        <H3 gutterBottom style={{ marginTop: 32 }}>
+          {props.children}
+        </H3>
+      )
     case 3:
-      return <H4 gutterBottom children={props.children} />
+      return (
+        <H4 gutterBottom style={{ marginTop: 32 }}>
+          {props.children}
+        </H4>
+      )
     case 4:
-      return <H5 gutterBottom children={props.children} />
+      return (
+        <H5 gutterBottom style={{ marginTop: 32 }}>
+          {props.children}
+        </H5>
+      )
     case 5:
-      return <H6 gutterBottom children={props.children} />
+      return (
+        <H6 gutterBottom style={{ marginTop: 32 }}>
+          {props.children}
+        </H6>
+      )
     case 6:
-      return <Subtitle1 gutterBottom children={props.children} />
+      return (
+        <Subtitle2 gutterBottom style={{ marginTop: 32 }}>
+          {props.children}
+        </Subtitle2>
+      )
 
-    // default to H6 if you try to get a heading of level 0 or 7, as an example
+    // default to value of H6 if you try to get a heading of level 0 or 7, as an example
     default:
-      return <H6 children={props.children} />
+      return (
+        <Subtitle2 gutterBottom style={{ marginTop: 32 }}>
+          {props.children}
+        </Subtitle2>
+      )
   }
 }
 // Renderer docs: https://github.com/rexxars/react-markdown#node-types
@@ -90,18 +121,16 @@ let row = 0
 
 function markdownRenderers(theme) {
   return {
-    root: props => <article children={props.children} />,
-    paragraph: props => <P paragraph children={props.children} />,
+    root: props => <article>{props.children}</article>,
+    paragraph: props => <P paragraph>{props.children}</P>,
     thematicBreak: props => (
-      <Divider
-        variant="middle"
-        style={{ marginBottom: theme.spacing(1.5) }}
-        children={props.children}
-      />
+      <Divider variant="middle" style={{ marginBottom: theme.spacing(1.5) }}>
+        {props.children}
+      </Divider>
     ),
-    blockquote: props => <Quote children={props.children} />,
-    link: props => <Link to={props.href} children={props.children} />,
-    linkReference: props => <Link to={props.href} children={props.children} />,
+    blockquote: props => <Quote>{props.children}</Quote>,
+    link: props => <Link to={props.href}>{props.children}</Link>,
+    linkReference: props => <Link to={props.href}>{props.children}</Link>,
     table: props => (
       <Paper
         style={{
@@ -111,32 +140,37 @@ function markdownRenderers(theme) {
           overflowX: "auto",
         }}
       >
-        <Table children={props.children} />
+        <Table>{props.children}</Table>
       </Paper>
     ),
-    tableHead: props => <TableHead children={props.children} />,
-    tableBody: props => <TableBody children={props.children} />,
+    tableHead: props => <TableHead>{props.children}</TableHead>,
+    tableBody: props => <TableBody>{props.children}</TableBody>,
     tableRow: props => {
       row++
       return (
-        <TableRow
-          hover={!props.isHeader}
-          tabIndex={-1}
-          key={row}
-          children={props.children}
-        />
+        <TableRow hover={!props.isHeader} tabIndex={-1} key={row}>
+          {props.children}
+        </TableRow>
       )
     },
     tableCell: props => (
-      <StyledTableCell
-        align={props.align ? props.align : "left"}
-        children={props.children}
-      />
+      <StyledTableCell align={props.align ? props.align : "left"}>
+        {props.children}
+      </StyledTableCell>
     ),
     image: props => <GImage filename={props.src} alt={props.alt} />,
     heading: props => HeadingLevelToComponent(props.level, props),
     inlineCode: props => <code>{props.children}</code>,
-    code: props => <Lowlight value={props.children} />,
+    code: props => {
+      console.log(props)
+
+      return (
+        <Lowlight
+          language={props.language ? props.language : undefined}
+          value={props.value}
+        />
+      )
+    },
     list: props => {
       const { ordered } = props
       return (
@@ -176,6 +210,8 @@ function markdownRenderers(theme) {
         </ListItem>
       )
     },
+    inlineMath: props => <TeX math={props.value} />,
+    math: props => <TeX block math={props.value} />,
   }
 }
 
@@ -185,7 +221,14 @@ const Markdown = props => {
   const { src } = props
   const renderers = markdownRenderers(theme)
 
-  return <ReactMarkdown source={src} escapeHtml={false} renderers={renderers} />
+  return (
+    <ReactMarkdown
+      plugins={[RemarkMathPlugin]}
+      source={src}
+      escapeHtml={false}
+      renderers={renderers}
+    />
+  )
 }
 
 Markdown.propTypes = {

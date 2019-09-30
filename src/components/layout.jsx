@@ -118,6 +118,18 @@ const theme = createMuiTheme({
         "sans-serif",
       ].join(","),
     },
+    button: {
+      fontFamily: [
+        "Lexend Deca",
+        '"Work Sans"',
+        "Roboto",
+        '"Helvetica Neue"',
+        '"Segoe UI"',
+        "Arial",
+        "sans-serif",
+      ].join(","),
+      letterSpacing: 1,
+    },
   },
 })
 

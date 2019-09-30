@@ -17,7 +17,7 @@ code {
 pre {
   display: block;
   background: rgba(128, 128, 128, 0.45);
-  padding: 2px 4px;
+  padding: 2px 0;
   border: 1px solid rgba(128, 128, 128, 0.85);
   border-radius: 6px;
   line-height: 1;
@@ -38,4 +38,10 @@ body,
 .footer-icon {
   transform: translateY(4px);
   margin-right: 2px;
+}
+
+a.no-underline:any-link:hover *,
+a.no-underline:any-link:hover {
+  text-decoration: none !important;
+  color: #ffa726;
 }
