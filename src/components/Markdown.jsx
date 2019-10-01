@@ -23,6 +23,7 @@ import {
   Checkbox,
 } from "@material-ui/core"
 
+import "./css/katex.css"
 import "katex/dist/katex.min.css"
 import TeX from "@matejmazur/react-katex"
 import RemarkMathPlugin from "remark-math"
@@ -120,6 +121,8 @@ const HeadingLevelToComponent = (level, props) => {
 let row = 0
 
 function markdownRenderers(theme) {
+  console.log(theme)
+
   return {
     root: props => <article>{props.children}</article>,
     paragraph: props => <P paragraph>{props.children}</P>,
@@ -174,40 +177,50 @@ function markdownRenderers(theme) {
     list: props => {
       const { ordered } = props
       return (
-        <List
-          component={ordered ? "ol" : "ul"}
-          style={{
-            width: "max-content",
-            minWidth: "50%",
-            maxWidth: "100%",
-            marginBottom: theme.spacing(2),
-            backgroundColor: theme.palette.background.paper,
-          }}
-        >
-          {props.children}
-        </List>
+        <Paper>
+          <List
+            component={ordered ? "ol" : "ul"}
+            style={{
+              marginBottom: theme.spacing(2),
+              "& li:last-child": {
+                display: "none",
+              },
+            }}
+          >
+            {props.children}
+          </List>
+        </Paper>
       )
     },
     listItem: props => {
       const { children, index, checked, ordered } = props
       return (
-        <ListItem component="li" button style={{ cursor: "unset" }}>
-          {ordered ? (
-            <ListItemIcon>
-              {checked !== true ? (
-                <P1 display="inline">{index + 1}.</P1>
-              ) : (
-                <Checkbox
-                  edge="start"
-                  checked={checked}
-                  disabled
-                  tabIndex={-1}
-                />
-              )}
-            </ListItemIcon>
-          ) : null}
-          <ListItemText primary={children} />
-        </ListItem>
+        <>
+          <ListItem
+            divider
+            disableRipple
+            disableTouchRipple
+            component="li"
+            button
+            style={{ cursor: "unset" }}
+          >
+            {ordered ? (
+              <ListItemIcon>
+                {checked !== true ? (
+                  <P1 display="inline">{index + 1}.</P1>
+                ) : (
+                  <Checkbox
+                    edge="start"
+                    checked={checked}
+                    disabled
+                    tabIndex={-1}
+                  />
+                )}
+              </ListItemIcon>
+            ) : null}
+            <ListItemText primary={children} />
+          </ListItem>
+        </>
       )
     },
     inlineMath: props => <TeX math={props.value} />,

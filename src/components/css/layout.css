@@ -45,3 +45,7 @@ a.no-underline:any-link:hover {
   text-decoration: none !important;
   color: #ffa726;
 }
+
+.MuiList-root .MuiListItem-root.MuiListItem-divider:last-child {
+  border: none;
+}

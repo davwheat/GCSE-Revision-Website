@@ -1,0 +1,7 @@
+.katex {
+  font-size: 1.25rem !important;
+}
+
+.katex-display .katex {
+  font-size: 1.5rem !important;
+}

@@ -18,120 +18,93 @@ import "typeface-fira-mono"
 import "highlight.js"
 
 import Header from "./header"
-import { Box, createMuiTheme, MuiThemeProvider, Paper } from "@material-ui/core"
+import {
+  Box,
+  createMuiTheme,
+  MuiThemeProvider,
+  Paper,
+  responsiveFontSizes,
+} from "@material-ui/core"
 
 import GitHubIcon from "mdi-react/GithubCircleIcon"
 
 import Link from "./Link"
 
-import "./layout.css"
+import "./css/layout.css"
 import { Body2 } from "./EasyText"
 import { lightBlue, orange } from "@material-ui/core/colors"
 
-const theme = createMuiTheme({
-  palette: {
-    type: "dark",
-    primary: {
-      main: orange[500],
+const normalFonts = [
+  "Lexend Deca",
+  '"Work Sans"',
+  "Roboto",
+  '"Helvetica Neue"',
+  '"Segoe UI"',
+  "Arial",
+  "sans-serif",
+].join(",")
+
+const headingFonts = [
+  '"Work Sans"',
+  "Lexend Deca",
+  "Roboto",
+  '"Helvetica Neue"',
+  '"Segoe UI"',
+  "Arial",
+  "sans-serif",
+].join(",")
+
+const theme = responsiveFontSizes(
+  createMuiTheme({
+    palette: {
+      type: "dark",
+      primary: {
+        main: orange[500],
+      },
+      secondary: {
+        main: lightBlue[400],
+      },
     },
-    secondary: {
-      main: lightBlue[400],
+    typography: {
+      fontFamily: normalFonts,
+      body1: {
+        fontSize: "1.2rem",
+        letterSpacing: "0.5px", // improve readability
+      },
+      caption: {
+        fontSize: "0.95rem",
+        color: "rgba(255, 255, 255, 0.5)", // 'hint' text colour
+        fontStyle: "italic",
+      },
+      h1: {
+        fontSize: "4rem",
+        fontWeight: "600",
+        fontFamily: headingFonts,
+      },
+      h2: {
+        fontSize: "3rem",
+        fontWeight: "bold",
+        fontFamily: headingFonts,
+      },
+      h3: {
+        fontFamily: headingFonts,
+      },
+      h4: {
+        fontFamily: headingFonts,
+      },
+      h5: {
+        fontFamily: headingFonts,
+      },
+      h6: {
+        fontFamily: normalFonts,
+      },
+      button: {
+        fontFamily: normalFonts,
+      },
     },
-  },
-  typography: {
-    fontFamily: [
-      "Lexend Deca",
-      '"Work Sans"',
-      "Roboto",
-      '"Helvetica Neue"',
-      '"Segoe UI"',
-      "Arial",
-      "sans-serif",
-    ].join(","),
-    h1: {
-      fontSize: 64,
-      fontWeight: "600",
-      fontFamily: [
-        '"Work Sans"',
-        "Lexend Deca",
-        "Roboto",
-        '"Helvetica Neue"',
-        '"Segoe UI"',
-        "Arial",
-        "sans-serif",
-      ].join(","),
-    },
-    h2: {
-      fontSize: 48,
-      fontWeight: "bold",
-      fontFamily: [
-        '"Work Sans"',
-        "Lexend Deca",
-        "Roboto",
-        '"Helvetica Neue"',
-        '"Segoe UI"',
-        "Arial",
-        "sans-serif",
-      ].join(","),
-    },
-    h3: {
-      fontFamily: [
-        '"Work Sans"',
-        "Lexend Deca",
-        "Roboto",
-        '"Helvetica Neue"',
-        '"Segoe UI"',
-        "Arial",
-        "sans-serif",
-      ].join(","),
-    },
-    h4: {
-      fontFamily: [
-        '"Work Sans"',
-        "Lexend Deca",
-        "Roboto",
-        '"Helvetica Neue"',
-        '"Segoe UI"',
-        "Arial",
-        "sans-serif",
-      ].join(","),
-    },
-    h5: {
-      fontFamily: [
-        '"Work Sans"',
-        "Lexend Deca",
-        "Roboto",
-        '"Helvetica Neue"',
-        '"Segoe UI"',
-        "Arial",
-        "sans-serif",
-      ].join(","),
-    },
-    h6: {
-      fontFamily: [
-        "Lexend Deca",
-        '"Work Sans"',
-        "Roboto",
-        '"Helvetica Neue"',
-        '"Segoe UI"',
-        "Arial",
-        "sans-serif",
-      ].join(","),
-    },
-    button: {
-      fontFamily: [
-        "Lexend Deca",
-        '"Work Sans"',
-        "Roboto",
-        '"Helvetica Neue"',
-        '"Segoe UI"',
-        "Arial",
-        "sans-serif",
-      ].join(","),
-      letterSpacing: 1,
-    },
-  },
-})
+  }),
+  { breakpoints: ["xs", "sm", "md", "lg", "xl"], factor: 2.25 }
+)
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
