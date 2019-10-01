@@ -1,3 +1,6 @@
+# school machine powershell script
+/init.ps1
+
 # Logs
 logs
 *.log
