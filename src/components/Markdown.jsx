@@ -121,8 +121,6 @@ const HeadingLevelToComponent = (level, props) => {
 let row = 0
 
 function markdownRenderers(theme) {
-  console.log(theme)
-
   return {
     root: props => <article>{props.children}</article>,
     paragraph: props => <P paragraph>{props.children}</P>,
