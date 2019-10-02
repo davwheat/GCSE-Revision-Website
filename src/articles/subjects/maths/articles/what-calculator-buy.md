@@ -1,7 +1,7 @@
 ---
-title: "Amazing Calculator HACKS You Can't Do Without!"
-date: "2019-09-29"
-description: "Calculators are key to GCSE Maths but there are so many things that they can do for you which most people don't realise!"
+title: "What calculator should I get?"
+date: "2019-10-01"
+description: "There are many different calculators that you can get for your GCSE Maths exams but there are also some important regulations that you have to be aware of."
 subject: "maths"
 ---
 
@@ -13,7 +13,7 @@ If the steps for any of these tips differs between these two calculators, both m
 
 ![The Casio fx-991EX is a very useful and modern calculator](articles/fx-991ex.png)
 
-# 1. Product of prime factors
+# 1. Calculating prime factors
 
 Your calculator can tell you any integer's prime factors. This can also be used to check if a number is prime or not.
 
@@ -29,17 +29,13 @@ Your calculator can tell you any integer's prime factors. This can also be used 
 
 Sometimes, it just requires that little bit too much effort to write out a whole Pythagoras equation in your calculator just to find the hypotenuse of a triangle, such as:
 
-$$
-5=\sqrt{3^2 + 4^2}
-$$
+$5=\sqrt{3^2 + 4^2}$
 
 It's also quite tricky to remember the whole [SOH CAH TOA song](https://www.youtube.com/watch?v=PIWJo5uK3Fo) just for calculating one angle.
 
 ![Right angled triangle with side lengths 3 and 7 with labelled angle 'x' adjacent to side of length 7](articles/exmaple-right-triangle.png)
 
 **Don't fret!** I have one super easy way to find out the length of the hypotenuse and the angle you need.
-
-**_fx-83GT PLUS_ and _fx-991EX_:**
 
 1. Press **`SHIFT`** + `+` (labelled `Pol` in yellow).
 2. Enter the length of the **adjacent** side. In our example, `7`.
@@ -60,51 +56,6 @@ $$
 \text{Give your answer as a decimal.}
 $$
 
-**_fx-83GT PLUS_ and _fx-991EX_:**
-
 1. Type in your number (e.g. `1.6`)
 2. Press the reciprocal button ($x^{-1}$), followed by `=`
 3. As this question requires a decimal, press `S⬄D` to get $0.625$
-
-# 4. n-th term tables and graph coordinates
-
-Calculating values for an $n^{\text{th}}$ term table can take upwards of 5 minutes if you have to substitute the value for $x$ every time. What many people don't realise is that most scientific calculators have a way to do this for you.
-
-**Example:**
-
-$$
-\text{Complete the table for values of: } y=2x^2-3x+4
-
-\\[1cm]
-
-\def\arraystretch{1.5}
-
-\begin{array}{c:c:c:c:c:c:c}
-\hline
-x & -1 & 0 & 1 & 2 & 3 & 4 \\ \hline
-y &    &   & 3 &   &   & 24 \\ \hline
-\end{array}
-$$
-
-**_fx-83GT PLUS_:**
-
-1. Press **`MODE`** at the top of your calculator.
-2. Press **`3`** to choose `TABLE` mode.
-3. Enter your equation: $2x^2-3x+4$. If you are calulating $n^{\text{th}}$ term, replace $n$ with $x$.
-4. Press `=`
-5. Enter your start value, then press `=` (ours is $-1$ as that is the lowest value of $x$).
-6. Enter your end value, then press `=` (ours is $4$ as that is the highest value of $x$).
-7. Enter the step value, then press `=` (ours is $1$ as the values of $x$ increase by $1$ each time)
-8. The table then shows the value of $x$ and $y$ (shown as $f(x)$).
-
-**_fx-991EX_:**
-
-1. Press **`MENU`** at the top of your calculator.
-2. Press **`9`** to choose `TABLE` mode.
-3. Enter your equation: $2x^2-3x+4$. If you are calulating $n^{\text{th}}$ term, replace $n$ with $x$.
-4. Press `=`
-5. If prompted with $g(x)$, press `=`. Don't enter anything.
-6. Enter your start value, then press `=` (ours is $-1$ as that is the lowest value of $x$).
-7. Enter your end value, then press `=` (ours is $4$ as that is the highest value of $x$).
-8. Enter the step value, then press `=` (ours is $1$ as the values of $x$ increase by $1$ each time)
-9. The table then shows the value of $x$ and $y$ (shown as $f(x)$).
