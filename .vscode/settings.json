@@ -1,0 +1,8 @@
+{
+  "gitflow4code.hotfixes": [
+    {
+      "name": "hotfix/gatsby-material-ui-styles",
+      "base": "development"
+    }
+  ]
+}
