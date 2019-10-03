@@ -75,7 +75,7 @@ Calculating values for an $n^{\text{th}}$ term table can take upwards of 5 minut
 $$
 \text{Complete the table for values of: } y=2x^2-3x+4
 
-\[1cm]
+\\[1cm]
 
 \def\arraystretch{1.5}
 
