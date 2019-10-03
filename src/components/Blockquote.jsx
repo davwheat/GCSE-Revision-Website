@@ -15,20 +15,16 @@ const Quote = props => {
       margin: `${theme.spacing(topMultiplier)}px ${theme.spacing(
         4
       )}px ${theme.spacing(bottomMultiplier)}px`,
-      padding: `${theme.spacing(0.5)}px ${theme.spacing(1)}px ${theme.spacing(
-        0.5
-      )}px`,
+      padding: theme.spacing(2),
+      paddingBottom: theme.spacing(0.5),
+      color: theme.palette.text.secondary,
+      "& p": {
+        ...theme.typography.body2,
+      },
     },
   }))()
 
-  return (
-    <P2
-      component="blockquote"
-      {...newProps}
-      className={classes.quote}
-      paragraph
-    />
-  )
+  return <blockquote {...newProps} className={classes.quote} paragraph />
 }
 
 Quote.propTypes = {

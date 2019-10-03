@@ -71,6 +71,10 @@ const theme = responsiveFontSizes(
         fontSize: "1.2rem",
         letterSpacing: "0.5px", // improve readability
       },
+      body2: {
+        fontSize: "1rem",
+        letterSpacing: "0.4px", // improve readability
+      },
       caption: {
         fontSize: "0.95rem",
         color: "rgba(255, 255, 255, 0.5)", // 'hint' text colour
