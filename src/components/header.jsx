@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Header = ({ siteTitle, pageTitle }) => (
+const Header = ({ pageTitle }) => (
   <>
     <CssBaseline />
     <header>
@@ -82,7 +82,10 @@ const MakeAppBar = ({ title }) => {
     setState({ ...state, isDrawerOpen: open })
   }
 
-  const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
+  const iOS =
+    typeof process !== "undefined"
+      ? process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
+      : false
 
   return (
     <div className={classes.root}>

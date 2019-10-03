@@ -48,7 +48,6 @@ const ArticleList = props => {
       `}
       render={data => {
         const posts = data.allMarkdownRemark.edges
-        console.log(posts)
 
         return (
           <>
