@@ -20,7 +20,6 @@ String.prototype.trimRight = function(charlist) {
 
 const Article = props => {
   const post = props.data.markdownRemark
-  console.log(post)
 
   const theme = useTheme()
 
