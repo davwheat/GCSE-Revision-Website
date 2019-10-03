@@ -5,7 +5,7 @@ import { P2 } from "./EasyText"
 import { makeStyles } from "@material-ui/core"
 
 const Quote = props => {
-  const { topMultiplier, bottomMultiplier } = props
+  const { topMultiplier, bottomMultiplier, ...newProps } = props
 
   const classes = makeStyles(theme => ({
     quote: {
@@ -22,7 +22,12 @@ const Quote = props => {
   }))()
 
   return (
-    <P2 component="blockquote" {...props} className={classes.quote} paragraph />
+    <P2
+      component="blockquote"
+      {...newProps}
+      className={classes.quote}
+      paragraph
+    />
   )
 }
 

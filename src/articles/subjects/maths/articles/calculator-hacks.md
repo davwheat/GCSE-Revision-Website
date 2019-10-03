@@ -19,11 +19,11 @@ Your calculator can tell you any integer's prime factors. This can also be used 
 
 **_fx-83GT PLUS_ and _fx-991EX_:**
 
-1.  Type in the number (e.g. **`25`**).
-2.  Press the equals **`=`** button.
-3.  Press **`SHIFT`**, then press the degrees (**`°′ ″`**) button, labelled **`FACT`** in yellow.
-4.  The prime factor is shown on the display, in this example, $5^2$.
-5.  If it still shows the same number, then it is prime.
+1. Type in the number (e.g. **`25`**).
+2. Press the equals **`=`** button.
+3. Press **`SHIFT`**, then press the degrees (**`°′ ″`**) button, labelled **`FACT`** in yellow.
+4. The prime factor is shown on the display, in this example, $5^2$.
+5. If it still shows the same number, then it is prime.
 
 # 2. Easy Pythagoras and Trig
 

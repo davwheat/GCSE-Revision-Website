@@ -9,50 +9,50 @@ There are many different types and brands of scientific calulcators on the marke
 
 All of the information below has been taken from Section 10 of JCQ's _Instructions for conducting examinations_ PDF document for 2019-2020. **Please double-check that these rules still apply in the future.** You can find this document on [JCQ's website](http://www.jcq.org.uk/exams-office/ice---instructions-for-conducting-examinations).
 
-# What are the rules for calculators?
+# Calculator rules
 
 These are the basic rules you must be aware of:
 
--   If the question paper does not state that you cannot use a calculator, calculators should be treated as standard equipment and may be used in that examination.
--   Students are responsible for ensuring that their calculators meet their awarding bodies' regulations.
--   Invigilators may give candidates a replacement calculator.
--   Students may **not** borrow one anothers' calculators during an examination.
+- If the question paper does not state that you cannot use a calculator, calculators should be treated as standard equipment and may be used in that examination.
+- Students are responsible for ensuring that their calculators meet their awarding bodies' regulations.
+- Invigilators may give candidates a replacement calculator.
+- Students may **not** borrow one anothers' calculators during an examination.
 
-# What is my calculator allowed to do?
+## In detail...
 
 According to Section 10.3, your calculator must...
 
--   be of a size suitable for use on the desk;
--   be either battery or solar powered;
--   be free of lids, cases, and covers which have printed instructions or formulas.
+- be of a size suitable for use on the desk;
+- be either battery or solar powered;
+- be free of lids, cases, and covers which have printed instructions or formulas.
 
 The candidate is responsible for...
 
--   the calculator's power supply (ensure it has enough battery);
--   the calculator's working condition (make sure it turns on);
--   clearing anything stored in the calculator (formulae, variables, etc).
+- the calculator's power supply (ensure it has enough battery);
+- the calculator's working condition (make sure it turns on);
+- clearing anything stored in the calculator (formulae, variables, etc).
 
 Furthermore, calculators to be used in exams may not...
 
--   have: language translators; **symbolic** algebraic manipulation; **symbolic** differentiation or integration; communications technology with other machines or the internet
--   be borrowed from another candidate during an examination for any reason
--   have retrievable information stored in them, such as: databanks; dictionaries; mathematical formulas; or text.
+- have: language translators; **symbolic** algebraic manipulation; **symbolic** differentiation or integration; communications technology with other machines or the internet
+- be borrowed from another candidate during an examination for any reason
+- have retrievable information stored in them, such as: databanks; dictionaries; mathematical formulas; or text.
 
-# What calculators meet these requirements?
+# Calculators that meet the regulations
 
 There are many calculators that meet all of these regulations, but here are a subset of them:
 
-|     Model    | Comments                                                                                                                        | Purchase Link                                 |
+|    Model     | Comments                                                                                                                        | Purchase Link                                 |
 | :----------: | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
 | fx-83GT PLUS | The price of these have skyrocketed as they aren't made any more. There is a new model which replaces these: the fx-83GTX.      | [Amazon UK](https://amzn.to/2Ifjm19)          |
 | fx-85GT PLUS | The price of these have skyrocketed as they aren't made any more. There is a new model which replaces these: the fx-85GTX.      | [Amazon UK](https://amzn.to/2MgIAxs)          |
-|   fx-83GT X  | The new CLASSWIZ model of the fx-83GT PLUS with a newer and clearer display.                                                    | [£11.89 @ Amazon UK](https://amzn.to/2AHc9Tc) |
-|   fx-85GT X  | The new CLASSWIZ model of the fx-85GT PLUS with a newer and clearer display.                                                    | [£11.99 @ Amazon UK](https://amzn.to/2IluYQb) |
-|   fx-991 EX  | The latest CASIO calculator with the ability to solve quadratic equations, differentiate, perform matrix calculations and more. | [£23.99 @ Amazon UK](https://amzn.to/2nefw0R) |
+|  fx-83GT X   | The new CLASSWIZ model of the fx-83GT PLUS with a newer and clearer display.                                                    | [£11.89 @ Amazon UK](https://amzn.to/2AHc9Tc) |
+|  fx-85GT X   | The new CLASSWIZ model of the fx-85GT PLUS with a newer and clearer display.                                                    | [£11.99 @ Amazon UK](https://amzn.to/2IluYQb) |
+|  fx-991 EX   | The latest CASIO calculator with the ability to solve quadratic equations, differentiate, perform matrix calculations and more. | [£23.99 @ Amazon UK](https://amzn.to/2nefw0R) |
 
 All prices are correct as of 03/10/2019.
 
-# Which is the best calculator?
+# The best calculator
 
 In my opinion, the best calculator is the fx-991 EX as it provides you with a massive advantage over other students.
 
@@ -79,6 +79,6 @@ When contacting my school's exams officer, I received this response:
 >
 > Like you, I have researched the Casio FX-991EX online and have found no reliable evidence to show that it would not be acceptable in an exam and am therefore more than happy for it to be used for your maths GCSE exams.
 
-* * *
+---
 
 <sub>Please note that this page contains affiliate links and we may receive a small cut of the value of any purchases you make through these links. This is of no extra cost to you and allows us to keep running for free.</sub>
