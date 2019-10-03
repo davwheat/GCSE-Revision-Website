@@ -41,13 +41,13 @@ It's also quite tricky to remember the whole [SOH CAH TOA song](https://www.yout
 
 **_fx-83GT PLUS_ and _fx-991EX_:**
 
-1. Press **`SHIFT`** + `+` (labelled `Pol` in yellow).
-2. Enter the length of the **adjacent** side. In our example, `7`.
-3. Press **`SHIFT`** + `)` (labelled `,` in yellow).
-4. Enter the length of the **opposite** side. In our example, `3`.
-5. Close the function with the `)` button, then press `=`.
-6. The answer is displayed: $r=\text{hypotenuse length}, \theta=\text{angle size}$
-7. In our example, $r=7.615...,\text{ }\theta=23.198...$
+1.  Press **`SHIFT`** + `+` (labelled `Pol` in yellow).
+2.  Enter the length of the **adjacent** side. In our example, `7`.
+3.  Press **`SHIFT`** + `)` (labelled `,` in yellow).
+4.  Enter the length of the **opposite** side. In our example, `3`.
+5.  Close the function with the `)` button, then press `=`.
+6.  The answer is displayed: $r=\text{hypotenuse length}, \theta=\text{angle size}$
+7.  In our example, $r=7.615...,\text{ }\theta=23.198...$
 
 # 3. 1-button reciprocals
 
@@ -62,9 +62,9 @@ $$
 
 **_fx-83GT PLUS_ and _fx-991EX_:**
 
-1. Type in your number (e.g. `1.6`)
-2. Press the reciprocal button ($x^{-1}$), followed by `=`
-3. As this question requires a decimal, press `S⬄D` to get $0.625$
+1.  Type in your number (e.g. `1.6`)
+2.  Press the reciprocal button ($x^{-1}$), followed by `=`
+3.  As this question requires a decimal, press `S⬄D` to get $0.625$
 
 # 4. n-th term tables and graph coordinates
 
@@ -75,7 +75,7 @@ Calculating values for an $n^{\text{th}}$ term table can take upwards of 5 minut
 $$
 \text{Complete the table for values of: } y=2x^2-3x+4
 
-\\[1cm]
+\[1cm]
 
 \def\arraystretch{1.5}
 
@@ -88,23 +88,23 @@ $$
 
 **_fx-83GT PLUS_:**
 
-1. Press **`MODE`** at the top of your calculator.
-2. Press **`3`** to choose `TABLE` mode.
-3. Enter your equation: $2x^2-3x+4$. If you are calulating $n^{\text{th}}$ term, replace $n$ with $x$.
-4. Press `=`
-5. Enter your start value, then press `=` (ours is $-1$ as that is the lowest value of $x$).
-6. Enter your end value, then press `=` (ours is $4$ as that is the highest value of $x$).
-7. Enter the step value, then press `=` (ours is $1$ as the values of $x$ increase by $1$ each time)
-8. The table then shows the value of $x$ and $y$ (shown as $f(x)$).
+1.  Press **`MODE`** at the top of your calculator.
+2.  Press **`3`** to choose `TABLE` mode.
+3.  Enter your equation: $2x^2-3x+4$. If you are calulating $n^{\text{th}}$ term, replace $n$ with $x$.
+4.  Press `=`
+5.  Enter your start value, then press `=` (ours is $-1$ as that is the lowest value of $x$).
+6.  Enter your end value, then press `=` (ours is $4$ as that is the highest value of $x$).
+7.  Enter the step value, then press `=` (ours is $1$ as the values of $x$ increase by $1$ each time)
+8.  The table then shows the value of $x$ and $y$ (shown as $f(x)$).
 
 **_fx-991EX_:**
 
-1. Press **`MENU`** at the top of your calculator.
-2. Press **`9`** to choose `TABLE` mode.
-3. Enter your equation: $2x^2-3x+4$. If you are calulating $n^{\text{th}}$ term, replace $n$ with $x$.
-4. Press `=`
-5. If prompted with $g(x)$, press `=`. Don't enter anything.
-6. Enter your start value, then press `=` (ours is $-1$ as that is the lowest value of $x$).
-7. Enter your end value, then press `=` (ours is $4$ as that is the highest value of $x$).
-8. Enter the step value, then press `=` (ours is $1$ as the values of $x$ increase by $1$ each time)
-9. The table then shows the value of $x$ and $y$ (shown as $f(x)$).
+1.  Press **`MENU`** at the top of your calculator.
+2.  Press **`9`** to choose `TABLE` mode.
+3.  Enter your equation: $2x^2-3x+4$. If you are calulating $n^{\text{th}}$ term, replace $n$ with $x$.
+4.  Press `=`
+5.  If prompted with $g(x)$, press `=`. Don't enter anything.
+6.  Enter your start value, then press `=` (ours is $-1$ as that is the lowest value of $x$).
+7.  Enter your end value, then press `=` (ours is $4$ as that is the highest value of $x$).
+8.  Enter the step value, then press `=` (ours is $1$ as the values of $x$ increase by $1$ each time)
+9.  The table then shows the value of $x$ and $y$ (shown as $f(x)$).
