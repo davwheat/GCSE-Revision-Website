@@ -7,6 +7,13 @@ module.exports = {
     siteUrl: "https://gcse-revision-site.firebaseapp.com",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        googleAdClientId: "ca-pub-2701335557132384",
+        head: true, // Optional
+      },
+    },
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
