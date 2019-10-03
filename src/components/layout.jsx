@@ -126,7 +126,7 @@ const Layout = ({ children }) => {
           <Body2>
             &copy; {new Date().getFullYear()}
             {"   "}|{"   "}
-            <Link to="https://github.com/davwheat">
+            <Link to="https://github.com/davwheat" hasExternalLinkIcon={false}>
               <GitHubIcon size={20} className="footer-icon" />
               davwheat
             </Link>
@@ -137,7 +137,7 @@ const Layout = ({ children }) => {
           <Body2 style={{ fontSize: 13 }}>
             &copy; {new Date().getFullYear()}
             {"   "}|{"   "}
-            <Link to="https://github.com/davwheat">
+            <Link to="https://github.com/davwheat" hasExternalLinkIcon={false}>
               <GitHubIcon size={18} className="footer-icon" />
               davwheat
             </Link>
