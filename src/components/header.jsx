@@ -94,10 +94,13 @@ const MakeAppBar = ({ title }) => {
             color="inherit"
             aria-label="menu"
             onClick={toggleDrawer(true)}
+            key={0}
           >
             <MenuIcon />
           </IconButton>
-          <H6 className={classes.title}>{title}</H6>
+          <H6 key={1} className={classes.title}>
+            {title}
+          </H6>
         </Toolbar>
       </AppBar>
 
@@ -116,7 +119,7 @@ const MakeAppBar = ({ title }) => {
         >
           {MenuItems.map((groups, i) => (
             <>
-              <List>
+              <List key={i}>
                 {groups.map(items => (
                   <ListItem
                     component={Link}
@@ -129,7 +132,7 @@ const MakeAppBar = ({ title }) => {
                   </ListItem>
                 ))}
               </List>
-              {i + 1 !== MenuItems.length ? <Divider /> : null}
+              {i + 1 !== MenuItems.length ? <Divider key={i + 0.5} /> : null}
             </>
           ))}
         </nav>
