@@ -126,10 +126,6 @@ const PostCard = props => {
           >
             {timeToRead} {timeToRead === 1 ? "min" : "mins"}
           </P2>
-          <WordIcon
-            aria-label="word count"
-            color={theme.palette.text.secondary}
-          />
           <P2 color="textSecondary" style={{ marginLeft: theme.spacing(0.5) }}>
             {wordCount} words
           </P2>

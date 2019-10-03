@@ -28,13 +28,25 @@ const SubjectsMathsPage = () => {
       <H3 gutterBottom component="h2">
         Articles
       </H3>
-      <P>
+      <P paragraph>
         Our site offers many GCSE Maths related articles.{" "}
         <Link to="/subjects/maths/articles">
           Click here to see our articles.
         </Link>
       </P>
-      <H3 component="h2"></H3>
+      <H3 gutterBottom component="h2">
+        Calculator Hacks
+      </H3>
+      <P paragraph>
+        Calculators are the most powerful tool (other than your brain) that you
+        can take into two out of three Maths exams, so it&apos;s always good to
+        know about every little trick you can do with them.
+      </P>
+      <P paragraph>
+        <Link to="/subjects/maths/articles/calculator-hacks/">
+          Read our Calculator Hacks article
+        </Link>
+      </P>
     </Layout>
   )
 }
