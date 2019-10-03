@@ -74,17 +74,12 @@ Calculating values for an $n^{\text{th}}$ term table can take upwards of 5 minut
 
 $$
 \text{Complete the table for values of: } y=2x^2-3x+4
-
-\\[1cm]
-
-\def\arraystretch{1.5}
-
-\begin{array}{c:c:c:c:c:c:c}
-\hline
-x & -1 & 0 & 1 & 2 & 3 & 4 \\ \hline
-y &    &   & 3 &   &   & 24 \\ \hline
-\end{array}
 $$
+
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: |
+|   $x$    |   $-1$   |   $0$    |   $1$    |   $2$    |   $3$    |   $4$    |
+|   $y$    |          |          |   $3$    |          |          |   $24$   |
 
 **_fx-83GT PLUS_:**
 
