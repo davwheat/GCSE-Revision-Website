@@ -74,17 +74,12 @@ Calculating values for an $n^{\text{th}}$ term table can take upwards of 5 minut
 
 $$
 \text{Complete the table for values of: } y=2x^2-3x+4
-
-\\[1cm]
-
-\def\arraystretch{1.5}
-
-\begin{array}{c:c:c:c:c:c:c}
-\hline
-x & -1 & 0 & 1 & 2 & 3 & 4 \\ \hline
-y &    &   & 3 &   &   & 24 \\ \hline
-\end{array}
 $$
+
+| <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> | <!-- --> |
+| :------: | :------: | :------: | :------: | :------: | :------: | :------: |
+|   $x$    |   $-1$   |   $0$    |   $1$    |   $2$    |   $3$    |   $4$    |
+|   $y$    |          |          |   $3$    |          |          |   $24$   |
 
 **_fx-83GT PLUS_:**
 
@@ -108,3 +103,6 @@ $$
 7.  Enter your end value, then press `=` (ours is $4$ as that is the highest value of $x$).
 8.  Enter the step value, then press `=` (ours is $1$ as the values of $x$ increase by $1$ each time)
 9.  The table then shows the value of $x$ and $y$ (shown as $f(x)$).
+
+$$
+$$

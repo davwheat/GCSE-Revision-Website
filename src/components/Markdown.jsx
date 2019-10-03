@@ -147,6 +147,16 @@ function markdownRenderers(theme) {
     tableHead: props => <TableHead>{props.children}</TableHead>,
     tableBody: props => <TableBody>{props.children}</TableBody>,
     tableRow: props => {
+      let headerEmpty = false
+
+      if (props.isHeader) {
+        props.children.forEach(child => {
+          headerEmpty = headerEmpty ? true : child.props.children.length === 0
+        })
+      }
+
+      if (headerEmpty) return null
+
       row++
       return (
         <TableRow hover={!props.isHeader} tabIndex={-1} key={row}>
