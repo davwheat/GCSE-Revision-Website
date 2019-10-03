@@ -180,9 +180,6 @@ function markdownRenderers(theme) {
             component={ordered ? "ol" : "ul"}
             style={{
               marginBottom: theme.spacing(2),
-              "& li:last-child": {
-                display: "none",
-              },
             }}
           >
             {props.children}

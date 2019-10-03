@@ -22,7 +22,7 @@ const styles = makeStyles(() => ({
 }))
 
 const Link = props => {
-  const { to, children, button, ...newprops } = props
+  const { to, children, button, hasExternalLinkIcon, ...newprops } = props
   if (
     to.startsWith("https://") ||
     to.startsWith("http://") ||
@@ -33,14 +33,16 @@ const Link = props => {
       return (
         <Button href={to} {...newprops} target="_blank" rel="noopener">
           {children}
-          {props.hasExternalLinkIcon ? <ExternalLinkIcon /> : null}
+          {hasExternalLinkIcon ? (
+            <ExternalLinkIcon size={14} className={classes.externalLinkIcon} />
+          ) : null}
         </Button>
       )
     } else {
       return (
         <MatLink href={to} {...newprops} target="_blank" rel="noopener">
           {children}
-          {props.hasExternalLinkIcon ? (
+          {hasExternalLinkIcon ? (
             <ExternalLinkIcon size={14} className={classes.externalLinkIcon} />
           ) : null}
         </MatLink>
