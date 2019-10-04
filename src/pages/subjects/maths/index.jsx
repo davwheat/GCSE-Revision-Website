@@ -15,8 +15,8 @@ const SubjectsMathsPage = () => {
         title="Maths"
         description="Our site provides useful tips and tricks to help you make the most of your calculator as well as maths quizzes and articles on harder topics."
       />
-      <Link button color="primary" to="/">
-        <NavigateBackIcon /> Go back
+      <Link button color="primary" to="/" startIcon={<NavigateBackIcon />}>
+        Go back
       </Link>
       <Divider variant="middle" style={{ marginBottom: 24, marginTop: 16 }} />
       <H1 gutterBottom>Maths</H1>

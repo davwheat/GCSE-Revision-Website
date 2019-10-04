@@ -7,14 +7,14 @@ import Link from "../../../components/Link"
 
 import WordOfTheDay from "../../../components/WordOfTheDay"
 import { Divider } from "@material-ui/core"
-import NavigateBeforeIcon from "mdi-react/NavigateBeforeIcon"
+import NavigateBackIcon from "mdi-react/NavigateBeforeIcon"
 
 const SubjectsEnglishPage = () => {
   return (
     <Layout>
       <SEO title="English" />
-      <Link button color="primary" to="/">
-        <NavigateBeforeIcon /> Go back
+      <Link button color="primary" to="/" startIcon={<NavigateBackIcon />}>
+        Go back
       </Link>
       <Divider variant="middle" style={{ marginBottom: 24, marginTop: 16 }} />
       <H1 gutterBottom>English</H1>
