@@ -7,6 +7,7 @@ import Link from "../../../components/Link"
 
 import NavigateBackIcon from "mdi-react/NavigateBeforeIcon"
 import { Divider } from "@material-ui/core"
+import Ad from "../../../components/Advert"
 
 const SubjectsMathsPage = () => {
   return (
@@ -47,6 +48,7 @@ const SubjectsMathsPage = () => {
           Read our Calculator Hacks article
         </Link>
       </P>
+      <Ad />
     </Layout>
   )
 }

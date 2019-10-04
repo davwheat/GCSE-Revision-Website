@@ -8,6 +8,7 @@ import Link from "../../../components/Link"
 import WordOfTheDay from "../../../components/WordOfTheDay"
 import { Divider } from "@material-ui/core"
 import NavigateBackIcon from "mdi-react/NavigateBeforeIcon"
+import Ad from "../../../components/Advert"
 
 const SubjectsEnglishPage = () => {
   return (
@@ -28,7 +29,7 @@ const SubjectsEnglishPage = () => {
       <H3 component="h2">Word of the day</H3>
       <br />
       <WordOfTheDay />
-      <H3 component="h2"></H3>
+      <Ad />
     </Layout>
   )
 }
