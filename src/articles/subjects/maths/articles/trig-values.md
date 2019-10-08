@@ -28,7 +28,7 @@ $$
 
 This seems complicated at first, but the explanation will help.
 
-### Cslculating values of sin/cos
+## Calculating values of sin/cos
 
 To work out the value of $\sin45$, you would look at the top row of the **MEGA FRACTION**, as that is labelled $\sin$.
 
