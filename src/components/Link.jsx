@@ -31,11 +31,21 @@ const Link = props => {
     const classes = styles()
     if (button === true) {
       return (
-        <Button href={to} {...newprops} target="_blank" rel="noopener">
+        <Button
+          href={to}
+          {...newprops}
+          target="_blank"
+          rel="noopener"
+          endIcon={
+            hasExternalLinkIcon ? (
+              <ExternalLinkIcon
+                size={14}
+                className={classes.externalLinkIcon}
+              />
+            ) : null
+          }
+        >
           {children}
-          {hasExternalLinkIcon ? (
-            <ExternalLinkIcon size={14} className={classes.externalLinkIcon} />
-          ) : null}
         </Button>
       )
     } else {

@@ -6,6 +6,7 @@ import { Box } from "@material-ui/core"
 
 import Link from "../components/Link"
 import { H1, P } from "../components/EasyText"
+import Ad from "../components/Advert"
 
 const NotFoundPage = () => {
   return (
@@ -17,6 +18,7 @@ const NotFoundPage = () => {
         <P paragraph>
           <Link to="/">Let&apos;s go home</Link>
         </P>
+        <Ad />
       </Box>
     </Layout>
   )

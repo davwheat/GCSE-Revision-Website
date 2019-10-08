@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 
 import { H1, P, Subtitle1 as S1 } from "../components/EasyText"
 import { Divider } from "@material-ui/core"
+import Ad from "../components/Advert"
 
 const AboutPage = () => (
   <Layout>
@@ -36,6 +37,8 @@ const AboutPage = () => (
     <P paragraph>
       <Link to="/">Go home</Link>
     </P>
+    
+    <Ad />
   </Layout>
 )
 

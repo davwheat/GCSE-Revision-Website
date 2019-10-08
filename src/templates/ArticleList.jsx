@@ -15,7 +15,6 @@ import Link from "../components/Link"
 
 import NavigateBackIcon from "mdi-react/NavigateBeforeIcon"
 import TimerIcon from "mdi-react/TimerIcon"
-import WordIcon from "mdi-react/FormatLetterCaseIcon"
 
 const ArticleList = props => {
   return (
@@ -51,8 +50,8 @@ const ArticleList = props => {
 
         return (
           <>
-            <Link button color="primary" to={props.backUrl}>
-              <NavigateBackIcon /> Go back
+            <Link button color="primary" to={props.backUrl} startIcon={<NavigateBackIcon />}>
+              Go back
             </Link>
             <Divider
               variant="middle"

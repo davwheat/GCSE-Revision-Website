@@ -7,6 +7,7 @@ import Link from "../../../components/Link"
 
 import NavigateBackIcon from "mdi-react/NavigateBeforeIcon"
 import { Divider } from "@material-ui/core"
+import Ad from "../../../components/Advert"
 
 import { Descriptions } from "../../../constants/subjectInfo"
 
@@ -17,8 +18,8 @@ const SubjectsMathsPage = () => {
         title="Maths"
         description="Our site provides useful tips and tricks to help you make the most of your calculator as well as maths quizzes and articles on harder topics."
       />
-      <Link button color="primary" to="/">
-        <NavigateBackIcon /> Go back
+      <Link button color="primary" to="/" startIcon={<NavigateBackIcon />}>
+        Go back
       </Link>
       <Divider variant="middle" style={{ marginBottom: 24, marginTop: 16 }} />
       <H1 gutterBottom>Maths</H1>
@@ -47,6 +48,7 @@ const SubjectsMathsPage = () => {
           Read our Calculator Hacks article
         </Link>
       </P>
+      <Ad />
     </Layout>
   )
 }
