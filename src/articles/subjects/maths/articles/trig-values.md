@@ -5,6 +5,8 @@ description: "There are certain trigonometry values that you have to know off by
 subject: "maths"
 ---
 
+There are a few ways to remember what $\sin$, $\cos$ and $\tan$ mean, including [a brilliant song](https://www.youtube.com/watch?v=PIWJo5uK3Fo), but few know any good ways to memorise exact trig values.
+
 On your non-calculator GCSE paper, you could be asked to calculate the side length of a right angled triangle with an angle of $30$, $45$, $60$ or $90$ degrees, so you have to make sure that you know the corresponding $\sin$, $\cos$ and $\tan$ values of these angles.
 
 # How to remember
