@@ -2,12 +2,14 @@ import React from "react"
 
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
-import { H1, H6, H3, P } from "../../../components/EasyText"
+import { H1, H6, H3 } from "../../../components/EasyText"
 import Link from "../../../components/Link"
 
 import { Divider } from "@material-ui/core"
 import NavigateBackIcon from "mdi-react/NavigateBeforeIcon"
 import Ad from "../../../components/Advert"
+
+import WordOfTheDay from "../../../components/WordOfTheDay"
 
 import { Descriptions } from "../../../constants/subjectInfo"
 
