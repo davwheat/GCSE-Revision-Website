@@ -19,21 +19,9 @@ import Link from "./Link"
 
 import MenuIcon from "mdi-react/HamburgerMenuIcon"
 
-import HomeIcon from "mdi-react/HomeOutlineIcon"
-import EnglishIcon from "mdi-react/BookOutlineIcon"
-import MathsIcon from "mdi-react/CalculatorIcon"
-import AboutIcon from "mdi-react/AboutOutlineIcon"
-
 import CssBaseline from "@material-ui/core/CssBaseline"
 
-const MenuItems = [
-  [{ text: "Home", icon: <HomeIcon />, href: "/" }],
-  [
-    { text: "English", icon: <EnglishIcon />, href: "/subjects/english" },
-    { text: "Maths", icon: <MathsIcon />, href: "/subjects/maths" },
-  ],
-  [{ text: "About Us", icon: <AboutIcon />, href: "/about-us" }],
-]
+import { MenuItems } from "../constants"
 
 const useStyles = makeStyles(theme => ({
   root: {

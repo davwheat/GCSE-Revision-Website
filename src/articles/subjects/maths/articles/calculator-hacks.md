@@ -103,6 +103,3 @@ $$
 7.  Enter your end value, then press `=` (ours is $4$ as that is the highest value of $x$).
 8.  Enter the step value, then press `=` (ours is $1$ as the values of $x$ increase by $1$ each time)
 9.  The table then shows the value of $x$ and $y$ (shown as $f(x)$).
-
-$$
-$$

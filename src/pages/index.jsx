@@ -3,6 +3,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import { SubjectInfo as subjects } from "../constants"
+
 import {
   Grid,
   makeStyles,
@@ -25,37 +27,6 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary,
   },
 }))
-
-const subjects = [
-  {
-    name: "English",
-    description: `We offer many helpful English revision
-    tools, such as: mini language mocks, essay planning
-    tips, quote memorising tools and literature knowledge
-    organisers. We're always looking to add more to the
-    table!`,
-    url: "/subjects/english",
-    unreleased: false,
-  },
-  {
-    name: "Maths",
-    description: `Our site provides useful tips and tricks to
-    help you make the most of your calculator as well as maths
-    quizzes and articles on harder topics.`,
-    url: "/subjects/maths",
-    unreleased: false,
-  },
-  {
-    name: "Computer Science",
-    description: `Computer science is made easier with out site.
-    With useful suggestions for converting between hex, decimal
-    and binary as well as an interactive bitmap editor, there's
-    nothing else you'll need to revise (...except your brain and an
-      internet-enabled device).`,
-    url: null,
-    unreleased: true,
-  },
-]
 
 const IndexPage = () => {
   const classes = useStyles()
