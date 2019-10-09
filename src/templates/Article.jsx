@@ -2,14 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 
-import { useTheme, Divider } from "@material-ui/core"
+import { useTheme } from "@material-ui/core"
 
 import Layout from "../components/layout"
 import Markdown from "../components/Markdown"
 import { H1, Subtitle1 } from "../components/EasyText"
-import Link from "../components/Link"
-
-import NavigateBackIcon from "mdi-react/NavigateBeforeIcon"
+import Breadcrumbs from "../components/Breadcrumbs"
 import SEO from "../components/seo"
 
 String.prototype.trimRight = function(charlist) {
@@ -28,6 +26,12 @@ const Article = props => {
   let url = slug.trimRight("/").split("/")
   url.pop()
 
+  const subjectUrl = post.frontmatter.subject.replace(" ", "-")
+  const subjectLabel = post.frontmatter.subject
+    .split(" ")
+    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(" ")
+
   return (
     <Layout>
       <SEO
@@ -38,10 +42,14 @@ const Article = props => {
             : post.excerpt
         }
       />
-      <Link button color="primary" to={url.join("/")}>
-        <NavigateBackIcon /> Go back
-      </Link>
-      <Divider variant="middle" style={{ marginBottom: 24, marginTop: 16 }} />
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: subjectLabel, href: `/subjects/${subjectUrl}` },
+          { label: "Articles", href: `/subjects/${subjectUrl}/articles` },
+          { label: post.frontmatter.title },
+        ]}
+      />
       <H1 gutterBottom>{post.frontmatter.title}</H1>
       <Subtitle1 align="right" style={{ marginBottom: theme.spacing(6) }}>
         Published {post.frontmatter.date}
@@ -65,6 +73,7 @@ export const query = graphql`
         title
         date(formatString: "DD/MM/YYYY")
         description
+        subject
       }
       fields {
         slug
