@@ -2,35 +2,25 @@ import React from "react"
 
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
-import { H1, H6, H3 } from "../../../components/EasyText"
-import Link from "../../../components/Link"
+import { H1 } from "../../../components/EasyText"
+import Breadcrumbs from "../../../components/Breadcrumbs"
+import BitmapEditor from "../../../components/BitmapEditor"
 
-import WordOfTheDay from "../../../components/WordOfTheDay"
-import { Divider } from "@material-ui/core"
-import NavigateBeforeIcon from "mdi-react/NavigateBeforeIcon"
-
-const SubjectsEnglishPage = () => {
+const ComputingBitmapEditorPage = () => {
   return (
     <Layout>
       <SEO title="Computing" />
-      <Link button color="primary" to="/subjects/computer-science">
-        <NavigateBeforeIcon /> Go back
-      </Link>
-      <Divider variant="middle" style={{ marginBottom: 24, marginTop: 16 }} />
-      <H1 gutterBottom>Computing</H1>
-      <H6 component="p" paragraph>
-        We offer many helpful English revision tools, such as: mini language
-        mocks, essay planning tips, quote memorising tools and literature
-        knowledge organisers. We&apos;re always looking to add more to the
-        table!
-      </H6>
-      <br />
-      <H3 component="h2">Word of the day</H3>
-      <br />
-      <WordOfTheDay />
-      <H3 component="h2"></H3>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Computer Science", href: "/subjects/computer-science" },
+          { label: "Bitmap Editor" },
+        ]}
+      />
+      <H1 gutterBottom>Computing Bitmap Editor</H1>
+      <BitmapEditor />
     </Layout>
   )
 }
 
-export default SubjectsEnglishPage
+export default ComputingBitmapEditorPage

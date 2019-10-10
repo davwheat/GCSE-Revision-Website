@@ -2,6 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Breadcrumbs from "../components/Breadcrumbs"
 
 import { SubjectInfo as subjects } from "../constants"
 
@@ -34,6 +35,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
+      <Breadcrumbs items={[{ label: "Home" }]} />
       <H1 gutterBottom>Welcome</H1>
       <H5 component="p" paragraph>
         Pick a subject below or use the main menu on the left-hand side.

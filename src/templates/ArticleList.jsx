@@ -2,21 +2,25 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 
-import { H2, H4, P, Subtitle2, P2 } from "../components/EasyText"
+import { H1, H4, Subtitle2, P, P2 } from "../components/EasyText"
 import {
   Card,
   Grid,
   CardContent,
   CardActions,
   useTheme,
-  Divider,
 } from "@material-ui/core"
 import Link from "../components/Link"
+import Breadcrumbs from "../components/Breadcrumbs"
 
-import NavigateBackIcon from "mdi-react/NavigateBeforeIcon"
 import TimerIcon from "mdi-react/TimerIcon"
 
 const ArticleList = props => {
+  const subjectLabel = props.subject
+    .split(" ")
+    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+    .join(" ")
+
   return (
     <StaticQuery
       query={graphql`
@@ -50,16 +54,14 @@ const ArticleList = props => {
 
         return (
           <>
-            <Link button color="primary" to={props.backUrl} startIcon={<NavigateBackIcon />}>
-              Go back
-            </Link>
-            <Divider
-              variant="middle"
-              style={{ marginBottom: 24, marginTop: 16 }}
+            <Breadcrumbs
+              items={[
+                { label: "Home", href: "/" },
+                { label: subjectLabel, href: props.backUrl },
+                { label: "Articles" },
+              ]}
             />
-            <H2 component="h1" gutterBottom>
-              All {props.subject} articles
-            </H2>
+            <H1 gutterBottom>All {subjectLabel} articles</H1>
             <br />
             <Grid container spacing={3}>
               {posts.map((post, i) => {
