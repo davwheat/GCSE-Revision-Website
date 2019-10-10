@@ -4,8 +4,6 @@ import {
   makeStyles,
   ButtonGroup,
   Button,
-  Snackbar,
-  SnackbarContent,
   FormControlLabel,
   Switch,
   TextField,
@@ -15,8 +13,6 @@ import { ToggleButtonGroup, ToggleButton } from "@material-ui/lab"
 import useForceUpdate from "../functions/useForceUpdate"
 import useStateWithLocalStorage from "../functions/useStateWithLocalStorage"
 import { H2 } from "./EasyText"
-
-import ErrorIcon from "mdi-react/ErrorOutlineIcon"
 
 const BitmapEditor = () => {
   return (
@@ -34,7 +30,6 @@ const BitmapImageEditor = () => {
     {
       width: 4,
       height: 4,
-      error: null,
       oneColour: "white",
       showValues: false,
       pixelStates: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
@@ -43,11 +38,8 @@ const BitmapImageEditor = () => {
 
   const FixBrokenLocalStorage = () => {
     if (typeof window !== "undefined") {
-      const { width, height, error } = data
-      if (error) {
-        resetData()
-        forceUpdate()
-      } else if (width < 1 || width > 16 || height < 1 || height > 16) {
+      const { width, height } = data
+      if (width < 1 || width > 16 || height < 1 || height > 16) {
         resetData()
         forceUpdate()
       }
@@ -135,34 +127,34 @@ const BitmapImageEditor = () => {
   }
 
   const ChangeBitmapSize = (w, h) => {
+    let { pixelStates, width, height, ...state } = data
+
     if (w < 1 || h < 1) {
       // eslint-disable-next-line no-unused-vars
-      let { error, ...state } = data
+      let { ...ss } = data
 
-      let err = `You can't make the image smaller than 1 pixel in width or
-                height!`
+      console.log({ w: w, h: h, width: width, height: height })
+
       setData({
-        ...state,
-        error: err,
+        ...ss,
         width: w < 1 ? 1 : width,
         height: w < 1 ? 1 : height,
       })
       return
     }
     if (w > 16 || h > 16) {
-      let err = `You can't make the image larger than 16 pixels in width or
-                height!`
+      let { ...ss } = data
+
+      console.log({ w: w, h: h, width: width, height: height })
 
       setData({
-        ...state,
-        error: err,
+        ...ss,
         width: w > 16 ? 16 : width,
         height: h > 16 ? 16 : height,
       })
       return
     }
 
-    let { pixelStates, width, height, ...state } = data
     let newPixels = []
 
     if (w < width || h < height) {
@@ -342,32 +334,6 @@ const BitmapImageEditor = () => {
       <Button color="primary" variant="outlined" onClick={resetData}>
         Reset all options
       </Button>
-
-      {data.error ? (
-        <Snackbar
-          open
-          autoHideDuration={6000}
-          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-        >
-          <SnackbarContent
-            style={{
-              background: "#f44336",
-            }}
-            message={
-              <span
-                id="client-snackbar"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <ErrorIcon size={20} style={{ marginRight: 4 }} />
-                {data.error}
-              </span>
-            }
-          />
-        </Snackbar>
-      ) : null}
     </>
   )
 }
