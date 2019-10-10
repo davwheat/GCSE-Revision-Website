@@ -4,9 +4,7 @@ import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
 import { H1, H6, H3, P } from "../../../components/EasyText"
 import Link from "../../../components/Link"
-
-import NavigateBackIcon from "mdi-react/NavigateBeforeIcon"
-import { Divider } from "@material-ui/core"
+import Breadcrumbs from "../../../components/Breadcrumbs"
 import Ad from "../../../components/Advert"
 
 import { Descriptions } from "../../../constants/subjectInfo"
@@ -18,10 +16,9 @@ const SubjectsMathsPage = () => {
         title="Maths"
         description="Our site provides useful tips and tricks to help you make the most of your calculator as well as maths quizzes and articles on harder topics."
       />
-      <Link button color="primary" to="/" startIcon={<NavigateBackIcon />}>
-        Go back
-      </Link>
-      <Divider variant="middle" style={{ marginBottom: 24, marginTop: 16 }} />
+      <Breadcrumbs
+        items={[{ label: "Home", href: "/" }, { label: "Maths" }]}
+      />
       <H1 gutterBottom>Maths</H1>
       <H6 component="p" paragraph>
         {Descriptions["Maths"]}

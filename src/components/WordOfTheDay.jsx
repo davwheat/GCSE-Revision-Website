@@ -10,7 +10,7 @@ import "whatwg-fetch"
 
 import clsx from "clsx"
 
-import AllWords from "../ambitiousWords"
+import AllWords from "../constants/ambitiousWords"
 
 import {
   useTheme,

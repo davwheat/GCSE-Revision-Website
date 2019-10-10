@@ -2,12 +2,9 @@ import React from "react"
 
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
-import { H1, H6, H3 } from "../../../components/EasyText"
+import { H1, H6, H3, P } from "../../../components/EasyText"
 import Link from "../../../components/Link"
-
-import WordOfTheDay from "../../../components/WordOfTheDay"
-import { Divider } from "@material-ui/core"
-import NavigateBeforeIcon from "mdi-react/NavigateBeforeIcon"
+import Breadcrumbs from "../../../components/Breadcrumbs"
 
 import { Descriptions } from "../../../constants/subjectInfo"
 
@@ -15,19 +12,28 @@ const SubjectsComputingPage = () => {
   return (
     <Layout>
       <SEO title="Computing" />
-      <Link button color="primary" to="/">
-        <NavigateBeforeIcon /> Go back
-      </Link>
-      <Divider variant="middle" style={{ marginBottom: 24, marginTop: 16 }} />
+      <Breadcrumbs
+        items={[{ label: "Home", href: "/" }, { label: "Computer Science" }]}
+      />
       <H1 gutterBottom>Computing</H1>
       <H6 component="p" paragraph>
         {Descriptions["Computer Science"]}
       </H6>
-      <br />
-      <H3 component="h2">Word of the day</H3>
-      <br />
-      <WordOfTheDay />
-      <H3 component="h2"></H3>
+      <H3 gutterBottom component="h2">
+        <Link to="/subjects/computer-science/bitmap-editor/">
+          Bitmap Editor
+        </Link>
+      </H3>
+      <P paragraph>
+        We offer a useful bitmap editor which you can use to make your own
+        bitmaps with our interactive editor which can also turn your image into
+        binary.
+      </P>
+      <P paragraph>
+        <Link to="/subjects/computer-science/bitmap-editor/">
+          Open Bitmap Editor
+        </Link>
+      </P>
     </Layout>
   )
 }

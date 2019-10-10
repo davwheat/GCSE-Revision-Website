@@ -1,7 +1,7 @@
 code,
 pre,
 .monospace-font {
-  font-family: "Fira Mono", "Fira Code", "Consolas", monospace;
+  font-family: "Fira Mono", "Fira Code", "Consolas", monospace !important;
 }
 
 code {
@@ -32,7 +32,7 @@ body,
 }
 
 #gatsby-focus-wrapper {
-  margin-bottom: -65px;
+  padding-bottom: 65px;
 }
 
 .footer-icon {

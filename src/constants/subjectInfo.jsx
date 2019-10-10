@@ -27,7 +27,6 @@ const AllDetails = [
     url: "/subjects/english",
     unreleased: false,
     icon: <EnglishIcon />,
-    href: "/subjects/english",
   },
   {
     name: "Maths",
@@ -35,15 +34,13 @@ const AllDetails = [
     url: "/subjects/maths",
     unreleased: false,
     icon: <MathsIcon />,
-    href: "/subjects/maths",
   },
   {
     name: "Computer Science",
     description: Descriptions["Computer Science"],
-    url: null,
-    unreleased: true,
+    url: "/subjects/computer-science",
+    unreleased: false,
     icon: <ComputingIcon />,
-    href: "/subjects/computer-science",
   },
 ]
 
