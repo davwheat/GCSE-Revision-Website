@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import clsx from "clsx"
 
 import {
   makeStyles,
@@ -7,9 +6,14 @@ import {
   Button,
   Snackbar,
   SnackbarContent,
-  useTheme,
+  FormControlLabel,
+  Switch,
+  TextField,
 } from "@material-ui/core"
+import { ToggleButtonGroup, ToggleButton } from "@material-ui/lab"
+
 import useForceUpdate from "../functions/useForceUpdate"
+import useStateWithLocalStorage from "../functions/useStateWithLocalStorage"
 import { H2 } from "./EasyText"
 
 import ErrorIcon from "mdi-react/ErrorOutlineIcon"
@@ -25,16 +29,21 @@ const BitmapEditor = () => {
 const BitmapImageEditor = () => {
   const forceUpdate = useForceUpdate()
 
-  const [data, setData] = useState({
-    width: 4,
-    height: 4,
-    error: null,
-    pixelStates: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-  })
+  const [data, setData, resetData] = useStateWithLocalStorage(
+    "bitmapEditorData",
+    {
+      width: 4,
+      height: 4,
+      error: null,
+      oneColour: "white",
+      showValues: false,
+      pixelStates: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
+    }
+  )
 
   const classes = makeStyles(theme => ({
-    pixelLight: {
-      background: "white",
+    pixelOn: {
+      background: data.oneColour,
       display: "inline-flex",
       justifyContent: "center",
       alignItems: "center",
@@ -42,10 +51,13 @@ const BitmapImageEditor = () => {
       height: "4em",
       margin: theme.spacing(0.2),
       cursor: "pointer",
-      color: "rgba(0, 0, 0, 0.7)",
+      color:
+        data.oneColour === "black"
+          ? "rgba(255, 255, 255, 0.7)"
+          : "rgba(0, 0, 0, 0.7)",
     },
-    pixelDark: {
-      background: "black",
+    pixelOff: {
+      background: data.oneColour === "white" ? "black" : "white",
       display: "inline-flex",
       justifyContent: "center",
       alignItems: "center",
@@ -53,7 +65,13 @@ const BitmapImageEditor = () => {
       height: "4em",
       margin: theme.spacing(0.2),
       cursor: "pointer",
-      color: "rgba(255, 255, 255, 0.7)",
+      color:
+        data.oneColour === "white"
+          ? "rgba(255, 255, 255, 0.7)"
+          : "rgba(0, 0, 0, 0.7)",
+    },
+    labelButton: {
+      color: theme.palette.text.secondary + " !important",
     },
   }))()
 
@@ -66,6 +84,29 @@ const BitmapImageEditor = () => {
 
     setData({ pixelStates: pixelStates, ...state })
     forceUpdate()
+  }
+
+  const ChangeDefaultValue = val => {
+    setData({ ...data, oneColour: val })
+  }
+
+  const ToggleValues = show => {
+    setData({ ...data, showValues: show })
+  }
+
+  const GetBinary = () => {
+    const { pixelStates } = data
+
+    let out = ""
+
+    pixelStates.forEach((row, i) => {
+      row.forEach(pixel => {
+        out += pixel
+      })
+      if (i + 1 !== pixelStates.length) out += "\n"
+    })
+
+    return out
   }
 
   const ChangeBitmapSize = (w, h) => {
@@ -99,7 +140,47 @@ const BitmapImageEditor = () => {
           />
         </Snackbar>
       )
-      setData({ error: err, ...state })
+      setData({
+        ...state,
+        error: err,
+        width: w < 1 ? 1 : w,
+        height: w < 1 ? 1 : h,
+      })
+      return
+    }
+    if (w > 16 || h > 16) {
+      let err = (
+        <Snackbar
+          open
+          autoHideDuration={6000}
+          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        >
+          <SnackbarContent
+            style={{
+              background: "#f44336",
+            }}
+            message={
+              <span
+                id="client-snackbar"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <ErrorIcon size={20} style={{ marginRight: 4 }} />
+                {`You can't make the image larger than 16 pixels in width or
+                height!`}
+              </span>
+            }
+          />
+        </Snackbar>
+      )
+      setData({
+        ...state,
+        error: err,
+        width: w > 16 ? 16 : w,
+        height: h > 16 ? 16 : h,
+      })
       return
     }
 
@@ -151,11 +232,10 @@ const BitmapImageEditor = () => {
 
   let { pixelStates, width, height } = data
   for (let y = 0; y < height; y++) {
-    const realY = height - y - 1
     const cols = []
+
     for (let x = 0; x < width; x++) {
-      const color =
-        pixelStates[y][x] === 1 ? classes.pixelLight : classes.pixelDark
+      const color = pixelStates[y][x] === 1 ? classes.pixelOn : classes.pixelOff
 
       cols.push(
         <td
@@ -164,19 +244,37 @@ const BitmapImageEditor = () => {
           onClick={() => {
             ChangePixelColour(y, x)
           }}
+          style={{ whiteSpace: "nowrap" }}
         >
-          ({x}, {realY})
+          {data.showValues ? data.pixelStates[y][x] : null}
         </td>
       )
     }
-    pixels.push(<tr key={y}>{cols}</tr>)
+    pixels.push(
+      <tr style={{ whiteSpace: "nowrap" }} key={y}>
+        {cols}
+      </tr>
+    )
   }
 
   return (
     <>
-      <table>
-        <tbody>{pixels}</tbody>
-      </table>
+      <div style={{ overflowX: "auto" }}>
+        <table style={{ tableLayout: "fixed" }}>
+          <tbody>{pixels}</tbody>
+        </table>
+      </div>
+      <br />
+      <H2 gutterBottom>Binary Output</H2>
+      <TextField
+        multiline
+        value={GetBinary()}
+        margin="normal"
+        InputProps={{
+          readOnly: true,
+          classes: { inputMultiline: "monospace-font" },
+        }}
+      />
       <br />
       <H2 gutterBottom>Options</H2>
       <ButtonGroup
@@ -191,7 +289,9 @@ const BitmapImageEditor = () => {
         >
           -
         </Button>
-        <Button disabled>Width: {width}</Button>
+        <Button disabled className={classes.labelButton}>
+          Width: {width}
+        </Button>
         <Button
           onClick={() => {
             ChangeBitmapSize(width + 1, height)
@@ -208,7 +308,9 @@ const BitmapImageEditor = () => {
         >
           -
         </Button>
-        <Button disabled>Height: {height}</Button>
+        <Button disabled className={classes.labelButton}>
+          Height: {height}
+        </Button>
         <Button
           onClick={() => {
             ChangeBitmapSize(width, height + 1)
@@ -217,6 +319,50 @@ const BitmapImageEditor = () => {
           +
         </Button>
       </ButtonGroup>
+      <br />
+      <br />
+      <ToggleButtonGroup
+        color="primary"
+        aria-label="on value changer"
+        exclusive
+        size="small"
+        onChange={(e, value) => ChangeDefaultValue(value)}
+      >
+        <ToggleButton disabled className={classes.labelButton}>
+          1 = {data.oneColour}
+        </ToggleButton>
+        <ToggleButton
+          selected={data.oneColour === "white" ? true : false}
+          value="white"
+        >
+          White
+        </ToggleButton>
+        <ToggleButton
+          selected={data.oneColour === "black" ? true : false}
+          value="black"
+        >
+          Black
+        </ToggleButton>
+      </ToggleButtonGroup>
+      <br />
+      <br />
+
+      <FormControlLabel
+        control={
+          <Switch
+            checked={data.showValues}
+            onChange={e => ToggleValues(e.target.checked)}
+            color="primary"
+          />
+        }
+        label="Show values"
+      />
+
+      <br />
+      <br />
+      <Button color="primary" variant="outlined" onClick={resetData}>
+        Reset all options
+      </Button>
 
       {data.error}
     </>
