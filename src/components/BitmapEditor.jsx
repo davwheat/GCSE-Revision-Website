@@ -84,10 +84,8 @@ const BitmapImageEditor = () => {
 
   const ChangePixelColour = (x, y) => {
     let { pixelStates, ...state } = data
-    console.log(pixelStates)
 
     pixelStates[x][y] = pixelStates[x][y] === 1 ? 0 : 1
-    console.log(pixelStates)
 
     setData({ pixelStates: pixelStates, ...state })
     forceUpdate()
@@ -133,8 +131,6 @@ const BitmapImageEditor = () => {
       // eslint-disable-next-line no-unused-vars
       let { ...ss } = data
 
-      console.log({ w: w, h: h, width: width, height: height })
-
       setData({
         ...ss,
         width: w < 1 ? 1 : width,
@@ -144,8 +140,6 @@ const BitmapImageEditor = () => {
     }
     if (w > 16 || h > 16) {
       let { ...ss } = data
-
-      console.log({ w: w, h: h, width: width, height: height })
 
       setData({
         ...ss,
@@ -178,7 +172,6 @@ const BitmapImageEditor = () => {
         let newRow = []
         if (!row) {
           newRow = new Array(w).fill(0)
-          console.log(newRow)
         } else {
           for (let x = 0; x < w; x++) {
             const pixel = row[x]
@@ -190,7 +183,7 @@ const BitmapImageEditor = () => {
             }
           }
         }
-        console.log(newPixels)
+        
         newPixels.push(newRow)
       }
 
@@ -240,6 +233,7 @@ const BitmapImageEditor = () => {
         multiline
         value={GetBinary()}
         margin="normal"
+        variant="outlined"
         InputProps={{
           readOnly: true,
           classes: { inputMultiline: "monospace-font" },
