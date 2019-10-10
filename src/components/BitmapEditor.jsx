@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 
 import {
   makeStyles,
@@ -95,7 +95,17 @@ const BitmapImageEditor = () => {
   }
 
   const GetBinary = () => {
+    if (
+      data.width > 16 ||
+      data.height > 16 ||
+      data.width < 1 ||
+      data.height < 1
+    )
+      return
+
     const { pixelStates } = data
+
+    if (typeof pixelStates === "undefined") return
 
     let out = ""
 
@@ -114,72 +124,25 @@ const BitmapImageEditor = () => {
       // eslint-disable-next-line no-unused-vars
       let { error, ...state } = data
 
-      let err = (
-        <Snackbar
-          open
-          autoHideDuration={6000}
-          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-        >
-          <SnackbarContent
-            style={{
-              background: "#f44336",
-            }}
-            message={
-              <span
-                id="client-snackbar"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <ErrorIcon size={20} style={{ marginRight: 4 }} />
-                {`You can't make the image smaller than 1 pixel in width or
-                height!`}
-              </span>
-            }
-          />
-        </Snackbar>
-      )
+      let err = `You can't make the image smaller than 1 pixel in width or
+                height!`
       setData({
         ...state,
         error: err,
-        width: w < 1 ? 1 : w,
-        height: w < 1 ? 1 : h,
+        width: w < 1 ? 1 : width,
+        height: w < 1 ? 1 : height,
       })
       return
     }
     if (w > 16 || h > 16) {
-      let err = (
-        <Snackbar
-          open
-          autoHideDuration={6000}
-          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-        >
-          <SnackbarContent
-            style={{
-              background: "#f44336",
-            }}
-            message={
-              <span
-                id="client-snackbar"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <ErrorIcon size={20} style={{ marginRight: 4 }} />
-                {`You can't make the image larger than 16 pixels in width or
-                height!`}
-              </span>
-            }
-          />
-        </Snackbar>
-      )
+      let err = `You can't make the image larger than 16 pixels in width or
+                height!`
+
       setData({
         ...state,
         error: err,
-        width: w > 16 ? 16 : w,
-        height: h > 16 ? 16 : h,
+        width: w > 16 ? 16 : width,
+        height: h > 16 ? 16 : height,
       })
       return
     }
@@ -351,6 +314,7 @@ const BitmapImageEditor = () => {
         control={
           <Switch
             checked={data.showValues}
+            value="y"
             onChange={e => ToggleValues(e.target.checked)}
             color="primary"
           />
@@ -364,7 +328,31 @@ const BitmapImageEditor = () => {
         Reset all options
       </Button>
 
-      {data.error}
+      {data.error ? (
+        <Snackbar
+          open
+          autoHideDuration={6000}
+          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+        >
+          <SnackbarContent
+            style={{
+              background: "#f44336",
+            }}
+            message={
+              <span
+                id="client-snackbar"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <ErrorIcon size={20} style={{ marginRight: 4 }} />
+                {data.error}
+              </span>
+            }
+          />
+        </Snackbar>
+      ) : null}
     </>
   )
 }
