@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
 function useStateWithLocalStorage(key, initialValue) {
   // State to store our value
