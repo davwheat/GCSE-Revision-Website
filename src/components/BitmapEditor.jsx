@@ -41,6 +41,21 @@ const BitmapImageEditor = () => {
     }
   )
 
+  const FixBrokenLocalStorage = () => {
+    if (typeof window !== "undefined") {
+      const { width, height, error } = data
+      if (error) {
+        resetData()
+        forceUpdate()
+      } else if (width < 1 || width > 16 || height < 1 || height > 16) {
+        resetData()
+        forceUpdate()
+      }
+    }
+  }
+
+  FixBrokenLocalStorage()
+
   const classes = makeStyles(theme => ({
     pixelOn: {
       background: data.oneColour,
@@ -292,7 +307,7 @@ const BitmapImageEditor = () => {
         onChange={(e, value) => ChangeDefaultValue(value)}
       >
         <ToggleButton disabled className={classes.labelButton}>
-          1 = {data.oneColour}
+          Value of {`'1'`}
         </ToggleButton>
         <ToggleButton
           selected={data.oneColour === "white" ? true : false}
