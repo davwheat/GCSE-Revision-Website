@@ -32,11 +32,22 @@ const BaseConverter = () => {
 
     switch (el.id) {
       case "decimal":
-        newData.decimal = el.value
+        newData.num = parseInt(el.value, 10)
+        newData.decimal = newData.num.toString(10)
+        newData.hexadecimal = newData.num.toString(16)
+        newData.binary = newData.num.toString(2)
         break
       case "hexadecimal":
+        newData.num = parseInt(el.value, 16)
+        newData.decimal = newData.num.toString(10)
+        newData.hexadecimal = newData.num.toString(16)
+        newData.binary = newData.num.toString(2)
         break
       case "binary":
+        newData.num = parseInt(el.value, 2)
+        newData.decimal = newData.num.toString(10)
+        newData.hexadecimal = newData.num.toString(16)
+        newData.binary = newData.num.toString(2)
         break
     }
 
