@@ -4,7 +4,7 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "headers": [
       {
-        "source": "/**/*.html",
+        "source": "**/*.html",
         "headers": [
           {
             "key": "Cache-Control",
@@ -13,11 +13,20 @@
         ]
       },
       {
-        "source": "page-data/*.json",
+        "source": "page-data/**/*.json",
         "headers": [
           {
             "key": "Cache-Control",
             "value": "public, max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(js|css|js.map|css.map)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
           }
         ]
       },
@@ -36,15 +45,6 @@
           {
             "key": "Cache-Control",
             "value": "public, max-age=0, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "page-data/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|ttc|woff|woff2|font.css)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=604800"
           }
         ]
       }
