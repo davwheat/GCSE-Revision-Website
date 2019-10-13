@@ -173,8 +173,6 @@ function markdownRenderers(theme) {
     heading: props => HeadingLevelToComponent(props.level, props),
     inlineCode: props => <code>{props.children}</code>,
     code: props => {
-      console.log(props)
-
       return (
         <Lowlight
           language={props.language ? props.language : undefined}

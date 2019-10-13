@@ -20,9 +20,7 @@ const SubjectsComputingPage = () => {
         {Descriptions["Computer Science"]}
       </H6>
       <H3 gutterBottom component="h2">
-        <Link to="/subjects/computer-science/bitmap-editor/">
-          Bitmap Editor
-        </Link>
+        Bitmap Editor
       </H3>
       <P paragraph>
         We offer a useful bitmap editor which you can use to make your own
@@ -32,6 +30,18 @@ const SubjectsComputingPage = () => {
       <P paragraph>
         <Link to="/subjects/computer-science/bitmap-editor/">
           Open Bitmap Editor
+        </Link>
+      </P>
+      <H3 gutterBottom component="h2">
+        Base Converter
+      </H3>
+      <P paragraph>
+        Need to convert between binary, decimal and hexadecimal? We&apos;ve got
+        it covered!
+      </P>
+      <P paragraph>
+        <Link to="/subjects/computer-science/base-converter/">
+          Open Base Converter
         </Link>
       </P>
     </Layout>

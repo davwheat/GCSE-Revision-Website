@@ -13,8 +13,6 @@ SubjectInfo.forEach(o => {
   }
 })
 
-console.log(SubjectInfo)
-
 export default [
   [{ text: "Home", icon: <HomeIcon />, href: "/" }],
   [...subjectItems],
