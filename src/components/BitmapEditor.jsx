@@ -183,7 +183,7 @@ const BitmapImageEditor = () => {
             }
           }
         }
-        
+
         newPixels.push(newRow)
       }
 
