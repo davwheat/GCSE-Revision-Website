@@ -111,13 +111,13 @@ const BaseConverter = () => {
           newData.binary = FormatNumberString(value, 4, true)
           break
         case "binary":
-          newData.hexadecimal = FormatNumberString(value, 2)
+          newData.hexadecimal = FormatNumberString(value, 2, true)
           break
       }
     } else {
       newData.decimal = FormatNumberString(newData.num.toString(10), 3)
       newData.binary = FormatNumberString(newData.num.toString(2), 4, true)
-      newData.hexadecimal = FormatNumberString(newData.num.toString(16), 2)
+      newData.hexadecimal = FormatNumberString(newData.num.toString(16), 2, true)
     }
 
     if (isNaN(newData.num)) return
