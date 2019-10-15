@@ -33,7 +33,7 @@ const Article = props => {
     .join(" ")
 
   return (
-    <Layout>
+    <Layout type="article">
       <SEO
         title={post.frontmatter.title}
         description={
@@ -50,11 +50,13 @@ const Article = props => {
           { label: post.frontmatter.title },
         ]}
       />
-      <H1 gutterBottom>{post.frontmatter.title}</H1>
-      <Subtitle1 align="right" style={{ marginBottom: theme.spacing(6) }}>
-        Published {post.frontmatter.date}
-      </Subtitle1>
-      <Markdown src={post.rawMarkdownBody} />
+      <article id="article-container">
+        <H1 gutterBottom>{post.frontmatter.title}</H1>
+        <Subtitle1 align="right" style={{ marginBottom: theme.spacing(6) }}>
+          Published {post.frontmatter.date}
+        </Subtitle1>
+        <Markdown src={post.rawMarkdownBody} />
+      </article>
     </Layout>
   )
 }
