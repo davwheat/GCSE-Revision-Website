@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 import {
   makeStyles,
@@ -12,6 +12,8 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Collapse,
+  useTheme,
   Box,
 } from "@material-ui/core"
 
@@ -19,6 +21,8 @@ import { H6 } from "./EasyText"
 import Link from "./Link"
 
 import MenuIcon from "mdi-react/HamburgerMenuIcon"
+import ExpandMoreIcon from "mdi-react/ChevronDownIcon"
+import ExpandLessIcon from "mdi-react/ChevronUpIcon"
 
 import CssBaseline from "@material-ui/core/CssBaseline"
 
@@ -60,6 +64,9 @@ const useStyles = makeStyles(theme => ({
       width: "1rem", // initial size
       background: theme.palette.secondary.main,
     },
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
   },
 }))
 
@@ -164,16 +171,8 @@ const MakeAppBar = ({ title }) => {
           {MenuItems.map((groups, i) => (
             <>
               <List key={i}>
-                {groups.map(items => (
-                  <ListItem
-                    component={Link}
-                    to={items.href}
-                    button
-                    key={items.text}
-                  >
-                    <ListItemIcon>{items.icon}</ListItemIcon>
-                    <ListItemText primary={items.text} />
-                  </ListItem>
+                {groups.map((items, i) => (
+                  <DrawerMenuItem key={i} item={items} />
                 ))}
               </List>
               {i + 1 !== MenuItems.length ? <Divider key={i + 0.5} /> : null}
@@ -182,6 +181,64 @@ const MakeAppBar = ({ title }) => {
         </nav>
       </SwipeableDrawer>
     </div>
+  )
+}
+
+const DrawerMenuItem = ({ item: itemProp }) => {
+  const classes = useStyles()
+  const theme = useTheme()
+
+  const hasSubitems = typeof itemProp.subitems !== "undefined"
+  const [expanded, setExpanded] = useState(false)
+
+  console.log(itemProp)
+
+  const handleClick = () => {
+    setExpanded(!expanded)
+  }
+
+  return (
+    <>
+      <ListItem
+        component={hasSubitems ? null : Link}
+        to={hasSubitems ? null : itemProp.href}
+        onClick={hasSubitems ? handleClick : null}
+        button
+        key={itemProp.text + itemProp.href}
+      >
+        <ListItemIcon>{itemProp.icon}</ListItemIcon>
+        <ListItemText
+          style={{ color: theme.palette.primary.main }}
+          primary={itemProp.text}
+        />
+
+        {hasSubitems ? (
+          expanded ? (
+            <ExpandLessIcon />
+          ) : (
+            <ExpandMoreIcon />
+          )
+        ) : null}
+      </ListItem>
+      {hasSubitems ? (
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {itemProp.subitems.map(item => (
+              <ListItem
+                className={classes.nested}
+                component={Link}
+                to={item.href}
+                button
+                key={item.text + itemProp.href}
+              >
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.text} />
+              </ListItem>
+            ))}
+          </List>
+        </Collapse>
+      ) : null}
+    </>
   )
 }
 
@@ -198,6 +255,21 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
   pageTitle: `GCSE Revision`,
+}
+
+DrawerMenuItem.propTypes = {
+  item: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    icon: PropTypes.node.isRequired,
+    href: PropTypes.string.isRequired,
+    subitems: PropTypes.arrayOf(
+      PropTypes.shape({
+        text: PropTypes.string.isRequired,
+        icon: PropTypes.node.isRequired,
+        href: PropTypes.string.isRequired,
+      })
+    ),
+  }),
 }
 
 export default Header
