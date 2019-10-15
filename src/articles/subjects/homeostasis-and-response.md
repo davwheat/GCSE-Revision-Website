@@ -49,5 +49,22 @@ This process happens without you thinking about it — it's completely automated
 
 The **Central Nervous System** (CNS), in vertebrates, consists of the brain and spinal cord. In mammals, the CNS is connected to the body via sensory neurons and motor neurons.
 
+### Sensory Neurones
 
+The **neurones** that carry information as electrical impulses from the **receptors** to the **CNS**.
+
+### Motor Neurones
+
+The **neurones** that carry electrical impulses from the **CNS** to **effector organs**.
+
+### Effector Organs
+
+All muscles and glands. They respond to the impulses from your **motor nerves**.
+
+## Receptors and Effectors can form part of Complex Organs
+
+1. **Receptors** are the cells that **detect stimuli**
+2. There are many different types of receptors, such as taste receptors on the tongue and sound receptors in the ears
+3. Receptors can form part of **larger, complex organs**, e.g. the retina of the eye is covered in light receptor cells
+4. **Effector Organs** respond to nervous impulses and bring about a change
 
