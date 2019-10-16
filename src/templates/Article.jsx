@@ -34,6 +34,25 @@ const Article = props => {
   const subjectUrl = ConvertStringToUrl(post.frontmatter.subject)
   const subjectLabel = ConvertStringToLabel(post.frontmatter.subject)
 
+  const subjectGroupUrl = post.frontmatter.subjectGroup
+    ? post.frontmatter.subjectGroup.replace(" ", "-")
+    : null
+  const subjectGroupLabel = subjectGroupUrl
+    ? post.frontmatter.subjectGroup
+        .split(" ")
+        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(" ")
+    : null
+
+  const groupBreadcrumb = subjectGroupUrl
+    ? [
+        {
+          label: subjectGroupLabel,
+          href: `/subjects/${subjectGroupUrl}`,
+        },
+      ]
+    : []
+
   return (
     <Layout type="article">
       <SEO
@@ -47,8 +66,19 @@ const Article = props => {
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: subjectLabel, href: `/subjects/${subjectUrl}` },
-          { label: "Articles", href: `/subjects/${subjectUrl}/articles` },
+          ...groupBreadcrumb,
+          {
+            label: subjectLabel,
+            href: subjectGroupUrl
+              ? `/subjects/${subjectGroupUrl}/${subjectUrl}`
+              : `/subjects/${subjectUrl}`,
+          },
+          {
+            label: "Articles",
+            href: subjectGroupUrl
+              ? `/subjects/${subjectGroupUrl}/${subjectUrl}/articles`
+              : `/subjects/${subjectUrl}/articles`,
+          },
           { label: post.frontmatter.title },
         ]}
       />
@@ -78,6 +108,7 @@ export const query = graphql`
         date(formatString: "DD/MM/YYYY")
         description
         subject
+        subjectGroup
       }
       fields {
         slug
