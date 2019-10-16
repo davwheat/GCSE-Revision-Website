@@ -6,7 +6,7 @@ subject: "biology"
 subjectGroup: "science"
 ---
 
-# Homeostasis definition
+# Homeostasis
 
 Definition:
 
@@ -50,19 +50,19 @@ This process happens without you thinking about it — it's completely automated
 
 ### Central Nervous System
 
-The **Central Nervous System** (CNS), in vertebrates, consists of the brain and spinal cord. In mammals, the CNS is connected to the body via sensory neurons and motor neurons.
+The **Central Nervous System** (CNS), in vertebrates, consists of the brain and spinal cord. In mammals, the CNS is connected to the body via sensory nerves and motor nerves.
 
-### Sensory Neurones
+### Sensory Nerves
 
-The **neurons** (or **nerves**) that carry information as electrical impulses from the **receptors** to the **CNS**.
+The **nerves** (or **neurons**) that carry information as electrical impulses from the **receptors** to the **CNS**.
 
-### Motor Neurones
+### Motor Nerves
 
-The **neurons** (or **nerves**) that carry electrical impulses from the **CNS** to **effector organs**.
+The **nerves** (or **neurons**) that carry electrical impulses from the **CNS** to **effector organs**.
 
 ### Effector Organs
 
-*All* muscles and glands are **effector organs**. They respond to the impulses from your **motor nerves**.
+_All_ muscles and glands are **effector organs**. They respond to the impulses from your **motor nerves**.
 
 ## Receptors and Effectors can form part of Complex Organs
 
@@ -70,3 +70,22 @@ The **neurons** (or **nerves**) that carry electrical impulses from the **CNS** 
 2. There are many different types of receptors, such as taste receptors on the tongue and sound receptors in the ears
 3. Receptors can form part of **larger, complex organs**, e.g. the retina of the eye is covered in light receptor cells
 4. **Effector Organs** respond to nervous impulses and bring about a change
+
+## Purpose of the Central Nervous System (CNS)
+
+The CNS's purpose is to coordinate responses — it's called a **coordination centre** for a reason! It receives information from the **receptors** and coordinates a response (works out what to do about it). This response is carried out by the **effectors**.
+
+You need to remember a couple of **Central Nervous Systems**: the **brain** and the **spinal cord**.
+
+### Example
+
+Imagine a toddler in the kitchen...
+
+1. ...and they see some chocolate (the food is the **stimulus**)
+2. The **receptors** in the toddler's eye are **stimulated**
+3. **Sensory nerves** carry the info from the **receptors** to the **CNS** (in this case, the **brain**)
+4. The **CNS** decides what to do about this information
+5. The **CNS** sends information to the muscles (the **effectors**) along **motor nerves**
+6. The toddler's muscles contract and they runs towards the chocolate (and their parents aren't too happy...)
+
+![Naughty, naughty...](articles/biology/homeostasis-toddler-eating-chocolate.png)
