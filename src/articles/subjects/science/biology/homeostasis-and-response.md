@@ -3,6 +3,7 @@ title: "Homeostasis & Response - Reference Guide"
 date: "2019-10-15"
 description: "Homeostasis — a word that strikes fear into the heart of GCSE students. It's really not that bad at all. This article is a reference guide for all things Homeostasis"
 subject: "biology"
+subjectGroup: "science"
 ---
 
 # Homeostasis definition
