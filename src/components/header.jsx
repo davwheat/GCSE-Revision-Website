@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useEffect } from "react"
 
 import {
   makeStyles,
@@ -12,6 +12,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Box,
 } from "@material-ui/core"
 
 import { H6 } from "./EasyText"
@@ -40,16 +41,68 @@ const useStyles = makeStyles(theme => ({
   navbar: {
     minWidth: 250,
   },
+  withScrollIndicator: {
+    position: "sticky",
+    marginTop: -32,
+    top: 0,
+    display: "block",
+    zIndex: 1001,
+    height: 3,
+    background: theme.palette.secondary.dark,
+    width: "100vw",
+    overflow: "hidden",
+    "&:after": {
+      content: "''",
+      display: "block",
+      position: "absolute",
+      top: 0,
+      height: 3,
+      width: "1rem", // initial size
+      background: theme.palette.secondary.main,
+    },
+  },
 }))
 
-const Header = ({ pageTitle }) => (
-  <>
-    <CssBaseline />
-    <header>
+const Header = ({ pageTitle, type }) => {
+  const classes = useStyles()
+
+  useEffect(() => {
+    if (type === "article") {
+      const styleElem = document.head.appendChild(
+        document.createElement("style")
+      )
+
+      window.addEventListener("scroll", () => {
+        let h = document.documentElement,
+          b = document.body,
+          st = "scrollTop",
+          sh = "scrollHeight"
+
+        let scrollPercentage =
+          ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
+
+        styleElem.innerHTML = `#scrollIndicator:after {
+          width: calc(${scrollPercentage}% + 1rem);
+        }`
+      })
+    }
+  })
+
+  return (
+    <>
+      <CssBaseline />
       <MakeAppBar title={pageTitle} />
-    </header>
-  </>
-)
+
+      {type === "article" ? (
+        <Box
+          boxShadow={1}
+          id="scrollIndicator"
+          className={classes.withScrollIndicator}
+        />
+      ) : null}
+    </>
+  )
+}
 
 const MakeAppBar = ({ title }) => {
   const classes = useStyles()
@@ -139,6 +192,7 @@ MakeAppBar.propTypes = {
 Header.propTypes = {
   siteTitle: PropTypes.string,
   pageTitle: PropTypes.string,
+  type: PropTypes.oneOf(["article", null]),
 }
 
 Header.defaultProps = {

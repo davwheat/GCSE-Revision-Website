@@ -110,7 +110,7 @@ const theme = responsiveFontSizes(
   { breakpoints: ["xs", "sm", "md", "lg", "xl"], factor: 2.25 }
 )
 
-const Layout = ({ children }) => {
+const Layout = ({ children, type }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -153,7 +153,7 @@ const Layout = ({ children }) => {
 
   return (
     <MuiThemeProvider theme={theme}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} type={type} />
       <div
         style={{
           margin: `0 auto`,
@@ -161,6 +161,7 @@ const Layout = ({ children }) => {
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
           marginBottom: theme.spacing(3),
+          marginTop: theme.spacing(2),
         }}
       >
         <main>{children}</main>
@@ -201,6 +202,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(["article", null]),
 }
 
 export default Layout
