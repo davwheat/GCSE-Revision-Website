@@ -14,6 +14,8 @@ import { H2 } from "../components/EasyText"
 
 import textToSafeId from "../functions/textToSafeId"
 
+const nestMultiplier = 4
+
 const ArticleTOC = ({ headings }) => {
   const theme = useTheme()
 
@@ -28,7 +30,9 @@ const ArticleTOC = ({ headings }) => {
             to={`#${textToSafeId(heading.value)}`}
             key={heading.value}
             style={{
-              paddingLeft: theme.spacing(heading.depth * 2),
+              paddingLeft: theme.spacing(
+                heading.depth * nestMultiplier
+              ),
               color: theme.palette.primary.main,
             }}
           >
