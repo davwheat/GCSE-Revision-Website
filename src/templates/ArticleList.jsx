@@ -147,7 +147,7 @@ const PostCard = props => {
             {wordCount} words
           </P2>
         </>
-        <Link button color="primary" to={slug} style={{ marginLeft: "auto" }}>
+        <Link linkIsButton color="primary" to={slug} style={{ marginLeft: "auto" }}>
           Read article
         </Link>
       </CardActions>

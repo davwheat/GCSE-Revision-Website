@@ -1,7 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link as MatLink, Button, makeStyles } from "@material-ui/core"
+
+import {
+  Link as MatLink,
+  Button,
+  makeStyles,
+  useTheme,
+} from "@material-ui/core"
 import { Link as GatsbyLink } from "gatsby"
+import AnchorLink from "react-anchor-link-smooth-scroll-hashchange"
 
 import ExternalLinkIcon from "mdi-react/ExternalLinkIcon"
 
@@ -22,14 +29,19 @@ const styles = makeStyles(() => ({
 }))
 
 const Link = props => {
-  const { to, children, button, hasExternalLinkIcon, ...newprops } = props
+  const { to, children, linkIsButton, hasExternalLinkIcon, ...newprops } = props
+
+  const classes = styles()
+  const theme = useTheme()
+
+  const AnchorOffset = 32
+
   if (
     to.startsWith("https://") ||
     to.startsWith("http://") ||
     to.startsWith("//")
   ) {
-    const classes = styles()
-    if (button === true) {
+    if (linkIsButton === true) {
       return (
         <Button
           href={to}
@@ -58,8 +70,36 @@ const Link = props => {
         </MatLink>
       )
     }
+  } else if (to.startsWith("#")) {
+    if (linkIsButton === true) {
+      return (
+        <Button
+          component={AnchorLink}
+          offset={AnchorOffset}
+          href={to}
+          {...newprops}
+          target="_blank"
+          rel="noopener"
+        >
+          {children}
+        </Button>
+      )
+    } else {
+      console.log(props)
+
+      return (
+        <AnchorLink
+          style={{ color: theme.palette.primary.main }}
+          offset={AnchorOffset}
+          href={to}
+          {...newprops}
+        >
+          {children}
+        </AnchorLink>
+      )
+    }
   } else {
-    if (button === true) {
+    if (linkIsButton === true) {
       return (
         <Button component={AdapterLink} to={to} {...newprops}>
           {children}
@@ -78,7 +118,7 @@ const Link = props => {
 Link.propTypes = {
   children: PropTypes.node.isRequired,
   to: PropTypes.string.isRequired,
-  button: PropTypes.bool,
+  linkIsButton: PropTypes.bool,
   hasExternalLinkIcon: PropTypes.bool,
 }
 

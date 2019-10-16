@@ -34,6 +34,7 @@
     "mdi-react": "^6.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
+    "react-anchor-link-smooth-scroll-hashchange": "git+https://github.com/davwheat/react-anchor-link-smooth-scroll-hashchange.git",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
     "react-jsx-parser": "^1.21.0",

@@ -21,6 +21,7 @@ import {
   ListItemIcon,
   ListItemText,
   Checkbox,
+  makeStyles,
 } from "@material-ui/core"
 
 import "./css/katex.css"
@@ -47,6 +48,8 @@ import GImage from "./image"
 import { P, H2, H3, H4, H5, H6, P1, Subtitle2 } from "./EasyText"
 import Quote from "./Blockquote"
 
+import textToSafeId from "../functions/textToSafeId"
+
 Lowlight.registerLanguage("js", js)
 Lowlight.registerLanguage("py", py)
 Lowlight.registerLanguage("cs", cs)
@@ -70,49 +73,155 @@ const StyledTableCell = withStyles(theme => ({
 
 const HeadingLevelToComponent = (level, props) => {
   // Start with H2 because H1 is generated automatically from the title in the MD doc
+
+  const classes = makeStyles(theme => ({
+    heading: {
+      position: "relative",
+      "&:hover": {
+        "& a": {
+          visibility: "visible",
+        },
+      },
+    },
+    headingLink: {
+      visibility: "hidden",
+      display: "inline-block",
+      position: "absolute",
+      top: "calc(50% - 8px)",
+      marginLeft: theme.spacing(),
+      fontSize: 16,
+      color: `${theme.palette.secondary.main} !important`,
+      fontWeight: 500,
+    },
+  }))()
+
   switch (level) {
     case 1:
       return (
-        <H2 gutterBottom style={{ marginTop: 32 }}>
+        <H2
+          gutterBottom
+          style={{ marginTop: 32 }}
+          id={textToSafeId(props.children[0].props.value)}
+          className={classes.heading}
+        >
           {props.children}
+          <Link
+            className={classes.headingLink}
+            to={`#${textToSafeId(props.children[0].props.value)}`}
+            title="Link to this section"
+          >
+            #
+          </Link>
         </H2>
       )
     case 2:
       return (
-        <H3 gutterBottom style={{ marginTop: 32 }}>
+        <H3
+          gutterBottom
+          style={{ marginTop: 32 }}
+          id={textToSafeId(props.children[0].props.value)}
+          className={classes.heading}
+        >
           {props.children}
+          <Link
+            className={classes.headingLink}
+            to={`#${textToSafeId(props.children[0].props.value)}`}
+            title="Link to this section"
+          >
+            #
+          </Link>
         </H3>
       )
     case 3:
       return (
-        <H4 gutterBottom style={{ marginTop: 32 }}>
+        <H4
+          gutterBottom
+          style={{ marginTop: 32 }}
+          id={textToSafeId(props.children[0].props.value)}
+          className={classes.heading}
+        >
           {props.children}
+          <Link
+            className={classes.headingLink}
+            to={`#${textToSafeId(props.children[0].props.value)}`}
+            title="Link to this section"
+          >
+            #
+          </Link>
         </H4>
       )
     case 4:
       return (
-        <H5 gutterBottom style={{ marginTop: 32 }}>
+        <H5
+          gutterBottom
+          style={{ marginTop: 32 }}
+          id={textToSafeId(props.children[0].props.value)}
+          className={classes.heading}
+        >
           {props.children}
+          <Link
+            className={classes.headingLink}
+            to={`#${textToSafeId(props.children[0].props.value)}`}
+            title="Link to this section"
+          >
+            #
+          </Link>
         </H5>
       )
     case 5:
       return (
-        <H6 gutterBottom style={{ marginTop: 32 }}>
+        <H6
+          gutterBottom
+          style={{ marginTop: 32 }}
+          id={textToSafeId(props.children[0].props.value)}
+          className={classes.heading}
+        >
           {props.children}
+          <Link
+            className={classes.headingLink}
+            to={`#${textToSafeId(props.children[0].props.value)}`}
+            title="Link to this section"
+          >
+            #
+          </Link>
         </H6>
       )
     case 6:
       return (
-        <Subtitle2 gutterBottom style={{ marginTop: 32 }}>
+        <Subtitle2
+          gutterBottom
+          style={{ marginTop: 32 }}
+          id={textToSafeId(props.children[0].props.value)}
+          className={classes.heading}
+        >
           {props.children}
+          <Link
+            className={classes.headingLink}
+            to={`#${textToSafeId(props.children[0].props.value)}`}
+            title="Link to this section"
+          >
+            #
+          </Link>
         </Subtitle2>
       )
 
     // default to value of H6 if you try to get a heading of level 0 or 7, as an example
     default:
       return (
-        <Subtitle2 gutterBottom style={{ marginTop: 32 }}>
+        <Subtitle2
+          gutterBottom
+          style={{ marginTop: 32 }}
+          id={textToSafeId(props.children[0].props.value)}
+          className={classes.heading}
+        >
           {props.children}
+          <Link
+            className={classes.headingLink}
+            to={`#${textToSafeId(props.children[0].props.value)}`}
+            title="Link to this section"
+          >
+            #
+          </Link>
         </Subtitle2>
       )
   }
