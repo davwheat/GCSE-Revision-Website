@@ -10,6 +10,8 @@ import { H1, Subtitle1 } from "../components/EasyText"
 import Breadcrumbs from "../components/Breadcrumbs"
 import SEO from "../components/seo"
 
+import ArticleTOC from "./ArticleTOC"
+
 import {
   ConvertStringToLabel,
   ConvertStringToUrl,
@@ -85,8 +87,9 @@ const Article = props => {
       <article id="article-container">
         <H1 gutterBottom>{post.frontmatter.title}</H1>
         <Subtitle1 align="right" style={{ marginBottom: theme.spacing(6) }}>
-          Published {post.frontmatter.date}
+            Published {post.frontmatter.date}
         </Subtitle1>
+        <ArticleTOC headings={post.headings} />
         <Markdown src={post.rawMarkdownBody} />
       </article>
     </Layout>
@@ -115,6 +118,10 @@ export const query = graphql`
       }
       rawMarkdownBody
       excerpt
+      headings {
+        value
+        depth
+      }
     }
   }
 `
