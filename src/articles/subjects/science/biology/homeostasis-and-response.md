@@ -89,3 +89,24 @@ Imagine a toddler in the kitchen...
 6. The toddler's muscles contract and they runs towards the chocolate (and their parents aren't too happy...)
 
 ![Naughty, naughty...](articles/biology/homeostasis-toddler-eating-chocolate.png)
+
+## Synapses
+
+**Synapses** connect neurons.
+
+1. The **connection** between two **neurons** is called a **synapse**.
+2. The nerve signal is transferred by **chemicals** that diffuse (move) across the gap between the neurons.
+3. The chemicalsset off a new **electrical signal** in the next neuron.
+
+![Labelled diagram of a synapse](articles/biology/nerve-synapse.jpg)
+
+### Neurotransmitters
+
+You need to know two examples of neurotransmitters:
+
+- dopamine (the 'happy' one)
+- ATP (the normal one)
+
+# Reflexes
+
+**Neurons** transmit information extremely quickly to and from the **CNS**
