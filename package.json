@@ -36,7 +36,7 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
-    "react-jsx-parser": "^1.20.0",
+    "react-jsx-parser": "^1.21.0",
     "react-lowlight": "^2.0.0",
     "react-markdown": "^4.2.2",
     "rehype-katex": "^2.0.0",
