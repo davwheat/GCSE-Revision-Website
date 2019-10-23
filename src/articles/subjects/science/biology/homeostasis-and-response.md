@@ -92,7 +92,7 @@ Imagine a toddler in the kitchen...
 
 ## Synapses
 
-**Synapses** connect neurons.
+**Synapses** are the *fancy* name for the part of a nerve cell used to connect multiple nerves or neurons together in a chain. The cells don't actually touch, so they can't transfer an actual electrical charge. Instead they use ***CHEMICALS!!!***
 
 1. The **connection** between two **neurons** is called a **synapse**.
 2. The nerve signal is transferred by **chemicals** that diffuse (move) across the gap between the neurons.
@@ -107,6 +107,19 @@ You need to know two examples of neurotransmitters:
 - dopamine (the 'happy' one)
 - ATP (the normal one)
 
-# Reflexes
+# Reflex actions
 
-**Neurons** transmit information extremely quickly to and from the **CNS**
+**Reflex actions** happen without you even thinking about it. (I'm sure we all wish revision worked this way too...) The **nerve path** that a reflex action takes is called a **reflex arc**.
+
+They are a way for the body to automatically respond to a stimulus to minimise damage to the body. **Reflex actions** generally follow this pattern:
+
+**stimulus** → **receptor** → **sensory nerve** → **relay nerve** → **motor nerve** → **effector** → **response**
+
+![An example reflex arc for nearing a flame](articles/biology/homeostasis-reflex-action.png)
+
+1. The **stimulus** is the object that triggers the reflex action (e.g. a hot pan).
+2. The **receptor** is the thing in the skin that *detects* the stimulus (e.g. a change in temperature)
+3. The **sensory nerve** sends a message from the receptor to the **relay nerve** which is inside the CNS (spinal cord for reflex actions).
+4. The **relay nerve** *relays* the message from the sensory nerve, to the **motor nerve**.
+5. The **motor nerve** sends impulses to the **effector**.
+6. The **effector** produces a **response** (e.g. contracts muscles to move hand away from the flame).
