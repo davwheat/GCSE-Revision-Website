@@ -111,7 +111,7 @@ You need to know two examples of neurotransmitters:
 
 **Reflex actions** happen without you even thinking about it. (I'm sure we all wish revision worked this way too...) The **nerve path** that a reflex action takes is called a **reflex arc**.
 
-They are a way for the body to automatically respond to a stimulus to minimise damage to the body. **Reflex actions** generally follow this pattern:
+They are a way for the body to automatically respond to a stimulus to minimise damage to the body. Reflexes happen so quickly because the actions only have to pass through 3 nerves. **Reflex actions** generally follow this pattern:
 
 **stimulus** → **receptor** → **sensory nerve** → **relay nerve** → **motor nerve** → **effector** → **response**
 
@@ -123,3 +123,24 @@ They are a way for the body to automatically respond to a stimulus to minimise d
 4. The **relay nerve** *relays* the message from the sensory nerve, to the **motor nerve**.
 5. The **motor nerve** sends impulses to the **effector**.
 6. The **effector** produces a **response** (e.g. contracts muscles to move hand away from the flame).
+
+## Confusion
+
+Some students get confused about reflex actions and call conscious action reflexes.
+
+### Catching a dropped ruler is a reflex!
+
+Some students, when discussing the ruler drop test for measuring reaction time, call it a reflex action. **This is incorrect.**
+
+A reflex action must not be made consciously: it is made automatically. When your eye sees the ruler has been dropped, you *consciously* decide to catch the ruler. It isn't automatic.
+
+### You can't override a reflex action!
+
+Yes, you can!
+
+When picking up a hot plate (please don't try this), the reflex action will make you drop it almost immediately. However, it is possible to consciously override these reflexes.
+
+You don't need to know this but the way the brain prevents the reflexes is by sending signals through inhibitionary nerves to prevent nerves firing.
+
+You can learn more about inhibiting reflexes on this [StackExchange post](https://biology.stackexchange.com/questions/39768/how-are-reflexes-suppressed).
+
