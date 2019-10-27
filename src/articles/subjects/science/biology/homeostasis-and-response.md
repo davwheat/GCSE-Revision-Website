@@ -128,19 +128,18 @@ They are a way for the body to automatically respond to a stimulus to minimise d
 
 Some students get confused about reflex actions and call conscious action reflexes.
 
-### Catching a dropped ruler is a reflex!
+### Catching a dropped ruler is a reflex
 
 Some students, when discussing the ruler drop test for measuring reaction time, call it a reflex action. **This is incorrect.**
 
 A reflex action must not be made consciously: it is made automatically. When your eye sees the ruler has been dropped, you *consciously* decide to catch the ruler. It isn't automatic.
 
-### You can't override a reflex action!
+### You can't override a reflex action
 
 Yes, you can!
 
-When picking up a hot plate (please don't try this), the reflex action will make you drop it almost immediately. However, it is possible to consciously override these reflexes.
+When picking up a hot plate or tray (don't try it!), the reflex action will make you drop it almost immediately. However, it is possible to consciously override these reflexes.
 
 You don't need to know this but the way the brain prevents the reflexes is by sending signals through inhibitionary nerves to prevent nerves firing.
 
-You can learn more about inhibiting reflexes on this [StackExchange post](https://biology.stackexchange.com/questions/39768/how-are-reflexes-suppressed).
-
+You can learn more about how animals inhibit reflex actions [here](https://biology.stackexchange.com/questions/39768/how-are-reflexes-suppressed).
