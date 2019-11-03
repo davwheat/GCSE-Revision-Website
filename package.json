@@ -10,7 +10,7 @@
     "@material-ui/icons": "^4.5.1",
     "@material-ui/lab": "^4.0.0-alpha.29",
     "@openfonts/lexend-deca_all": "^1.43.0",
-    "@openfonts/lexend-exa_all": "^1.43.0",
+    "@openfonts/lexend-exa_all": "^1.44.0",
     "async": "^3.1.0",
     "clsx": "^1.0.4",
     "eslint-plugin-flowtype": "^4.3.0",
