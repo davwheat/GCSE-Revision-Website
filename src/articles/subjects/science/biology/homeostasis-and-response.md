@@ -92,7 +92,7 @@ Imagine a toddler in the kitchen...
 
 ## Synapses
 
-**Synapses** are the *fancy* name for the part of a nerve cell used to connect multiple nerves or neurons together in a chain. The cells don't actually touch, so they can't transfer an actual electrical charge. Instead they use ***CHEMICALS!!!***
+**Synapses** are the _fancy_ name for the part of a nerve cell used to connect multiple nerves or neurons together in a chain. The cells don't actually touch, so they can't transfer an actual electrical charge. Instead they use **_CHEMICALS!!!_**
 
 1. The **connection** between two **neurons** is called a **synapse**.
 2. The nerve signal is transferred by **chemicals** that diffuse (move) across the gap between the neurons.
@@ -118,9 +118,9 @@ They are a way for the body to automatically respond to a stimulus to minimise d
 ![An example reflex arc for nearing a flame](articles/biology/homeostasis-reflex-action.png)
 
 1. The **stimulus** is the object that triggers the reflex action (e.g. a hot pan).
-2. The **receptor** is the thing in the skin that *detects* the stimulus (e.g. a change in temperature)
+2. The **receptor** is the thing in the skin that _detects_ the stimulus (e.g. a change in temperature)
 3. The **sensory nerve** sends a message from the receptor to the **relay nerve** which is inside the CNS (spinal cord for reflex actions).
-4. The **relay nerve** *relays* the message from the sensory nerve, to the **motor nerve**.
+4. The **relay nerve** _relays_ the message from the sensory nerve, to the **motor nerve**.
 5. The **motor nerve** sends impulses to the **effector**.
 6. The **effector** produces a **response** (e.g. contracts muscles to move hand away from the flame).
 
@@ -132,7 +132,7 @@ Some students get confused about reflex actions and call conscious action reflex
 
 Some students, when discussing the ruler drop test for measuring reaction time, call it a reflex action. **This is incorrect.**
 
-A reflex action must not be made consciously: it is made automatically. When your eye sees the ruler has been dropped, you *consciously* decide to catch the ruler. It isn't automatic.
+A reflex action must not be made consciously: it is made automatically. When your eye sees the ruler has been dropped, you _consciously_ decide to catch the ruler. It isn't automatic.
 
 ### You can't override a reflex action
 
