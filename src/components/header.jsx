@@ -191,8 +191,6 @@ const DrawerMenuItem = ({ item: itemProp }) => {
   const hasSubitems = typeof itemProp.subitems !== "undefined"
   const [expanded, setExpanded] = useState(false)
 
-  console.log(itemProp)
-
   const handleClick = event => {
     setExpanded(!expanded)
 

@@ -85,8 +85,6 @@ const Link = props => {
         </Button>
       )
     } else {
-      console.log(props)
-
       return (
         <AnchorLink
           style={{ color: theme.palette.primary.main }}
