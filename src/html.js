@@ -29,8 +29,7 @@ export default function HTML(props) {
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
         </noscript>
-        <div key={`body`} id="___gatsby">       
-          <p style={{textAlign: "center",marginTop: "300px",fontSize: "20px", color: "blue"}}>Loading...</p> 
+        <div key={`body`} id="___gatsby">
           {props.body}
         </div>
         {props.postBodyComponents}
