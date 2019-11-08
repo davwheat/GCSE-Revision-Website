@@ -23,7 +23,7 @@
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-remove-console": "0.0.2",
     "gatsby-plugin-sharp": "^2.2.36",
-    "gatsby-remark-images": "^3.1.28",
+    "gatsby-remark-images": "^3.1.29",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-theme-material-ui": "^1.0.5",
     "gatsby-transformer-sharp": "^2.3.2",
