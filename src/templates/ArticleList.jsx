@@ -39,6 +39,7 @@ const ArticleList = props => {
                   title
                   date(formatString: "dddd, DD MMMM YYYY")
                   description
+                  topic
                   subject
                 }
                 wordCount {
@@ -53,28 +54,22 @@ const ArticleList = props => {
         const posts = data.allMarkdownRemark.edges
 
         return (
-          <>
-            <Breadcrumbs
-              items={[
-                { label: "Home", href: "/" },
-                { label: subjectLabel, href: props.backUrl },
-                { label: "Articles" },
-              ]}
-            />
-            <H1 gutterBottom>All {subjectLabel} articles</H1>
-            <br />
-            <Grid container spacing={3}>
-              {posts.map((post, i) => {
-                if (post.node.frontmatter.subject !== props.subject) return null
+          <Grid container spacing={3}>
+            {posts.map((post, i) => {
+              // If it's not the subject we want, ignore it
+              if (post.node.frontmatter.subject !== props.subject) return null
 
-                return (
-                  <Grid key={i} item xs={12} sm={6}>
-                    <PostCard post={post} />
-                  </Grid>
-                )
-              })}
-            </Grid>
-          </>
+              // If it's not the topic we want (and we have told the component a topic) ignore it
+              if (props.topic && post.node.frontmatter.topic !== props.topic)
+                return null
+
+              return (
+                <Grid key={i} item xs={12} sm={6}>
+                  <PostCard post={post} />
+                </Grid>
+              )
+            })}
+          </Grid>
         )
       }}
     />
@@ -83,6 +78,7 @@ const ArticleList = props => {
 
 ArticleList.propTypes = {
   subject: PropTypes.string.isRequired,
+  topic: PropTypes.string,
   backUrl: PropTypes.string.isRequired,
 }
 
