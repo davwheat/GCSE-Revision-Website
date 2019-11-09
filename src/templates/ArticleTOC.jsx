@@ -21,7 +21,7 @@ const ArticleTOC = ({ headings }) => {
 
   return (
     <>
-      <H2>Contents</H2>
+      <H2 gutterBottom>Contents</H2>
       <List>
         {headings.map(heading => (
           <ListItem
@@ -40,7 +40,7 @@ const ArticleTOC = ({ headings }) => {
           </ListItem>
         ))}
       </List>
-      <Divider variant="fullWidth" style={{ marginTop: 8, marginBottom: 20 }} />
+      <Divider variant="fullWidth" style={{ marginTop: 16, marginBottom: 32 }} />
     </>
   )
 }

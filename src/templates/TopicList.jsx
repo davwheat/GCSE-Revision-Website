@@ -109,7 +109,7 @@ const TopicCard = props => {
           </P2>
         </>
         <Link
-          button
+          linkIsButton
           color="primary"
           to={`/subjects/${ConvertStringToUrl(
             subject
