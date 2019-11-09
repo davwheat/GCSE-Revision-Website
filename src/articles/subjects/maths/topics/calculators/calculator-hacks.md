@@ -3,6 +3,7 @@ title: "Amazing Calculator HACKS You Can't Do Without!"
 date: "2019-09-29"
 description: "Calculators are key to GCSE Maths but there are so many things that they can do for you which most people don't realise!"
 subject: "maths"
+topic: "calculators"
 ---
 
 Calculators are a crucial part of your GCSE Maths, with two of the three exams requiring one. Why not make the most of them by learning about these cool tips and ticks to speed up your calculations?

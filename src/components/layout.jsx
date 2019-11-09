@@ -5,6 +5,8 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+import CookieConsent, { Cookies } from "react-cookie-consent"
+
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 import React from "react"
@@ -12,7 +14,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "@openfonts/lexend-deca_all"
-import "typeface-work-sans"
+import "typeface-poppins"
 import "typeface-fira-mono"
 
 import "highlight.js"
@@ -24,6 +26,7 @@ import {
   MuiThemeProvider,
   Paper,
   responsiveFontSizes,
+  Button,
 } from "@material-ui/core"
 
 import GitHubIcon from "mdi-react/GithubCircleIcon"
@@ -36,7 +39,7 @@ import { lightBlue, orange } from "@material-ui/core/colors"
 
 const normalFonts = [
   "Lexend Deca",
-  '"Work Sans"',
+  "Poppins",
   "Roboto",
   '"Helvetica Neue"',
   '"Segoe UI"',
@@ -45,7 +48,7 @@ const normalFonts = [
 ].join(",")
 
 const headingFonts = [
-  '"Work Sans"',
+  "Poppins",
   "Lexend Deca",
   "Roboto",
   '"Helvetica Neue"',
@@ -153,6 +156,29 @@ const Layout = ({ children, type }) => {
 
   return (
     <MuiThemeProvider theme={theme}>
+      <CookieConsent
+        location="bottom"
+        enableDeclineButton={false}
+        buttonText="Sounds good!"
+        cookieName="cookieConsent"
+        style={{ background: "#2B373B" }}
+        expires={365} // consent expires in one year
+        // eslint-disable-next-line no-unused-vars
+        ButtonComponent={({ children, style, ...props }) => {
+          props["variant"] = "contained"
+          props["color"] = "primary"
+          props["style"] = { marginRight: theme.spacing() }
+
+          return React.createElement(Button, props, children)
+        }}
+      >
+        For this site to work properly, we need to store cookies on your device.{" "}
+        <span style={{ fontSize: "10px" }}>
+          <Link hasExternalLinkIcon={false} to="http://www.whatarecookies.com/">
+            Learn more about cookies
+          </Link>
+        </span>
+      </CookieConsent>
       <Header siteTitle={data.site.siteMetadata.title} type={type} />
       <div
         style={{
@@ -161,7 +187,8 @@ const Layout = ({ children, type }) => {
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
           marginBottom: theme.spacing(3),
-          marginTop: theme.spacing(2),
+          marginTop:
+            type === "article" ? theme.spacing(4) - 3 : theme.spacing(4), // -3 for articles to account for scroll indicator
         }}
       >
         <main>{children}</main>

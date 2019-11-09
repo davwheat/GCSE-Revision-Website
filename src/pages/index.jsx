@@ -64,7 +64,7 @@ const IndexPage = () => {
                     Coming soon
                   </Button>
                 ) : (
-                  <Link button to={subject.url} size="medium" color="primary">
+                  <Link linkIsButton to={subject.url} size="medium" color="primary">
                     Start revising!
                   </Link>
                 )}

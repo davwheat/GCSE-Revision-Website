@@ -9,7 +9,14 @@ let subjectItems = []
 
 SubjectInfo.forEach(o => {
   if (o.unreleased !== true) {
-    subjectItems.push({ text: o.name, icon: o.icon, href: o.url })
+    subjectItems.push({
+      text: o.name,
+      icon: o.icon,
+      href: o.url,
+      subitems: o.subitems
+        ? o.subitems.map(o => ({ text: o.name, href: o.url, ...o }))
+        : undefined,
+    })
   }
 })
 

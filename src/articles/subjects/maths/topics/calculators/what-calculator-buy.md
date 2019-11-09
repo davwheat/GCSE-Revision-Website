@@ -3,6 +3,7 @@ title: "What calculator should I get?"
 date: "2019-10-03"
 description: "There are many different calculators that you can use for your GCSE exams but there are also some important regulations that you have to be aware of."
 subject: "maths"
+topic: "calculators"
 ---
 
 There are many different types and brands of scientific calulcators on the market (.com) that you can buy. Some you can't use for GCSE or A-Level due to rules set in place by the **Joint Council for Qualifications** (JCQ).
