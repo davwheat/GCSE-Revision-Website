@@ -14,6 +14,12 @@ module.exports = {
         head: true, // Optional
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-20362245-5",
+      },
+    },
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
