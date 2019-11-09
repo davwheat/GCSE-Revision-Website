@@ -319,7 +319,9 @@ function markdownRenderers(theme) {
             {ordered ? (
               <ListItemIcon>
                 {checked !== true ? (
-                  <P1 display="inline">{index + 1}.</P1>
+                  <P1 display="inline" style={{ fontWeight: 500 }}>
+                    {index + 1}.
+                  </P1>
                 ) : (
                   <Checkbox
                     edge="start"

@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
@@ -37,13 +38,10 @@ const Article = props => {
   const subjectLabel = ConvertStringToLabel(post.frontmatter.subject)
 
   const subjectGroupUrl = post.frontmatter.subjectGroup
-    ? post.frontmatter.subjectGroup.replace(" ", "-")
+    ? ConvertStringToUrl(post.frontmatter.subjectGroup)
     : null
   const subjectGroupLabel = subjectGroupUrl
-    ? post.frontmatter.subjectGroup
-        .split(" ")
-        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(" ")
+    ? ConvertStringToLabel(post.frontmatter.subjectGroup)
     : null
 
   const groupBreadcrumb = subjectGroupUrl
@@ -71,15 +69,23 @@ const Article = props => {
           ...groupBreadcrumb,
           {
             label: subjectLabel,
-            href: subjectGroupUrl
-              ? `/subjects/${subjectGroupUrl}/${subjectUrl}`
-              : `/subjects/${subjectUrl}`,
+            href: `/subjects/${
+              subjectGroupUrl ? subjectGroupUrl + "/" : ""
+            }${subjectUrl}`,
           },
           {
-            label: "Articles",
-            href: subjectGroupUrl
-              ? `/subjects/${subjectGroupUrl}/${subjectUrl}/articles`
-              : `/subjects/${subjectUrl}/articles`,
+            label: "Topics",
+            href: `/subjects/${
+              subjectGroupUrl ? subjectGroupUrl + "/" : ""
+            }${subjectUrl}/topics`,
+          },
+          {
+            label: ConvertStringToLabel(post.frontmatter.topic),
+            href: `/subjects/${
+              subjectGroupUrl ? subjectGroupUrl + "/" : ""
+            }${subjectUrl}/topics/${ConvertStringToUrl(
+              post.frontmatter.topic
+            )}`,
           },
           { label: post.frontmatter.title },
         ]}
@@ -87,7 +93,7 @@ const Article = props => {
       <article id="article-container">
         <H1 gutterBottom>{post.frontmatter.title}</H1>
         <Subtitle1 align="right" style={{ marginBottom: theme.spacing(6) }}>
-            Published {post.frontmatter.date}
+          Published {post.frontmatter.date}
         </Subtitle1>
         <ArticleTOC headings={post.headings} />
         <Markdown src={post.rawMarkdownBody} />
@@ -112,6 +118,7 @@ export const query = graphql`
         description
         subject
         subjectGroup
+        topic
       }
       fields {
         slug
