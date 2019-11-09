@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@material-ui/core"
 import { Link as GatsbyLink } from "gatsby"
-import AnchorLink from "react-anchor-link-smooth-scroll-hashchange"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 import ExternalLinkIcon from "mdi-react/ExternalLinkIcon"
 
