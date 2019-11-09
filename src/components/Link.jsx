@@ -10,6 +10,8 @@ import {
 import { Link as GatsbyLink } from "gatsby"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
+import { OutboundLink } from "gatsby-plugin-gtag"
+
 import ExternalLinkIcon from "mdi-react/ExternalLinkIcon"
 
 // eslint-disable-next-line react/display-name
@@ -45,6 +47,7 @@ const Link = props => {
       return (
         <Button
           href={to}
+          component={OutboundLink}
           {...newprops}
           target="_blank"
           rel="noopener"
@@ -62,7 +65,13 @@ const Link = props => {
       )
     } else {
       return (
-        <MatLink href={to} {...newprops} target="_blank" rel="noopener">
+        <MatLink
+          href={to}
+          {...newprops}
+          target="_blank"
+          rel="noopener"
+          component={OutboundLink}
+        >
           {children}
           {hasExternalLinkIcon ? (
             <ExternalLinkIcon size={14} className={classes.externalLinkIcon} />
