@@ -10,6 +10,11 @@ import { H1, Subtitle1 } from "../components/EasyText"
 import Breadcrumbs from "../components/Breadcrumbs"
 import SEO from "../components/seo"
 
+import {
+  ConvertStringToLabel,
+  ConvertStringToUrl,
+} from "../functions/stringManipulations"
+
 String.prototype.trimRight = function(charlist) {
   if (charlist === undefined) charlist = "s"
 
@@ -26,11 +31,8 @@ const Article = props => {
   let url = slug.trimRight("/").split("/")
   url.pop()
 
-  const subjectUrl = post.frontmatter.subject.replace(" ", "-")
-  const subjectLabel = post.frontmatter.subject
-    .split(" ")
-    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-    .join(" ")
+  const subjectUrl = ConvertStringToUrl(post.frontmatter.subject)
+  const subjectLabel = ConvertStringToLabel(post.frontmatter.subject)
 
   return (
     <Layout type="article">
