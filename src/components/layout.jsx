@@ -14,7 +14,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import "@openfonts/lexend-deca_all"
-import "typeface-work-sans"
+import "typeface-poppins"
 import "typeface-fira-mono"
 
 import "highlight.js"
@@ -39,7 +39,7 @@ import { lightBlue, orange } from "@material-ui/core/colors"
 
 const normalFonts = [
   "Lexend Deca",
-  '"Work Sans"',
+  "Poppins",
   "Roboto",
   '"Helvetica Neue"',
   '"Segoe UI"',
@@ -48,7 +48,7 @@ const normalFonts = [
 ].join(",")
 
 const headingFonts = [
-  '"Work Sans"',
+  "Poppins",
   "Lexend Deca",
   "Roboto",
   '"Helvetica Neue"',
@@ -187,7 +187,8 @@ const Layout = ({ children, type }) => {
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
           marginBottom: theme.spacing(3),
-          marginTop: theme.spacing(2),
+          marginTop:
+            type === "article" ? theme.spacing(4) - 3 : theme.spacing(4), // -3 for articles to account for scroll indicator
         }}
       >
         <main>{children}</main>

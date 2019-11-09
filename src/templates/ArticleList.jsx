@@ -15,11 +15,15 @@ import Breadcrumbs from "../components/Breadcrumbs"
 
 import TimerIcon from "mdi-react/TimerIcon"
 
-const ArticleList = props => {
-  const subjectLabel = props.subject
+function GenerateLabel(subject) {
+  return subject
     .split(" ")
     .map(s => s.charAt(0).toUpperCase() + s.substring(1))
     .join(" ")
+}
+
+const ArticleList = props => {
+  const subjectLabel = GenerateLabel(props.subject)
 
   return (
     <StaticQuery
@@ -53,6 +57,16 @@ const ArticleList = props => {
       render={data => {
         const posts = data.allMarkdownRemark.edges
 
+        let groupBreadcrumbs = []
+
+        props.subjectGroup &&
+          (groupBreadcrumbs = [
+            {
+              label: GenerateLabel(props.subjectGroup),
+              href: `/subjects/${props.subjectGroup}`,
+            },
+          ])
+
         return (
           <Grid container spacing={3}>
             {posts.map((post, i) => {
@@ -80,6 +94,7 @@ ArticleList.propTypes = {
   subject: PropTypes.string.isRequired,
   topic: PropTypes.string,
   backUrl: PropTypes.string.isRequired,
+  subjectGroup: PropTypes.string,
 }
 
 const PostCard = props => {
@@ -127,7 +142,7 @@ const PostCard = props => {
             {wordCount} words
           </P2>
         </>
-        <Link button color="primary" to={slug} style={{ marginLeft: "auto" }}>
+        <Link linkIsButton color="primary" to={slug} style={{ marginLeft: "auto" }}>
           Read article
         </Link>
       </CardActions>

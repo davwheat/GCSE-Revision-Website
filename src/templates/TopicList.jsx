@@ -28,13 +28,14 @@ const TopicList = props => {
   return (
     <StaticQuery
       query={graphql`
-        query {
+        {
           topics: allMarkdownRemark {
             group(field: frontmatter___topic) {
               fieldValue
               totalCount
               nodes {
                 frontmatter {
+                  subjectGroup
                   subject
                 }
               }
@@ -48,15 +49,30 @@ const TopicList = props => {
         return (
           <Grid container spacing={3}>
             {topics.map(topic => {
-              return (
-                <Grid key={topic.fieldValue} item xs={12} sm={6}>
-                  <TopicCard
-                    topic={topic.fieldValue}
-                    articleCount={topic.totalCount}
-                    subject={subjectLabel}
-                  />
-                </Grid>
-              )
+              console.log(topic)
+
+              if (
+                topic.nodes[0].frontmatter.subject === props.subject ||
+                (topic.nodes[0].frontmatter.subjectGroup &&
+                  props.subjectGroup &&
+                  topic.nodes[0].frontmatter.subjectGroup !==
+                    props.subjectGroup)
+              ) {
+                return (
+                  <Grid key={topic.fieldValue} item xs={12} sm={6}>
+                    <TopicCard
+                      topic={topic.fieldValue}
+                      articleCount={topic.totalCount}
+                      subject={subjectLabel}
+                      subjectGroup={
+                        props.subjectGroup ? props.subjectGroup : undefined
+                      }
+                    />
+                  </Grid>
+                )
+              } else {
+                return null
+              }
             })}
           </Grid>
         )
@@ -67,21 +83,25 @@ const TopicList = props => {
 
 TopicList.propTypes = {
   subject: PropTypes.string.isRequired,
+  subjectGroup: PropTypes.string,
 }
 
 const TopicCard = props => {
-  const { topic, subject, articleCount } = props
+  const { topic, subject, subjectGroup, articleCount } = props
 
   const theme = useTheme()
+
+  const getUrl = (topic, subject, subjectGroup = null) =>
+    `/subjects/${
+      subjectGroup ? ConvertStringToUrl(subjectGroup) + "/" : ""
+    }${ConvertStringToUrl(subject)}/topics/${ConvertStringToUrl(topic)}`
 
   return (
     <Card>
       <CardContent>
         <Link
           className="no-underline"
-          to={`/subjects/${ConvertStringToUrl(
-            subject
-          )}/topics/${ConvertStringToUrl(topic)}`}
+          to={getUrl(topic, subject, subjectGroup)}
         >
           <H4
             component="h2"
@@ -109,11 +129,9 @@ const TopicCard = props => {
           </P2>
         </>
         <Link
-          button
+          linkIsButton
           color="primary"
-          to={`/subjects/${ConvertStringToUrl(
-            subject
-          )}/topics/${ConvertStringToUrl(topic)}`}
+          to={getUrl(topic, subject, subjectGroup)}
           style={{ marginLeft: "auto" }}
         >
           View topic
