@@ -87,6 +87,7 @@ const theme = responsiveFontSizes(
         fontSize: "4.5rem",
         fontWeight: "700",
         fontFamily: headingFonts,
+        lineHeight: 1.2,
       },
       h2: {
         fontSize: "4rem",
