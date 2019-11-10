@@ -115,7 +115,8 @@ const PostCard = props => {
               marginRight: theme.spacing(2.5),
             }}
           >
-            {timeToRead} {timeToRead === 1 ? "min" : "mins"}
+            {Math.round(1.35 * timeToRead)}{" "}
+            {Math.round(1.35 * timeToRead) === 1 ? "mins" : "min"}
           </P2>
           <P2 color="textSecondary" style={{ marginLeft: theme.spacing(0.5) }}>
             {wordCount} words
