@@ -1,7 +1,7 @@
 ---
 title: "Atoms: what actually are those tiny things?"
 date: "2019-11-09"
-description: "Homeostasis — a word that strikes fear into the heart of GCSE students. It's really not that bad at all."
+description: "Every substance is made up of small particles called atoms. Atoms are roughly 0.1 nanometers in radius - that's pretty small!"
 subject: "chemistry"
 subjectGroup: "science"
 topic: "topic 1 - atomic structure and the periodic table"
