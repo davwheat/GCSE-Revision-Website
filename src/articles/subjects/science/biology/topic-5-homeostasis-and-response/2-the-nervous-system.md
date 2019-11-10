@@ -1,6 +1,6 @@
 ---
 title: "The Nervous System"
-date: "2019-11-09"
+date: "2019-11-10"
 description: "Your nervous system is made up of loads of cool, but pretty complex, things. Why not check you know whats going on in there?"
 subject: "biology"
 subjectGroup: "science"
