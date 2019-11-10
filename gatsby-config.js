@@ -55,14 +55,7 @@ module.exports = {
               useMozJpeg: true,
               defaultQuality: 95,
               showCaptions: true,
-              linkImagesToOriginal: false,
-            },
-          },
-          {
-            resolve: `gatsby-remark-images-medium-zoom`,
-            options: {
-              background: "#303030",
-              margin: 50,
+              linkImagesToOriginal: true,
             },
           },
         ],
