@@ -84,13 +84,13 @@ const theme = responsiveFontSizes(
         fontStyle: "italic",
       },
       h1: {
-        fontSize: "4.5rem",
+        fontSize: "4rem",
         fontWeight: "700",
         fontFamily: headingFonts,
-        lineHeight: 1.2,
+        lineHeight: 1.1,
       },
       h2: {
-        fontSize: "4rem",
+        fontSize: "3.65rem",
         fontWeight: "600",
         fontFamily: headingFonts,
       },
