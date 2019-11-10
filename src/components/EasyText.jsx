@@ -1,41 +1,102 @@
+/* eslint-disable react/prop-types */
 import React from "react"
 import { Typography } from "@material-ui/core"
 
-export const H1 = props => (
-  <Typography variant="h1" {...props}>
-    {props.children}
-  </Typography>
-)
+export const H1 = props => {
+  let { gutterBottom, style, ...afterProps } = props
 
-export const H2 = props => (
-  <Typography variant="h2" {...props}>
-    {props.children}
-  </Typography>
-)
+  style = style || {}
 
-export const H3 = props => (
-  <Typography variant="h3" {...props}>
-    {props.children}
-  </Typography>
-)
+  if (gutterBottom) {
+    style.marginBottom = "0.5em"
+  }
 
-export const H4 = props => (
-  <Typography variant="h4" {...props}>
-    {props.children}
-  </Typography>
-)
+  return (
+    <Typography variant="h1" style={style} {...afterProps}>
+      {props.children}
+    </Typography>
+  )
+}
 
-export const H5 = props => (
-  <Typography variant="h5" {...props}>
-    {props.children}
-  </Typography>
-)
+export const H2 = props => {
+  let { gutterBottom, style, ...afterProps } = props
 
-export const H6 = props => (
-  <Typography variant="h6" {...props}>
-    {props.children}
-  </Typography>
-)
+  style = style || {}
+
+  if (gutterBottom) {
+    style.marginBottom = "0.5em"
+  }
+
+  return (
+    <Typography variant="h2" style={style} {...afterProps}>
+      {props.children}
+    </Typography>
+  )
+}
+
+export const H3 = props => {
+  let { gutterBottom, style, ...afterProps } = props
+
+  style = style || {}
+
+  if (gutterBottom) {
+    style.marginBottom = "0.5em"
+  }
+
+  return (
+    <Typography variant="h3" style={style} {...afterProps}>
+      {props.children}
+    </Typography>
+  )
+}
+
+export const H4 = props => {
+  let { gutterBottom, style, ...afterProps } = props
+
+  style = style || {}
+
+  if (gutterBottom) {
+    style.marginBottom = "0.5em"
+  }
+
+  return (
+    <Typography variant="h4" style={style} {...afterProps}>
+      {props.children}
+    </Typography>
+  )
+}
+
+export const H5 = props => {
+  let { gutterBottom, style, ...afterProps } = props
+
+  style = style || {}
+
+  if (gutterBottom) {
+    style.marginBottom = "0.5em"
+  }
+
+  return (
+    <Typography variant="h5" style={style} {...afterProps}>
+      {props.children}
+    </Typography>
+  )
+}
+
+export const H6 = props => {
+  let { gutterBottom, style, ...afterProps } = props
+
+  style = style || {}
+
+  if (gutterBottom) {
+    style.marginBottom = "0.5em"
+  }
+
+  return (
+    <Typography variant="h6" style={style} {...afterProps}>
+      {props.children}
+    </Typography>
+  )
+}
 
 export const Subtitle1 = props => (
   <Typography variant="subtitle1" {...props}>

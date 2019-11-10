@@ -2,8 +2,10 @@ export function ConvertStringToUrl(s) {
   if (typeof s !== "string") return ""
   return s
     .toLowerCase()
+    .replace(/([^a-z0-9\s]+)/gi, "")
     .split(" ")
     .join("-")
+    .replace(/(-)\1+/g, "$1")
 }
 
 export function ConvertStringToLabel(s) {

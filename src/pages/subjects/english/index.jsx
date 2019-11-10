@@ -18,9 +18,9 @@ const SubjectsEnglishPage = () => {
         items={[{ label: "Home", href: "/" }, { label: "English" }]}
       />
       <H1 gutterBottom>English</H1>
-      <H6 component="p" paragraph>
+      <P paragraph>
         {Descriptions["English"]}
-      </H6>
+      </P>
       <br />
       <H3 component="h2">Word of the day</H3>
       <br />

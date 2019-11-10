@@ -49,8 +49,6 @@ const TopicList = props => {
         return (
           <Grid container spacing={3}>
             {topics.map(topic => {
-              console.log(topic)
-
               if (
                 topic.nodes[0].frontmatter.subject === props.subject ||
                 (topic.nodes[0].frontmatter.subjectGroup &&

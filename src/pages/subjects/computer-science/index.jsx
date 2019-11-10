@@ -16,9 +16,9 @@ const SubjectsComputingPage = () => {
         items={[{ label: "Home", href: "/" }, { label: "Computer Science" }]}
       />
       <H1 gutterBottom>Computing</H1>
-      <H6 component="p" paragraph>
+      <P paragraph>
         {Descriptions["Computer Science"]}
-      </H6>
+      </P>
       <H3 gutterBottom component="h2">
         Bitmap Editor
       </H3>

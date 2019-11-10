@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../../../../components/layout"
 import SEO from "../../../../components/seo"
-import { H1, H2, H3, H4, P } from "../../../../components/EasyText"
+import { H1, H2, H3, P } from "../../../../components/EasyText"
 import Breadcrumbs from "../../../../components/Breadcrumbs"
 import Ad from "../../../../components/Advert"
 import TopicList from "../../../../templates/TopicList"
@@ -13,16 +13,16 @@ import Link from "../../../../components/Link"
 const SubjectsBiologyPage = () => {
   return (
     <Layout>
-      <SEO title="Biology" description={Descriptions["Biology"]} />
+      <SEO title="Chemistry" description={Descriptions["Chemistry"]} />
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
           { label: "Science", href: "/subjects/science" },
-          { label: "Biology" },
+          { label: "Chemistry" },
         ]}
       />
-      <H1 gutterBottom>Biology</H1>
-      <P paragraph>{Descriptions["Biology"]}</P>
+      <H1 gutterBottom>Chemistry</H1>
+      <P paragraph>{Descriptions["Chemistry"]}</P>
       <H2 gutterBottom>How are you assessed?</H2>
       <H3 gutterBottom>Triple/Single Science</H3>
       <P paragraph>
@@ -33,13 +33,14 @@ const SubjectsBiologyPage = () => {
         check your work, but it is more than likely you will have longer.
       </P>
       <P paragraph>
-        In <strong>Paper 1</strong>, you will be assessed on topics 1-4: Cell
-        biology; Organisation; Infection and response; and Bioenergetics.
+        In <strong>Paper 1</strong>, you will be assessed on topics 1-5: Atomic
+        structure and the periodic table; Bonding, structure, and the properties
+        of matter; Quantitative chemistry, Chemical changes; and Energy changes.
       </P>
       <P paragraph>
-        In <strong>Paper 2</strong>, you will be assessed on topics 5-7:
-        Homeostasis and response; Inheritance; Variation and evolution; and
-        Ecology.
+        In <strong>Paper 2</strong>, you will be assessed on topics 6-10: The
+        rate and extent of chemical change; Organic chemistry; Chemical
+        analysis, Chemistry of the atmosphere; and Using resources.
       </P>
       <P paragraph>
         <strong>
@@ -49,13 +50,13 @@ const SubjectsBiologyPage = () => {
       </P>
       <P paragraph>
         For full information, see AQA&apos;s{" "}
-        <Link to="https://www.aqa.org.uk/subjects/science/gcse/biology-8461/specification-at-a-glance">
+        <Link to="https://www.aqa.org.uk/subjects/science/gcse/chemistry-8462/specification-at-a-glance">
           Specification at a glance
         </Link>{" "}
         page.
       </P>
       <H2 gutterBottom>Topics</H2>
-      <TopicList subject="biology" subjectGroup="science" />
+      <TopicList subject="chemistry" subjectGroup="science" />
       <Ad />
     </Layout>
   )

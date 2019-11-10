@@ -1,21 +1,35 @@
-import React, { Component } from "react"
+import React from "react"
+import PropTypes from "prop-types"
 
-export default class Ad extends Component {
-  componentDidMount() {
-    (window.adsbygoogle = window.adsbygoogle || []).push({})
+import AdSense from "react-adsense-ad"
+
+const Advert = props => {
+  const { type } = props
+  let slot = ""
+
+  switch (type) {
+    default:
+    case "banner":
+      slot = "4237027635"
+      break
   }
 
-  render() {
-    return (
-      <div className="ad">
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-2701335557132384"
-          // data-ad-slot="xxxxxxxxxx"
-          data-ad-format="auto"
-        />
-      </div>
-    )
-  }
+  return (
+    <AdSense.Google
+      client="ca-pub-2701335557132384"
+      slot={slot}
+      format="auto"
+      responsive="true"
+    />
+  )
 }
+
+Advert.propTypes = {
+  type: PropTypes.oneOf(["banner"]),
+}
+
+Advert.defaultProps = {
+  type: "banner",
+}
+
+export default Advert

@@ -63,10 +63,10 @@ const StyledTableCell = withStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     fontWeight: 700,
-    fontSize: 14,
+    fontSize: 16,
   },
   body: {
-    fontSize: 14,
+    fontSize: 16,
     borderRight: "1px solid rgba(81, 81, 81, 1)",
   },
 }))(TableCell)
@@ -244,7 +244,8 @@ function markdownRenderers(theme) {
     table: props => (
       <Paper
         style={{
-          width: "100%",
+          width: "max-content",
+          margin: "auto",
           marginTop: theme.spacing(3),
           marginBottom: theme.spacing(3),
           overflowX: "auto",

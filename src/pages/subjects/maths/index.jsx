@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
-import { H1, H6, H3 } from "../../../components/EasyText"
+import { H1, H2, H3, P } from "../../../components/EasyText"
 import TopicList from "../../../templates/TopicList"
 import Breadcrumbs from "../../../components/Breadcrumbs"
 import Ad from "../../../components/Advert"
@@ -18,12 +18,8 @@ const SubjectsMathsPage = () => {
       />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Maths" }]} />
       <H1 gutterBottom>Maths</H1>
-      <H6 component="p" paragraph>
-        {Descriptions["Maths"]}
-      </H6>
-      <H3 gutterBottom component="h2">
-        Topics
-      </H3>
+      <P paragraph>{Descriptions["Maths"]}</P>
+      <H2 gutterBottom>Topics</H2>
       <TopicList subject="maths" />
       <Ad />
     </Layout>

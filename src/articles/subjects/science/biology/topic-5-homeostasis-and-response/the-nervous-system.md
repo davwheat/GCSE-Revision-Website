@@ -4,7 +4,7 @@ date: "2019-11-09"
 description: "Your nervous system is made up of loads of cool, but pretty complex, things. Why not check you know whats going on in there?"
 subject: "biology"
 subjectGroup: "science"
-topic: "homeostasis and response"
+topic: "topic 5 - homeostasis and response"
 ---
 
 # The Nervous System

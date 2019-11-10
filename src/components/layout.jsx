@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import CookieConsent, { Cookies } from "react-cookie-consent"
+import CookieConsent from "react-cookie-consent"
 
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 
@@ -84,25 +84,29 @@ const theme = responsiveFontSizes(
         fontStyle: "italic",
       },
       h1: {
+        fontSize: "4.5rem",
+        fontWeight: "700",
+        fontFamily: headingFonts,
+      },
+      h2: {
         fontSize: "4rem",
         fontWeight: "600",
         fontFamily: headingFonts,
       },
-      h2: {
-        fontSize: "3rem",
-        fontWeight: "bold",
-        fontFamily: headingFonts,
-      },
       h3: {
+        fontWeight: "500",
         fontFamily: headingFonts,
       },
       h4: {
+        fontWeight: "500",
         fontFamily: headingFonts,
       },
       h5: {
+        fontWeight: "500",
         fontFamily: headingFonts,
       },
       h6: {
+        fontWeight: "500",
         fontFamily: normalFonts,
       },
       button: {
