@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 
-import { H1, H4, P2 } from "../components/EasyText"
+import { H4, P2 } from "../components/EasyText"
 import {
   Card,
   Grid,
@@ -142,6 +142,7 @@ const TopicCard = props => {
 TopicCard.propTypes = {
   topic: PropTypes.string.isRequired,
   subject: PropTypes.string.isRequired,
+  subjectGroup: PropTypes.string,
   articleCount: PropTypes.number.isRequired,
 }
 
