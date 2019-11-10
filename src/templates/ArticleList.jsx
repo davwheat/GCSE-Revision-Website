@@ -20,7 +20,7 @@ const ArticleList = props => {
       query={graphql`
         query {
           allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
+            sort: { fields: [frontmatter___date], order: ASC }
           ) {
             edges {
               node {
@@ -97,7 +97,7 @@ const PostCard = props => {
           </H4>
         </Link>
         <Subtitle2 color="textSecondary" gutterBottom>
-          {date}
+          Published on {date}
         </Subtitle2>
 
         <P gutterBottom>{description ? description : excerpt}</P>
