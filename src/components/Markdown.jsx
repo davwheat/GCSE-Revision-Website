@@ -49,6 +49,7 @@ import { P, H2, H3, H4, H5, H6, P1, Subtitle2 } from "./EasyText"
 import Quote from "./Blockquote"
 
 import textToSafeId from "../functions/textToSafeId"
+import LinkIcon from "mdi-react/LinkVariantIcon"
 
 Lowlight.registerLanguage("js", js)
 Lowlight.registerLanguage("py", py)
@@ -83,16 +84,6 @@ const HeadingLevelToComponent = (level, props) => {
         },
       },
     },
-    headingLink: {
-      visibility: "hidden",
-      display: "inline-block",
-      position: "absolute",
-      top: "calc(50% - 8px)",
-      marginLeft: theme.spacing(),
-      fontSize: 16,
-      color: `${theme.palette.secondary.main} !important`,
-      fontWeight: 500,
-    },
   }))()
 
   switch (level) {
@@ -105,13 +96,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H2>
       )
     case 2:
@@ -123,13 +107,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H3>
       )
     case 3:
@@ -141,13 +118,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H4>
       )
     case 4:
@@ -159,13 +129,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H5>
       )
     case 5:
@@ -177,13 +140,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H6>
       )
     case 6:
@@ -195,13 +151,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </Subtitle2>
       )
 
@@ -215,13 +164,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </Subtitle2>
       )
   }
@@ -350,12 +292,14 @@ const Markdown = props => {
   const renderers = markdownRenderers(theme)
 
   return (
-    <ReactMarkdown
-      plugins={[RemarkMathPlugin]}
-      source={src}
-      escapeHtml={false}
-      renderers={renderers}
-    />
+    <div style={{ marginLeft: 4, marginRight: 4 }}>
+      <ReactMarkdown
+        plugins={[RemarkMathPlugin]}
+        source={src}
+        escapeHtml={false}
+        renderers={renderers}
+      />
+    </div>
   )
 }
 
