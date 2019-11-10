@@ -3,8 +3,6 @@ import PropTypes, { string } from "prop-types"
 
 import { Howl } from "howler"
 
-import "@openfonts/lexend-exa_all"
-
 // window.fetch polyfill
 import "whatwg-fetch"
 
@@ -165,9 +163,8 @@ const WordOfTheDay = () => {
               component="h3"
               style={{
                 fontFamily: [
-                  "Lexend Exa",
+                  "Poppins",
                   "Lexend Deca",
-                  '"Work Sans"',
                   "Roboto",
                   '"Helvetica Neue"',
                   '"Segoe UI"',
