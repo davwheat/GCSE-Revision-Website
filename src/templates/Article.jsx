@@ -92,7 +92,7 @@ const Article = props => {
       />
       <article id="article-container">
         <H1 gutterBottom>{post.frontmatter.title}</H1>
-        <Subtitle1 align="right" style={{ marginBottom: theme.spacing(6) }}>
+        <Subtitle1 align="right" style={{ marginBottom: theme.spacing(4) }}>
           Published {post.frontmatter.date}
         </Subtitle1>
         <ArticleTOC headings={post.headings} />
