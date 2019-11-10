@@ -67,7 +67,7 @@ Imagine a toddler in the kitchen...
 
 1. The **connection** between two **neurons** is called a **synapse**.
 2. The nerve signal is transferred by **chemicals** that diffuse (move) across the gap between the neurons.
-3. The chemicalsset off a new **electrical signal** in the next neuron.
+3. The chemicals set off a new **electrical signal** in the next neuron.
 
 ![Labelled diagram of a synapse](articles/biology/nerve-synapse.jpg)
 
