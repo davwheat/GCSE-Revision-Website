@@ -17,8 +17,8 @@ const Image = props => {
                 relativePath
                 name
                 childImageSharp {
-                  fluid(maxHeight: 400) {
-                    ...GatsbyImageSharpFluid_withWebp
+                  fluid(quality: 80, maxHeight: 500) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
