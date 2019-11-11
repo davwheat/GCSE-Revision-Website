@@ -107,17 +107,33 @@ const Link = props => {
     }
   } else {
     if (linkIsButton === true) {
-      return (
-        <Button component={AdapterLink} to={to} {...newprops}>
-          {children}
-        </Button>
-      )
+      if (to.startsWith("/")) {
+        return (
+          <Button component="a" href={to} {...newprops}>
+            {children}
+          </Button>
+        )
+      } else {
+        return (
+          <Button component={AdapterLink} to={to} {...newprops}>
+            {children}
+          </Button>
+        )
+      }
     } else {
-      return (
-        <MatLink component={GatsbyLink} to={to} {...newprops}>
-          {children}
-        </MatLink>
-      )
+      if (to.startsWith("/")) {
+        return (
+          <MatLink component="a" href={to} {...newprops}>
+            {children}
+          </MatLink>
+        )
+      } else {
+        return (
+          <MatLink component={GatsbyLink} to={to} {...newprops}>
+            {children}
+          </MatLink>
+        )
+      }
     }
   }
 }

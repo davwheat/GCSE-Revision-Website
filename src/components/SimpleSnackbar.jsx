@@ -7,7 +7,6 @@ import {
   Snackbar,
   SnackbarContent,
   IconButton,
-  useTheme,
 } from "@material-ui/core"
 import { amber, green } from "@material-ui/core/colors"
 

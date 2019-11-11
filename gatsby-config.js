@@ -8,6 +8,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-adsense`,
       options: {
         googleAdClientId: "ca-pub-2701335557132384",

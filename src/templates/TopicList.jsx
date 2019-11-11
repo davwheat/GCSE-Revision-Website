@@ -15,6 +15,7 @@ import Link from "../components/Link"
 import {
   ConvertStringToLabel,
   ConvertStringToUrl,
+  ConvertStringToTopicUrl,
 } from "../functions/stringManipulations"
 
 import ArticlesIcon from "mdi-react/NewspaperVariantMultipleOutlineIcon"
@@ -92,7 +93,9 @@ const TopicCard = props => {
   const getUrl = (topic, subject, subjectGroup = null) =>
     `/subjects/${
       subjectGroup ? ConvertStringToUrl(subjectGroup) + "/" : ""
-    }${ConvertStringToUrl(subject)}/topics/${ConvertStringToUrl(topic)}`
+    }${ConvertStringToUrl(subject)}/topics/${ConvertStringToTopicUrl(
+      ConvertStringToUrl(topic)
+    )}`
 
   return (
     <Card>

@@ -69,7 +69,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `viewport`,
-          content: `minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no`,
+          content: `width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no`,
         },
       ].concat(meta)}
     />
@@ -77,7 +77,7 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `en-GB`,
   meta: [],
   description: ``,
 }

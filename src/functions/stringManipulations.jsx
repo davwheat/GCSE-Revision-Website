@@ -8,6 +8,13 @@ export function ConvertStringToUrl(s) {
     .replace(/(-)\1+/g, "$1")
 }
 
+export function ConvertStringToTopicUrl(s) {
+  //s = "topic-1-atomic-structure-..."
+  let s1 = s.split("-") // ["topic", "1", "atomic", ...]
+
+  return `${s1[0]}-${s1[1]}` // "topic-1"
+}
+
 export function ConvertStringToLabel(s) {
   if (typeof s !== "string") return ""
   return s

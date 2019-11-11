@@ -49,7 +49,6 @@ import { P, H2, H3, H4, H5, H6, P1, Subtitle2 } from "./EasyText"
 import Quote from "./Blockquote"
 
 import textToSafeId from "../functions/textToSafeId"
-import LinkIcon from "mdi-react/LinkVariantIcon"
 
 Lowlight.registerLanguage("js", js)
 Lowlight.registerLanguage("py", py)
