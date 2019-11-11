@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
-import { H1, H6, H3 } from "../../../components/EasyText"
+import { H1, H2, P } from "../../../components/EasyText"
 import Breadcrumbs from "../../../components/Breadcrumbs"
 import Ad from "../../../components/Advert"
 
@@ -18,11 +18,11 @@ const SubjectsEnglishPage = () => {
         items={[{ label: "Home", href: "/" }, { label: "English" }]}
       />
       <H1 gutterBottom>English</H1>
-      <H6 component="p" paragraph>
+      <P paragraph>
         {Descriptions["English"]}
-      </H6>
+      </P>
       <br />
-      <H3 component="h2">Word of the day</H3>
+      <H2>Word of the day</H2>
       <br />
       <WordOfTheDay />
       <Ad />

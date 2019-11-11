@@ -63,10 +63,10 @@ const StyledTableCell = withStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
     fontWeight: 700,
-    fontSize: 14,
+    fontSize: 16,
   },
   body: {
-    fontSize: 14,
+    fontSize: 16,
     borderRight: "1px solid rgba(81, 81, 81, 1)",
   },
 }))(TableCell)
@@ -74,7 +74,7 @@ const StyledTableCell = withStyles(theme => ({
 const HeadingLevelToComponent = (level, props) => {
   // Start with H2 because H1 is generated automatically from the title in the MD doc
 
-  const classes = makeStyles(theme => ({
+  const classes = makeStyles(() => ({
     heading: {
       position: "relative",
       "&:hover": {
@@ -82,16 +82,6 @@ const HeadingLevelToComponent = (level, props) => {
           visibility: "visible",
         },
       },
-    },
-    headingLink: {
-      visibility: "hidden",
-      display: "inline-block",
-      position: "absolute",
-      top: "calc(50% - 8px)",
-      marginLeft: theme.spacing(),
-      fontSize: 16,
-      color: `${theme.palette.secondary.main} !important`,
-      fontWeight: 500,
     },
   }))()
 
@@ -105,13 +95,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H2>
       )
     case 2:
@@ -123,13 +106,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H3>
       )
     case 3:
@@ -141,13 +117,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H4>
       )
     case 4:
@@ -159,13 +128,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H5>
       )
     case 5:
@@ -177,13 +139,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </H6>
       )
     case 6:
@@ -195,13 +150,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </Subtitle2>
       )
 
@@ -215,13 +163,6 @@ const HeadingLevelToComponent = (level, props) => {
           className={classes.heading}
         >
           {props.children}
-          <Link
-            className={classes.headingLink}
-            to={`#${textToSafeId(props.children[0].props.value)}`}
-            title="Link to this section"
-          >
-            #
-          </Link>
         </Subtitle2>
       )
   }
@@ -244,7 +185,8 @@ function markdownRenderers(theme) {
     table: props => (
       <Paper
         style={{
-          width: "100%",
+          width: "max-content",
+          margin: "auto",
           marginTop: theme.spacing(3),
           marginBottom: theme.spacing(3),
           overflowX: "auto",
@@ -349,12 +291,14 @@ const Markdown = props => {
   const renderers = markdownRenderers(theme)
 
   return (
-    <ReactMarkdown
-      plugins={[RemarkMathPlugin]}
-      source={src}
-      escapeHtml={false}
-      renderers={renderers}
-    />
+    <div style={{ marginLeft: 4, marginRight: 4 }}>
+      <ReactMarkdown
+        plugins={[RemarkMathPlugin]}
+        source={src}
+        escapeHtml={false}
+        renderers={renderers}
+      />
+    </div>
   )
 }
 

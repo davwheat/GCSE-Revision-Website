@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
-import { H1, H6, H3, P } from "../../../components/EasyText"
+import { H1, H2, P } from "../../../components/EasyText"
 import Link from "../../../components/Link"
 import Breadcrumbs from "../../../components/Breadcrumbs"
 import Ad from "../../../components/Advert"
@@ -18,15 +18,22 @@ const SubjectsSciencePage = () => {
         items={[{ label: "Home", href: "/" }, { label: "Science" }]}
       />
       <H1 gutterBottom>Science</H1>
-      <H6 component="p" paragraph>
-        {Descriptions["Science"]}
-      </H6>
-      <H3 gutterBottom component="h2">
-        Select course
-      </H3>
+      <P paragraph>{Descriptions["Science"]}</P>
+      <H2 gutterBottom>Select course</H2>
       <List>
         <ListItem button component={Link} to="/subjects/science/biology">
           <ListItemText>Biology</ListItemText>
+        </ListItem>
+        <ListItem button component={Link} to="/subjects/science/chemistry">
+          <ListItemText>Chemistry</ListItemText>
+        </ListItem>
+        <ListItem
+          button
+          component={Link}
+          to="/subjects/science/physics"
+          disabled
+        >
+          <ListItemText>Physics</ListItemText>
         </ListItem>
       </List>
       <Ad />

@@ -1,7 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-import { P2 } from "./EasyText"
 import { makeStyles } from "@material-ui/core"
 
 const Quote = props => {
@@ -17,9 +15,10 @@ const Quote = props => {
       )}px ${theme.spacing(bottomMultiplier)}px`,
       padding: theme.spacing(2),
       paddingBottom: theme.spacing(0.5),
-      color: theme.palette.text.secondary,
+      color: theme.palette.text.primary,
       "& p": {
-        ...theme.typography.body2,
+        ...theme.typography.body1,
+        fontSize: "1.3rem !important",
       },
     },
   }))()

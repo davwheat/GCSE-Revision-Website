@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 
-import { H1, H4, Subtitle2, P, P2 } from "../components/EasyText"
+import { H4, Subtitle2, P, P2 } from "../components/EasyText"
 import {
   Card,
   Grid,
@@ -11,26 +11,16 @@ import {
   useTheme,
 } from "@material-ui/core"
 import Link from "../components/Link"
-import Breadcrumbs from "../components/Breadcrumbs"
 
 import TimerIcon from "mdi-react/TimerIcon"
 
-function GenerateLabel(subject) {
-  return subject
-    .split(" ")
-    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-    .join(" ")
-}
-
 const ArticleList = props => {
-  const subjectLabel = GenerateLabel(props.subject)
-
   return (
     <StaticQuery
       query={graphql`
         query {
           allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: DESC }
+            sort: { fields: [frontmatter___date], order: ASC }
           ) {
             edges {
               node {
@@ -56,16 +46,6 @@ const ArticleList = props => {
       `}
       render={data => {
         const posts = data.allMarkdownRemark.edges
-
-        let groupBreadcrumbs = []
-
-        props.subjectGroup &&
-          (groupBreadcrumbs = [
-            {
-              label: GenerateLabel(props.subjectGroup),
-              href: `/subjects/${props.subjectGroup}`,
-            },
-          ])
 
         return (
           <Grid container spacing={3}>
@@ -93,7 +73,6 @@ const ArticleList = props => {
 ArticleList.propTypes = {
   subject: PropTypes.string.isRequired,
   topic: PropTypes.string,
-  backUrl: PropTypes.string.isRequired,
   subjectGroup: PropTypes.string,
 }
 
@@ -118,7 +97,7 @@ const PostCard = props => {
           </H4>
         </Link>
         <Subtitle2 color="textSecondary" gutterBottom>
-          {date}
+          Published on {date}
         </Subtitle2>
 
         <P gutterBottom>{description ? description : excerpt}</P>
@@ -136,13 +115,19 @@ const PostCard = props => {
               marginRight: theme.spacing(2.5),
             }}
           >
-            {timeToRead} {timeToRead === 1 ? "min" : "mins"}
+            {Math.round(1.35 * timeToRead)}{" "}
+            {Math.round(1.35 * timeToRead) === 1 ? "mins" : "min"}
           </P2>
           <P2 color="textSecondary" style={{ marginLeft: theme.spacing(0.5) }}>
             {wordCount} words
           </P2>
         </>
-        <Link linkIsButton color="primary" to={slug} style={{ marginLeft: "auto" }}>
+        <Link
+          linkIsButton
+          color="primary"
+          to={slug}
+          style={{ marginLeft: "auto" }}
+        >
           Read article
         </Link>
       </CardActions>

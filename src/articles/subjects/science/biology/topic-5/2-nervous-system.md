@@ -1,15 +1,15 @@
 ---
 title: "The Nervous System"
-date: "2019-11-09"
+date: "2019-11-10"
 description: "Your nervous system is made up of loads of cool, but pretty complex, things. Why not check you know whats going on in there?"
 subject: "biology"
 subjectGroup: "science"
-topic: "homeostasis and response"
+topic: "topic 5 - homeostasis and response"
 ---
 
-# The Nervous System
+# What the Nervous System does
 
-**The Nervous System** allows humans to react to their surroundings and coordinate their behaviour.
+The **Nervous System** allows humans to **react** to their surroundings and **coordinate** their behaviour both **consciously** and by **reflex**.
 
 ## How the Nervous System reacts
 
@@ -67,7 +67,7 @@ Imagine a toddler in the kitchen...
 
 1. The **connection** between two **neurons** is called a **synapse**.
 2. The nerve signal is transferred by **chemicals** that diffuse (move) across the gap between the neurons.
-3. The chemicalsset off a new **electrical signal** in the next neuron.
+3. The chemicals set off a new **electrical signal** in the next neuron.
 
 ![Labelled diagram of a synapse](articles/biology/nerve-synapse.jpg)
 

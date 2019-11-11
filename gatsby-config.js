@@ -8,6 +8,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-adsense`,
       options: {
         googleAdClientId: "ca-pub-2701335557132384",
@@ -49,11 +55,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1000,
-              withWebp: true,
+              maxWidth: 750,
+              withWebp: false,
               backgroundColor: "#303030",
               useMozJpeg: true,
-              defaultQuality: 85,
+              defaultQuality: 95,
               showCaptions: true,
               linkImagesToOriginal: true,
             },
@@ -68,7 +74,7 @@ module.exports = {
         name: `GCSE Revision Website`,
         short_name: `GCSE Revision`,
         start_url: `/?utm_source=pwa`,
-        background_color: `#ae5c2d`,
+        background_color: `#303030`,
         theme_color: `#ff9800`,
         display: `standalone`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.

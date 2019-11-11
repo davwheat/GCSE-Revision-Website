@@ -3,11 +3,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 
-import { useTheme } from "@material-ui/core"
+import { useTheme, Divider } from "@material-ui/core"
 
 import Layout from "../components/layout"
 import Markdown from "../components/Markdown"
-import { H1, Subtitle1 } from "../components/EasyText"
+import { H1, Subtitle1, P } from "../components/EasyText"
 import Breadcrumbs from "../components/Breadcrumbs"
 import SEO from "../components/seo"
 
@@ -16,7 +16,10 @@ import ArticleTOC from "./ArticleTOC"
 import {
   ConvertStringToLabel,
   ConvertStringToUrl,
+  ConvertStringToTopicUrl,
 } from "../functions/stringManipulations"
+import PeriodicTable from "../components/PeriodicTable"
+import Link from "../components/Link"
 
 String.prototype.trimRight = function(charlist) {
   if (charlist === undefined) charlist = "s"
@@ -53,6 +56,10 @@ const Article = props => {
       ]
     : []
 
+  if (subjectLabel === "Chemistry") {
+    post.headings.push({ value: "Interactive Periodic Table", depth: 1 })
+  }
+
   return (
     <Layout type="article">
       <SEO
@@ -83,8 +90,8 @@ const Article = props => {
             label: ConvertStringToLabel(post.frontmatter.topic),
             href: `/subjects/${
               subjectGroupUrl ? subjectGroupUrl + "/" : ""
-            }${subjectUrl}/topics/${ConvertStringToUrl(
-              post.frontmatter.topic
+            }${subjectUrl}/topics/${ConvertStringToTopicUrl(
+              ConvertStringToUrl(post.frontmatter.topic)
             )}`,
           },
           { label: post.frontmatter.title },
@@ -92,12 +99,34 @@ const Article = props => {
       />
       <article id="article-container">
         <H1 gutterBottom>{post.frontmatter.title}</H1>
-        <Subtitle1 align="right" style={{ marginBottom: theme.spacing(6) }}>
+        <Subtitle1 align="right" style={{ marginBottom: theme.spacing(4) }}>
           Published {post.frontmatter.date}
         </Subtitle1>
         <ArticleTOC headings={post.headings} />
         <Markdown src={post.rawMarkdownBody} />
       </article>
+      {subjectLabel === "Chemistry" ? (
+        <>
+          <Divider
+            variant="middle"
+            style={{
+              marginTop: theme.spacing(4),
+              marginBottom: theme.spacing(4),
+            }}
+          />
+
+          <H1 gutterBottom id="interactive-periodic-table">
+            Interactive Periodic Table
+          </H1>
+
+          <PeriodicTable />
+          <P paragraph style={{ marginTop: theme.spacing(2) }}>
+            If this periodic table doesn&apos;t seem to work properly for you,
+            you can download a PDF copy of the official AQA periodic table from{" "}
+            <Link to="/files/periodic-table-insert.pdf">this link</Link>.
+          </P>
+        </>
+      ) : null}
     </Layout>
   )
 }

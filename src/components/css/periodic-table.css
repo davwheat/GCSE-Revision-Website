@@ -1,0 +1,97 @@
+.element {
+  width: 125px;
+  height: 150px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  background: #333;
+
+  padding: 2px;
+
+  outline: 2px solid #000;
+  /* fixes weird sticking out outline */
+  outline-offset: -1px;
+
+  overflow: hidden;
+
+  transition: cubic-bezier(0, 1.1, 0.3, 1) 150ms transform,
+    cubic-bezier(0, 1.1, 0.3, 1) 150ms background-color;
+}
+
+.element:hover:not(.element--descriptive) {
+  width: 125px;
+  height: 150px;
+
+  transform: scale(1.75) translateZ(0);
+  backface-visibility: hidden;
+
+  background-color: #333;
+
+  padding: 2px;
+  overflow: hidden;
+
+  z-index: 10000000;
+
+  transition: cubic-bezier(0.19, 1, 0.22, 1) 250ms transform,
+    cubic-bezier(0.19, 1, 0.22, 1) 250ms background-color;
+}
+
+.element.element--key {
+  width: calc(125px * 3);
+  grid-column-start: 4;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  overflow: visible;
+}
+
+.element.element--key::before {
+  display: block;
+  content: "Key";
+  position: absolute;
+  top: -48px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.element .number {
+  font-size: 20px;
+  display: block;
+  justify-self: flex-start;
+  font-weight: 300;
+}
+
+.element .symbol {
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+}
+
+.element .element-name {
+  font-size: 16px;
+  text-align: center;
+  hyphens: auto;
+}
+
+.element-1 {
+  grid-column-start: 8;
+}
+
+.element-2 {
+  grid-column-start: -2;
+}
+
+.element-5,
+.element-13 {
+  grid-column-start: 13;
+}
+
+.element--extra-info {
+  margin-top: 16px;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}

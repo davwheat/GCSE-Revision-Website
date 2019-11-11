@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 
-import { H1, H4, P2 } from "../components/EasyText"
+import { H4, P2 } from "../components/EasyText"
 import {
   Card,
   Grid,
@@ -15,6 +15,7 @@ import Link from "../components/Link"
 import {
   ConvertStringToLabel,
   ConvertStringToUrl,
+  ConvertStringToTopicUrl,
 } from "../functions/stringManipulations"
 
 import ArticlesIcon from "mdi-react/NewspaperVariantMultipleOutlineIcon"
@@ -49,8 +50,6 @@ const TopicList = props => {
         return (
           <Grid container spacing={3}>
             {topics.map(topic => {
-              console.log(topic)
-
               if (
                 topic.nodes[0].frontmatter.subject === props.subject ||
                 (topic.nodes[0].frontmatter.subjectGroup &&
@@ -94,7 +93,9 @@ const TopicCard = props => {
   const getUrl = (topic, subject, subjectGroup = null) =>
     `/subjects/${
       subjectGroup ? ConvertStringToUrl(subjectGroup) + "/" : ""
-    }${ConvertStringToUrl(subject)}/topics/${ConvertStringToUrl(topic)}`
+    }${ConvertStringToUrl(subject)}/topics/${ConvertStringToTopicUrl(
+      ConvertStringToUrl(topic)
+    )}`
 
   return (
     <Card>
@@ -144,6 +145,7 @@ const TopicCard = props => {
 TopicCard.propTypes = {
   topic: PropTypes.string.isRequired,
   subject: PropTypes.string.isRequired,
+  subjectGroup: PropTypes.string,
   articleCount: PropTypes.number.isRequired,
 }
 
