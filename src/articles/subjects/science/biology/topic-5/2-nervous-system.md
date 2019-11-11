@@ -7,9 +7,9 @@ subjectGroup: "science"
 topic: "topic 5 - homeostasis and response"
 ---
 
-# The Nervous System
+# What the Nervous System does
 
-**The Nervous System** allows humans to react to their surroundings and coordinate their behaviour.
+The **Nervous System** allows humans to **react** to their surroundings and **coordinate** their behaviour both **consciously** and by **reflex**.
 
 ## How the Nervous System reacts
 
