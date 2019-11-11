@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useRef } from "react"
 import PropTypes from "prop-types"
 
 import "./css/periodic-table.css"
@@ -6,7 +6,7 @@ import "./css/periodic-table.css"
 import { makeStyles, Paper } from "@material-ui/core"
 import PanZoom from "react-easy-panzoom"
 
-import { H2, H5, H6, P, P2 } from "./EasyText"
+import { H2, H5, H6, P } from "./EasyText"
 import { ConvertStringToUrl } from "../functions/stringManipulations"
 
 import tableData from "../constants/elements"

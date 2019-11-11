@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../../../../components/layout"
 import SEO from "../../../../components/seo"
-import { H1, H2, H3, H4, P } from "../../../../components/EasyText"
+import { H1, H2, H3, P } from "../../../../components/EasyText"
 import Breadcrumbs from "../../../../components/Breadcrumbs"
 import Ad from "../../../../components/Advert"
 import TopicList from "../../../../templates/TopicList"

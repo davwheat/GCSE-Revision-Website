@@ -7,7 +7,7 @@ subjectGroup: "science"
 topic: "topic 1 - atomic structure and the periodic table"
 ---
 
-# What is an element?
+# What's an element
 
 An element is a substance made up of **atoms** that all have the **same** number of **protons** in their **nucleus**.
 

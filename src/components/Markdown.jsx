@@ -74,7 +74,7 @@ const StyledTableCell = withStyles(theme => ({
 const HeadingLevelToComponent = (level, props) => {
   // Start with H2 because H1 is generated automatically from the title in the MD doc
 
-  const classes = makeStyles(theme => ({
+  const classes = makeStyles(() => ({
     heading: {
       position: "relative",
       "&:hover": {

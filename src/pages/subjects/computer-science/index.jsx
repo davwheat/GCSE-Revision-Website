@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
-import { H1, H6, H3, P } from "../../../components/EasyText"
+import { H1, H3, P } from "../../../components/EasyText"
 import Link from "../../../components/Link"
 import Breadcrumbs from "../../../components/Breadcrumbs"
 
@@ -16,9 +16,7 @@ const SubjectsComputingPage = () => {
         items={[{ label: "Home", href: "/" }, { label: "Computer Science" }]}
       />
       <H1 gutterBottom>Computing</H1>
-      <P paragraph>
-        {Descriptions["Computer Science"]}
-      </P>
+      <P paragraph>{Descriptions["Computer Science"]}</P>
       <H3 gutterBottom component="h2">
         Bitmap Editor
       </H3>

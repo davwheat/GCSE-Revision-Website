@@ -31,7 +31,7 @@ import { P, P2, H4 } from "./EasyText"
 
 import SeededRandom from "seedrandom"
 
-import "./WordOfTheDay.css"
+import "./css/WordOfTheDay.css"
 
 import { Words } from "../audio"
 

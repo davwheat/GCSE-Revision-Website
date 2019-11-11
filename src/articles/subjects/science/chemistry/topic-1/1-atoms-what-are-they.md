@@ -7,7 +7,7 @@ subjectGroup: "science"
 topic: "topic 1 - atomic structure and the periodic table"
 ---
 
-# What is an atom?
+# What's an atom
 
 Every substance is made up of small particles called **atoms**. Atoms are roughly **1 × 10<sup>-10</sup> m (0.1 nanometers) in radius** - pretty small!
 
