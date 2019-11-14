@@ -7,8 +7,6 @@
 
 import CookieConsent from "react-cookie-consent"
 
-import useMediaQuery from "@material-ui/core/useMediaQuery"
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
@@ -27,6 +25,7 @@ import {
   Paper,
   responsiveFontSizes,
   Button,
+  useMediaQuery,
 } from "@material-ui/core"
 
 import GitHubIcon from "mdi-react/GithubCircleIcon"

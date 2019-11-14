@@ -27,12 +27,7 @@ const SubjectsSciencePage = () => {
         <ListItem button component={Link} to="/subjects/science/chemistry">
           <ListItemText>Chemistry</ListItemText>
         </ListItem>
-        <ListItem
-          button
-          component={Link}
-          to="/subjects/science/physics"
-          disabled
-        >
+        <ListItem button component={Link} to="/subjects/science/physics">
           <ListItemText>Physics</ListItemText>
         </ListItem>
       </List>

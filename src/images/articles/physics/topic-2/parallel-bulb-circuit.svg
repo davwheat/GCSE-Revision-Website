@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51.777mm" height="44.368mm" version="1.1" viewBox="0 0 51.777 44.368" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(-26.272 -72.221)">
+<g transform="translate(-28.726 39.31)">
+<g transform="matrix(.26458 0 0 .26458 45.127 26.215)" color="#ffffff" font-family="'Segoe UI', Arial, sans-serif" font-weight="300" letter-spacing="1px" stroke="#fff">
+<g stroke-linecap="square" stroke-width="2">
+<line x1="180" x2="230" y1="120" y2="120"/>
+<line x1="60" x2="90" y1="120" y2="120"/>
+<line x1="60" x2="90" y1="180" y2="180"/>
+<line x1="180" x2="230" y1="180" y2="180"/>
+<line x1="90" x2="105" y1="180" y2="180"/>
+<path d="m105 180v-3l5 3-5 3v-3"/>
+</g>
+<text x="100" y="168" dy="0.30000001em" font-size="10px" text-anchor="middle">0.5 A</text>
+<line x1="90" x2="105" y1="120" y2="120" stroke-linecap="square" stroke-width="2"/>
+<path d="m105 120v-3l5 3-5 3v-3" stroke-linecap="square" stroke-width="2"/>
+<text x="100" y="108" dy="0.30000001em" font-size="10px" text-anchor="middle">0.5 A</text>
+<line x1="60" x2="60" y1="50" y2="85" stroke-linecap="square" stroke-width="2"/>
+<path d="m60 85h3l-3 5-3-5h3" stroke-linecap="square" stroke-width="2"/>
+<text x="52" y="70" dy="0.30000001em" font-size="10px" text-anchor="end">1 A</text>
+<g stroke-linecap="square" stroke-width="2">
+<line x1="110" x2="133" y1="180" y2="180"/>
+<line x1="157" x2="180" y1="180" y2="180"/>
+<line x1="137" x2="153" y1="172" y2="188"/>
+<line x1="137" x2="153" y1="188" y2="172"/>
+</g>
+<circle cx="145" cy="180" r="12" fill-opacity="0" stroke-width="2"/>
+<g stroke-linecap="square" stroke-width="2">
+<line x1="230" x2="230" y1="50" y2="180"/>
+<line x1="60" x2="60" y1="90" y2="180"/>
+<line x1="110" x2="133" y1="120" y2="120"/>
+<line x1="157" x2="180" y1="120" y2="120"/>
+<line x1="137" x2="153" y1="112" y2="128"/>
+<line x1="137" x2="153" y1="128" y2="112"/>
+</g>
+<circle cx="145" cy="120" r="12" fill-opacity="0" stroke-width="2"/>
+<g stroke-linecap="square" stroke-width="2">
+<line x1="60" x2="136" y1="50" y2="50"/>
+<line x1="136" x2="136" y1="40" y2="60"/>
+<line x1="142" x2="142" y1="45" y2="55"/>
+<line x1="148" x2="148" y1="40" y2="60"/>
+<line x1="154" x2="154" y1="45" y2="55"/>
+<line x1="154" x2="230" y1="50" y2="50"/>
+</g>
+<text x="145" y="38" dy="-0.30000001em" font-size="12px" text-anchor="middle">+12V</text>
+<circle cx="230" cy="120" r="2" stroke-width="2"/>
+<circle cx="60" cy="120" r="2" stroke-width="2"/>
+</g>
+</g>
+</g>
+</svg>
