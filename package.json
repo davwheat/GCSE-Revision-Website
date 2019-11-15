@@ -22,7 +22,7 @@
     "gatsby-plugin-offline": "^3.0.21",
     "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-remove-console": "0.0.2",
-    "gatsby-plugin-sharp": "^2.2.39",
+    "gatsby-plugin-sharp": "^2.3.0",
     "gatsby-remark-images": "^3.1.31",
     "gatsby-source-filesystem": "^2.1.37",
     "gatsby-theme-material-ui": "^1.0.5",
