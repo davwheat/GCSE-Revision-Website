@@ -34,7 +34,7 @@
     "katex": "^0.11.1",
     "mdi-react": "^6.2.0",
     "prop-types": "^15.7.2",
-    "react": "^16.11.0",
+    "react": "^16.12.0",
     "react-adsense-ad": "^3.4.0",
     "react-anchor-link-smooth-scroll": "git+https://github.com/john555/react-anchor-link-smooth-scroll.git",
     "react-cookie-consent": "^2.5.0",
