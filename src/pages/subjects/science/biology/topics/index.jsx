@@ -15,9 +15,9 @@ const MathsArticleList = () => {
       <SEO title="Biology Topics" />
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
-          { label: "Science", href: "/subjects/science" },
-          { label: "Biology", href: "/subjects/science/biology" },
+          { label: "Home", href: "" },
+          { label: "Science", href: "subjects/science" },
+          { label: "Biology", href: "subjects/science/biology" },
           { label: "Topics" },
         ]}
       />

@@ -47,11 +47,6 @@ const IndexPage = () => {
         {subjects.map(subject => (
           <Grid item xs={12} sm={12} md={6} key={subject.name}>
             <Card className={classes.card}>
-              {/* <CardMedia
-                  className={classes.media}
-                  image="/static/images/cards/contemplative-reptile.jpg"
-                  title="Contemplative Reptile"
-                /> */}
               <CardContent>
                 <H5 gutterBottom component="h3">
                   {subject.name}
@@ -64,7 +59,12 @@ const IndexPage = () => {
                     Coming soon
                   </Button>
                 ) : (
-                  <Link linkIsButton to={subject.url} size="medium" color="primary">
+                  <Link
+                    linkIsButton
+                    to={subject.url}
+                    size="medium"
+                    color="primary"
+                  >
                     Start revising!
                   </Link>
                 )}

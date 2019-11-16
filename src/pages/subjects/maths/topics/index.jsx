@@ -15,14 +15,14 @@ const MathsArticleList = () => {
       <SEO title="Maths Topics" />
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
-          { label: "Maths", href: "/subjects/maths" },
+          { label: "Home", href: "" },
+          { label: "Maths", href: "subjects/maths" },
           { label: "Topics" },
         ]}
       />
 
       <H1 gutterBottom>Maths Topics</H1>
-      <TopicList subject="maths" backUrl="/subjects/maths" />
+      <TopicList subject="maths" backUrl="subjects/maths" />
       <Ad />
     </Layout>
   )

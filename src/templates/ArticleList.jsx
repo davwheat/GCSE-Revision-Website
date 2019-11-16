@@ -87,7 +87,7 @@ const PostCard = props => {
   return (
     <Card>
       <CardContent>
-        <Link className="no-underline" to={slug}>
+        <Link className="no-underline" to={slug.substr(1)}>
           <H4
             component="h2"
             color="primary"
@@ -125,7 +125,7 @@ const PostCard = props => {
         <Link
           linkIsButton
           color="primary"
-          to={slug}
+          to={slug.substr(1)}
           style={{ marginLeft: "auto" }}
         >
           Read article

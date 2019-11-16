@@ -91,7 +91,7 @@ const TopicCard = props => {
   const theme = useTheme()
 
   const getUrl = (topic, subject, subjectGroup = null) =>
-    `/subjects/${
+    `subjects/${
       subjectGroup ? ConvertStringToUrl(subjectGroup) + "/" : ""
     }${ConvertStringToUrl(subject)}/topics/${ConvertStringToTopicUrl(
       ConvertStringToUrl(topic)

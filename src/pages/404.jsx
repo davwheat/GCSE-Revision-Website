@@ -16,7 +16,7 @@ const NotFoundPage = () => {
         <H1 gutterBottom>Oops!</H1>
         <P paragraph>Looks like that page doesn&apos;t exist.</P>
         <P paragraph>
-          <Link to="/">Let&apos;s go home</Link>
+          <Link to="">Let&apos;s go home</Link>
         </P>
         <Ad />
       </Box>

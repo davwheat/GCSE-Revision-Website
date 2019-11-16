@@ -13,10 +13,10 @@ const BioTopic5ArticleList = () => {
       <SEO title="Biology: Homeostasis & Response" />
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
-          { label: "Science", href: "/subjects/science" },
-          { label: "Biology", href: "/subjects/science/biology" },
-          { label: "Topics", href: "/subjects/science/biology/topics" },
+          { label: "Home", href: "" },
+          { label: "Science", href: "subjects/science" },
+          { label: "Biology", href: "subjects/science/biology" },
+          { label: "Topics", href: "subjects/science/biology/topics" },
           { label: "Topic 5 - Homeostasis and Response" },
         ]}
       />

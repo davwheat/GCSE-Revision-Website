@@ -15,19 +15,19 @@ const SubjectsSciencePage = () => {
     <Layout>
       <SEO title="Science" description={Descriptions["Science"]} />
       <Breadcrumbs
-        items={[{ label: "Home", href: "/" }, { label: "Science" }]}
+        items={[{ label: "Home", href: "" }, { label: "Science" }]}
       />
       <H1 gutterBottom>Science</H1>
       <P paragraph>{Descriptions["Science"]}</P>
       <H2 gutterBottom>Select course</H2>
       <List>
-        <ListItem button component={Link} to="/subjects/science/biology">
+        <ListItem button component={Link} to="subjects/science/biology">
           <ListItemText>Biology</ListItemText>
         </ListItem>
-        <ListItem button component={Link} to="/subjects/science/chemistry">
+        <ListItem button component={Link} to="subjects/science/chemistry">
           <ListItemText>Chemistry</ListItemText>
         </ListItem>
-        <ListItem button component={Link} to="/subjects/science/physics">
+        <ListItem button component={Link} to="subjects/science/physics">
           <ListItemText>Physics</ListItemText>
         </ListItem>
       </List>
