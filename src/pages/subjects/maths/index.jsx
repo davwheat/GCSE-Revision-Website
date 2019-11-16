@@ -16,7 +16,7 @@ const SubjectsMathsPage = () => {
         title="Maths"
         description="Our site provides useful tips and tricks to help you make the most of your calculator as well as maths quizzes and articles on harder topics."
       />
-      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Maths" }]} />
+      <Breadcrumbs items={[{ label: "Home", href: "" }, { label: "Maths" }]} />
       <H1 gutterBottom>Maths</H1>
       <P paragraph>{Descriptions["Maths"]}</P>
       <H2 gutterBottom>Topics</H2>

@@ -35,7 +35,7 @@ const AboutPage = () => (
     <P paragraph>Enjoy your revision!</P>
 
     <P paragraph>
-      <Link to="/">Go home</Link>
+      <Link to="">Go home</Link>
     </P>
     
     <Ad />

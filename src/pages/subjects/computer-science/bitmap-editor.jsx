@@ -12,8 +12,8 @@ const ComputingBitmapEditorPage = () => {
       <SEO title="Computing" />
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
-          { label: "Computer Science", href: "/subjects/computer-science" },
+          { label: "Home", href: "" },
+          { label: "Computer Science", href: "subjects/computer-science" },
           { label: "Bitmap Editor" },
         ]}
       />

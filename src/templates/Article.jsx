@@ -51,7 +51,7 @@ const Article = props => {
     ? [
         {
           label: subjectGroupLabel,
-          href: `/subjects/${subjectGroupUrl}`,
+          href: `subjects/${subjectGroupUrl}`,
         },
       ]
     : []
@@ -72,23 +72,23 @@ const Article = props => {
       />
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
+          { label: "Home", href: "" },
           ...groupBreadcrumb,
           {
             label: subjectLabel,
-            href: `/subjects/${
+            href: `subjects/${
               subjectGroupUrl ? subjectGroupUrl + "/" : ""
             }${subjectUrl}`,
           },
           {
             label: "Topics",
-            href: `/subjects/${
+            href: `subjects/${
               subjectGroupUrl ? subjectGroupUrl + "/" : ""
             }${subjectUrl}/topics`,
           },
           {
             label: ConvertStringToLabel(post.frontmatter.topic),
-            href: `/subjects/${
+            href: `subjects/${
               subjectGroupUrl ? subjectGroupUrl + "/" : ""
             }${subjectUrl}/topics/${ConvertStringToTopicUrl(
               ConvertStringToUrl(post.frontmatter.topic)

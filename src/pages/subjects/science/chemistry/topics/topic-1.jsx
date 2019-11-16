@@ -13,10 +13,10 @@ const ChemTopic1ArticleList = () => {
       <SEO title="Chemistry: Atomic Structure & the Periodic Table" />
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
-          { label: "Science", href: "/subjects/science" },
-          { label: "Chemistry", href: "/subjects/science/chemistry" },
-          { label: "Topics", href: "/subjects/science/chemistry/topics" },
+          { label: "Home", href: "" },
+          { label: "Science", href: "subjects/science" },
+          { label: "Chemistry", href: "subjects/science/chemistry" },
+          { label: "Topics", href: "subjects/science/chemistry/topics" },
           { label: "Topic 1 - Atomic Structure and the Periodic Table" },
         ]}
       />

@@ -13,7 +13,7 @@ const SubjectsComputingPage = () => {
     <Layout>
       <SEO title="Computing" />
       <Breadcrumbs
-        items={[{ label: "Home", href: "/" }, { label: "Computer Science" }]}
+        items={[{ label: "Home", href: "" }, { label: "Computer Science" }]}
       />
       <H1 gutterBottom>Computing</H1>
       <P paragraph>{Descriptions["Computer Science"]}</P>
@@ -26,7 +26,7 @@ const SubjectsComputingPage = () => {
         binary.
       </P>
       <P paragraph>
-        <Link to="/subjects/computer-science/bitmap-editor/">
+        <Link to="subjects/computer-science/bitmap-editor/">
           Open Bitmap Editor
         </Link>
       </P>
@@ -38,7 +38,7 @@ const SubjectsComputingPage = () => {
         it covered!
       </P>
       <P paragraph>
-        <Link to="/subjects/computer-science/base-converter/">
+        <Link to="subjects/computer-science/base-converter/">
           Open Base Converter
         </Link>
       </P>

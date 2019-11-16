@@ -16,8 +16,8 @@ const SubjectsBiologyPage = () => {
       <SEO title="Biology" description={Descriptions["Biology"]} />
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
-          { label: "Science", href: "/subjects/science" },
+          { label: "Home", href: "" },
+          { label: "Science", href: "subjects/science" },
           { label: "Biology" },
         ]}
       />

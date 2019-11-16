@@ -15,7 +15,7 @@ const SubjectsEnglishPage = () => {
     <Layout>
       <SEO title="English" />
       <Breadcrumbs
-        items={[{ label: "Home", href: "/" }, { label: "English" }]}
+        items={[{ label: "Home", href: "" }, { label: "English" }]}
       />
       <H1 gutterBottom>English</H1>
       <P paragraph>

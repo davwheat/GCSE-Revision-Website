@@ -13,10 +13,10 @@ const PhysicsTopic2ArticleList = () => {
       <SEO title="Physics: Electricity" />
       <Breadcrumbs
         items={[
-          { label: "Home", href: "/" },
-          { label: "Science", href: "/subjects/science" },
-          { label: "Physics", href: "/subjects/science/physics" },
-          { label: "Topics", href: "/subjects/science/physics/topics" },
+          { label: "Home", href: "" },
+          { label: "Science", href: "subjects/science" },
+          { label: "Physics", href: "subjects/science/physics" },
+          { label: "Topics", href: "subjects/science/physics/topics" },
           { label: "Topic 2 - Electricity" },
         ]}
       />
