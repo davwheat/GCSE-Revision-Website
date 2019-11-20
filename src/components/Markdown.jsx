@@ -16,11 +16,6 @@ import {
   TableRow,
   TableCell,
   withStyles,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Checkbox,
   makeStyles,
 } from "@material-ui/core"
 
@@ -70,6 +65,18 @@ const StyledTableCell = withStyles(theme => ({
     borderRight: "1px solid rgba(81, 81, 81, 1)",
   },
 }))(TableCell)
+
+const useStyles = makeStyles(theme => ({
+  embeddedList: {
+    "& > li": {
+      backgroundSize: 20,
+      marginLeft: -28,
+      paddingLeft: 28,
+      background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1000'%3E%3Cpath transform='translate(0,450)' fill='%23fff' d='M742 508q-9-9-9-22.5t9-22.5l172-172H32q-13 0-22.5-9.5T0 259t9.5-22.5T32 227h883L743 55q-10-9-10-22.5T743 10q9-10 22.5-10T788 10l227 226q9 9 9 22.5t-9 22.5L787 508q-9 9-22.5 9t-22.5-9z'/%3E%3C/svg%3E") no-repeat left top`,
+    },
+    listStyle: "none",
+  },
+}))
 
 const HeadingLevelToComponent = (level, props) => {
   // Start with H2 because H1 is generated automatically from the title in the MD doc
@@ -170,7 +177,7 @@ const HeadingLevelToComponent = (level, props) => {
 // Renderer docs: https://github.com/rexxars/react-markdown#node-types
 let row = 0
 
-function markdownRenderers(theme) {
+function markdownRenderers(theme, classes) {
   return {
     root: props => <article>{props.children}</article>,
     paragraph: props => <P paragraph>{props.children}</P>,
@@ -233,49 +240,44 @@ function markdownRenderers(theme) {
     },
     list: props => {
       const { ordered } = props
-      return (
-        <Paper>
-          <List
-            component={ordered ? "ol" : "ul"}
+      console.log(props)
+
+      if (props.depth > 0) {
+        return (
+          <>
+            {ordered ? (
+              <ol className={classes.embeddedList}>{props.children}</ol>
+            ) : (
+              <ul className={classes.embeddedList}>{props.children}</ul>
+            )}
+          </>
+        )
+      } else {
+        return (
+          <Paper
+            elevation={2}
             style={{
+              padding: theme.spacing(2),
               marginBottom: theme.spacing(2),
             }}
           >
-            {props.children}
-          </List>
-        </Paper>
-      )
+            {ordered ? <ol>{props.children}</ol> : <ul>{props.children}</ul>}
+          </Paper>
+        )
+      }
     },
     listItem: props => {
-      const { children, index, checked, ordered } = props
+      const { children } = props
       return (
         <>
-          <ListItem
-            divider
-            disableRipple
-            disableTouchRipple
-            component="li"
-            button
-            style={{ cursor: "unset" }}
+          <li
+            style={{
+              marginBottom: theme.spacing(),
+              marginTop: theme.spacing(),
+            }}
           >
-            {ordered ? (
-              <ListItemIcon>
-                {checked !== true ? (
-                  <P1 display="inline" style={{ fontWeight: 500 }}>
-                    {index + 1}.
-                  </P1>
-                ) : (
-                  <Checkbox
-                    edge="start"
-                    checked={checked}
-                    disabled
-                    tabIndex={-1}
-                  />
-                )}
-              </ListItemIcon>
-            ) : null}
-            <ListItemText primary={children} />
-          </ListItem>
+            <P>{children}</P>
+          </li>
         </>
       )
     },
@@ -286,9 +288,10 @@ function markdownRenderers(theme) {
 
 const Markdown = props => {
   const theme = useTheme()
+  const classes = useStyles()
 
   const { src } = props
-  const renderers = markdownRenderers(theme)
+  const renderers = markdownRenderers(theme, classes)
 
   return (
     <div style={{ marginLeft: 4, marginRight: 4 }}>

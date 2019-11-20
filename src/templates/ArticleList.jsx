@@ -9,6 +9,7 @@ import {
   CardContent,
   CardActions,
   useTheme,
+  CardActionArea,
 } from "@material-ui/core"
 import Link from "../components/Link"
 
@@ -86,22 +87,27 @@ const PostCard = props => {
 
   return (
     <Card>
-      <CardContent>
-        <Link className="no-underline" to={slug.substr(1)}>
+      <CardActionArea
+        component={Link}
+        className="no-underline color-inherit"
+        to={slug.substr(1)}
+      >
+        <CardContent>
           <H4
             component="h2"
             color="primary"
+            className="keepColor"
             style={{ marginBottom: theme.spacing(0.75) }}
           >
             {title}
           </H4>
-        </Link>
-        <Subtitle2 color="textSecondary" gutterBottom>
-          Published on {date}
-        </Subtitle2>
+          <Subtitle2 color="textSecondary" gutterBottom>
+            Published on {date}
+          </Subtitle2>
 
-        <P gutterBottom>{description ? description : excerpt}</P>
-      </CardContent>
+          <P gutterBottom>{description ? description : excerpt}</P>
+        </CardContent>
+      </CardActionArea>
       <CardActions disableSpacing>
         <>
           <TimerIcon

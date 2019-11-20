@@ -31,7 +31,14 @@ const styles = makeStyles(() => ({
 }))
 
 const Link = props => {
-  const { to, children, linkIsButton, hasExternalLinkIcon, ...newprops } = props
+  const {
+    to,
+    children,
+    linkIsButton,
+    hasExternalLinkIcon,
+    inheritColor,
+    ...newprops
+  } = props
 
   const classes = styles()
   const theme = useTheme()
@@ -47,6 +54,7 @@ const Link = props => {
       return (
         <Button
           href={to}
+          color={inheritColor ? "inherit" : "primary"}
           component={OutboundLink}
           {...newprops}
           target="_blank"
@@ -66,6 +74,7 @@ const Link = props => {
     } else {
       return (
         <MatLink
+          color={inheritColor ? "inherit" : "primary"}
           href={to}
           {...newprops}
           target="_blank"
@@ -83,6 +92,7 @@ const Link = props => {
     if (linkIsButton === true) {
       return (
         <Button
+          color={inheritColor ? "inherit" : "primary"}
           component={AnchorLink}
           offset={AnchorOffset}
           href={to}
@@ -96,7 +106,7 @@ const Link = props => {
     } else {
       return (
         <AnchorLink
-          style={{ color: theme.palette.primary.main }}
+          style={{ color: inheritColor ? null : theme.palette.primary.main }}
           offset={AnchorOffset}
           href={to}
           {...newprops}
@@ -109,13 +119,23 @@ const Link = props => {
     if (linkIsButton === true) {
       if (to.startsWith("/")) {
         return (
-          <Button component="a" href={to} {...newprops}>
+          <Button
+            color={inheritColor ? "inherit" : "primary"}
+            component="a"
+            href={to}
+            {...newprops}
+          >
             {children}
           </Button>
         )
       } else {
         return (
-          <Button component={AdapterLink} to={to} {...newprops}>
+          <Button
+            color={inheritColor ? "inherit" : "primary"}
+            component={AdapterLink}
+            to={`/` + to}
+            {...newprops}
+          >
             {children}
           </Button>
         )
@@ -123,13 +143,23 @@ const Link = props => {
     } else {
       if (to.startsWith("/")) {
         return (
-          <MatLink component="a" href={to} {...newprops}>
+          <MatLink
+            color={inheritColor ? "inherit" : "primary"}
+            component="a"
+            href={to}
+            {...newprops}
+          >
             {children}
           </MatLink>
         )
       } else {
         return (
-          <MatLink component={GatsbyLink} to={to} {...newprops}>
+          <MatLink
+            color={inheritColor ? "inherit" : "primary"}
+            component={GatsbyLink}
+            to={`/` + to}
+            {...newprops}
+          >
             {children}
           </MatLink>
         )

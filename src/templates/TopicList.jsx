@@ -9,6 +9,7 @@ import {
   CardContent,
   CardActions,
   useTheme,
+  CardActionArea,
 } from "@material-ui/core"
 import Link from "../components/Link"
 
@@ -51,10 +52,10 @@ const TopicList = props => {
           <Grid container spacing={3}>
             {topics.map(topic => {
               if (
-                topic.nodes[0].frontmatter.subject === props.subject ||
-                (topic.nodes[0].frontmatter.subjectGroup &&
-                  props.subjectGroup &&
-                  topic.nodes[0].frontmatter.subjectGroup !==
+                (!props.subjectGroup &&
+                  topic.nodes[0].frontmatter.subject === props.subject) ||
+                (topic.nodes[0].frontmatter.subject === props.subject &&
+                  topic.nodes[0].frontmatter.subjectGroup ===
                     props.subjectGroup)
               ) {
                 return (
@@ -99,20 +100,22 @@ const TopicCard = props => {
 
   return (
     <Card>
-      <CardContent>
-        <Link
-          className="no-underline"
-          to={getUrl(topic, subject, subjectGroup)}
-        >
+      <CardActionArea
+        component={Link}
+        className="no-underline color-inherit"
+        to={getUrl(topic, subject, subjectGroup)}
+      >
+        <CardContent>
           <H4
             component="h2"
             color="primary"
+            className="keepColor"
             style={{ marginBottom: theme.spacing(0.75) }}
           >
             {ConvertStringToLabel(topic)}
           </H4>
-        </Link>
-      </CardContent>
+        </CardContent>
+      </CardActionArea>
       <CardActions disableSpacing>
         <>
           <ArticlesIcon

@@ -26,7 +26,7 @@ const SubjectsBiologyPage = () => {
       <H2 gutterBottom>How are you assessed?</H2>
       <H3 gutterBottom>Triple/Single Science</H3>
       <P paragraph>
-        In Triple Science, you will be assesed with <strong>2 papers</strong>.
+        In Triple Science, you will be assessed with <strong>2 papers</strong>.
         Each exam lasts <strong>1 hour 45 minutes</strong> each and is worth{" "}
         <strong>100 marks</strong>. Based on the &quot;1 mark per minute&quot;
         rule, you should have at least 5 minutes at the end of the paper to
