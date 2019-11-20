@@ -11,20 +11,18 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import "typeface-poppins"
-import "typeface-fira-mono"
+import theme from "../constants/theme"
 
 import "highlight.js"
 
 import Header from "./header"
 import {
   Box,
-  createMuiTheme,
   MuiThemeProvider,
   Paper,
-  responsiveFontSizes,
   Button,
   useMediaQuery,
+  Container,
 } from "@material-ui/core"
 
 import GitHubIcon from "mdi-react/GithubCircleIcon"
@@ -33,86 +31,6 @@ import Link from "./Link"
 
 import "./css/layout.css"
 import { Body2 } from "./EasyText"
-import { lightBlue, orange } from "@material-ui/core/colors"
-
-const normalFonts = [
-  "Poppins",
-  "Roboto",
-  '"Helvetica Neue"',
-  '"Segoe UI"',
-  "Arial",
-  "sans-serif",
-].join(",")
-
-const headingFonts = [
-  "Poppins",
-  "Roboto",
-  '"Helvetica Neue"',
-  '"Segoe UI"',
-  "Arial",
-  "sans-serif",
-].join(",")
-
-const theme = responsiveFontSizes(
-  createMuiTheme({
-    palette: {
-      type: "dark",
-      primary: {
-        main: orange[500],
-      },
-      secondary: {
-        main: lightBlue[400],
-      },
-    },
-    typography: {
-      fontFamily: normalFonts,
-      body1: {
-        fontSize: "1.2rem",
-        letterSpacing: "0.5px", // improve readability
-      },
-      body2: {
-        fontSize: "1rem",
-        letterSpacing: "0.4px", // improve readability
-      },
-      caption: {
-        fontSize: "0.95rem",
-        color: "rgba(255, 255, 255, 0.5)", // 'hint' text colour
-        fontStyle: "italic",
-      },
-      h1: {
-        fontSize: "4rem",
-        fontWeight: "700",
-        fontFamily: headingFonts,
-        lineHeight: 1.1,
-      },
-      h2: {
-        fontSize: "3.65rem",
-        fontWeight: "600",
-        fontFamily: headingFonts,
-      },
-      h3: {
-        fontWeight: "500",
-        fontFamily: headingFonts,
-      },
-      h4: {
-        fontWeight: "500",
-        fontFamily: headingFonts,
-      },
-      h5: {
-        fontWeight: "500",
-        fontFamily: headingFonts,
-      },
-      h6: {
-        fontWeight: "500",
-        fontFamily: normalFonts,
-      },
-      button: {
-        fontFamily: normalFonts,
-      },
-    },
-  }),
-  { breakpoints: ["xs", "sm", "md", "lg", "xl"], factor: 2.25 }
-)
 
 const Layout = ({ children, type }) => {
   const data = useStaticQuery(graphql`
@@ -192,7 +110,9 @@ const Layout = ({ children, type }) => {
             type === "article" ? theme.spacing(4) - 3 : theme.spacing(4), // -3 for articles to account for scroll indicator
         }}
       >
-        <main>{children}</main>
+        <Container maxWidth="md">
+          <Box component="main">{children}</Box>
+        </Container>
       </div>
 
       {SmallScreen ? (
