@@ -115,7 +115,7 @@ const Link = props => {
         )
       } else {
         return (
-          <Button component={AdapterLink} to={to} {...newprops}>
+          <Button component={AdapterLink} to={`/` + to} {...newprops}>
             {children}
           </Button>
         )
@@ -129,7 +129,7 @@ const Link = props => {
         )
       } else {
         return (
-          <MatLink component={GatsbyLink} to={to} {...newprops}>
+          <MatLink component={GatsbyLink} to={`/` + to} {...newprops}>
             {children}
           </MatLink>
         )

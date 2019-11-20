@@ -9,24 +9,28 @@ import SEO from "../../../../../components/seo"
 import Ad from "../../../../../components/Advert"
 import Breadcrumbs from "../../../../../components/Breadcrumbs"
 
-const ChemistryArticleList = () => {
+import { Descriptions } from "../../../../../constants/subjectInfo"
+
+const EnglishLangTopics = () => {
   return (
     <Layout>
-      <SEO title="Chemistry Topics" />
+      <SEO
+        title="English Language"
+        description={Descriptions["English Language"]}
+      />
       <Breadcrumbs
         items={[
           { label: "Home", href: "" },
-          { label: "Science", href: "subjects/science" },
-          { label: "Chemistry", href: "subjects/science/chemistry" },
+          { label: "English", href: "subjects/english" },
+          { label: "Language", href: "subjects/english/english-language" },
           { label: "Topics" },
         ]}
       />
-
-      <H1 gutterBottom>Chemistry Topics</H1>
-      <TopicList subject="chemistry" subjectGroup="science" />
+      <H1 gutterBottom>English Language</H1>
+      <TopicList subject="english language" subjectGroup="english" />
       <Ad />
     </Layout>
   )
 }
 
-export default ChemistryArticleList
+export default EnglishLangTopics

@@ -234,48 +234,26 @@ function markdownRenderers(theme) {
     list: props => {
       const { ordered } = props
       return (
-        <Paper>
-          <List
-            component={ordered ? "ol" : "ul"}
-            style={{
-              marginBottom: theme.spacing(2),
-            }}
-          >
-            {props.children}
-          </List>
+        <Paper
+          elevation={2}
+          style={{ padding: theme.spacing(2), marginBottom: theme.spacing(2) }}
+        >
+          {ordered ? <ol>{props.children}</ol> : <ul>{props.children}</ul>}
         </Paper>
       )
     },
     listItem: props => {
-      const { children, index, checked, ordered } = props
+      const { children } = props
       return (
         <>
-          <ListItem
-            divider
-            disableRipple
-            disableTouchRipple
-            component="li"
-            button
-            style={{ cursor: "unset" }}
+          <li
+            style={{
+              marginBottom: theme.spacing(),
+              marginTop: theme.spacing(),
+            }}
           >
-            {ordered ? (
-              <ListItemIcon>
-                {checked !== true ? (
-                  <P1 display="inline" style={{ fontWeight: 500 }}>
-                    {index + 1}.
-                  </P1>
-                ) : (
-                  <Checkbox
-                    edge="start"
-                    checked={checked}
-                    disabled
-                    tabIndex={-1}
-                  />
-                )}
-              </ListItemIcon>
-            ) : null}
-            <ListItemText primary={children} />
-          </ListItem>
+            <P>{children}</P>
+          </li>
         </>
       )
     },

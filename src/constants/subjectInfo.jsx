@@ -14,6 +14,11 @@ const Descriptions = {
   tips, quote memorising tools, and literature knowledge
   organisers. We're always looking to add more to the
   site!`,
+  "English Language": `English Language often gets labelled as 
+  stressful, horrible and downright useless. And to be honest, 
+  that's pretty accurate. GCSE Revise It! can help you manage 
+  this with top tips for each paper as well as many other useful 
+  strategies.`,
   Maths: `Our site provides useful tips and tricks to
   help you make the most of your calculator as well as maths
   quizzes and articles on harder topics.`,
