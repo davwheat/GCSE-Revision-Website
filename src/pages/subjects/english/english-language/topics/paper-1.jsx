@@ -20,10 +20,7 @@ const EnglishLangPaper1ArticleList = () => {
         ]}
       />
       <H1 gutterBottom>English Language: Paper 1</H1>
-      <ArticleList
-        subject="english language"
-        topic="paper 1"
-      />
+      <ArticleList subject="english language" topic="paper 1" />
       <Ad />
     </Layout>
   )

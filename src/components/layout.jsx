@@ -11,7 +11,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import "@openfonts/lexend-deca_all"
 import "typeface-poppins"
 import "typeface-fira-mono"
 
@@ -37,7 +36,6 @@ import { Body2 } from "./EasyText"
 import { lightBlue, orange } from "@material-ui/core/colors"
 
 const normalFonts = [
-  "Lexend Deca",
   "Poppins",
   "Roboto",
   '"Helvetica Neue"',
@@ -48,7 +46,6 @@ const normalFonts = [
 
 const headingFonts = [
   "Poppins",
-  "Lexend Deca",
   "Roboto",
   '"Helvetica Neue"',
   '"Segoe UI"',

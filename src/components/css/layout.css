@@ -46,6 +46,12 @@ a.no-underline:any-link:hover {
   color: #ffa726;
 }
 
+a.color-inherit:any-link,
+a.color-inherit:any-link:hover,
+a.color-inherit:any-link:hover *:not(.keepColor) {
+  color: inherit;
+}
+
 .MuiList-root .MuiListItem-root.MuiListItem-divider:last-child {
   border: none;
 }

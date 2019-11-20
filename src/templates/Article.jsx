@@ -21,10 +21,10 @@ import {
 import PeriodicTable from "../components/PeriodicTable"
 import Link from "../components/Link"
 
-String.prototype.trimRight = function(charlist) {
-  if (charlist === undefined) charlist = "s"
+String.prototype.trimRight = function(charList) {
+  if (charList === undefined) charList = "s"
 
-  return this.replace(new RegExp("[" + charlist + "]+$"), "")
+  return this.replace(new RegExp("[" + charList + "]+$"), "")
 }
 
 const Article = props => {
