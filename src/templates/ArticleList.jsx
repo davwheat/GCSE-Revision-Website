@@ -84,7 +84,7 @@ const ArticleList = props => {
               return (
                 <Box
                   key={i}
-                  style={{ margin: theme.spacing(1.5), maxWidth: 400 }}
+                  style={{ margin: theme.spacing(1.5), maxWidth: 400, width: "50%" }}
                 >
                   <PostCard post={post} />
                 </Box>

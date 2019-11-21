@@ -64,7 +64,11 @@ const TopicList = props => {
                 return (
                   <Box
                     key={topic.fieldValue}
-                    style={{ margin: theme.spacing(1.5), maxWidth: 400 }}
+                    style={{
+                      margin: theme.spacing(1.5),
+                      maxWidth: 400,
+                      width: "50%",
+                    }}
                   >
                     <TopicCard
                       topic={topic.fieldValue}
