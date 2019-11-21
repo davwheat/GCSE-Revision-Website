@@ -1,6 +1,6 @@
 ---
 title: "Communicable disease & types and spreading of pathogens"
-date: "2019-11-09"
+date: "2019-11-21"
 description: \"ARGH! GET AWAY FROM ME!\" is what you'd scream if someone had a communicable disease. Communicable diseases are just diseases that can spread. Done!
 subject: "biology"
 subjectGroup: "science"

@@ -1,6 +1,6 @@
 ---
 title: "Viral & fungal diseases"
-date: "2019-11-09"
+date: "2019-11-21"
 description: "There are loads of diseases caused by viruses and fungi, but let's just stick to four for now."
 subject: "biology"
 subjectGroup: "science"
