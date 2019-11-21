@@ -44,6 +44,7 @@ import { P, H2, H3, H4, H5, H6, P1, Subtitle2 } from "./EasyText"
 import Quote from "./Blockquote"
 
 import textToSafeId from "../functions/textToSafeId"
+import YouTubeEmbed from "./YouTubeEmbed"
 
 Lowlight.registerLanguage("js", js)
 Lowlight.registerLanguage("py", py)
@@ -187,7 +188,18 @@ function markdownRenderers(theme, classes) {
       </Divider>
     ),
     blockquote: props => <Quote>{props.children}</Quote>,
-    link: props => <Link to={props.href}>{props.children}</Link>,
+    link: props => {
+      console.log(props)
+
+      if (
+        props.children.length === 1 &&
+        props.children[0].props.value === props.href
+      ) {
+        return <YouTubeEmbed url={props.href} />
+      } else {
+        return <Link to={props.href}>{props.children}</Link>
+      }
+    },
     linkReference: props => <Link to={props.href}>{props.children}</Link>,
     table: props => (
       <Paper
