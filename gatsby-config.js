@@ -31,7 +31,6 @@ module.exports = {
         anonymize: false,
       },
     },
-    `gatsby-plugin-material-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -87,5 +86,6 @@ module.exports = {
         exclude: ["error", "warn", "info"], // <- will not be removed
       },
     },
+    `gatsby-plugin-material-ui`,
   ],
 }
