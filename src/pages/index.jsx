@@ -47,11 +47,11 @@ const IndexPage = () => {
       <br />
       <H3 component="h2">Subjects</H3>
       <br />
-      <Masonry container spacing={3}>
+      <Masonry>
         {subjects.map(subject => (
           <Box
             key={subject.name}
-            style={{ margin: theme.spacing(1.5), maxWidth: 400 }}
+            style={{ margin: theme.spacing(1.5), maxWidth: 400, width: "50%" }}
           >
             <Card className={classes.card}>
               {subject.unreleased === false ? (

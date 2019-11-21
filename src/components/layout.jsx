@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 /**
  * Layout component that queries for data
  * with Gatsby's useStaticQuery component
@@ -7,7 +8,7 @@
 
 import CookieConsent from "react-cookie-consent"
 
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -23,14 +24,18 @@ import {
   Button,
   useMediaQuery,
   Container,
+  IconButton,
 } from "@material-ui/core"
 
 import GitHubIcon from "mdi-react/GithubCircleIcon"
+import CloseIcon from "mdi-react/CloseIcon"
 
 import Link from "./Link"
 
 import "./css/layout.css"
 import { Body2 } from "./EasyText"
+
+import { SnackbarProvider, useSnackbar } from "notistack"
 
 const Layout = ({ children, type }) => {
   const data = useStaticQuery(graphql`
@@ -43,11 +48,16 @@ const Layout = ({ children, type }) => {
     }
   `)
 
-  const SmallScreen = useMediaQuery("(min-width:600px)")
+  const notistackRef = React.createRef()
+  const onClickDismiss = key => () => {
+    notistackRef.current.closeSnackbar(key)
+  }
+
+  const LargeScreen = useMediaQuery("(min-width:600px)")
 
   const FooterContent = (
     <>
-      {SmallScreen ? (
+      {LargeScreen ? (
         <Box textAlign="center">
           <Body2>
             &copy; {new Date().getFullYear()}
@@ -111,11 +121,30 @@ const Layout = ({ children, type }) => {
         }}
       >
         <Container maxWidth="md">
-          <Box component="main">{children}</Box>
+          <SnackbarProvider
+            preventDuplicate
+            maxSnack={3}
+            autoHideDuration={5000}
+            dense={!LargeScreen}
+            ref={notistackRef}
+            action={key => (
+              <IconButton
+                aria-label="Dismiss notification"
+                onClick={onClickDismiss(key)}
+                size="small"
+                color="inherit"
+              >
+                <CloseIcon />
+              </IconButton>
+            )}
+          >
+            <ServiceWorkerUpdate />
+            <Box component="main">{children}</Box>
+          </SnackbarProvider>
         </Container>
       </div>
 
-      {SmallScreen ? (
+      {LargeScreen ? (
         <Paper
           component="footer"
           style={{
@@ -154,3 +183,31 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+const ServiceWorkerUpdate = () => {
+  const { enqueueSnackbar } = useSnackbar()
+
+  useEffect(() => {
+    if (window.IsWorkerUpdateAvailable === true) {
+      window.onServiceWorkerUpdateReady = () => {
+        enqueueSnackbar(`This site has been updated.`, {
+          action: () => (
+            <Button
+              aria-label="Refresh page"
+              onClick={() => {
+                window.location.reload()
+              }}
+              color="inherit"
+            >
+              Refresh
+            </Button>
+          ),
+          persist: true,
+          variant: "info",
+        })
+      }
+    }
+  })
+
+  return <span style={{ display: "none" }} />
+}
