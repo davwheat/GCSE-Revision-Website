@@ -108,6 +108,8 @@ const TopicCard = props => {
       ConvertStringToUrl(topic)
     )}`
 
+  console.log(ConvertStringToUrl(topic))
+
   return (
     <Card>
       <CardActionArea
