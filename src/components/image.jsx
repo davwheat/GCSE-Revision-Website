@@ -47,7 +47,7 @@ const Image = props => {
           return null
         }
 
-        if (image.node.extension === "svg") {
+        if (image.node.extension === "svg" || image.node.extension === "gif") {
           return (
             <>
               <div
