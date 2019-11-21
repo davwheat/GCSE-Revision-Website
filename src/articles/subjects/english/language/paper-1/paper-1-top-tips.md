@@ -92,7 +92,7 @@ You are advised to spend about **20 minutes** on this question. It is worth **20
 - Use **synonyms**
   - If the statement says _"a darker and more chilling tone"_, don't just repeat _darker_ or _chilling_: use other words like _devastating_, _cataclysmic_, _brooding_, _mysterious_, _foreboding_.
 
-# Section B (QUestion 5)
+# Section B (Question 5)
 
 You are advised to spend about **45 minutes** on this question. It is worth **40 marks**. This question is all about **your ability to produce creative writing**.
 
