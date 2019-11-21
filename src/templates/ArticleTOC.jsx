@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core"
 
 import Link from "../components/Link"
-import { H2 } from "../components/EasyText"
+import { H2, P2 } from "../components/EasyText"
 
 import textToSafeId from "../functions/textToSafeId"
 
@@ -22,7 +22,8 @@ const ArticleTOC = ({ headings }) => {
   return (
     <>
       <H2 gutterBottom>Contents</H2>
-      <List>
+      <P2>Tap on a heading to scroll automatically.</P2>
+      <List dense>
         {headings.map(heading => (
           <ListItem
             button
@@ -30,9 +31,7 @@ const ArticleTOC = ({ headings }) => {
             to={`#${textToSafeId(heading.value)}`}
             key={heading.value}
             style={{
-              paddingLeft: theme.spacing(
-                heading.depth * nestMultiplier
-              ),
+              paddingLeft: theme.spacing(heading.depth * nestMultiplier),
               color: theme.palette.primary.main,
             }}
           >
@@ -40,7 +39,10 @@ const ArticleTOC = ({ headings }) => {
           </ListItem>
         ))}
       </List>
-      <Divider variant="fullWidth" style={{ marginTop: 16, marginBottom: 32 }} />
+      <Divider
+        variant="fullWidth"
+        style={{ marginTop: 16, marginBottom: 32 }}
+      />
     </>
   )
 }

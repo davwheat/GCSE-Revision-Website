@@ -46,6 +46,7 @@
     "react-jsx-parser": "^1.21.0",
     "react-lowlight": "^2.0.0",
     "react-markdown": "^4.2.2",
+    "react-masonry-component": "^6.2.1",
     "rehype-katex": "^2.0.0",
     "remark-math": "^2.0.0",
     "seedrandom": "^3.0.5",

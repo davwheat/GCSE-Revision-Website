@@ -5,12 +5,14 @@ import { graphql, StaticQuery } from "gatsby"
 import { H4, P2 } from "../components/EasyText"
 import {
   Card,
-  Grid,
   CardContent,
   CardActions,
   useTheme,
   CardActionArea,
+  Box,
 } from "@material-ui/core"
+import ArticlesIcon from "mdi-react/NewspaperVariantMultipleOutlineIcon"
+
 import Link from "../components/Link"
 
 import {
@@ -19,13 +21,14 @@ import {
   ConvertStringToTopicUrl,
 } from "../functions/stringManipulations"
 
-import ArticlesIcon from "mdi-react/NewspaperVariantMultipleOutlineIcon"
+import Masonry from "react-masonry-component"
 
 const TopicList = props => {
   const subjectLabel = props.subject
     .split(" ")
     .map(s => s.charAt(0).toUpperCase() + s.substring(1))
     .join(" ")
+  const theme = useTheme()
 
   return (
     <StaticQuery
@@ -49,7 +52,7 @@ const TopicList = props => {
         const topics = data.topics.group
 
         return (
-          <Grid container spacing={3}>
+          <Masonry>
             {topics.map(topic => {
               if (
                 (!props.subjectGroup &&
@@ -59,7 +62,10 @@ const TopicList = props => {
                     props.subjectGroup)
               ) {
                 return (
-                  <Grid key={topic.fieldValue} item xs={12} sm={6}>
+                  <Box
+                    key={topic.fieldValue}
+                    style={{ margin: theme.spacing(1.5), maxWidth: 400 }}
+                  >
                     <TopicCard
                       topic={topic.fieldValue}
                       articleCount={topic.totalCount}
@@ -68,13 +74,13 @@ const TopicList = props => {
                         props.subjectGroup ? props.subjectGroup : undefined
                       }
                     />
-                  </Grid>
+                  </Box>
                 )
               } else {
                 return null
               }
             })}
-          </Grid>
+          </Masonry>
         )
       }}
     />
