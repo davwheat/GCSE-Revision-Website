@@ -240,7 +240,6 @@ function markdownRenderers(theme, classes) {
     },
     list: props => {
       const { ordered } = props
-      console.log(props)
 
       if (props.depth > 0) {
         return (
@@ -258,7 +257,7 @@ function markdownRenderers(theme, classes) {
             elevation={2}
             style={{
               padding: theme.spacing(2),
-              marginBottom: theme.spacing(2),
+              marginBottom: theme.spacing(3),
             }}
           >
             {ordered ? <ol>{props.children}</ol> : <ul>{props.children}</ul>}
