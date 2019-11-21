@@ -9,10 +9,14 @@ export function ConvertStringToUrl(s) {
 }
 
 export function ConvertStringToTopicUrl(s) {
-  //s = "topic-1-atomic-structure-..."
-  let s1 = s.split("-") // ["topic", "1", "atomic", ...]
+  if (s.match(/(topic-)[0-9]+-.*/)) {
+    //s = "topic-1-atomic-structure-..."
+    let s1 = s.split("-") // ["topic", "1", "atomic", ...]
 
-  return `${s1[0]}-${s1[1]}` // "topic-1"
+    return `${s1[0]}-${s1[1]}` // "topic-1"
+  } else {
+    return s
+  }
 }
 
 export function ConvertStringToLabel(s) {

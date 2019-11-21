@@ -47,7 +47,7 @@ const Image = props => {
           return null
         }
 
-        if (image.node.extension === "svg") {
+        if (image.node.extension === "svg" || image.node.extension === "gif") {
           return (
             <>
               <div
@@ -101,14 +101,6 @@ const Image = props => {
                 {ModalOpen ? (
                   <Modal onClose={toggleModal}>
                     <Carousel
-                      styles={{
-                        view: () => ({
-                          // none of react-images styles are passed to <View />
-                          height: "100vh",
-                          width: "100vw",
-                          "object-fit": "contain",
-                        }),
-                      }}
                       views={[
                         { src: image.node.publicURL, caption: props.alt },
                       ]}
