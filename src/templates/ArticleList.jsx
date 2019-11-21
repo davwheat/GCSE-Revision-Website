@@ -3,19 +3,24 @@ import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 
 import { H4, Subtitle2, P, P2 } from "../components/EasyText"
+
 import {
   Card,
-  Grid,
   CardContent,
   CardActions,
   useTheme,
   CardActionArea,
+  Box,
 } from "@material-ui/core"
-import Link from "../components/Link"
-
 import TimerIcon from "mdi-react/TimerIcon"
 
+import Link from "../components/Link"
+
+import Masonry from "react-masonry-component"
+
 const ArticleList = props => {
+  const theme = useTheme()
+
   return (
     <StaticQuery
       query={graphql`
@@ -48,8 +53,26 @@ const ArticleList = props => {
       render={data => {
         const posts = data.allMarkdownRemark.edges
 
+        // return (
+        //   <Grid container spacing={3}>
+        //     {posts.map((post, i) => {
+        //       // If it's not the subject we want, ignore it
+        //       if (post.node.frontmatter.subject !== props.subject) return null
+
+        //       // If it's not the topic we want (and we have told the component a topic) ignore it
+        //       if (props.topic && post.node.frontmatter.topic !== props.topic)
+        //         return null
+
+        //       return (
+        //         <Grid key={i} item xs={12} sm={6}>
+        //           <PostCard post={post} />
+        //         </Grid>
+        //       )
+        //     })}
+        //   </Grid>
+        // )
         return (
-          <Grid container spacing={3}>
+          <Masonry>
             {posts.map((post, i) => {
               // If it's not the subject we want, ignore it
               if (post.node.frontmatter.subject !== props.subject) return null
@@ -59,12 +82,15 @@ const ArticleList = props => {
                 return null
 
               return (
-                <Grid key={i} item xs={12} sm={6}>
+                <Box
+                  key={i}
+                  style={{ margin: theme.spacing(1.5), maxWidth: 400 }}
+                >
                   <PostCard post={post} />
-                </Grid>
+                </Box>
               )
             })}
-          </Grid>
+          </Masonry>
         )
       }}
     />

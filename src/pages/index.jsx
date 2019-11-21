@@ -7,16 +7,19 @@ import Breadcrumbs from "../components/Breadcrumbs"
 import { SubjectInfo as subjects } from "../constants"
 
 import {
-  Grid,
   makeStyles,
   Card,
   CardActions,
   CardContent,
   Button,
+  Box,
+  useTheme,
+  CardActionArea,
 } from "@material-ui/core"
 
 import { H1, H5, P2, H3 } from "../components/EasyText"
 import Link from "../components/Link"
+import Masonry from "react-masonry-component"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,6 +33,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const IndexPage = () => {
+  const theme = useTheme()
   const classes = useStyles()
 
   return (
@@ -43,16 +47,34 @@ const IndexPage = () => {
       <br />
       <H3 component="h2">Subjects</H3>
       <br />
-      <Grid container spacing={3}>
+      <Masonry container spacing={3}>
         {subjects.map(subject => (
-          <Grid item xs={12} sm={12} md={6} key={subject.name}>
+          <Box
+            key={subject.name}
+            style={{ margin: theme.spacing(1.5), maxWidth: 400 }}
+          >
             <Card className={classes.card}>
-              <CardContent>
-                <H5 gutterBottom component="h3">
-                  {subject.name}
-                </H5>
-                <P2 color="textSecondary">{subject.description}</P2>
-              </CardContent>
+              {subject.unreleased === false ? (
+                <CardActionArea
+                  component={Link}
+                  to={subject.url}
+                  className="no-underline color-inherit"
+                >
+                  <CardContent>
+                    <H5 gutterBottom component="h3">
+                      {subject.name}
+                    </H5>
+                    <P2 color="textSecondary">{subject.description}</P2>
+                  </CardContent>
+                </CardActionArea>
+              ) : (
+                <CardContent>
+                  <H5 gutterBottom component="h3">
+                    {subject.name}
+                  </H5>
+                  <P2 color="textSecondary">{subject.description}</P2>
+                </CardContent>
+              )}
               <CardActions>
                 {subject.unreleased === true ? (
                   <Button color="primary" disabled>
@@ -70,9 +92,9 @@ const IndexPage = () => {
                 )}
               </CardActions>
             </Card>
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Masonry>
     </Layout>
   )
 }
