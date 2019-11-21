@@ -58,22 +58,27 @@ const theme = responsiveFontSizes(
         fontSize: "3.65rem",
         fontWeight: "600",
         fontFamily: headingFonts,
+        lineHeight: 1.1,
       },
       h3: {
         fontWeight: "500",
         fontFamily: headingFonts,
+        lineHeight: 1.1,
       },
       h4: {
         fontWeight: "500",
         fontFamily: headingFonts,
+        lineHeight: 1.1,
       },
       h5: {
         fontWeight: "500",
         fontFamily: headingFonts,
+        lineHeight: 1.1,
       },
       h6: {
         fontWeight: "500",
         fontFamily: normalFonts,
+        lineHeight: 1.1,
       },
       button: {
         fontFamily: normalFonts,
