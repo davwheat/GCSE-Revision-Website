@@ -17,6 +17,7 @@ export default {
       "Topic 1 - Atomic Structure and the Periodic Table": `Oxygen, hydrogen, sulfur, sodium, and phosphorous walk into a bar: "OH SNaP!" says the bartender.`,
     },
     Physics: {
+      "Key Ideas": `You'll need to know about these for every paper, so make sure you learn them!`,
       "Topic 2 - Electricity": `It'll make you loopy at first, but you'll soon get into the flow of it. Just learn a handful rules, a spoonful of equations, and a sprinkle of diagrams and you'll be all set.`,
     },
   },
