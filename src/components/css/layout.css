@@ -55,3 +55,7 @@ a.color-inherit:any-link:hover *:not(.keepColor) {
 .MuiList-root .MuiListItem-root.MuiListItem-divider:last-child {
   border: none;
 }
+
+p > svg.mdi-icon {
+  transform: translateY(4px);
+}

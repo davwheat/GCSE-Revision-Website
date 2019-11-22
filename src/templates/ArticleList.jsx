@@ -13,6 +13,8 @@ import {
   Box,
 } from "@material-ui/core"
 import TimerIcon from "mdi-react/TimerIcon"
+import TripleIcon from "mdi-react/Numeric3CircleOutlineIcon"
+import HigherIcon from "mdi-react/ArrowUpCircleOutlineIcon"
 
 import Link from "../components/Link"
 
@@ -41,6 +43,8 @@ const ArticleList = props => {
                   description
                   topic
                   subject
+                  tripleOnly
+                  higherOnly
                 }
                 wordCount {
                   words
@@ -72,7 +76,7 @@ const ArticleList = props => {
         //   </Grid>
         // )
         return (
-          <Masonry>
+          <Masonry style={{ margin: "auto" }}>
             {posts.map((post, i) => {
               // If it's not the subject we want, ignore it
               if (post.node.frontmatter.subject !== props.subject) return null
@@ -84,7 +88,10 @@ const ArticleList = props => {
               return (
                 <Box
                   key={i}
-                  style={{ margin: theme.spacing(1.5), maxWidth: 400, width: "50%" }}
+                  style={{
+                    margin: theme.spacing(1.5),
+                    maxWidth: 400,
+                  }}
                 >
                   <PostCard post={post} />
                 </Box>
@@ -105,7 +112,13 @@ ArticleList.propTypes = {
 
 const PostCard = props => {
   const { excerpt, timeToRead } = props.post.node
-  const { date, description, /*subject,*/ title } = props.post.node.frontmatter
+  const {
+    date,
+    description,
+    title,
+    tripleOnly: isTripleScience,
+    higherOnly: isHigher,
+  } = props.post.node.frontmatter
   const { slug } = props.post.node.fields
   const wordCount = props.post.node.wordCount.words
 
@@ -131,7 +144,26 @@ const PostCard = props => {
             Published on {date}
           </Subtitle2>
 
-          <P gutterBottom>{description ? description : excerpt}</P>
+          {isTripleScience && isHigher ? (
+            <P paragraph align="center">
+              [<TripleIcon />
+              <HigherIcon /> <strong>Triple Science Higher only</strong>]
+            </P>
+          ) : null}
+          {isTripleScience && !isHigher ? (
+            <P paragraph align="center">
+              [<TripleIcon />
+              <strong>Triple Science only</strong>]
+            </P>
+          ) : null}
+          {!isTripleScience && isHigher ? (
+            <P paragraph align="center">
+              [<HigherIcon />
+              <strong>Higher only</strong>]
+            </P>
+          ) : null}
+
+          <P>{description ? description : excerpt}</P>
         </CardContent>
       </CardActionArea>
       <CardActions disableSpacing>
