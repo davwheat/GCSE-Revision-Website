@@ -189,8 +189,6 @@ function markdownRenderers(theme, classes) {
     ),
     blockquote: props => <Quote>{props.children}</Quote>,
     link: props => {
-      console.log(props)
-
       if (
         props.children.length === 1 &&
         props.children[0].props.value === props.href
@@ -204,7 +202,6 @@ function markdownRenderers(theme, classes) {
     table: props => (
       <Paper
         style={{
-          width: "max-content",
           margin: "auto",
           marginTop: theme.spacing(3),
           marginBottom: theme.spacing(3),
