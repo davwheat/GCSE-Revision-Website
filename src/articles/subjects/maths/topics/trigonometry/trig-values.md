@@ -1,9 +1,9 @@
 ---
 title: "Exact trig values"
 date: "2019-10-04"
-description: "There are certain trigonometry values that you have to know off by heart that you may be asked about on the non-calculatior paper."
+description: "There are set trigonometry values that you have to know off by heart that you may be asked about on the non-calculatior paper."
 subject: "maths"
-topic: "subject knowledge"
+topic: "trigonometry"
 ---
 
 There are a few ways to remember what $\sin$, $\cos$ and $\tan$ mean, including [a brilliant song](https://www.youtube.com/watch?v=PIWJo5uK3Fo), but few know any good ways to memorise exact trig values.

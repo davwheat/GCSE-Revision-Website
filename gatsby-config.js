@@ -1,8 +1,10 @@
 /* eslint-disable */
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
-    title: `Free GCSE Revision`,
-    description: `A free revision tool for GCSE students.`,
+    title: `GCSE: Revise It!`,
+    description: `A free revision website aimed at GCSE students.`,
     author: `@davwheat`,
     siteUrl: "https://gcse-revision-site.firebaseapp.com",
   },
@@ -70,8 +72,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GCSE Revision Website`,
-        short_name: `GCSE Revision`,
+        name: `GCSE: Revise It!`,
+        short_name: `Revise It!`,
         start_url: `/?utm_source=pwa`,
         background_color: `#303030`,
         theme_color: `#ff9800`,
@@ -87,5 +89,20 @@ module.exports = {
       },
     },
     `gatsby-plugin-material-ui`,
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        features: {
+          auth: false,
+          database: false,
+          firestore: false,
+          storage: false,
+          messaging: true,
+          functions: false,
+          performance: false,
+          analytics: true,
+        },
+      },
+    },
   ],
 }
