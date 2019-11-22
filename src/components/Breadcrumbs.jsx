@@ -17,7 +17,7 @@ const CustomBreadcrumbs = ({ items }) => {
       overflow: "hidden",
       textOverflow: "ellipsis",
       verticalAlign: "middle",
-      marginTop: -4, // adjust for incline block baseline lowering with overflow hidden
+      marginTop: -2, // adjust for incline block baseline lowering with overflow hidden
     },
     paper: {
       padding: theme.spacing(1.5, 2.5),

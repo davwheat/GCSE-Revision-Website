@@ -2,14 +2,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 
-import { H4, P2 } from "../components/EasyText"
+import { H4, P2, P } from "../components/EasyText"
 import {
   Card,
   CardContent,
   CardActions,
-  useTheme,
   CardActionArea,
   Box,
+  makeStyles,
+  Zoom,
+  useTheme,
 } from "@material-ui/core"
 import ArticlesIcon from "mdi-react/NewspaperVariantMultipleOutlineIcon"
 
@@ -22,13 +24,30 @@ import {
 } from "../functions/stringManipulations"
 
 import Masonry from "react-masonry-component"
+import { TopicDescriptions } from "../constants/subjectInfo"
+
+const useStyles = makeStyles(theme => ({
+  card: {
+    margin: theme.spacing(1.5),
+    maxWidth: 400,
+    "@media (max-width: 768px)": {
+      width: `calc(100% - ${theme.spacing(3)}px)`,
+      maxWidth: "unset",
+    },
+  },
+  container: {
+    margin: "0 auto",
+    maxWidth: "100%",
+  },
+}))
 
 const TopicList = props => {
   const subjectLabel = props.subject
     .split(" ")
     .map(s => s.charAt(0).toUpperCase() + s.substring(1))
     .join(" ")
-  const theme = useTheme()
+
+  const classes = useStyles()
 
   return (
     <StaticQuery
@@ -52,8 +71,14 @@ const TopicList = props => {
         const topics = data.topics.group
 
         return (
-          <Masonry style={{ margin: "auto" }}>
-            {topics.map(topic => {
+          <Masonry
+            options={{
+              fitWidth: true,
+              horizontalOrder: true,
+            }}
+            className={classes.container}
+          >
+            {topics.map((topic, i) => {
               if (
                 (!props.subjectGroup &&
                   topic.nodes[0].frontmatter.subject === props.subject) ||
@@ -62,21 +87,22 @@ const TopicList = props => {
                     props.subjectGroup)
               ) {
                 return (
-                  <Box
-                    key={topic.fieldValue}
-                    style={{
-                      margin: theme.spacing(1.5),
-                      maxWidth: 400,
-                    }}
-                  >
-                    <TopicCard
-                      topic={topic.fieldValue}
-                      articleCount={topic.totalCount}
-                      subject={subjectLabel}
-                      subjectGroup={
-                        props.subjectGroup ? props.subjectGroup : undefined
-                      }
-                    />
+                  <Box key={topic.fieldValue} className={classes.card}>
+                    <Zoom
+                      in
+                      style={{ transitionDelay: i * 50 + "ms !important" }}
+                    >
+                      <div>
+                        <TopicCard
+                          topic={topic.fieldValue}
+                          articleCount={topic.totalCount}
+                          subject={subjectLabel}
+                          subjectGroup={
+                            props.subjectGroup ? props.subjectGroup : undefined
+                          }
+                        />
+                      </div>
+                    </Zoom>
                   </Box>
                 )
               } else {
@@ -125,6 +151,15 @@ const TopicCard = props => {
           >
             {ConvertStringToLabel(topic)}
           </H4>
+          <P2>
+            {subjectGroup
+              ? TopicDescriptions[ConvertStringToLabel(subjectGroup)][
+                  ConvertStringToLabel(subject)
+                ][ConvertStringToLabel(topic)] || ""
+              : TopicDescriptions[ConvertStringToLabel(subject)][
+                  ConvertStringToLabel(topic)
+                ] || ""}
+          </P2>
         </CardContent>
       </CardActionArea>
       <CardActions disableSpacing>

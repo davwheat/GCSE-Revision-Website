@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/display-name */
 /**
  * Layout component that queries for data
@@ -8,7 +9,7 @@
 
 import CookieConsent from "react-cookie-consent"
 
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -25,6 +26,12 @@ import {
   useMediaQuery,
   Container,
   IconButton,
+  Modal,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from "@material-ui/core"
 
 import GitHubIcon from "mdi-react/GithubCircleIcon"
@@ -37,6 +44,8 @@ import { Body2 } from "./EasyText"
 
 import { SnackbarProvider, useSnackbar } from "notistack"
 
+import { useFirebase } from "gatsby-plugin-firebase"
+
 const Layout = ({ children, type }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -47,6 +56,12 @@ const Layout = ({ children, type }) => {
       }
     }
   `)
+
+  const [Firebase, setFirebase] = useState(null)
+
+  useFirebase(firebase => {
+    setFirebase(firebase)
+  })
 
   const notistackRef = React.createRef()
   const onClickDismiss = key => () => {
@@ -138,7 +153,7 @@ const Layout = ({ children, type }) => {
               </IconButton>
             )}
           >
-            <ServiceWorkerUpdate />
+            <NotificationPermission Firebase={Firebase} />
             <Box component="main">{children}</Box>
           </SnackbarProvider>
         </Container>
@@ -184,30 +199,116 @@ Layout.propTypes = {
 
 export default Layout
 
-const ServiceWorkerUpdate = () => {
-  const { enqueueSnackbar } = useSnackbar()
+const NotificationPermission = ({ Firebase }) => {
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar()
+  const [Open, setOpen] = useState(false)
 
-  useEffect(() => {
-    if (window.IsWorkerUpdateAvailable === true) {
-      window.onServiceWorkerUpdateReady = () => {
-        enqueueSnackbar(`This site has been updated.`, {
-          action: () => (
-            <Button
-              aria-label="Refresh page"
-              onClick={() => {
-                window.location.reload()
-              }}
-              color="inherit"
-            >
-              Refresh
-            </Button>
-          ),
-          persist: true,
-          variant: "info",
+  const FCM = Firebase ? Firebase.messaging() : null
+
+  const getToken = async () => {
+    const token = await FCM.getToken()
+
+    if (!token) {
+      try {
+        await FCM.requestPermission(p => {
+          // If the user accepts, let's create a notification
+          if (p === "granted") {
+            enqueueSnackbar()
+          }
         })
+        const token = await FCM.getToken()
+
+        return token
+      } catch (error) {
+        console.error(error)
       }
     }
-  })
+  }
 
-  return <span style={{ display: "none" }} />
+  if (Firebase) {
+    if (Firebase.messaging.isSupported()) {
+      if (!["granted", "denied"].includes(Notification.permission)) {
+        enqueueSnackbar(
+          `Want to get notified about new content and features?`,
+          {
+            action: key => (
+              <Button
+                aria-label="Learn more"
+                onClick={() => {
+                  showDialog()
+                  closeSnackbar(key)
+                }}
+                color="inherit"
+              >
+                Learn more
+              </Button>
+            ),
+            persist: true,
+            variant: "info",
+          }
+        )
+      } else if (Notification.permission !== "denied") {
+        // Callback fired if Instance ID token is updated.
+        FCM &&
+          FCM.onTokenRefresh(async () => {
+            console.info("Token refreshed.")
+            await getToken()
+          })
+
+        getToken()
+      }
+    } else {
+      console.warn(
+        "You're using a terrible browser that doesn't support the web's notification standard. SHAME! SHAME! SHAME! https://www.youtube.com/watch?v=SrDSqODtEFM"
+      )
+    }
+  }
+
+  const showDialog = () => {
+    setOpen(true)
+  }
+
+  const hideDialog = () => {
+    setOpen(false)
+  }
+
+  const acceptNotifications = async () => {
+    await getToken()
+    setOpen(false)
+  }
+
+  return (
+    <Dialog
+      open={Open}
+      onClose={() => {}}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+    >
+      <DialogTitle
+        id="alert-dialog-title"
+        style={{ marginTop: theme.spacing() }}
+      >
+        {`Enable notifications?`}
+      </DialogTitle>
+      <DialogContent>
+        <DialogContentText id="alert-dialog-description">
+          Enabling notifications allows us to notify you when new content or
+          features are available, or if we want your feedback about something.
+          <br />
+          <br />
+          You in?
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button
+          onClick={acceptNotifications}
+          color="primary"
+          variant="contained"
+          autoFocus
+        >
+          Yeah!
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
 }

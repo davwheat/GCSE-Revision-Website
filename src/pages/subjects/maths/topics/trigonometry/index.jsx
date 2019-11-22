@@ -6,27 +6,23 @@ import Ad from "../../../../../components/Advert"
 import Breadcrumbs from "../../../../../components/Breadcrumbs"
 import { H1 } from "../../../../../components/EasyText"
 
-const MathsArticleList = () => {
+const MathsTrigArticleList = () => {
   return (
     <Layout>
-      <SEO title="Maths: Calculator Articles" />
+      <SEO title="Maths: Trigonometry Articles" />
       <Breadcrumbs
         items={[
           { label: "Home", href: "" },
           { label: "Maths", href: "subjects/maths" },
           { label: "Topics", href: "subjects/maths/topics" },
-          { label: "Calculator Articles" },
+          { label: "Trigonometry Articles" },
         ]}
       />
-      <H1 gutterBottom>Maths: subject knowledge articles</H1>
-      <ArticleList
-        subject="maths"
-        topic="calculators"
-        backUrl="subjects/maths/topics"
-      />
+      <H1 gutterBottom>Maths: Trigonometry articles</H1>
+      <ArticleList subject="maths" topic="trigonometry" />
       <Ad />
     </Layout>
   )
 }
 
-export default MathsArticleList
+export default MathsTrigArticleList

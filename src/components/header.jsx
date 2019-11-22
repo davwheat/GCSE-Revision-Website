@@ -254,7 +254,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   siteTitle: ``,
-  pageTitle: `GCSE Revision`,
+  pageTitle: `GCSE: Revise It!`,
 }
 
 DrawerMenuItem.propTypes = {

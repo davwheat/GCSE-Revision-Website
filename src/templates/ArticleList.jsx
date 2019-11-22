@@ -11,6 +11,8 @@ import {
   useTheme,
   CardActionArea,
   Box,
+  makeStyles,
+  Zoom,
 } from "@material-ui/core"
 import TimerIcon from "mdi-react/TimerIcon"
 import TripleIcon from "mdi-react/Numeric3CircleOutlineIcon"
@@ -20,8 +22,23 @@ import Link from "../components/Link"
 
 import Masonry from "react-masonry-component"
 
+const useStyles = makeStyles(theme => ({
+  card: {
+    margin: theme.spacing(1),
+    maxWidth: 400,
+    "@media (max-width: 768px)": {
+      width: `calc(100% - ${theme.spacing(2)}px)`,
+      maxWidth: "unset",
+    },
+  },
+  container: {
+    margin: "0 auto",
+    maxWidth: "100%",
+  },
+}))
+
 const ArticleList = props => {
-  const theme = useTheme()
+  const classes = useStyles()
 
   return (
     <StaticQuery
@@ -76,7 +93,13 @@ const ArticleList = props => {
         //   </Grid>
         // )
         return (
-          <Masonry style={{ margin: "auto" }}>
+          <Masonry
+            options={{
+              fitWidth: true,
+              horizontalOrder: true,
+            }}
+            className={classes.container}
+          >
             {posts.map((post, i) => {
               // If it's not the subject we want, ignore it
               if (post.node.frontmatter.subject !== props.subject) return null
@@ -86,14 +109,12 @@ const ArticleList = props => {
                 return null
 
               return (
-                <Box
-                  key={i}
-                  style={{
-                    margin: theme.spacing(1.5),
-                    maxWidth: 400,
-                  }}
-                >
-                  <PostCard post={post} />
+                <Box key={i} className={classes.card}>
+                  <Zoom in style={{ transitionDelay: i * 50 + "ms" }}>
+                    <div>
+                      <PostCard post={post} />
+                    </div>
+                  </Zoom>
                 </Box>
               )
             })}
