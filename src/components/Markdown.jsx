@@ -67,7 +67,7 @@ const StyledTableCell = withStyles(theme => ({
   },
 }))(TableCell)
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   embeddedList: {
     "& > li": {
       backgroundSize: 20,
@@ -76,6 +76,16 @@ const useStyles = makeStyles(theme => ({
       background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1000'%3E%3Cpath transform='translate(0,450)' fill='%23fff' d='M742 508q-9-9-9-22.5t9-22.5l172-172H32q-13 0-22.5-9.5T0 259t9.5-22.5T32 227h883L743 55q-10-9-10-22.5T743 10q9-10 22.5-10T788 10l227 226q9 9 9 22.5t-9 22.5L787 508q-9 9-22.5 9t-22.5-9z'/%3E%3C/svg%3E") no-repeat left top`,
     },
     listStyle: "none",
+  },
+  tableHead: {
+    "& th": {
+      "&:first-child": {
+        borderTopLeftRadius: 3,
+      },
+      "&:last-child": {
+        borderTopRightRadius: 3,
+      },
+    },
   },
 }))
 
@@ -206,12 +216,15 @@ function markdownRenderers(theme, classes) {
           marginTop: theme.spacing(3),
           marginBottom: theme.spacing(3),
           overflowX: "auto",
+          padding: 1,
         }}
       >
         <Table>{props.children}</Table>
       </Paper>
     ),
-    tableHead: props => <TableHead>{props.children}</TableHead>,
+    tableHead: props => (
+      <TableHead className={classes.tableHead}>{props.children}</TableHead>
+    ),
     tableBody: props => <TableBody>{props.children}</TableBody>,
     tableRow: props => {
       let headerEmpty = false
@@ -226,7 +239,12 @@ function markdownRenderers(theme, classes) {
 
       row++
       return (
-        <TableRow hover={!props.isHeader} tabIndex={-1} key={row}>
+        <TableRow
+          style={{ borderRadius: props.isHeader ? 4 : "unset" }}
+          hover={!props.isHeader}
+          tabIndex={-1}
+          key={row}
+        >
           {props.children}
         </TableRow>
       )
