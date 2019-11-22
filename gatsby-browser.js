@@ -8,5 +8,8 @@
 // You can delete this file if you're not using it
 
 export const onServiceWorkerUpdateReady = () => {
-  window.IsWorkerUpdateAvailable = true
+  // window.IsWorkerUpdateAvailable = true
+
+  if (window.confirm("This site has got new content. Reload?"))
+    window.location.reload()
 }
