@@ -52,7 +52,7 @@ const TopicList = props => {
         const topics = data.topics.group
 
         return (
-          <Masonry>
+          <Masonry style={{ margin: "auto" }}>
             {topics.map(topic => {
               if (
                 (!props.subjectGroup &&
@@ -67,7 +67,6 @@ const TopicList = props => {
                     style={{
                       margin: theme.spacing(1.5),
                       maxWidth: 400,
-                      width: "50%",
                     }}
                   >
                     <TopicCard
