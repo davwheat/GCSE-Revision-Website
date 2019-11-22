@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
@@ -143,12 +144,7 @@ const TopicCard = props => {
         to={getUrl(topic, subject, subjectGroup)}
       >
         <CardContent>
-          <H4
-            component="h2"
-            color="primary"
-            className="keepColor"
-            style={{ marginBottom: theme.spacing(0.75) }}
-          >
+          <H4 component="h2" color="primary" className="keepColor" gutterBottom>
             {ConvertStringToLabel(topic)}
           </H4>
           <P2>
