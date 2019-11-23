@@ -117,7 +117,14 @@ const componentTransforms = {
       <ExpansionPanelSummary expandIcon={<ExpandIcon />}>
         {title}
       </ExpansionPanelSummary>
-      <ExpansionPanelDetails>{content}</ExpansionPanelDetails>
+      <ExpansionPanelDetails>
+        {content.split("\\n").map(line => (
+          <>
+            {line}
+            <br />
+          </>
+        ))}
+      </ExpansionPanelDetails>
     </ExpansionPanel>
   ),
 }
@@ -180,6 +187,8 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+let previousHeadings = []
+
 const HeadingLevelToComponent = (level, props) => {
   // Start with H2 because H1 is generated automatically from the title in the MD doc
 
@@ -194,13 +203,21 @@ const HeadingLevelToComponent = (level, props) => {
     },
   }))()
 
+  let id = textToSafeId(props.children[0].props.value)
+
+  if (previousHeadings.includes(id)) {
+    id += `-${previousHeadings.length}`
+  }
+
+  previousHeadings.push(id)
+
   switch (level) {
     case 1:
       return (
         <H2
           gutterBottom
           style={{ marginTop: 32 }}
-          id={textToSafeId(props.children[0].props.value)}
+          id={id}
           className={classes.heading}
         >
           {props.children}
@@ -211,7 +228,7 @@ const HeadingLevelToComponent = (level, props) => {
         <H3
           gutterBottom
           style={{ marginTop: 32 }}
-          id={textToSafeId(props.children[0].props.value)}
+          id={id}
           className={classes.heading}
         >
           {props.children}
@@ -222,7 +239,7 @@ const HeadingLevelToComponent = (level, props) => {
         <H4
           gutterBottom
           style={{ marginTop: 32 }}
-          id={textToSafeId(props.children[0].props.value)}
+          id={id}
           className={classes.heading}
         >
           {props.children}
@@ -233,7 +250,7 @@ const HeadingLevelToComponent = (level, props) => {
         <H5
           gutterBottom
           style={{ marginTop: 32 }}
-          id={textToSafeId(props.children[0].props.value)}
+          id={id}
           className={classes.heading}
         >
           {props.children}
@@ -244,7 +261,7 @@ const HeadingLevelToComponent = (level, props) => {
         <H6
           gutterBottom
           style={{ marginTop: 32 }}
-          id={textToSafeId(props.children[0].props.value)}
+          id={id}
           className={classes.heading}
         >
           {props.children}
@@ -255,7 +272,7 @@ const HeadingLevelToComponent = (level, props) => {
         <Subtitle2
           gutterBottom
           style={{ marginTop: 32 }}
-          id={textToSafeId(props.children[0].props.value)}
+          id={id}
           className={classes.heading}
         >
           {props.children}
@@ -268,7 +285,7 @@ const HeadingLevelToComponent = (level, props) => {
         <Subtitle2
           gutterBottom
           style={{ marginTop: 32 }}
-          id={textToSafeId(props.children[0].props.value)}
+          id={id}
           className={classes.heading}
         >
           {props.children}

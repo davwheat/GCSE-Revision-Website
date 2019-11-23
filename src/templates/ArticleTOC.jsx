@@ -19,25 +19,38 @@ const nestMultiplier = 4
 const ArticleTOC = ({ headings }) => {
   const theme = useTheme()
 
+  let previousHeadings = []
+
   return (
     <>
       <H2 gutterBottom>Contents</H2>
       <P2>Tap on a heading to scroll automatically.</P2>
       <List dense>
-        {headings.map(heading => (
-          <ListItem
-            button
-            component={Link}
-            to={`#${textToSafeId(heading.value)}`}
-            key={heading.value}
-            style={{
-              paddingLeft: theme.spacing(heading.depth * nestMultiplier),
-              color: theme.palette.primary.main,
-            }}
-          >
-            <ListItemText primary={heading.value} />
-          </ListItem>
-        ))}
+        {headings.map((heading, i) => {
+          // Ensure all heading IDs are unique
+          let id = textToSafeId(heading.value)
+
+          if (previousHeadings.includes(id)) {
+            id += `-${i}`
+          }
+
+          previousHeadings.push(id)
+
+          return (
+            <ListItem
+              button
+              component={Link}
+              to={`#${id}`}
+              key={heading.value}
+              style={{
+                paddingLeft: theme.spacing(heading.depth * nestMultiplier),
+                color: theme.palette.primary.main,
+              }}
+            >
+              <ListItemText primary={heading.value} />
+            </ListItem>
+          )
+        })}
       </List>
       <Divider
         variant="fullWidth"
