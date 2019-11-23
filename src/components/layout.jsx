@@ -155,6 +155,7 @@ const Layout = ({ children, type }) => {
           >
             <NotificationPermission Firebase={Firebase} />
             <Box component="main">{children}</Box>
+            <div id="ezoic-pub-ad-placeholder-101" />
           </SnackbarProvider>
         </Container>
       </div>
