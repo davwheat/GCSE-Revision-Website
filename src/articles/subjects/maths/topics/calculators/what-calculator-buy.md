@@ -43,13 +43,13 @@ Furthermore, calculators to be used in exams may not...
 
 There are many calculators that meet all of these regulations, but here are a subset of them:
 
-|    Model     | Comments                                                                                                                        | Purchase Link                                 |
-| :----------: | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| fx-83GT PLUS | The price of these have skyrocketed as they aren't made any more. There is a new model which replaces these: the fx-83GTX.      | [Amazon UK](https://amzn.to/2Ifjm19)          |
-| fx-85GT PLUS | The price of these have skyrocketed as they aren't made any more. There is a new model which replaces these: the fx-85GTX.      | [Amazon UK](https://amzn.to/2MgIAxs)          |
-|  fx-83GT X   | The new CLASSWIZ model of the fx-83GT PLUS with a newer and clearer display.                                                    | [£11.89 @ Amazon UK](https://amzn.to/2AHc9Tc) |
-|  fx-85GT X   | The new CLASSWIZ model of the fx-85GT PLUS with a newer and clearer display.                                                    | [£11.99 @ Amazon UK](https://amzn.to/2IluYQb) |
-|  fx-991 EX   | The latest CASIO calculator with the ability to solve quadratic equations, differentiate, perform matrix calculations and more. | [£23.99 @ Amazon UK](https://amzn.to/2nefw0R) |
+|    Model     | Comments                                                                                                                        | Purchase Link                                                |
+| :----------: | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| fx-83GT PLUS | The price of these have skyrocketed as they aren't made any more. There is a new model which replaces these: the fx-83GTX.      | [Amazon UK](https://www.amazon.co.uk/dp/B00925MSLS)          |
+| fx-85GT PLUS | The price of these have skyrocketed as they aren't made any more. There is a new model which replaces these: the fx-85GTX.      | [Amazon UK](https://www.amazon.co.uk/dp/B00925JHOY)          |
+|  fx-83GT X   | The new CLASSWIZ model of the fx-83GT PLUS with a newer and clearer display.                                                    | [£9.59 @ Amazon UK](https://www.amazon.co.uk/dp/B07L5YWTPH)  |
+|  fx-85GT X   | The new CLASSWIZ model of the fx-85GT PLUS with a newer and clearer display.                                                    | [£11.99 @ Amazon UK](https://www.amazon.co.uk/dp/B07L68RQCX) |
+|  fx-991 EX   | The latest CASIO calculator with the ability to solve quadratic equations, differentiate, perform matrix calculations and more. | [£26.93 @ Amazon UK](https://www.amazon.co.uk/dp/B00ZZ93346) |
 
 All prices are correct as of 03/10/2019.
 

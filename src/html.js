@@ -6,19 +6,8 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-        <script
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: `(adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-2701335557132384",
-              enable_page_level_ads: true
-          });`,
-          }}
-        />
+        <script>var ezoicId = #####;</script>
+        <script type="text/javascript" src="//go.ezoic.net/ezoic/ezoic.js" />
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         {props.headComponents}

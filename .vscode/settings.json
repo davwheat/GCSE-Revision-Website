@@ -4,5 +4,7 @@
       "name": "hotfix/gatsby-material-ui-styles",
       "base": "development"
     }
-  ]
+  ],
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120
 }

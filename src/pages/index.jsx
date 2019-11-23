@@ -91,7 +91,7 @@ const SubjectCard = ({ subject }) => (
         className="no-underline color-inherit"
       >
         <CardContent>
-          <H4 gutterBottom component="h3">
+          <H4 gutterBottom component="h3" color="primary" className="keepColor">
             {subject.name}
           </H4>
           <P2 color="textSecondary">{subject.description}</P2>

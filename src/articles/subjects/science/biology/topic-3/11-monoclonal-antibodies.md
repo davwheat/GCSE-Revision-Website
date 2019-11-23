@@ -49,12 +49,6 @@ A hormone called **HCG** is found only in the **urine of pregnant women**. **Pre
    1. The wee **still** moves up the stick, carrying the coloured beads but **no HCG**
    2. Because there's **no HCG**, the beads **don't bind** to the antibodies on the **test strip** so the strip **doesn't go coloured**
 
-# FreeScienceLessons video
+# Freesciencelessons videos
 
-## Monoclonal antibodies
-
-https://www.youtube.com/watch?v=4AYzuejK_aM
-
-## Uses of monoclonal antibodies
-
-https://www.youtube.com/watch?v=Bgde7orTxD8
+<YouTubeCollapses titles="[`Monoclonal antibodies`,`Uses of monoclonal antibodies`]" urls="[`https://www.youtube.com/watch?v=4AYzuejK_aM`,`https://www.youtube.com/watch?v=Bgde7orTxD8`]" />

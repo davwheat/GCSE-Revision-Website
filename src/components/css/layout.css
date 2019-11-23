@@ -31,6 +31,10 @@ body,
   min-height: 100vh !important;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #gatsby-focus-wrapper {
   padding-bottom: 65px;
 }

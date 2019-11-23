@@ -48,3 +48,9 @@ export function ConvertStringToLabel(s) {
     })
     .join(" ")
 }
+
+export function IsYouTubeUrl(s) {
+  return !!s.match(
+    /^.*(youtu\.be\/|vi?\/|u\/\w\/|embed\/|\?vi?=|\&vi?=)([^#\&\?]*).*/
+  )
+}

@@ -48,6 +48,12 @@ const SubjectsBiologyPage = () => {
         </em>
       </P>
       <P paragraph>
+        <em>
+          For both papers, you must know the appropriate formulae, which you can
+          see under the &quot;Key Ideas&quot; topic.
+        </em>
+      </P>
+      <P paragraph>
         For full information, see AQA&apos;s{" "}
         <Link to="https://www.aqa.org.uk/subjects/science/gcse/physics-8463/specification-at-a-glance">
           Specification at a glance
