@@ -72,10 +72,16 @@ const Link = props => {
         </Button>
       )
     } else {
+      let url = to
+
+      if (url.match(/(?:[/dp/]|$)([A-Z0-9]{10})/)) {
+        url = `https://www.amazon.co.uk/gp/product/${url.match(/(?:[/dp/]|$)([A-Z0-9]{10})/)[0].substr(1)}/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=${url.match(/(?:[/dp/]|$)([A-Z0-9]{10})/)[0].substr(1)}&linkCode=as2&tag=wheatleywebse-21&linkId=b464328f449dbfe39206c55a2828121b`
+      }
+
       return (
         <MatLink
           color={inheritColor ? "inherit" : "primary"}
-          href={to}
+          href={url}
           {...newprops}
           target="_blank"
           rel="noopener"

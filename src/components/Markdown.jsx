@@ -4,7 +4,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import ReactMarkdown from "react-markdown/with-html"
+import ReactMarkdown from "react-markdown"
+import JsxParser from "react-jsx-parser"
+
+import Twemoji from "react-twemoji"
 
 import {
   Paper,
@@ -17,9 +20,14 @@ import {
   TableCell,
   withStyles,
   makeStyles,
+  Tooltip,
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  ExpansionPanelDetails,
 } from "@material-ui/core"
+import ExpandIcon from "@material-ui/icons/ExpandMore"
 
-import "./css/katex.css"
+import "./css/markdown.css"
 import "katex/dist/katex.min.css"
 import TeX from "@matejmazur/react-katex"
 import RemarkMathPlugin from "remark-math"
@@ -54,6 +62,66 @@ Lowlight.registerLanguage("md", md)
 Lowlight.registerLanguage("php", php)
 Lowlight.registerLanguage("css", css)
 
+import TripleIcon from "mdi-react/Numeric3CircleOutlineIcon"
+import HigherIcon from "mdi-react/ArrowUpCircleOutlineIcon"
+import PaperIcon from "mdi-react/FileDocumentBoxOutlineIcon"
+import { IsYouTubeUrl } from "../functions/stringManipulations"
+
+const componentTransforms = {
+  Triple: ({ primary }) => (
+    <Tooltip arrow title="Triple Science only">
+      <span>
+        <TripleIcon color={primary ? "#ff9800" : null} />
+      </span>
+    </Tooltip>
+  ),
+  Higher: ({ primary }) => (
+    <Tooltip arrow title="Higher Tier only">
+      <span>
+        <HigherIcon color={primary ? "#ff9800" : null} />
+      </span>
+    </Tooltip>
+  ),
+  Paper: ({ primary }) => (
+    <Tooltip arrow title="Included on equation sheet">
+      <span>
+        <PaperIcon color={primary ? "#ff9800" : null} />
+      </span>
+    </Tooltip>
+  ),
+  YouTubeCollapses: ({ titles, urls }) => (
+    <>
+      {eval(titles).map((_, i) => (
+        <ExpansionPanel
+          key={eval(titles)[i]}
+          TransitionProps={{ mountOnEnter: true }}
+          style={{ overflow: "hidden" }}
+        >
+          <ExpansionPanelSummary expandIcon={<ExpandIcon />}>
+            {eval(titles)[i]}
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <YouTubeEmbed url={eval(urls)[i]} />
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      ))}
+    </>
+  ),
+  Collapse: ({ title, content }) => (
+    <ExpansionPanel
+      TransitionProps={{ mountOnEnter: true }}
+      style={{
+        marginTop: 24,
+      }}
+    >
+      <ExpansionPanelSummary expandIcon={<ExpandIcon />}>
+        {title}
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails>{content}</ExpansionPanelDetails>
+    </ExpansionPanel>
+  ),
+}
+
 const StyledTableCell = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.primary.main,
@@ -63,11 +131,13 @@ const StyledTableCell = withStyles(theme => ({
   },
   body: {
     fontSize: 16,
-    borderRight: "1px solid rgba(81, 81, 81, 1)",
+    "&:not(:last-child)": {
+      borderRight: "1px solid rgba(81, 81, 81, 1)",
+    },
   },
 }))(TableCell)
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   embeddedList: {
     "& > li": {
       backgroundSize: 20,
@@ -77,13 +147,34 @@ const useStyles = makeStyles(() => ({
     },
     listStyle: "none",
   },
-  tableHead: {
-    "& th": {
-      "&:first-child": {
-        borderTopLeftRadius: 3,
-      },
-      "&:last-child": {
-        borderTopRightRadius: 3,
+  article: { "& article": { display: "flex", flexDirection: "column" } },
+  tablePaper: {
+    overflowX: "auto",
+    minWidth: "100%",
+    maxWidth: "max-content",
+    width: "85vw",
+    alignSelf: "center",
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+    "@media (max-width: 1280px)": {
+      width: "92vw",
+    },
+    "@media (max-width: 960px)": {
+      width: "95vw",
+    },
+    "@media (max-width: 768px)": {
+      width: "100vw",
+    },
+  },
+  table: {
+    "& thead": {
+      "& th": {
+        "&:first-child": {
+          borderTopLeftRadius: 3,
+        },
+        "&:last-child": {
+          borderTopRightRadius: 3,
+        },
       },
     },
   },
@@ -191,7 +282,28 @@ let row = 0
 function markdownRenderers(theme, classes) {
   return {
     root: props => <article>{props.children}</article>,
-    paragraph: props => <P paragraph>{props.children}</P>,
+    paragraph: props => {
+      const { children } = props
+
+      console.log(children)
+
+      if (
+        (children &&
+          children[0] &&
+          children.length === 1 &&
+          children[0].props &&
+          children[0].props.src) ||
+        (children &&
+          children[0] &&
+          children.length === 1 &&
+          children[0].props &&
+          children[0].props.href &&
+          IsYouTubeUrl(children[0].props.href))
+      ) {
+        return children
+      }
+      return <P paragraph>{props.children}</P>
+    },
     thematicBreak: props => (
       <Divider variant="middle" style={{ marginBottom: theme.spacing(1.5) }}>
         {props.children}
@@ -210,16 +322,8 @@ function markdownRenderers(theme, classes) {
     },
     linkReference: props => <Link to={props.href}>{props.children}</Link>,
     table: props => (
-      <Paper
-        style={{
-          margin: "auto",
-          marginTop: theme.spacing(3),
-          marginBottom: theme.spacing(3),
-          overflowX: "auto",
-          padding: 1,
-        }}
-      >
-        <Table>{props.children}</Table>
+      <Paper className={classes.tablePaper}>
+        <Table className={classes.table}>{props.children}</Table>
       </Paper>
     ),
     tableHead: props => (
@@ -241,7 +345,6 @@ function markdownRenderers(theme, classes) {
       return (
         <TableRow
           style={{ borderRadius: props.isHeader ? 4 : "unset" }}
-          hover={!props.isHeader}
           tabIndex={-1}
           key={row}
         >
@@ -309,6 +412,13 @@ function markdownRenderers(theme, classes) {
     },
     inlineMath: props => <TeX math={props.value} />,
     math: props => <TeX block math={props.value} />,
+    html: props => (
+      <JsxParser
+        style={{ display: "inline-block" }}
+        jsx={props.value}
+        components={componentTransforms}
+      />
+    ),
   }
 }
 
@@ -320,14 +430,16 @@ const Markdown = props => {
   const renderers = markdownRenderers(theme, classes)
 
   return (
-    <div style={{ marginLeft: 4, marginRight: 4 }}>
-      <ReactMarkdown
-        plugins={[RemarkMathPlugin]}
-        source={src}
-        escapeHtml={false}
-        renderers={renderers}
-      />
-    </div>
+    <Twemoji options={{ className: "twemoji", ext: ".png" }} noWrapper>
+      <div className={classes.article}>
+        <ReactMarkdown
+          plugins={[RemarkMathPlugin]}
+          source={src}
+          escapeHtml={false}
+          renderers={renderers}
+        />
+      </div>
+    </Twemoji>
   )
 }
 

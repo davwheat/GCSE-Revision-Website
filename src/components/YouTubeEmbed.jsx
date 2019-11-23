@@ -12,8 +12,10 @@ const YouTubeEmbed = ({ url }) => {
       style={{
         position: "relative",
         paddingBottom: "56.25%" /* 16:9 */,
-        paddingTop: 25,
+        //paddingTop: 25,
         height: 0,
+        transform: "translateZ(0)",
+        width: "100%",
       }}
     >
       <iframe
@@ -23,9 +25,11 @@ const YouTubeEmbed = ({ url }) => {
           left: 0,
           width: "100%",
           height: "100%",
+          transform: "translateZ(0)",
         }}
-        allowFullscreen="allowfullscreen"
-        src={`https://www.youtube.com/embed/${youtubeId}`}
+        type="text/html"
+        allowFullScreen="allowfullscreen"
+        src={`https://www.youtube.com/embed/${youtubeId}?modestbranding=1&rel=0&hl=en-gb`}
         frameBorder="0"
       />
     </div>

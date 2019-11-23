@@ -1,0 +1,26 @@
+.katex {
+  font-size: 22px !important;
+}
+
+.katex-display .katex {
+  font-size: 24px !important;
+}
+
+.jsx-parser {
+  display: inline;
+}
+
+p .jsx-parser svg.mdi-icon {
+  vertical-align: -0.275em;
+}
+
+.jsx-parser svg.mdi-icon {
+  vertical-align: text-bottom;
+}
+
+.twemoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
