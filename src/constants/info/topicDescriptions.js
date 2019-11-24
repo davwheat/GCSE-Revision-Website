@@ -2,6 +2,7 @@ export default {
   Maths: {
     Calculators: `Needed for two of your three Maths GCSE papers, calculators are the key to success. The question is: do you know what you can do with them?`,
     Trigonometry: `Some students view this as the most hated maths topic. Some view it as the hardest thing they'll ever do. Both are true, but not as bad when you read our articles about it!`,
+    Graphs: `What's a sheep's favourite graph? A 'baaa' graph! Ha ha ha ha... Ok, I'll stop now. I really need to hire a writer to do these for me.`,
   },
   English: {
     "English Language": {

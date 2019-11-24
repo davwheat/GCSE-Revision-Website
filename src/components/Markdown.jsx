@@ -4,7 +4,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import ReactMarkdown from "react-markdown"
+import clsx from "clsx"
+import _ from "lodash"
+
+import ReactMarkdown from "react-markdown/with-html"
 import JsxParser from "react-jsx-parser"
 
 import Twemoji from "react-twemoji"
@@ -25,7 +28,7 @@ import {
   ExpansionPanelSummary,
   ExpansionPanelDetails,
 } from "@material-ui/core"
-import ExpandIcon from "@material-ui/icons/ExpandMore"
+import ExpandIcon from "mdi-react/ExpandMoreIcon"
 
 import "./css/markdown.css"
 import "katex/dist/katex.min.css"
@@ -48,7 +51,7 @@ import "highlight.js/styles/monokai-sublime.css"
 
 import Link from "./Link"
 import GImage from "./image"
-import { P, H2, H3, H4, H5, H6, P1, Subtitle2 } from "./EasyText"
+import { P, P2, H2, H3, H4, H5, H6, Subtitle2 } from "./EasyText"
 import Quote from "./Blockquote"
 
 import textToSafeId from "../functions/textToSafeId"
@@ -67,7 +70,10 @@ import HigherIcon from "mdi-react/ArrowUpCircleOutlineIcon"
 import PaperIcon from "mdi-react/FileDocumentBoxOutlineIcon"
 import { IsYouTubeUrl } from "../functions/stringManipulations"
 
-const componentTransforms = {
+const componentTransforms = classes => ({
+  R: props => <>{props.children}</>,
+  P,
+  P2,
   Triple: ({ primary }) => (
     <Tooltip arrow title="Triple Science only">
       <span>
@@ -107,26 +113,95 @@ const componentTransforms = {
       ))}
     </>
   ),
-  Collapse: ({ title, content }) => (
-    <ExpansionPanel
-      TransitionProps={{ mountOnEnter: true }}
-      style={{
-        marginTop: 24,
-      }}
+  Collapser,
+  ExamQuestion,
+  TeX,
+})
+
+const Collapser = ({ title, children, noSpace, solution }) => (
+  <ExpansionPanel
+    TransitionProps={{ mountOnEnter: true }}
+    style={{
+      marginTop: noSpace || solution ? 0 : 24,
+      background: solution ? "#f8f8f8" : null,
+      color: solution ? "#000" : null,
+      borderBottomLeftRadius: solution ? 4 : null,
+      borderBottomRightRadius: solution ? 4 : null,
+    }}
+  >
+    <ExpansionPanelSummary
+      expandIcon={<ExpandIcon color={solution ? "#000" : "#fff"} />}
     >
-      <ExpansionPanelSummary expandIcon={<ExpandIcon />}>
-        {title}
-      </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
-        {content.split("\\n").map(line => (
-          <>
-            {line}
-            <br />
-          </>
-        ))}
-      </ExpansionPanelDetails>
-    </ExpansionPanel>
-  ),
+      {title}
+    </ExpansionPanelSummary>
+    <ExpansionPanelDetails style={{ display: "block" }}>
+      {children}
+    </ExpansionPanelDetails>
+  </ExpansionPanel>
+)
+
+const ExamQuestion = ({
+  questionNumber,
+  type,
+  marks,
+  marksText,
+  marksSquareBrackets,
+  lines,
+  answerLine,
+  children,
+  withSolution,
+  noSpace,
+}) => {
+  const usesNumberBoxes = type !== "no-box"
+
+  const str = `${questionNumber}`.split("")
+
+  if (usesNumberBoxes && typeof questionNumber === "number") {
+    if (questionNumber < 10) {
+      str.unshift("0")
+    }
+  }
+
+  const classes = useStyles()
+
+  return (
+    <Paper
+      className={classes.examQuestion}
+      style={{
+        borderBottomLeftRadius: withSolution ? 0 : null,
+        borderBottomRightRadius: withSolution ? 0 : null,
+        position: withSolution ? "relative" : null,
+        zIndex: withSolution ? 1 : null,
+        marginBottom: noSpace || withSolution ? 0 : 24,
+        marginTop: noSpace ? 0 : 24,
+      }}
+      elevation={2}
+    >
+      <div className={clsx("questionNumber", { numberBoxes: usesNumberBoxes })}>
+        {usesNumberBoxes ? (
+          str.map(s => <span key={s}>{s}</span>)
+        ) : (
+          <span>{questionNumber}</span>
+        )}
+      </div>
+      <div className="questionTitle">
+        <h6>{children}</h6>
+      </div>
+      <div
+        className={clsx("questionMarks", {
+          squareBrackets: !!marksSquareBrackets,
+          normalBrackets: !marksSquareBrackets,
+        })}
+      >
+        {marks}
+        {marksText ? (marks !== 1 ? " marks" : " mark") : ""}
+      </div>
+      <div className="questionAnswer">
+        {lines && _.times(lines, () => <hr className="questionAnswerLine" />)}
+        {answerLine ? <hr className="questionFinalAnswer" /> : null}
+      </div>
+    </Paper>
+  )
 }
 
 const StyledTableCell = withStyles(theme => ({
@@ -145,6 +220,101 @@ const StyledTableCell = withStyles(theme => ({
 }))(TableCell)
 
 const useStyles = makeStyles(theme => ({
+  examQuestion: {
+    marginTop: 24,
+    padding: 24,
+    background: "white",
+    color: "black",
+    "& > *": {
+      fontFamily: "Arial, Poppins, sans-serif !important",
+    },
+    "& .questionNumber": {
+      display: "block",
+      float: "left",
+      "&.numberBoxes span": {
+        border: "1px solid black",
+        width: "1.5em",
+      },
+      "&:not(.numberBoxes) span.additive::before": {
+        content: '"("',
+      },
+      "&:not(.numberBoxes) span.additive::after": {
+        content: '")"',
+      },
+      "& span": {
+        fontSize: "16px",
+        height: "1.5em",
+        width: 47,
+        display: "inline-block",
+        textAlign: "center",
+        lineHeight: "1.5em",
+        fontWeight: 700,
+      },
+      "&:not(.numberBoxes) span": {
+        transform: "translateX(-8px)",
+      },
+    },
+    "& .questionTitle": {
+      display: "block",
+      overflow: "auto",
+      paddingLeft: 16,
+      lineHeight: "1.5em",
+      "& > h6": {
+        fontSize: "16px",
+        fontWeight: "normal",
+        margin: 0,
+      },
+      "&::after": {
+        content: '""',
+        clear: "both",
+        display: "table",
+      },
+    },
+    "& .questionMarks": {
+      textAlign: "right",
+      fontWeight: 700,
+      "&.squareBrackets::before": {
+        content: '"["',
+      },
+      "&.squareBrackets::after": {
+        content: '"]"',
+      },
+      "&.normalBrackets::before": {
+        content: '"("',
+      },
+      "&.normalBrackets::after": {
+        content: '")"',
+      },
+    },
+    "& .questionAnswer": {
+      "& hr.questionAnswerLine": {
+        border: "none",
+        borderBottom: "2px solid #888",
+        paddingTop: "1.75em",
+        marginLeft: "64px",
+      },
+      "& hr.questionFinalAnswer": {
+        border: "none",
+        borderBottom: "2px solid #888",
+        paddingTop: "3em",
+        margin: "auto",
+        minWidth: 100,
+        width: "40%",
+        display: "block",
+        position: "relative",
+        overflow: "visible",
+        transform: "translate(8ch, 0)",
+        "&::before": {
+          position: "absolute",
+          content: '"Answer"',
+          display: "block",
+          bottom: -2,
+          left: "-7ch",
+        },
+      },
+    },
+  },
+
   embeddedList: {
     "& > li": {
       backgroundSize: 20,
@@ -376,8 +546,30 @@ function markdownRenderers(theme, classes) {
     ),
     image: props => <GImage filename={props.src} alt={props.alt} />,
     heading: props => HeadingLevelToComponent(props.level, props),
-    inlineCode: props => <code>{props.children}</code>,
+    inlineCode: props => {
+      if (props.value.startsWith("react ")) {
+        return (
+          <JsxParser
+            style={{ display: "inline-block" }}
+            jsx={props.value.substr("react ".length)}
+            components={componentTransforms(classes)}
+          />
+        )
+      }
+
+      return <code>{props.children}</code>
+    },
     code: props => {
+      if (props.language === "react") {
+        return (
+          <JsxParser
+            style={{ display: "inline-block" }}
+            jsx={props.value}
+            components={componentTransforms(classes)}
+          />
+        )
+      }
+
       return (
         <Lowlight
           language={props.language ? props.language : undefined}
@@ -429,13 +621,6 @@ function markdownRenderers(theme, classes) {
     },
     inlineMath: props => <TeX math={props.value} />,
     math: props => <TeX block math={props.value} />,
-    html: props => (
-      <JsxParser
-        style={{ display: "inline-block" }}
-        jsx={props.value}
-        components={componentTransforms}
-      />
-    ),
   }
 }
 

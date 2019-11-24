@@ -37,11 +37,9 @@ const theme = responsiveFontSizes(
       fontFamily: normalFonts,
       body1: {
         fontSize: "1.2rem",
-        letterSpacing: "0.5px", // improve readability
       },
       body2: {
         fontSize: "1rem",
-        letterSpacing: "0.4px", // improve readability
       },
       caption: {
         fontSize: "0.95rem",
