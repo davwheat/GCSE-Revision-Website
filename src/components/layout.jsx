@@ -236,8 +236,8 @@ const NotificationPermission = ({ Firebase }) => {
               <Button
                 aria-label="Learn more"
                 onClick={() => {
-                  showDialog()
                   closeSnackbar(key)
+                  showDialog()
                 }}
                 color="inherit"
               >
@@ -274,8 +274,8 @@ const NotificationPermission = ({ Firebase }) => {
   }
 
   const acceptNotifications = async () => {
+    hideDialog()
     await getToken()
-    setOpen(false)
   }
 
   return (
