@@ -169,6 +169,7 @@ const Layout = ({ children, type }) => {
             padding: theme.spacing(1.5),
             paddingBottom: theme.spacing(1.75),
             width: "100vw",
+            zIndex: 99,
           }}
           elevation={4}
         >
@@ -183,6 +184,7 @@ const Layout = ({ children, type }) => {
             padding: theme.spacing(1),
             paddingBottom: theme.spacing(1.25),
             width: "100vw",
+            zIndex: 99,
           }}
           elevation={8}
         >

@@ -28,7 +28,7 @@ import {
   ExpansionPanelSummary,
   ExpansionPanelDetails,
 } from "@material-ui/core"
-import ExpandIcon from "@material-ui/icons/ExpandMore"
+import ExpandIcon from "mdi-react/ExpandMoreIcon"
 
 import "./css/markdown.css"
 import "katex/dist/katex.min.css"
@@ -115,25 +115,26 @@ const componentTransforms = classes => ({
   ),
   Collapser,
   ExamQuestion,
+  TeX,
 })
 
-const Collapser = ({ title, content, children }) => (
+const Collapser = ({ title, children, noSpace, solution }) => (
   <ExpansionPanel
     TransitionProps={{ mountOnEnter: true }}
     style={{
-      marginTop: 24,
+      marginTop: noSpace || solution ? 0 : 24,
+      background: solution ? "#f8f8f8" : null,
+      color: solution ? "#000" : null,
+      borderBottomLeftRadius: solution ? 4 : null,
+      borderBottomRightRadius: solution ? 4 : null,
     }}
   >
-    <ExpansionPanelSummary expandIcon={<ExpandIcon />}>
+    <ExpansionPanelSummary
+      expandIcon={<ExpandIcon color={solution ? "#000" : "#fff"} />}
+    >
       {title}
     </ExpansionPanelSummary>
-    <ExpansionPanelDetails>
-      {/* {content.split("\\n").map(line => (
-      <>
-        {line}
-        <br />
-      </>
-    ))} */}
+    <ExpansionPanelDetails style={{ display: "block" }}>
       {children}
     </ExpansionPanelDetails>
   </ExpansionPanel>
@@ -142,12 +143,14 @@ const Collapser = ({ title, content, children }) => (
 const ExamQuestion = ({
   questionNumber,
   type,
-  question,
   marks,
   marksText,
   marksSquareBrackets,
   lines,
   answerLine,
+  children,
+  withSolution,
+  noSpace,
 }) => {
   const usesNumberBoxes = type !== "no-box"
 
@@ -162,7 +165,18 @@ const ExamQuestion = ({
   const classes = useStyles()
 
   return (
-    <Paper className={classes.examQuestion} elevation={2}>
+    <Paper
+      className={classes.examQuestion}
+      style={{
+        borderBottomLeftRadius: withSolution ? 0 : null,
+        borderBottomRightRadius: withSolution ? 0 : null,
+        position: withSolution ? "relative" : null,
+        zIndex: withSolution ? 1 : null,
+        marginBottom: noSpace || withSolution ? 0 : 24,
+        marginTop: noSpace ? 0 : 24,
+      }}
+      elevation={2}
+    >
       <div className={clsx("questionNumber", { numberBoxes: usesNumberBoxes })}>
         {usesNumberBoxes ? (
           str.map(s => <span key={s}>{s}</span>)
@@ -171,7 +185,7 @@ const ExamQuestion = ({
         )}
       </div>
       <div className="questionTitle">
-        <h6>{question}</h6>
+        <h6>{children}</h6>
       </div>
       <div
         className={clsx("questionMarks", {
@@ -207,11 +221,11 @@ const StyledTableCell = withStyles(theme => ({
 
 const useStyles = makeStyles(theme => ({
   examQuestion: {
-    marginBottom: 24,
+    marginTop: 24,
     padding: 24,
     background: "white",
     color: "black",
-    "& *": {
+    "& > *": {
       fontFamily: "Arial, Poppins, sans-serif !important",
     },
     "& .questionNumber": {
