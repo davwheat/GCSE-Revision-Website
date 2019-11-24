@@ -1,5 +1,5 @@
 ---
-title: "Perpendicular and Parallel Lines"
+title: "Perpendicular Lines"
 date: "2019-11-24"
 description: "I just saw a y=x movie. Unfortunately, its plot was quite predictable. (Please. Someone help. These jokes are too bad.)"
 subject: "maths"
