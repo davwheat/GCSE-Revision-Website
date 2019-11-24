@@ -48,7 +48,7 @@ import "highlight.js/styles/monokai-sublime.css"
 
 import Link from "./Link"
 import GImage from "./image"
-import { P, H2, H3, H4, H5, H6, P1, Subtitle2 } from "./EasyText"
+import { P, H2, H3, H4, H5, H6, P1, Subtitle2, Subtitle1 } from "./EasyText"
 import Quote from "./Blockquote"
 
 import textToSafeId from "../functions/textToSafeId"
@@ -67,7 +67,7 @@ import HigherIcon from "mdi-react/ArrowUpCircleOutlineIcon"
 import PaperIcon from "mdi-react/FileDocumentBoxOutlineIcon"
 import { IsYouTubeUrl } from "../functions/stringManipulations"
 
-const componentTransforms = {
+const componentTransforms = classes => ({
   Triple: ({ primary }) => (
     <Tooltip arrow title="Triple Science only">
       <span>
@@ -127,6 +127,28 @@ const componentTransforms = {
       </ExpansionPanelDetails>
     </ExpansionPanel>
   ),
+  ExamQuestion: ({ questionNumber, question, marks }) => (
+    <Paper className={classes.examQuestion} elevation={2}>
+      <QuestionTitle number={questionNumber} text={question} />{" "}
+      <Subtitle1 align="right">
+        [{marks} {marks === 1 ? "mark" : "marks"}]
+      </Subtitle1>
+    </Paper>
+  ),
+})
+
+const QuestionTitle = ({ number, text }) => {
+  const str = `${number}`.split("")
+
+  const classes = useStyles()
+
+  return (
+    <div className={classes.questionNumber}>
+      {str.map(s => (
+        <span>{s}</span>
+      ))}
+    </div>
+  )
 }
 
 const StyledTableCell = withStyles(theme => ({
@@ -145,6 +167,26 @@ const StyledTableCell = withStyles(theme => ({
 }))(TableCell)
 
 const useStyles = makeStyles(theme => ({
+  examQuestion: {
+    marginBottom: 24,
+    padding: 24,
+    background: "white",
+    color: "black",
+    "& *": {
+      fontFamily: "Arial, Poppins, sans-serif !important",
+    },
+  },
+  questionNumber: {
+    "& span": {
+      height: "1.5em",
+      width: "1.5em",
+      display: "inline-block",
+      border: "1px solid black",
+      textAlign: "center",
+      lineHeight: "1.5em",
+      fontWeight: 700,
+    },
+  },
   embeddedList: {
     "& > li": {
       backgroundSize: 20,
@@ -433,7 +475,7 @@ function markdownRenderers(theme, classes) {
       <JsxParser
         style={{ display: "inline-block" }}
         jsx={props.value}
-        components={componentTransforms}
+        components={componentTransforms(classes)}
       />
     ),
   }
