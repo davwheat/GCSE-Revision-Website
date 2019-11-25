@@ -14,7 +14,7 @@
     "clsx": "^1.0.4",
     "eslint-plugin-flowtype": "^4.5.2",
     "firebase": "^7.5.0",
-    "gatsby": "^2.18.2",
+    "gatsby": "^2.18.3",
     "gatsby-image": "^2.2.33",
     "gatsby-plugin-firebase": "^0.1.5",
     "gatsby-plugin-google-adsense": "^1.1.3",
