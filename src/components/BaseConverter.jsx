@@ -1,6 +1,6 @@
 import React from "react"
 
-import SimpleSnackbar from "../components/SimpleSnackbar"
+import { useSnackbar } from "notistack"
 
 import useStateWithLocalStorage from "../functions/useStateWithLocalStorage"
 
@@ -21,6 +21,8 @@ const useStyles = makeStyles(theme => ({
 
 const BaseConverter = () => {
   const classes = useStyles()
+
+  const { enqueueSnackbar } = useSnackbar()
 
   const [data, setData, resetData] = useStateWithLocalStorage(
     "baseConversion",
@@ -48,7 +50,7 @@ const BaseConverter = () => {
           // instead of
           // 1101100 -> 110 1100
 
-          if (pad && (i + 1 === inputString.length && (i + 1) % n !== 0)) {
+          if (pad && i + 1 === inputString.length && (i + 1) % n !== 0) {
             val = d + "0".repeat(4 - ((i + 1) % n))
           } else {
             val = d
@@ -117,12 +119,20 @@ const BaseConverter = () => {
     } else {
       newData.decimal = FormatNumberString(newData.num.toString(10), 3)
       newData.binary = FormatNumberString(newData.num.toString(2), 4, true)
-      newData.hexadecimal = FormatNumberString(newData.num.toString(16), 2, true)
+      newData.hexadecimal = FormatNumberString(
+        newData.num.toString(16),
+        2,
+        true
+      )
     }
 
     if (isNaN(newData.num)) return
 
     setData(newData)
+  }
+
+  if (data.error) {
+    enqueueSnackbar(data.error, { variant: "error" })
   }
 
   return (
@@ -191,14 +201,6 @@ const BaseConverter = () => {
           </Grid>
         </Grid>
       </Paper>
-      {data.error ? (
-        <SimpleSnackbar
-          message={data.error}
-          variant="error"
-          showCloseButton={false}
-          autoHide={false}
-        />
-      ) : null}
     </>
   )
 }
