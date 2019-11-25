@@ -126,10 +126,10 @@ const WordOfTheDay = () => {
   }
 
   let allSpeechParts =
-    stateWord === null ? null : [...new Set(Object.keys(stateWord["meaning"]))]
+    stateWord ? [...new Set(Object.keys(stateWord["meaning"]))] : null
 
   let firstSpeechPart =
-    stateWord === null ? null : Object.keys(stateWord["meaning"])[0]
+    stateWord ? Object.keys(stateWord["meaning"])[0] : null
 
   return (
     <Card className={classes.card}>

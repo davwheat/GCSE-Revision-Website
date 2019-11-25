@@ -9,7 +9,7 @@
 
 import CookieConsent from "react-cookie-consent"
 
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -26,7 +26,6 @@ import {
   useMediaQuery,
   Container,
   IconButton,
-  Modal,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -260,7 +259,11 @@ const NotificationPermission = ({ Firebase }) => {
             await getToken()
           })
 
+        Firebase.analytics().setUserProperties({ allowed_notifications: "yes" })
+
         getToken()
+      } else {
+        Firebase.analytics().setUserProperties({ allowed_notifications: "no" })
       }
     } else {
       console.warn(
