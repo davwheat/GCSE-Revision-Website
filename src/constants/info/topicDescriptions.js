@@ -7,6 +7,7 @@ export default {
   English: {
     "English Language": {
       "Paper 1": `Paper 1 is all about your ability to interpret and make inferences about fiction writing, as well as your ability to write a compelling piece of creative writing.`,
+      "Paper 2": `Paper 2 is all about writers' viewpoints and perspectives, as well as your ability to write non-fiction in a persuasive manner.`,
     },
   },
   Science: {
