@@ -206,9 +206,9 @@ const NotificationPermission = ({ Firebase }) => {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar()
   const [Open, setOpen] = useState(false)
 
-  const FCM = Firebase ? Firebase.messaging() : null
-
   const getToken = async () => {
+    const FCM = Firebase ? Firebase.messaging() : null
+
     const token = await FCM.getToken()
 
     if (!token) {
@@ -251,6 +251,8 @@ const NotificationPermission = ({ Firebase }) => {
           }
         )
       } else if (Notification.permission !== "denied") {
+        const FCM = Firebase ? Firebase.messaging() : null
+
         // Callback fired if Instance ID token is updated.
         FCM &&
           FCM.onTokenRefresh(async () => {
@@ -275,9 +277,13 @@ const NotificationPermission = ({ Firebase }) => {
     setOpen(false)
   }
 
-  const acceptNotifications = async () => {
+  const acceptNotifications = () => {
     hideDialog()
-    await getToken()
+    getToken()
+  }
+
+  const rejectNotifications = () => {
+    hideDialog()
   }
 
   return (
@@ -303,6 +309,14 @@ const NotificationPermission = ({ Firebase }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
+        <Button
+          onClick={rejectNotifications}
+          color="default"
+          variant="text"
+          autoFocus
+        >
+          No, I&apos;m a loser.
+        </Button>
         <Button
           onClick={acceptNotifications}
           color="primary"
