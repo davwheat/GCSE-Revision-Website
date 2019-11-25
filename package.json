@@ -8,7 +8,7 @@
     "@matejmazur/react-katex": "^3.0.2",
     "@material-ui/core": "^4.7.0",
     "@material-ui/icons": "^4.5.1",
-    "@material-ui/lab": "^4.0.0-alpha.32",
+    "@material-ui/lab": "^4.0.0-alpha.33",
     "@openfonts/lexend-deca_all": "^1.44.0",
     "async": "^3.1.0",
     "clsx": "^1.0.4",
