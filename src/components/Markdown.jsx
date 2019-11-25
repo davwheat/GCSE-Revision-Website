@@ -51,7 +51,7 @@ import "highlight.js/styles/monokai-sublime.css"
 
 import Link from "./Link"
 import GImage from "./image"
-import { P, P2, H2, H3, H4, H5, H6, Subtitle2 } from "./EasyText"
+import { P, P2, H1, H2, H3, H4, H5, H6, Subtitle2 } from "./EasyText"
 import Quote from "./Blockquote"
 
 import textToSafeId from "../functions/textToSafeId"
@@ -74,6 +74,12 @@ const componentTransforms = classes => ({
   R: props => <>{props.children}</>,
   P,
   P2,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
   Triple: ({ primary }) => (
     <Tooltip arrow title="Triple Science only">
       <span>
@@ -197,7 +203,9 @@ const ExamQuestion = ({
         {marksText ? (marks !== 1 ? " marks" : " mark") : ""}
       </div>
       <div className="questionAnswer">
-        {lines && _.times(lines, () => <hr className="questionAnswerLine" />)}
+        {lines && lines !== 0
+          ? _.times(lines, () => <hr className="questionAnswerLine" />)
+          : null}
         {answerLine ? <hr className="questionFinalAnswer" /> : null}
       </div>
     </Paper>
