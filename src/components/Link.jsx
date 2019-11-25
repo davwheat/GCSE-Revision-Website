@@ -10,8 +10,6 @@ import {
 import { Link as GatsbyLink } from "gatsby"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
-import { OutboundLink } from "gatsby-plugin-gtag"
-
 import ExternalLinkIcon from "mdi-react/ExternalLinkIcon"
 
 // eslint-disable-next-line react/display-name
@@ -55,7 +53,7 @@ const Link = props => {
         <Button
           href={to}
           color={inheritColor ? "inherit" : "primary"}
-          component={OutboundLink}
+          component="a"
           {...newprops}
           target="_blank"
           rel="noopener"
@@ -75,7 +73,15 @@ const Link = props => {
       let url = to
 
       if (url.match(/(?:[/dp/]|$)([A-Z0-9]{10})/)) {
-        url = `https://www.amazon.co.uk/gp/product/${url.match(/(?:[/dp/]|$)([A-Z0-9]{10})/)[0].substr(1)}/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=${url.match(/(?:[/dp/]|$)([A-Z0-9]{10})/)[0].substr(1)}&linkCode=as2&tag=wheatleywebse-21&linkId=b464328f449dbfe39206c55a2828121b`
+        url = `https://www.amazon.co.uk/gp/product/${url
+          .match(/(?:[/dp/]|$)([A-Z0-9]{10})/)[0]
+          .substr(
+            1
+          )}/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=${url
+          .match(/(?:[/dp/]|$)([A-Z0-9]{10})/)[0]
+          .substr(
+            1
+          )}&linkCode=as2&tag=wheatleywebse-21&linkId=b464328f449dbfe39206c55a2828121b`
       }
 
       return (
@@ -85,7 +91,7 @@ const Link = props => {
           {...newprops}
           target="_blank"
           rel="noopener"
-          component={OutboundLink}
+          component="a"
         >
           {children}
           {hasExternalLinkIcon ? (
