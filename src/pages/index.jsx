@@ -16,13 +16,12 @@ import {
   Box,
   CardActionArea,
   Zoom,
-  Slide,
 } from "@material-ui/core"
 
-import { H1, H4, H5, P2, H3, P, H2 } from "../components/EasyText"
+import { H1, H4, P2, P, H2 } from "../components/EasyText"
 import Link from "../components/Link"
 
-import Masonry from "react-masonry-component"
+import { XMasonry, XBlock } from "react-xmasonry"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -61,23 +60,23 @@ const IndexPage = () => {
       <br />
       <H2>Subjects</H2>
       <br />
-      <Masonry
-        options={{
-          fitWidth: true,
-          horizontalOrder: true,
-        }}
+      <XMasonry
+        targetBlockWidth={375}
+        maxColumns={2}
         className={classes.container}
       >
         {subjects.map((subject, i) => (
-          <Box key={subject.name} className={classes.card}>
-            <Zoom in style={{ transitionDelay: i * 50 + "ms" }}>
-              <div>
-                <SubjectCard subject={subject} />
-              </div>
-            </Zoom>
-          </Box>
+          <XBlock key={subject.name}>
+            <Box className={classes.card}>
+              <Zoom in style={{ transitionDelay: i * 50 + "ms" }}>
+                <div>
+                  <SubjectCard subject={subject} />
+                </div>
+              </Zoom>
+            </Box>
+          </XBlock>
         ))}
-      </Masonry>
+      </XMasonry>
     </Layout>
   )
 }

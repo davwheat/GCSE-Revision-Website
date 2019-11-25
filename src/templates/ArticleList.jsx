@@ -20,7 +20,7 @@ import HigherIcon from "mdi-react/ArrowUpCircleOutlineIcon"
 
 import Link from "../components/Link"
 
-import Masonry from "react-masonry-component"
+import { XMasonry, XBlock } from "react-xmasonry"
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -74,51 +74,33 @@ const ArticleList = props => {
       render={data => {
         const posts = data.allMarkdownRemark.edges
 
-        // return (
-        //   <Grid container spacing={3}>
-        //     {posts.map((post, i) => {
-        //       // If it's not the subject we want, ignore it
-        //       if (post.node.frontmatter.subject !== props.subject) return null
-
-        //       // If it's not the topic we want (and we have told the component a topic) ignore it
-        //       if (props.topic && post.node.frontmatter.topic !== props.topic)
-        //         return null
-
-        //       return (
-        //         <Grid key={i} item xs={12} sm={6}>
-        //           <PostCard post={post} />
-        //         </Grid>
-        //       )
-        //     })}
-        //   </Grid>
-        // )
         return (
-          <Masonry
-            options={{
-              fitWidth: true,
-              horizontalOrder: true,
-            }}
+          <XMasonry
+            targetBlockWidth={375}
+            maxColumns={2}
             className={classes.container}
           >
             {posts.map((post, i) => {
               // If it's not the subject we want, ignore it
-              if (post.node.frontmatter.subject !== props.subject) return null
+              if (post.node.frontmatter.subject !== props.subject) return []
 
               // If it's not the topic we want (and we have told the component a topic) ignore it
               if (props.topic && post.node.frontmatter.topic !== props.topic)
-                return null
+                return []
 
               return (
-                <Box key={i} className={classes.card}>
-                  <Zoom in style={{ transitionDelay: i * 50 + "ms" }}>
-                    <div>
-                      <PostCard post={post} />
-                    </div>
-                  </Zoom>
-                </Box>
+                <XBlock key={i}>
+                  <Box className={classes.card}>
+                    <Zoom in style={{ transitionDelay: i * 50 + "ms" }}>
+                      <div>
+                        <PostCard post={post} />
+                      </div>
+                    </Zoom>
+                  </Box>
+                </XBlock>
               )
             })}
-          </Masonry>
+          </XMasonry>
         )
       }}
     />
