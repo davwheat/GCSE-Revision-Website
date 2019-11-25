@@ -365,9 +365,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-let previousHeadings = []
-
-const HeadingLevelToComponent = (level, props) => {
+const HeadingLevelToComponent = (level, props, previousHeadings) => {
   // Start with H2 because H1 is generated automatically from the title in the MD doc
 
   const classes = makeStyles(() => ({
@@ -381,11 +379,8 @@ const HeadingLevelToComponent = (level, props) => {
     },
   }))()
 
-  let id = textToSafeId(props.children[0].props.value)
-
-  if (previousHeadings.includes(id)) {
-    id += `-${previousHeadings.length}`
-  }
+  let id =
+    textToSafeId(props.children[0].props.value) + `-${previousHeadings.length + 1}`
 
   previousHeadings.push(id)
 
@@ -474,7 +469,7 @@ const HeadingLevelToComponent = (level, props) => {
 // Renderer docs: https://github.com/rexxars/react-markdown#node-types
 let row = 0
 
-function markdownRenderers(theme, classes) {
+function markdownRenderers(theme, classes, previousHeadings) {
   return {
     root: props => <article>{props.children}</article>,
     paragraph: props => {
@@ -553,7 +548,8 @@ function markdownRenderers(theme, classes) {
       </StyledTableCell>
     ),
     image: props => <GImage filename={props.src} alt={props.alt} />,
-    heading: props => HeadingLevelToComponent(props.level, props),
+    heading: props =>
+      HeadingLevelToComponent(props.level, props, previousHeadings),
     inlineCode: props => {
       if (props.value.startsWith("react ")) {
         return (
@@ -636,8 +632,10 @@ const Markdown = props => {
   const theme = useTheme()
   const classes = useStyles()
 
+  let previousHeadings = []
+
   const { src } = props
-  const renderers = markdownRenderers(theme, classes)
+  const renderers = markdownRenderers(theme, classes, previousHeadings)
 
   return (
     <Twemoji options={{ className: "twemoji", ext: ".png" }} noWrapper>

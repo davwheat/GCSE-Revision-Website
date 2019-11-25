@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 
 import {
@@ -19,8 +19,6 @@ const nestMultiplier = 4
 const ArticleTOC = ({ headings }) => {
   const theme = useTheme()
 
-  let previousHeadings = []
-
   return (
     <>
       <H2 gutterBottom>Contents</H2>
@@ -28,13 +26,7 @@ const ArticleTOC = ({ headings }) => {
       <List dense>
         {headings.map((heading, i) => {
           // Ensure all heading IDs are unique
-          let id = textToSafeId(heading.value)
-
-          if (previousHeadings.includes(id)) {
-            id += `-${i}`
-          }
-
-          previousHeadings.push(id)
+          let id = textToSafeId(heading.value) + `-${i + 1}`
 
           return (
             <ListItem

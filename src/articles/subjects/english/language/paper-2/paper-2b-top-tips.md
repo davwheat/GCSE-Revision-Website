@@ -48,6 +48,16 @@ Unlike Paper 1, there is only **one option**. You will have only be given one of
 
 You are advised to spend about **45 minutes** on this question, including **5 minutes** for **planning**, and another **5 minutes** for **proofreading** your work.
 
+### Example Exam Question
+
+```react
+<ExamQuestion questionNumber={5} marks={40} english5 marksSquareBrackets marksText lines={0}>
+"Cars are noisy, dirty, smelly and downright dangerous. They should be bammed from all town and city centres, allowing people to walk and cycle in peace."
+<br/><br/>
+Write a letter to the Minister of Transport arguing your point of view on this statement.
+</ExamQuestion>
+```
+
 ### Letter
 
 - Be **respectful**
