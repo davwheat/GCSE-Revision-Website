@@ -63,3 +63,8 @@ a.color-inherit:any-link:hover *:not(.keepColor) {
 p > svg.mdi-icon {
   transform: translateY(4px);
 }
+
+.xmasonry .xblock {
+  transition: left 0.3s ease, top 0.3s ease;
+  will-change: left, top;
+}

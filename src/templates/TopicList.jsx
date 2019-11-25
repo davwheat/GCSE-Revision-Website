@@ -24,7 +24,8 @@ import {
   ConvertStringToTopicUrl,
 } from "../functions/stringManipulations"
 
-import Masonry from "react-masonry-component"
+import { XMasonry, XBlock } from "react-xmasonry"
+
 import { TopicDescriptions } from "../constants/subjectInfo"
 
 const useStyles = makeStyles(theme => ({
@@ -72,11 +73,9 @@ const TopicList = props => {
         const topics = data.topics.group
 
         return (
-          <Masonry
-            options={{
-              fitWidth: true,
-              horizontalOrder: true,
-            }}
+          <XMasonry
+            targetBlockWidth={375}
+            maxColumns={2}
             className={classes.container}
           >
             {topics.map((topic, i) => {
@@ -88,29 +87,33 @@ const TopicList = props => {
                     props.subjectGroup)
               ) {
                 return (
-                  <Box key={topic.fieldValue} className={classes.card}>
-                    <Zoom
-                      in
-                      style={{ transitionDelay: i * 50 + "ms !important" }}
-                    >
-                      <div>
-                        <TopicCard
-                          topic={topic.fieldValue}
-                          articleCount={topic.totalCount}
-                          subject={subjectLabel}
-                          subjectGroup={
-                            props.subjectGroup ? props.subjectGroup : undefined
-                          }
-                        />
-                      </div>
-                    </Zoom>
-                  </Box>
+                  <XBlock key={i}>
+                    <Box key={i} className={classes.card}>
+                      <Zoom
+                        in
+                        style={{ transitionDelay: i * 50 + "ms !important" }}
+                      >
+                        <div>
+                          <TopicCard
+                            topic={topic.fieldValue}
+                            articleCount={topic.totalCount}
+                            subject={subjectLabel}
+                            subjectGroup={
+                              props.subjectGroup
+                                ? props.subjectGroup
+                                : undefined
+                            }
+                          />
+                        </div>
+                      </Zoom>
+                    </Box>
+                  </XBlock>
                 )
               } else {
-                return null
+                return []
               }
             })}
-          </Masonry>
+          </XMasonry>
         )
       }}
     />
