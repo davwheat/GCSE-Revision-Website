@@ -21,7 +21,7 @@
     "gatsby-plugin-manifest": "^2.2.30",
     "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-offline": "^3.0.24",
-    "gatsby-plugin-react-helmet": "^3.1.15",
+    "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-remove-console": "0.0.2",
     "gatsby-plugin-sharp": "^2.3.4",
     "gatsby-remark-images": "^3.1.34",
