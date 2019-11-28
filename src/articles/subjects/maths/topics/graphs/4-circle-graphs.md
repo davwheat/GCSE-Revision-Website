@@ -13,7 +13,7 @@ I'll happily do algebra, geometry, trigonometry, and probability but graphing is
 
 I mean, I'm not quite sure what to say here... It's a _graph_... That's a _circle_!
 
-<iframe src="https://www.desmos.com/calculator/1eqdtjbzgs?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
+<iframe title="embedded graph" src="https://www.desmos.com/calculator/1eqdtjbzgs?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
 
 Loopy!
 
@@ -50,7 +50,7 @@ Give the radius of the circle described by the equation <TeX math="x^2+y^2=100">
 
 A tangent to a circle is any **straight line** that **touches** the circle at only one point.
 
-<iframe src="https://www.desmos.com/calculator/4haksob59p?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
+<iframe title="embedded graph" src="https://www.desmos.com/calculator/4haksob59p?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
 
 In the above example, the line $x=5$ is **tangent to** the circle $x^2+y^2=25$ as it touches the circle at one point: $(5,0)$.
 
@@ -58,7 +58,7 @@ In the above example, the line $x=5$ is **tangent to** the circle $x^2+y^2=25$ a
 
 The easiest way to explain how to find the equation of a tangent to a circle is to show you the method.
 
-<iframe src="https://www.desmos.com/calculator/w12wvjw2eq?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
+<iframe title="embedded graph" src="https://www.desmos.com/calculator/w12wvjw2eq?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
 
 ```react
 <ExamQuestion type="no-box" questionNumber={2} marks={5} marksSquareBrackets marksText lines={5} answerLine>
@@ -67,11 +67,11 @@ Find the equation of the tangent to the circle <TeX math="x^2+y^2=25"></TeX> at 
 ```
 
 1. First we have to find out the coordinates of point P. Using the graph, we can see that point P is at $(-3,4)$.
-   <iframe src="https://www.desmos.com/calculator/l9ekthtleo?embed" width="100%" height="300px" style="margin:12px 0 0 0" frameborder="0"></iframe>
+   <iframe title="embedded graph" src="https://www.desmos.com/calculator/l9ekthtleo?embed" width="100%" height="300px" style="margin:12px 0 0 0" frameborder="0"></iframe>
 2. Next, we have to work out the equation of the line that passes through the points $(0,0)$ and $(-3,4)$ (P).
    1. Using the knowledge from a [previous article](subjects/maths/topics/graphs/1-equations-of-lines/), we can work out that the line would be $y=-\frac{4}{3}x$.
    2. Now we can draw that line on the graph, too
-      <iframe src="https://www.desmos.com/calculator/hjp9wpuuwk?embed" width="100%" height="300px" style="margin:12px 0 0 0" frameborder="0"></iframe>
+      <iframe title="embedded graph" src="https://www.desmos.com/calculator/hjp9wpuuwk?embed" width="100%" height="300px" style="margin:12px 0 0 0" frameborder="0"></iframe>
 3. Now we need to work out the equation of the tangent
    1. Using our knowledge of [perpendicular lines](subjects/maths/topics/graphs/2-perpendicular-lines/), we know that the gradient of the tangent will be the **negative reciprocal** of the gradient of the line we just drew: $-\frac{4}{3}\to\frac{3}{4}$
    2. Now we have to use our knowledge of [calculating the equation of a line between two points](subjects/maths/topics/graphs/1-equations-of-lines/) to work out the equation of the line with gradient $\frac{3}{4}$ passing through point $(-3,4)$
