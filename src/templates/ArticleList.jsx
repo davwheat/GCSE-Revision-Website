@@ -143,7 +143,7 @@ const PostCard = props => {
           >
             {title}
           </H4>
-          <Subtitle2 color="textSecondary" gutterBottom>
+          <Subtitle2 component="p" color="textSecondary" gutterBottom>
             Published on {date}
           </Subtitle2>
 
