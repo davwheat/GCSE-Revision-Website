@@ -51,6 +51,8 @@ There was one hole in Rutherford's research: if the electrons were in a "cloud" 
 
 Niels Bohr filled this gap by suggesting that all electrons were contained in **shells**. He proposed that the electrons **orbit** the nucleus in **fixed shells** and aren't anywhere in between: the shells are at fixed distances from the nucleus. Bohr's model was supported by many further experiments, and helped to explain many other scientists' observations at the time.
 
+![Bohr's Nuclear Model](articles/chemistry/topic-1/bohrs-nuclear-model.png)
+
 # Freesciencelessons Videos
 
 ## Alpha Particle Scattering
