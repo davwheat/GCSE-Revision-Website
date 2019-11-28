@@ -17,6 +17,7 @@ export default {
     },
     Chemistry: {
       "Topic 1 - Atomic Structure and the Periodic Table": `Oxygen, hydrogen, sulfur, sodium, and phosphorous walk into a bar: "OH SNaP!" says the bartender.`,
+      "Topic 4 - Chemical Changes": `Why did the military use acid? To neutralise the enemy base! Chemical changes are a big players in GCSE Chemistry, so you'll need to know a fair bit about them.`,
     },
     Physics: {
       "Key Ideas": `You'll need to know about these for every paper, so make sure you learn them!`,
