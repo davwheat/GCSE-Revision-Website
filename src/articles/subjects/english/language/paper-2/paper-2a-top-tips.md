@@ -17,7 +17,7 @@ Here are AQA's suggested timings for English Language Paper 2. It's a good idea 
 
 # Section A
 
-**Section A** is all about **reading**. You will be given one fiction source which you then have to answer 4 questions about.
+**Section A** is all about **reading**. You will be given two non-fiction sources which you then have to answer 4 questions about.
 
 You should spend about **15 minutes** reading the questions and source. You may find it easier reading the questions first, then the source, so you know what sort of things you should annotate for.
 

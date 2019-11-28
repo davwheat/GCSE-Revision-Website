@@ -57,7 +57,11 @@ const Article = props => {
     : []
 
   if (subjectLabel === "Chemistry") {
-    post.headings.push({ value: "Interactive Periodic Table", depth: 1 })
+    post.headings.push({
+      value: "Interactive Periodic Table",
+      depth: 1,
+      constant: true,
+    })
   }
 
   return (

@@ -26,7 +26,11 @@ const ArticleTOC = ({ headings }) => {
       <List dense>
         {headings.map((heading, i) => {
           // Ensure all heading IDs are unique
-          let id = textToSafeId(heading.value) + `-${i + 1}`
+          let id = textToSafeId(heading.value)
+
+          if (!heading.constant) {
+            id += `-${i + 1}`
+          }
 
           return (
             <ListItem
