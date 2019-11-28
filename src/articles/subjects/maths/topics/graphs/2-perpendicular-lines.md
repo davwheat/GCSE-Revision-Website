@@ -12,7 +12,7 @@ I just saw a y=x movie. Unfortunately, its plot was quite predictable. (Please. 
 
 A perpendicular line is one that **intersects** another at a **90° angle**. Take a look at this demo of two lines **perpendicular to each other**.
 
-<iframe src="https://www.desmos.com/calculator/yazd6hlrqd?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
+<iframe title="embedded graph" src="https://www.desmos.com/calculator/yazd6hlrqd?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
 
 The two lines always meet at **right angles**, making them perpendicular.
 
@@ -40,7 +40,7 @@ Find the negative reciprocal of <TeX math="3"></TeX>.
 
 The negative reciprocal of $3$ is $-\frac{1}{3}$. We can see this if we plot $y=3x$ and $y=-\frac{1}{3}x$ on a graph:
 
-<iframe src="https://www.desmos.com/calculator/epuefmgsys?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
+<iframe title="embedded graph" src="https://www.desmos.com/calculator/epuefmgsys?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
 
 ### Walkthrough 2
 
@@ -56,7 +56,7 @@ Find the negative reciprocal of <TeX math="-\frac{4}{3}"></TeX>.
 
 The negative reciprocal of $-\frac{4}{3}$ is $\frac{3}{4}$. We can see this if we plot $y=-\frac{4}{3}x$ and $y=\frac{3}{4}x$ on a graph:
 
-<iframe src="https://www.desmos.com/calculator/7eaunlqo3h?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
+<iframe title="embedded graph" src="https://www.desmos.com/calculator/7eaunlqo3h?embed" width="100%" height="500px" style="margin-bottom:16px" frameborder="0"></iframe>
 
 # Exam-style questions
 

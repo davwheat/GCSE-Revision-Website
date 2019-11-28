@@ -19,6 +19,7 @@ const YouTubeEmbed = ({ url }) => {
       }}
     >
       <iframe
+        title="Embedded YouTube Video"
         style={{
           position: "absolute",
           top: 0,
