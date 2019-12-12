@@ -19,9 +19,9 @@ import ArticlesIcon from "mdi-react/NewspaperVariantMultipleOutlineIcon"
 import Link from "../components/Link"
 
 import {
-  ConvertStringToLabel,
   ConvertStringToUrl,
   ConvertStringToTopicUrl,
+  ConvertTagToString,
 } from "../functions/stringManipulations"
 
 import { XMasonry, XBlock } from "react-xmasonry"
@@ -137,6 +137,12 @@ const TopicCard = props => {
       ConvertStringToUrl(topic)
     )}`
 
+  console.log(ConvertTagToString(subject))
+  console.log(
+    TopicDescriptions[ConvertTagToString(subject)][ConvertTagToString(topic)] ||
+      ""
+  )
+
   return (
     <Card>
       <CardActionArea
@@ -146,15 +152,15 @@ const TopicCard = props => {
       >
         <CardContent>
           <H4 component="h2" color="primary" className="keepColor" gutterBottom>
-            {ConvertStringToLabel(topic)}
+            {ConvertTagToString(topic)}
           </H4>
           <P2>
             {subjectGroup
-              ? TopicDescriptions[ConvertStringToLabel(subjectGroup)][
-                  ConvertStringToLabel(subject)
-                ][ConvertStringToLabel(topic)] || ""
-              : TopicDescriptions[ConvertStringToLabel(subject)][
-                  ConvertStringToLabel(topic)
+              ? TopicDescriptions[ConvertTagToString(subjectGroup)][
+                  ConvertTagToString(subject)
+                ][ConvertTagToString(topic)] || ""
+              : TopicDescriptions[ConvertTagToString(subject)][
+                  ConvertTagToString(topic)
                 ] || ""}
           </P2>
         </CardContent>
