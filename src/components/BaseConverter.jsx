@@ -51,7 +51,7 @@ const BaseConverter = () => {
           // 1101100 -> 110 1100
 
           if (pad && i + 1 === inputString.length && (i + 1) % n !== 0) {
-            val = d + "0".repeat(4 - ((i + 1) % n))
+            val = d + "0".repeat(n - ((i + 1) % n))
           } else {
             val = d
           }
