@@ -8,7 +8,7 @@ import { useTheme, Divider } from "@material-ui/core"
 import {
   FacebookShareButton,
   TwitterShareButton,
-  WhatsAppShareButton,
+  WhatsappShareButton,
   RedditShareButton,
   EmailShareButton,
 } from "react-share"
@@ -133,7 +133,7 @@ const Article = props => {
           title={`Read ${post.frontmatter.title} from GCSE Revise It`}
           hashtags={[`gcses`, `revision`, `gcserevision`]}
         />
-        <WhatsAppShareButton
+        <WhatsappShareButton
           title={`Read ${post.frontmatter.title} from GCSE Revise It`}
           separator={` >> `}
         />

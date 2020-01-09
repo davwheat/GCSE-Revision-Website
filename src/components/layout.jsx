@@ -12,6 +12,7 @@ import CookieConsent from "react-cookie-consent"
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Cookies from "js-cookie"
 
 import theme from "../constants/theme"
 
@@ -230,25 +231,34 @@ const NotificationPermission = ({ Firebase }) => {
   if (Firebase) {
     if (Firebase.messaging.isSupported()) {
       if (!["granted", "denied"].includes(Notification.permission)) {
-        enqueueSnackbar(
-          `Want to get notified about new content and features?`,
-          {
-            action: key => (
-              <Button
-                aria-label="Learn more"
-                onClick={() => {
-                  closeSnackbar(key)
-                  showDialog()
-                }}
-                color="inherit"
-              >
-                Learn more
-              </Button>
-            ),
-            persist: true,
-            variant: "info",
-          }
-        )
+        let d = new Date()
+        
+        if (
+          localStorage.getItem("push-notifications-denied") <
+          d.setDate(d.getDate() - 28)
+        ) {
+          enqueueSnackbar(
+            `Want to get notified about new content and features?`,
+            {
+              action: key => {
+                return (
+                  <Button
+                    aria-label="Learn more"
+                    onClick={() => {
+                      closeSnackbar(key)
+                      showDialog()
+                    }}
+                    color="inherit"
+                  >
+                    Learn more
+                  </Button>
+                )
+              },
+              persist: true,
+              variant: "info",
+            }
+          )
+        }
       } else if (Notification.permission !== "denied") {
         const FCM = Firebase ? Firebase.messaging() : null
 
@@ -272,8 +282,17 @@ const NotificationPermission = ({ Firebase }) => {
     }
   }
 
+  let snackbarKey
+
   const showDialog = () => {
-    setOpen(true)
+    let d = new Date()
+
+    if (
+      localStorage.getItem("push-notifications-denied") <
+      d.setDate(d.getDate() - 28)
+    ) {
+      setOpen(true)
+    }
   }
 
   const hideDialog = () => {
@@ -286,7 +305,12 @@ const NotificationPermission = ({ Firebase }) => {
   }
 
   const rejectNotifications = () => {
+    localStorage.setItem(
+      "push-notifications-denied",
+      new Date().getMilliseconds()
+    )
     hideDialog()
+    // hideNotificationDialog()
   }
 
   return (
