@@ -70,7 +70,7 @@ const WordOfTheDay = () => {
 
   const wotdStyles = makeStyles({
     card: {
-      maxWidth: "92.5vw",
+      maxWidth: "100%",
       width: 650,
       display: "block",
       margin: theme.spacing(2) + "px auto",
