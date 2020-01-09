@@ -72,6 +72,8 @@ const TopicList = props => {
       render={data => {
         const topics = data.topics.group
 
+        let counter = -1
+
         return (
           <XMasonry
             targetBlockWidth={375}
@@ -86,12 +88,15 @@ const TopicList = props => {
                   topic.nodes[0].frontmatter.subjectGroup ===
                     props.subjectGroup)
               ) {
+                counter++
                 return (
                   <XBlock key={i}>
-                    <Box key={i} className={classes.card}>
+                    <Box className={classes.card}>
                       <Zoom
                         in
-                        style={{ transitionDelay: i * 50 + "ms !important" }}
+                        style={{
+                          transitionDelay: counter * 75 + "ms",
+                        }}
                       >
                         <div>
                           <TopicCard

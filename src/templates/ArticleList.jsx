@@ -74,6 +74,8 @@ const ArticleList = props => {
       render={data => {
         const posts = data.allMarkdownRemark.edges
 
+        let counter = -1
+
         return (
           <XMasonry
             targetBlockWidth={375}
@@ -88,10 +90,12 @@ const ArticleList = props => {
               if (props.topic && post.node.frontmatter.topic !== props.topic)
                 return []
 
+              counter++
+
               return (
                 <XBlock key={i}>
                   <Box className={classes.card}>
-                    <Zoom in style={{ transitionDelay: i * 50 + "ms" }}>
+                    <Zoom in style={{ transitionDelay: counter * 75 + "ms" }}>
                       <div>
                         <PostCard post={post} />
                       </div>
