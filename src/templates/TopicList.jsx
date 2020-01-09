@@ -3,7 +3,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 
-import { H4, P2, P } from "../components/EasyText"
+import { H4, P2 } from "../components/EasyText"
 import {
   Card,
   CardContent,
@@ -136,12 +136,6 @@ const TopicCard = props => {
     }${ConvertStringToUrl(subject)}/topics/${ConvertStringToTopicUrl(
       ConvertStringToUrl(topic)
     )}`
-
-  console.log(ConvertTagToString(subject))
-  console.log(
-    TopicDescriptions[ConvertTagToString(subject)][ConvertTagToString(topic)] ||
-      ""
-  )
 
   return (
     <Card>

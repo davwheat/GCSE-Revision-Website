@@ -475,8 +475,6 @@ function markdownRenderers(theme, classes, previousHeadings) {
     paragraph: props => {
       const { children } = props
 
-      console.log(children)
-
       if (
         (children &&
           children[0] &&
