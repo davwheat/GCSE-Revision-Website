@@ -5,6 +5,16 @@ import { graphql } from "gatsby"
 
 import { useTheme, Divider } from "@material-ui/core"
 
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsAppShareButton,
+  RedditShareButton,
+  EmailShareButton,
+} from "react-share"
+
+import { globalHistory } from "@reach/router"
+
 import Layout from "../components/layout"
 import Markdown from "../components/Markdown"
 import { H1, Subtitle1, P } from "../components/EasyText"
@@ -26,6 +36,8 @@ String.prototype.trimRight = function(charList) {
 
   return this.replace(new RegExp("[" + charList + "]+$"), "")
 }
+
+const CurrentUrl = globalHistory.location.pathname
 
 const Article = props => {
   const post = props.data.markdownRemark
@@ -110,6 +122,33 @@ const Article = props => {
         >
           Published {post.frontmatter.date}
         </Subtitle1>
+
+        <Divider />
+
+        <FacebookShareButton
+          quote={`Read ${post.frontmatter.title} from GCSE Revise It`}
+          hashtag={`gcses`}
+        />
+        <TwitterShareButton
+          title={`Read ${post.frontmatter.title} from GCSE Revise It`}
+          hashtags={[`gcses`, `revision`, `gcserevision`]}
+        />
+        <WhatsAppShareButton
+          title={`Read ${post.frontmatter.title} from GCSE Revise It`}
+          separator={` >> `}
+        />
+        <RedditShareButton
+          title={`Read ${post.frontmatter.title} from GCSE Revise It`}
+        />
+        <EmailShareButton
+          subject={`Check out GCSE Revise It`}
+          title={`Try reading ${post.frontmatter.title} from GCSE Revise It!`}
+          separator={` >> `}
+          openWindow
+        />
+
+        <Divider />
+
         <ArticleTOC headings={post.headings} />
         <Markdown src={post.rawMarkdownBody} />
       </article>

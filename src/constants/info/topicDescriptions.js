@@ -24,4 +24,7 @@ export default {
       "Topic 2 - Electricity": `It'll make you loopy at first, but you'll soon get into the flow of it. Just learn a handful rules, a spoonful of equations, and a sprinkle of diagrams and you'll be all set.`,
     },
   },
+  "Computer Science": {
+    
+  }
 }
