@@ -13,7 +13,7 @@
     "async": "^3.1.0",
     "clsx": "^1.0.4",
     "eslint-plugin-flowtype": "^4.5.3",
-    "firebase": "^7.6.1",
+    "firebase": "^7.6.2",
     "gatsby": "^2.18.21",
     "gatsby-image": "^2.2.38",
     "gatsby-plugin-firebase": "^0.1.7",
