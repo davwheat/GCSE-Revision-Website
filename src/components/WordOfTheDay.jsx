@@ -33,8 +33,6 @@ import SeededRandom from "seedrandom"
 
 import "./css/WordOfTheDay.css"
 
-import { Words } from "../audio"
-
 const MakeUrl = word =>
   "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + word
 
@@ -59,7 +57,7 @@ const WordOfTheDay = () => {
     if (typeof window !== "undefined" && !isPlaying) {
       isPlaying = true
       let sound = new Howl({
-        src: [Words[wordOfTheDay]],
+        src: [`/files/audio/words/${wordOfTheDay.toLowerCase()}.mp3`],
         onend: () => {
           isPlaying = false
         },
@@ -125,11 +123,11 @@ const WordOfTheDay = () => {
       })
   }
 
-  let allSpeechParts =
-    stateWord ? [...new Set(Object.keys(stateWord["meaning"]))] : null
+  let allSpeechParts = stateWord
+    ? [...new Set(Object.keys(stateWord["meaning"]))]
+    : null
 
-  let firstSpeechPart =
-    stateWord ? Object.keys(stateWord["meaning"])[0] : null
+  let firstSpeechPart = stateWord ? Object.keys(stateWord["meaning"])[0] : null
 
   return (
     <Card className={classes.card}>

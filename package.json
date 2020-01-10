@@ -12,7 +12,6 @@
     "@openfonts/lexend-deca_all": "^1.44.0",
     "async": "^3.1.0",
     "clsx": "^1.0.4",
-    "eslint-plugin-flowtype": "^4.5.3",
     "firebase": "^7.6.2",
     "gatsby": "^2.18.21",
     "gatsby-image": "^2.2.38",
@@ -49,12 +48,10 @@
     "react-markdown": "^4.3.1",
     "react-share": "^4.0.1",
     "react-twemoji": "^0.2.3",
-    "rehype-katex": "^2.0.0",
     "remark-math": "^2.0.0",
     "seedrandom": "^3.0.5",
     "typeface-fira-mono": "0.0.72",
     "typeface-poppins": "0.0.72",
-    "typeface-work-sans": "0.0.72",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
@@ -64,6 +61,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
+    "eslint-plugin-flowtype": "^4.5.3",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "firebase-tools": "^7.11.0",
