@@ -28,6 +28,6 @@ export default {
     },
   },
   "Computer Science": {
-    "Computer Systems": `Hi`,
+    "Computer Systems": `Everything to do with computers in general, including hardware, boolean logic, etc.`,
   },
 }
