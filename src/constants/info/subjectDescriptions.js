@@ -9,6 +9,10 @@ export default {
   that's pretty accurate. GCSE Revise It! can help you manage 
   this with top tips for each paper as well as many other useful 
   strategies.`,
+  "English Literature": `English Literature has a reputation of
+  being completely and utterly useless and pointless: after all
+  you don't need it for many (if any) college courses. Still,
+  it's worth giving it a shot anyway.`,
   Maths: `Our site provides useful tips and tricks to
   help you make the most of your calculator as well as maths
   quizzes and articles on harder topics.`,

@@ -15,6 +15,7 @@ import {
   Collapse,
   useTheme,
   Box,
+  Tooltip,
 } from "@material-ui/core"
 
 import { H6 } from "./EasyText"
@@ -23,6 +24,7 @@ import Link from "./Link"
 import MenuIcon from "mdi-react/HamburgerMenuIcon"
 import ExpandMoreIcon from "mdi-react/ChevronDownIcon"
 import ExpandLessIcon from "mdi-react/ChevronUpIcon"
+import BellOutlineIcon from "mdi-react/BellOutlineIcon"
 
 import CssBaseline from "@material-ui/core/CssBaseline"
 
@@ -70,7 +72,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Header = ({ pageTitle, type }) => {
+const Header = ({ pageTitle, type, overrideNotificationPopup }) => {
   const classes = useStyles()
 
   useEffect(() => {
@@ -98,7 +100,10 @@ const Header = ({ pageTitle, type }) => {
   return (
     <>
       <CssBaseline />
-      <MakeAppBar title={pageTitle} />
+      <MakeAppBar
+        overrideNotificationPopup={overrideNotificationPopup}
+        title={pageTitle}
+      />
 
       {type === "article" ? (
         <Box
@@ -111,7 +116,7 @@ const Header = ({ pageTitle, type }) => {
   )
 }
 
-const MakeAppBar = ({ title }) => {
+const MakeAppBar = ({ title, overrideNotificationPopup }) => {
   const classes = useStyles()
 
   const [state, setState] = React.useState({
@@ -152,6 +157,11 @@ const MakeAppBar = ({ title }) => {
           <H6 key={1} className={classes.title}>
             {title}
           </H6>
+          <Tooltip title="Enable notifications">
+            <IconButton onClick={overrideNotificationPopup}>
+              <BellOutlineIcon color="black" />
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
 

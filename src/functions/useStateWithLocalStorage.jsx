@@ -29,7 +29,7 @@ function useStateWithLocalStorage(key, initialValue) {
       window.localStorage.setItem(key, JSON.stringify(valueToStore))
     } catch (error) {
       // A more advanced implementation would handle the error case
-      console.log(error)
+      console.warn(error)
     }
   }
 
@@ -43,7 +43,7 @@ function useStateWithLocalStorage(key, initialValue) {
       window.localStorage.setItem(key, JSON.stringify(valueToStore))
     } catch (error) {
       // A more advanced implementation would handle the error case
-      console.log(error)
+      console.warn(error)
     }
   }
 

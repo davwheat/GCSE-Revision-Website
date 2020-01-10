@@ -17,11 +17,11 @@ const BioTopic5ArticleList = () => {
           { label: "Science", href: "subjects/science" },
           { label: "Biology", href: "subjects/science/biology" },
           { label: "Topics", href: "subjects/science/biology/topics" },
-          { label: "Topic 3 - Infection and Response" },
+          { label: "Topic 3: Infection and Response" },
         ]}
       />
       <H1 gutterBottom>Biology, Topic 3: Infection &amp; Response</H1>
-      <ArticleList subject="biology" topic="topic 3 - infection and response" />
+      <ArticleList subject="biology" topic="topic 3: infection and response" />
       <Ad />
     </Layout>
   )

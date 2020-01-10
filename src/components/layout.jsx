@@ -12,6 +12,7 @@ import CookieConsent from "react-cookie-consent"
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Cookies from "js-cookie"
 
 import theme from "../constants/theme"
 
@@ -97,6 +98,10 @@ const Layout = ({ children, type }) => {
     </>
   )
 
+  const [OverrideNotificationPopup, setOverrideNotificationPopup] = useState(
+    false
+  )
+
   return (
     <MuiThemeProvider theme={theme}>
       <CookieConsent
@@ -122,7 +127,13 @@ const Layout = ({ children, type }) => {
           </Link>
         </span>
       </CookieConsent>
-      <Header siteTitle={data.site.siteMetadata.title} type={type} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        type={type}
+        overrideNotificationPopup={() => {
+          setOverrideNotificationPopup(true)
+        }}
+      />
       <div
         style={{
           margin: `0 auto`,
@@ -152,7 +163,13 @@ const Layout = ({ children, type }) => {
               </IconButton>
             )}
           >
-            <NotificationPermission Firebase={Firebase} />
+            <NotificationPermission
+              Firebase={Firebase}
+              override={OverrideNotificationPopup}
+              resetOverride={() => {
+                setOverrideNotificationPopup(false)
+              }}
+            />
             <Box component="main">{children}</Box>
             <div id="ezoic-pub-ad-placeholder-101" />
           </SnackbarProvider>
@@ -201,7 +218,7 @@ Layout.propTypes = {
 
 export default Layout
 
-const NotificationPermission = ({ Firebase }) => {
+const NotificationPermission = ({ Firebase, override, resetOverride }) => {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar()
   const [Open, setOpen] = useState(false)
 
@@ -227,28 +244,71 @@ const NotificationPermission = ({ Firebase }) => {
     }
   }
 
+  const overrideNotificationPopup = () => {
+    localStorage.removeItem("push-notifications-denied")
+    resetOverride()
+  }
+
+  const showDialog = () => {
+    let d = new Date()
+
+    if (
+      localStorage.getItem("push-notifications-denied") <
+      d.setDate(d.getDate() - 28)
+    ) {
+      localStorage.removeItem("push-notifications-denied")
+      setOpen(true)
+    }
+  }
+
+  const hideDialog = () => {
+    setOpen(false)
+  }
+
+  const acceptNotifications = () => {
+    hideDialog()
+    getToken()
+  }
+
+  const rejectNotifications = () => {
+    localStorage.setItem("push-notifications-denied", new Date().getTime())
+    hideDialog()
+    // hideNotificationDialog()
+  }
+
   if (Firebase) {
     if (Firebase.messaging.isSupported()) {
       if (!["granted", "denied"].includes(Notification.permission)) {
-        enqueueSnackbar(
-          `Want to get notified about new content and features?`,
-          {
-            action: key => (
-              <Button
-                aria-label="Learn more"
-                onClick={() => {
-                  closeSnackbar(key)
-                  showDialog()
-                }}
-                color="inherit"
-              >
-                Learn more
-              </Button>
-            ),
-            persist: true,
-            variant: "info",
-          }
-        )
+        let d = new Date()
+
+        if (
+          localStorage.getItem("push-notifications-denied") <
+          d.setDate(d.getDate() - 28)
+        ) {
+          enqueueSnackbar(
+            `Want to get notified about new content and features?`,
+            {
+              action: key => {
+                return (
+                  <Button
+                    aria-label="Learn more"
+                    onClick={() => {
+                      closeSnackbar(key)
+                      showDialog()
+                    }}
+                    color="inherit"
+                  >
+                    Learn more
+                  </Button>
+                )
+              },
+              persist: true,
+              variant: "info",
+            }
+          )
+        } else if (override) {
+          overrideNotificationPopup()
+        }
       } else if (Notification.permission !== "denied") {
         const FCM = Firebase ? Firebase.messaging() : null
 
@@ -270,23 +330,6 @@ const NotificationPermission = ({ Firebase }) => {
         "You're using a terrible browser that doesn't support the web's notification standard. SHAME! SHAME! SHAME! https://www.youtube.com/watch?v=SrDSqODtEFM"
       )
     }
-  }
-
-  const showDialog = () => {
-    setOpen(true)
-  }
-
-  const hideDialog = () => {
-    setOpen(false)
-  }
-
-  const acceptNotifications = () => {
-    hideDialog()
-    getToken()
-  }
-
-  const rejectNotifications = () => {
-    hideDialog()
   }
 
   return (

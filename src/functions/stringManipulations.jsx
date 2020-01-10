@@ -23,6 +23,7 @@ export function ConvertTagToString(s) {
   if (typeof s !== "string") return ""
 
   return s
+    .replace(/\s/gi, "-")
     .split("-")
     .map(s => {
       if (

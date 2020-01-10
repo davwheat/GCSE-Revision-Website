@@ -4,7 +4,7 @@ date: "2019-11-21"
 description: "Antibodies aren't just used inside the immune system. Fancy-schmancy scientists have engineered them for lots of other uses too, like pregnancy tests or treating diseases."
 subject: "biology"
 subjectGroup: "science"
-topic: "topic 3 - infection and response"
+topic: "topic 3: infection and response"
 tripleOnly: true
 higherOnly: true
 ---

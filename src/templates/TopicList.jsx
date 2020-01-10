@@ -3,7 +3,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 
-import { H4, P2, P } from "../components/EasyText"
+import { H4, P2 } from "../components/EasyText"
 import {
   Card,
   CardContent,
@@ -72,6 +72,8 @@ const TopicList = props => {
       render={data => {
         const topics = data.topics.group
 
+        let counter = -1
+
         return (
           <XMasonry
             targetBlockWidth={375}
@@ -86,12 +88,15 @@ const TopicList = props => {
                   topic.nodes[0].frontmatter.subjectGroup ===
                     props.subjectGroup)
               ) {
+                counter++
                 return (
                   <XBlock key={i}>
-                    <Box key={i} className={classes.card}>
+                    <Box className={classes.card}>
                       <Zoom
                         in
-                        style={{ transitionDelay: i * 50 + "ms !important" }}
+                        style={{
+                          transitionDelay: counter * 75 + "ms",
+                        }}
                       >
                         <div>
                           <TopicCard
@@ -136,12 +141,6 @@ const TopicCard = props => {
     }${ConvertStringToUrl(subject)}/topics/${ConvertStringToTopicUrl(
       ConvertStringToUrl(topic)
     )}`
-
-  console.log(ConvertTagToString(subject))
-  console.log(
-    TopicDescriptions[ConvertTagToString(subject)][ConvertTagToString(topic)] ||
-      ""
-  )
 
   return (
     <Card>

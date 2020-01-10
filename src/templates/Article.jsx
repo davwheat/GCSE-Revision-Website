@@ -3,7 +3,20 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 
-import { useTheme, Divider } from "@material-ui/core"
+import { useTheme, Divider, makeStyles, Tooltip } from "@material-ui/core"
+
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  RedditShareButton,
+  EmailShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappIcon,
+  RedditIcon,
+  EmailIcon,
+} from "react-share"
 
 import Layout from "../components/layout"
 import Markdown from "../components/Markdown"
@@ -27,12 +40,35 @@ String.prototype.trimRight = function(charList) {
   return this.replace(new RegExp("[" + charList + "]+$"), "")
 }
 
-const Article = props => {
-  const post = props.data.markdownRemark
+const useShareBtnStyles = makeStyles(theme => ({
+  shareButton: {
+    verticalAlign: "top",
+    display: "inline-block",
+    marginTop: theme.spacing(),
+    marginBottom: theme.spacing(),
+    marginRight: theme.spacing(),
+    textAlign: "center",
+    transition: theme.transitions.create(["opacity", "box-shadow"], {
+      duration: 100,
+    }),
+    borderRadius: "50%",
+    cursor: "pointer",
+    "&:hover:not(:active)": {
+      opacity: 0.8,
+      boxShadow: theme.shadows[12],
+    },
+  },
+}))
 
+const Article = props => {
+  const classes = useShareBtnStyles()
   const theme = useTheme()
 
+  const post = props.data.markdownRemark
   const slug = post.fields.slug
+
+  // used instead of 'href' to remove hash
+  const CurrentUrl = props.location.origin + props.location.pathname
 
   let url = slug.trimRight("/").split("/")
   url.pop()
@@ -110,6 +146,91 @@ const Article = props => {
         >
           Published {post.frontmatter.date}
         </Subtitle1>
+
+        <Divider />
+
+        <section
+          style={{
+            display: "table",
+            margin: "auto",
+            paddingTop: 4,
+            paddingBottom: 4,
+          }}
+        >
+          <P
+            style={{
+              display: "table-cell",
+              verticalAlign: "middle",
+              paddingRight: 8,
+            }}
+          >
+            Share this article:
+          </P>
+
+          <Tooltip title="Share on Facebook">
+            <div className={classes.shareButton}>
+              <FacebookShareButton
+                url={CurrentUrl}
+                quote={`Read ${post.frontmatter.title} from GCSE Revise It`}
+                hashtag={`gcses`}
+              >
+                <FacebookIcon size={32} round />
+              </FacebookShareButton>
+            </div>
+          </Tooltip>
+
+          <Tooltip title="Share on Twitter">
+            <div className={classes.shareButton}>
+              <TwitterShareButton
+                url={CurrentUrl}
+                title={`Read ${post.frontmatter.title} from GCSE Revise It`}
+                hashtags={[`gcses`, `revision`, `gcserevision`]}
+              >
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>
+            </div>
+          </Tooltip>
+
+          <Tooltip title="Share via WhatsApp">
+            <div className={classes.shareButton}>
+              <WhatsappShareButton
+                url={CurrentUrl}
+                title={`Read ${post.frontmatter.title} from GCSE Revise It`}
+                separator={` >> `}
+              >
+                <WhatsappIcon size={32} round />
+              </WhatsappShareButton>
+            </div>
+          </Tooltip>
+
+          <Tooltip title="Share on Reddit">
+            <div className={classes.shareButton}>
+              <RedditShareButton
+                url={CurrentUrl}
+                title={`Read ${post.frontmatter.title} from GCSE Revise It`}
+              >
+                <RedditIcon size={32} round />
+              </RedditShareButton>
+            </div>
+          </Tooltip>
+
+          <Tooltip title="Share via Email">
+            <div className={classes.shareButton}>
+              <EmailShareButton
+                url={CurrentUrl}
+                subject={`Check out GCSE Revise It`}
+                title={`Try reading ${post.frontmatter.title} from GCSE Revise It!`}
+                separator={` >> `}
+                openWindow
+              >
+                <EmailIcon size={32} round />
+              </EmailShareButton>
+            </div>
+          </Tooltip>
+        </section>
+
+        <Divider style={{ marginBottom: 16 }} />
+
         <ArticleTOC headings={post.headings} />
         <Markdown src={post.rawMarkdownBody} />
       </article>
@@ -142,6 +263,8 @@ const Article = props => {
 Article.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.any,
+  // eslint-disable-next-line react/forbid-prop-types
+  location: PropTypes.object,
 }
 
 export default Article

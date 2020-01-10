@@ -4,7 +4,7 @@ date: "2019-11-28"
 description: "Acids and bases crop up everywhere in chemistry - here's the basics about pH levels."
 subject: "chemistry"
 subjectGroup: "science"
-topic: "topic 4 - chemical changes"
+topic: "topic 4: chemical changes"
 ---
 
 **Acids** and **bases** crop up everywhere in chemistry - here's the basics about **pH levels**.

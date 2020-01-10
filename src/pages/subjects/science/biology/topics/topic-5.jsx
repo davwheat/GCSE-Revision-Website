@@ -17,13 +17,13 @@ const BioTopic5ArticleList = () => {
           { label: "Science", href: "subjects/science" },
           { label: "Biology", href: "subjects/science/biology" },
           { label: "Topics", href: "subjects/science/biology/topics" },
-          { label: "Topic 5 - Homeostasis and Response" },
+          { label: "Topic 5: Homeostasis and Response" },
         ]}
       />
       <H1 gutterBottom>Biology, Topic 5: Homeostasis &amp; Response</H1>
       <ArticleList
         subject="biology"
-        topic="topic 5 - homeostasis and response"
+        topic="topic 5: homeostasis and response"
       />
       <Ad />
     </Layout>

@@ -4,7 +4,7 @@ date: "2019-11-21"
 description: "\"ARGH! GET AWAY FROM ME!\" is what you'd scream if someone had a communicable disease. Communicable diseases are just diseases that can spread. Done!"
 subject: "biology"
 subjectGroup: "science"
-topic: "topic 3 - infection and response"
+topic: "topic 3: infection and response"
 ---
 
 "ARGH! GET AWAY FROM ME!" is what you'd scream if someone had a communicable disease. **Communicable diseases are just diseases that can spread.** Done!

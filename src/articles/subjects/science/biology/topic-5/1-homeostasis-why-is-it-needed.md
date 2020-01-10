@@ -4,7 +4,7 @@ date: "2019-11-09"
 description: "Homeostasis — a word that strikes fear into the heart of GCSE students. It's really not that bad at all."
 subject: "biology"
 subjectGroup: "science"
-topic: "topic 5 - homeostasis and response"
+topic: "topic 5: homeostasis and response"
 ---
 
 # Homeostasis

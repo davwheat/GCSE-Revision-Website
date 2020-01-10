@@ -4,7 +4,7 @@ date: "2019-11-09"
 description: "Every substance is made up of small particles called atoms. Atoms are roughly 0.1 nanometers in radius - that's pretty small!"
 subject: "chemistry"
 subjectGroup: "science"
-topic: "topic 1 - atomic structure and the periodic table"
+topic: "topic 1: atomic structure and the periodic table"
 ---
 
 # What's an atom
