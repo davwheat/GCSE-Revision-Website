@@ -33,8 +33,6 @@ import SeededRandom from "seedrandom"
 
 import "./css/WordOfTheDay.css"
 
-import { Words } from "../audio"
-
 const MakeUrl = word =>
   "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + word
 
