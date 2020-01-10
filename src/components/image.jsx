@@ -4,8 +4,13 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Caption } from "./EasyText"
-import { useTheme, IconButton, Tooltip } from "@material-ui/core"
-import Carousel, { Modal, ModalGateway } from "react-images-maintained"
+import {
+  useTheme,
+  IconButton,
+  Tooltip,
+  CircularProgress,
+} from "@material-ui/core"
+import Carousel, { Modal, ModalGateway } from "react-images"
 
 import CloseIcon from "mdi-react/CloseIcon"
 
@@ -101,6 +106,7 @@ const Image = props => {
                 {ModalOpen ? (
                   <Modal onClose={toggleModal}>
                     <Carousel
+                      backdropClosesModal
                       views={[
                         { src: image.node.publicURL, caption: props.alt },
                       ]}
