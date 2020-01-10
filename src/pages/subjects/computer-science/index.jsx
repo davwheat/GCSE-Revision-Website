@@ -20,7 +20,7 @@ const SubjectsComputingPage = () => {
       <P paragraph>{Descriptions["Computer Science"]}</P>
 
       <H2 gutterBottom>Topics</H2>
-      <TopicList subject="computer-science" />
+      <TopicList subject="computer science" />
 
       <H2 gutterBottom>Bitmap Editor</H2>
       <P paragraph>

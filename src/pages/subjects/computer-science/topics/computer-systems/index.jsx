@@ -20,7 +20,7 @@ const MathsArticleList = () => {
       />
 
       <H1 gutterBottom>Computing, Topic 4: Computer Systems</H1>
-      <ArticleList subject="computer-science" topic="computer-systems" />
+      <ArticleList subject="computer science" topic="computer systems" />
       <Ad />
     </Layout>
   )

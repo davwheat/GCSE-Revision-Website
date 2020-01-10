@@ -2,8 +2,8 @@
 title: "Fetch-Decode-Execute Cycle"
 date: "2019-12-11"
 description: "The 'brain' of a computer uses the Fetch-Decode-Execute cycle to perform operations, but what actually is it?"
-subject: "computer-science"
-topic: "computer-systems"
+subject: "computer science"
+topic: "computer systems"
 ---
 
 # Tom Scott Video

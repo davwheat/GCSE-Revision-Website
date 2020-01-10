@@ -51,7 +51,7 @@ const ComputingArticleList = () => {
         response style questions which aim to assess your theoretical knowledge.
       </P>
 
-      <TopicList subject="computer-science" />
+      <TopicList subject="computer science" />
       <Ad />
     </Layout>
   )
