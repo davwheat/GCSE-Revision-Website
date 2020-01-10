@@ -171,7 +171,7 @@ const Layout = ({ children, type }) => {
               }}
             />
             <Box component="main">{children}</Box>
-            <div id="ezoic-pub-ad-placeholder-101" />
+            {/* <div id="ezoic-pub-ad-placeholder-101" /> */}
           </SnackbarProvider>
         </Container>
       </div>
