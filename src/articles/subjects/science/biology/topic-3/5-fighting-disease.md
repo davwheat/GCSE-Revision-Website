@@ -4,7 +4,7 @@ date: "2019-11-21"
 description: "The immune system has some sick (hehehe) ways to fight foreign particles like viruses, bacteria, and other diseases if they enter your body. It's pretty cool!"
 subject: "biology"
 subjectGroup: "science"
-topic: "topic 3 - infection and response"
+topic: "topic 3: infection and response"
 ---
 
 The immune system has some **sick** (hehehe) ways to fight foreign particles like viruses, bacteria, and other diseases if they enter your body. It's pretty cool!

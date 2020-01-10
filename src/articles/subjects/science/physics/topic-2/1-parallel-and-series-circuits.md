@@ -4,7 +4,7 @@ date: "2019-11-14"
 description: "A circuit is an interconnection of electrical components. Don't get all loopy over them! Just try your best and you'll get right into the flow."
 subject: "physics"
 subjectGroup: "science"
-topic: "topic 2 - electricity"
+topic: "topic 2: electricity"
 ---
 
 A circuit is an interconnection of electrical components. Don't get all loopy over them! Just try your best and you'll get right into the flow.

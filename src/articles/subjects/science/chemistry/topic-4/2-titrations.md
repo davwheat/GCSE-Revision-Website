@@ -4,7 +4,7 @@ date: "2019-11-28"
 description: "Titrations are a method of analysing the concentrations of solutions: they're prettttyyyy important!"
 subject: "chemistry"
 subjectGroup: "science"
-topic: "topic 4 - chemical changes"
+topic: "topic 4: chemical changes"
 ---
 
 Titrations are a method of analysing the concentrations of solutions: they're _prettttyyyy_ important!

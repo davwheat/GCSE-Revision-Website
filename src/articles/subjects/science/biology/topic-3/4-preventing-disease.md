@@ -4,7 +4,7 @@ date: "2019-11-21"
 description: "Pathogens love to just infect and infect and infect... but there are measures we can take to protect ourselves and other organisms from being infected."
 subject: "biology"
 subjectGroup: "science"
-topic: "topic 3 - infection and response"
+topic: "topic 3: infection and response"
 ---
 
 Pathogens love to just infect and infect and infect... but there are measures we can take to protect ourselves and other organisms from being infected.

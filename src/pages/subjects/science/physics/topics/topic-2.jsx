@@ -17,11 +17,11 @@ const PhysicsTopic2ArticleList = () => {
           { label: "Science", href: "subjects/science" },
           { label: "Physics", href: "subjects/science/physics" },
           { label: "Topics", href: "subjects/science/physics/topics" },
-          { label: "Topic 2 - Electricity" },
+          { label: "Topic 2: Electricity" },
         ]}
       />
       <H1 gutterBottom>Physics, Topic 2: Electricity</H1>
-      <ArticleList subject="physics" topic="topic 2 - electricity" />
+      <ArticleList subject="physics" topic="topic 2: electricity" />
       <Ad />
     </Layout>
   )

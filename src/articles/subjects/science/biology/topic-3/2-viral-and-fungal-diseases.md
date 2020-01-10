@@ -4,7 +4,7 @@ date: "2019-11-21"
 description: "There are loads of diseases caused by viruses and fungi, but let's just stick to four for now."
 subject: "biology"
 subjectGroup: "science"
-topic: "topic 3 - infection and response"
+topic: "topic 3: infection and response"
 ---
 
 There are loads of diseases caused by viruses and fungi, but let's just stick to four for now.

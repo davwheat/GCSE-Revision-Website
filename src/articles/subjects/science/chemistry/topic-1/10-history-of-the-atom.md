@@ -4,7 +4,7 @@ date: "2019-11-28"
 description: "You might have thought you already knew everything you needed to know about the atom but you're not going to get away that easily!"
 subject: "chemistry"
 subjectGroup: "science"
-topic: "topic 1 - atomic structure and the periodic table"
+topic: "topic 1: atomic structure and the periodic table"
 ---
 
 # Early 19th Century - "Solid Sphere" Model

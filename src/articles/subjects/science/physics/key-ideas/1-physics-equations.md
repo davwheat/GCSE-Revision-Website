@@ -24,7 +24,7 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 <Collapser title="Lyrics"><P>V = I x R<br/>P = I x V<br/>P = I²R (P = I×I×R)<br/>and E = P×t<br/>Where P is power,<br/>V is PD<br/>E stands for energy<br/>I is for current<br/>t is for time<br/>and R for resistance, which doesn't rhyme<br/><br/>Kinetic energy = 1/2 mv²<br/>Potential energy = mgh<br/>Efficiency is useful energy (out) divided by total energy (in)<br/><br/>Q = I×T<br/>E = Q×V<br/>where Q is charge, in Coulombs<br/>and that's it for electricity<br/><br/>Mass over volume, is density<br/>Weight is mass×gravity<br/>Work done is force×distance gone<br/>Force equals mass×acceleration<br/><br/>Kinetic energy = 1/2 mv²<br/>Potential energy = mgh<br/>Efficiency is useful energy (out) divided by total energy (in)<br/><br/>Momentum is mass×velocity<br/>Wave speed is wavelength×frequency<br/>Acceleration is change in speed over t (final velocity - initial velocity)<br/>For springs, F equals k×e<br/>F is for force<br/>k is constant<br/>e stands for extension<br/><br/>I think that's it. I think we're done.<br/>Just go learn all 21!<br/><br/>Kinetic energy = 1/2 mv²<br/>Potential energy = mgh<br/>Efficiency is useful energy (out) divided by total energy (in)</P></Collapser>
 ```
 
-# Topic 1 - Energy
+# Topic 1: Energy
 
 ```react
 <P paragraph>
@@ -55,7 +55,7 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 <YouTubeCollapses titles="[`Work Done & Energy Transfer`,`Kinetic Energy`,`Gravitational Potential Energy`, `Power`, `Efficiency`]" urls="[`https://www.youtube.com/watch?v=PY80j_iNT9Y`,`https://www.youtube.com/watch?v=-zy9eWzmGe4`,`https://www.youtube.com/watch?v=63OTIdNb-TE`,`https://www.youtube.com/watch?v=EDT0DPhaaMY`, `https://www.youtube.com/watch?v=NI5jaeBrIgQ`]" />
 ```
 
-# Topic 2 - Electricity
+# Topic 2: Electricity
 
 ```react
 <P paragraph>
@@ -87,7 +87,7 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 <YouTubeCollapses titles="[`Charge Flow`,`Resistance`,`Electrical Power`,`Efficiency of Electrical Appliances`]" urls="[`https://www.youtube.com/watch?v=ts7WumFAaSg`,`https://www.youtube.com/watch?v=cx9xLwa7Gco`,`https://www.youtube.com/watch?v=LOyJdI41aCU`,`https://www.youtube.com/watch?v=KrlDMZQtzoU`]"/>
 ```
 
-# Topic 3 - Particle Model of Matter
+# Topic 3: Particle Model of Matter
 
 ```react
 <P paragraph>
@@ -114,7 +114,7 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 <YouTubeCollapses titles="[`Density`,`Specific Latent Heat`,`Specific Heat Capacity`,`Pressure in Gases`]" urls="[`https://www.youtube.com/watch?v=EZmXVOSa20`,`https://www.youtube.com/watch?v=x7GZ2DXef84`,`https://www.youtube.com/watch?v=Hs5x0-IU2F4`,`https://www.youtube.com/watch?v=RuoZqmNiMEo`]" />
 ```
 
-# Topic 5 - Forces
+# Topic 5: Forces
 
 ```react
 <P paragraph>
@@ -149,7 +149,7 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 <YouTubeCollapses titles="[`Weight`,`Work Done by a Force`,`Forces & Elasticity`,`Moments`,`Acceleration`,`Resultant Forces`,`Momentum`,`Pressure in Liquids`,`Changes in momentum`]" urls="[`https://www.youtube.com/watch?v=W2aBVbcHr_k`,`https://www.youtube.com/watch?v=JHEmPZ-YnrU`,`https://www.youtube.com/watch?v=ACDbJ8rsQDo`,`https://www.youtube.com/watch?v=5kJBi2_BAPs`,`https://www.youtube.com/watch?v=r5iXzDCRMsE`,`https://www.youtube.com/watch?v=PL8ATKipoB4`,`https://www.youtube.com/watch?v=ZtQhlwPxE28`,`https://www.youtube.com/watch?v=P08-lYPy1hI`,`https://www.youtube.com/watch?v=6yx0fQrK3fA`]" />
 ```
 
-# Topic 6 - Waves
+# Topic 6: Waves
 
 ```react
 <P paragraph>
@@ -175,7 +175,7 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 <YouTubeCollapses titles="[`The Wave Equation`,`Wave Properties`]" urls="[`https://www.youtube.com/watch?v=W2aBVbcHr_k`,`https://www.youtube.com/watch?v=ITe6snlZBp8`]" />
 ```
 
-# Topic 7 - Magnetism & Electromagnetism
+# Topic 7: Magnetism & Electromagnetism
 
 ```react
 <P paragraph>
