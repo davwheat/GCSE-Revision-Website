@@ -1,0 +1,33 @@
+---
+title: "Characters: Duncan"
+date: "2020-01-09"
+description: "A character analysis of Duncan from Shakespeare's play, Macbeth."
+subject: "english literature"
+subjectGroup: "english"
+topic: "macbeth"
+---
+
+# He is kind, but too trusting
+
+- kind, "let me enfold thee / And hold thee to my heart".
+- trusting, "There's no art / To find the mind's construction in the face".
+- a good king, "So clear in his great office".
+- Nobody has a bad word to say about Duncan. Even Macbeth says "his virtues / Will plead like angels".
+- Duncan's flaw is that he is too trusting: he describes the man that murders him as "a gentleman on whom I built / An absolute trust".
+- However he can be firm (he executed the old Thane of Cawdor for betraying him).
+
+# He is an example of a good king
+
+- He is a model king: kind, honest and fair.
+- Macbeth says he is "a most sainted king," reminding the audience that kings were chosen by God (when Macbeth was not).
+- He is a HUGE contrast to when the tyrannous king Macbeth is in power. Duncan puts Scotland's needs ahead of his own. Duncan is loved, Macbeth is feared and hated.
+
+# Duncan isn't like other men
+
+- He isn't a soldier like Macbeth or Macduff. He's gentle and doesn't fight for himself, but sensibly sends his best soldiers.
+- He's not afraid to be emotional. He shows "drops of sorrow" because he's so happy and talks about his "gentle senses" - it could be seen as 'unmanly'.
+- The fact that Duncan is depicted as a model king but not necessarily 'manly', leads the audience to question whether a good leader needs to be a vicious warrior.
+
+---
+
+This content is derived from [Casey William](https://github.com/shnupta)'s GCSE Literature cheatsheets, [available freely on his GitHub](https://github.com/shnupta/EnglishGCSE2017). If you are the copyright owner of this content and would no longer like me using it, please click the link to my GitHub in the site footer and send me an email.
