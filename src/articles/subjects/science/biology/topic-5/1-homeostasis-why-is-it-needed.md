@@ -33,6 +33,6 @@ If a **receptor** detects that your blood glucose level is too high, it sends a 
 
 The opposite reaction happens if your blood glucose level is too low.
 
-The **effectors** continues producing the response as long as they are **stimulated** by the **coordination centre**. Unfortunately, this can cause the opposite problem making the level change too much from the ideal. To combar this, the **receptor detects** if the level changes too much and the **opposite** reaction starts.
+The **effectors** continues producing the response as long as they are **stimulated** by the **coordination centre**. Unfortunately, this can cause the opposite problem making the level change too much from the ideal. To combat this, the **receptor detects** if the level changes too much and the **opposite** reaction starts.
 
 This process happens without you thinking about it — it's completely automated. Clever, _huh_?
