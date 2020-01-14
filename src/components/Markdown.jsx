@@ -56,6 +56,7 @@ import Quote from "./Blockquote"
 
 import textToSafeId from "../functions/textToSafeId"
 import YouTubeEmbed from "./YouTubeEmbed"
+import KeyFact from "./KeyFact"
 
 Lowlight.registerLanguage("js", js)
 Lowlight.registerLanguage("py", py)
@@ -122,6 +123,7 @@ const componentTransforms = classes => ({
   Collapser,
   ExamQuestion,
   TeX,
+  KeyFact,
 })
 
 const Collapser = ({ title, children, noSpace, solution }) => (
@@ -380,7 +382,8 @@ const HeadingLevelToComponent = (level, props, previousHeadings) => {
   }))()
 
   let id =
-    textToSafeId(props.children[0].props.value) + `-${previousHeadings.length + 1}`
+    textToSafeId(props.children[0].props.value) +
+    `-${previousHeadings.length + 1}`
 
   previousHeadings.push(id)
 
