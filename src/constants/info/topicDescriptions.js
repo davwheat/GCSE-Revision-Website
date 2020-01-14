@@ -17,6 +17,7 @@ export default {
     Biology: {
       "Topic 3: Infection and Response": `Does an apple a day really keep the doctor away? Only if you aim it well enough!`,
       "Topic 5: Homeostasis and Response": `Homeostasis is the act of maintaining a stable internal environment. But... what does the hell does that actually mean?`,
+      "Topic 6: Inheritance, Variation and Evolution": `What did the 'A' base say to the 'G' base? "I'm sorry but we're base-ically not a good match!" (please help...)`,
     },
     Chemistry: {
       "Topic 1: Atomic Structure and the Periodic Table": `Oxygen, hydrogen, sulfur, sodium, and phosphorous walk into a bar: "OH SNaP!" says the bartender.`,
