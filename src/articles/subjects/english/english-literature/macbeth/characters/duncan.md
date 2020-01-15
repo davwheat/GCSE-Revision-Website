@@ -1,10 +1,11 @@
 ---
-title: "Characters: Duncan"
+title: "Duncan"
 date: "2020-01-09"
 description: "A character analysis of Duncan from Shakespeare's play, Macbeth."
 subject: "english literature"
 subjectGroup: "english"
 topic: "macbeth"
+subtopic: "characters"
 ---
 
 # He is kind, but too trusting
@@ -30,4 +31,4 @@ topic: "macbeth"
 
 ---
 
-This content is derived from [Casey William](https://github.com/shnupta)'s GCSE Literature cheatsheets, [available freely on his GitHub](https://github.com/shnupta/EnglishGCSE2017). If you are the copyright owner of this content and would no longer like me using it, please click the link to my GitHub in the site footer and send me an email.
+This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

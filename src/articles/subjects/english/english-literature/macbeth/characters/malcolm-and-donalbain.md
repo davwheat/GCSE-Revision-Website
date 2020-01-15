@@ -1,10 +1,11 @@
 ---
-title: "Characters: Malcolm & Donalbain"
+title: "Malcolm & Donalbain"
 date: "2020-01-09"
 description: "Character analyses of Malcolm & Donalbain from Shakespeare's play, Macbeth."
 subject: "english literature"
 subjectGroup: "english"
 topic: "macbeth"
+subtopic: "characters"
 ---
 
 They are Duncan's sons. Malcolm is the eldest, and is therefore heir to the throne after Duncan died. This means that he should be the next King of Scotland, not Macbeth.
@@ -27,4 +28,4 @@ They are Duncan's sons. Malcolm is the eldest, and is therefore heir to the thro
 
 ---
 
-This content is derived from [Casey William](https://github.com/shnupta)'s GCSE Literature cheatsheets, [available freely on his GitHub](https://github.com/shnupta/EnglishGCSE2017). If you are the copyright owner of this content and would no longer like me using it, please click the link to my GitHub in the site footer and send me an email.
+This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

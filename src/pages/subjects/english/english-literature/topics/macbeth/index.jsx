@@ -1,11 +1,10 @@
 import React from "react"
 
-import ArticleList from "../../../../../templates/ArticleList"
-import Layout from "../../../../../components/layout"
-import SEO from "../../../../../components/seo"
-import Ad from "../../../../../components/Advert"
-import Breadcrumbs from "../../../../../components/Breadcrumbs"
-import { H1 } from "../../../../../components/EasyText"
+import Layout from "../../../../../../components/layout"
+import SEO from "../../../../../../components/seo"
+import Breadcrumbs from "../../../../../../components/Breadcrumbs"
+import { H1 } from "../../../../../../components/EasyText"
+import SubTopicList from "../../../../../../templates/SubTopicList"
 
 const EnglishLitMacbethArticleList = () => {
   return (
@@ -20,8 +19,7 @@ const EnglishLitMacbethArticleList = () => {
         ]}
       />
       <H1 gutterBottom>English Literature: Macbeth</H1>
-      <ArticleList subject="english literature" topic="macbeth" />
-      <Ad />
+      <SubTopicList subjectGroup="english" subject="english literature" topic="macbeth" />
     </Layout>
   )
 }
