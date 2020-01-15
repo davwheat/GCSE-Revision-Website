@@ -59,6 +59,7 @@ const ArticleList = props => {
                   date(formatString: "dddd, DD MMMM YYYY")
                   description
                   topic
+                  subtopic
                   subject
                   tripleOnly
                   higherOnly
@@ -90,6 +91,13 @@ const ArticleList = props => {
               if (props.topic && post.node.frontmatter.topic !== props.topic)
                 return []
 
+              // If it's not the subtopic we want (and we have told the component a subtopic) ignore it
+              if (
+                props.subtopic &&
+                post.node.frontmatter.subtopic !== props.subtopic
+              )
+                return []
+
               counter++
 
               return (
@@ -115,6 +123,7 @@ ArticleList.propTypes = {
   subject: PropTypes.string.isRequired,
   topic: PropTypes.string,
   subjectGroup: PropTypes.string,
+  subtopic: PropTypes.string,
 }
 
 const PostCard = props => {
