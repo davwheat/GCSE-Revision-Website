@@ -7,7 +7,9 @@ import {
   makeStyles,
   useTheme,
 } from "@material-ui/core"
-import { Link as GatsbyLink } from "gatsby"
+
+import GatsbyLink from "gatsby-plugin-transition-link/AniLink"
+
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
 import ExternalLinkIcon from "mdi-react/ExternalLinkIcon"
@@ -17,6 +19,9 @@ const AdapterLink = React.forwardRef((props, ref) => (
   <GatsbyLink
     style={{ textDecoration: "none !important" }}
     innerRef={ref}
+    cover
+    duration={1}
+    bg="#ff9800"
     {...props}
   />
 ))
@@ -168,7 +173,7 @@ const Link = props => {
         return (
           <MatLink
             color={inheritColor ? "inherit" : "primary"}
-            component={GatsbyLink}
+            component={AdapterLink}
             to={`/` + to}
             {...newprops}
           >

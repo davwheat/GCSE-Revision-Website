@@ -9,19 +9,20 @@ module.exports = {
     siteUrl: "https://gcse-revision-site.firebaseapp.com",
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         devMode: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        googleAdClientId: "ca-pub-2701335557132384",
-        head: true, // Optional
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-adsense`,
+    //   options: {
+    //     googleAdClientId: "ca-pub-2701335557132384",
+    //     head: true, // Optional
+    //   },
+    // },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
