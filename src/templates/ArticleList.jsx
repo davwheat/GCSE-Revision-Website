@@ -21,15 +21,16 @@ import HigherIcon from "mdi-react/ArrowUpCircleOutlineIcon"
 import Link from "../components/Link"
 
 import { XMasonry, XBlock } from "react-xmasonry"
+import clsx from "clsx"
 
 const useStyles = makeStyles(theme => ({
   card: {
-    margin: theme.spacing(1),
-    maxWidth: 400,
-    "@media (max-width: 768px)": {
-      width: `calc(100% - ${theme.spacing(2)}px)`,
-      maxWidth: "unset",
+    "& > div > div": {
+      margin: theme.spacing(1),
+      // minWidth: 325,
     },
+    margin: `auto`,
+    // maxWidth: 400,
   },
   container: {
     margin: "0 auto",
@@ -126,6 +127,29 @@ ArticleList.propTypes = {
   subtopic: PropTypes.string,
 }
 
+const useStylesCard = makeStyles(() => ({
+  cardActions: {
+    whiteSpace: "nowrap",
+    "@media (max-width: 768px)": {
+      flexWrap: "wrap",
+      justifyContent: "center",
+    },
+  },
+  actionSeparator: {
+    "@media (max-width: 768px)": {
+      flexBasis: "100%",
+      width: 0,
+      display: "block",
+    },
+    display: "none",
+  },
+  readButton: {
+    "@media not all and (max-width: 768px)": {
+      marginLeft: "auto",
+    },
+  },
+}))
+
 const PostCard = props => {
   const { excerpt, timeToRead } = props.post.node
   const {
@@ -139,12 +163,13 @@ const PostCard = props => {
   const wordCount = props.post.node.wordCount.words
 
   const theme = useTheme()
+  const classes = useStylesCard()
 
   return (
     <Card>
       <CardActionArea
         component={Link}
-        className="no-underline color-inherit"
+        className={clsx("no-underline", "color-inherit")}
         to={slug.substr(1)}
       >
         <CardContent>
@@ -182,7 +207,7 @@ const PostCard = props => {
           <P>{description ? description : excerpt}</P>
         </CardContent>
       </CardActionArea>
-      <CardActions disableSpacing>
+      <CardActions disableSpacing className={classes.cardActions}>
         <>
           <TimerIcon
             aria-label="estimated time to read"
@@ -195,18 +220,18 @@ const PostCard = props => {
               marginRight: theme.spacing(2.5),
             }}
           >
-            {Math.round(1.25 * timeToRead + 1)}{" "}
-            {Math.round(1.25 * timeToRead + 1) === 1 ? "min" : "mins"}
+            {Math.round(1.5 * timeToRead + 1)} mins
           </P2>
           <P2 color="textSecondary" style={{ marginLeft: theme.spacing(0.5) }}>
             {wordCount} words
           </P2>
         </>
+        <div className={classes.actionSeparator} />
         <Link
           linkIsButton
           color="primary"
           to={slug.substr(1)}
-          style={{ marginLeft: "auto" }}
+          className={classes.readButton}
         >
           Read article
         </Link>
