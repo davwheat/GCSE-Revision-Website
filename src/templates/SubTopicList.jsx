@@ -82,44 +82,48 @@ const SubTopicList = props => {
             className={classes.container}
           >
             {subtopics.map((subtopic, i) => {
-              if (
-                subtopic.topic !== props.topic ||
-                (!props.subjectGroup &&
-                  subtopic.nodes[0].frontmatter.subject === props.subject) ||
-                (subtopic.nodes[0].frontmatter.subject === props.subject &&
-                  subtopic.nodes[0].frontmatter.subjectGroup ===
-                    props.subjectGroup)
-              ) {
-                counter++
-                return (
-                  <XBlock key={i}>
-                    <Box className={classes.card}>
-                      <Zoom
-                        in
-                        style={{
-                          transitionDelay: counter * 75 + "ms",
-                        }}
-                      >
-                        <div>
-                          <SubTopicCard
-                            subtopic={subtopic.fieldValue}
-                            topic={props.topic}
-                            articleCount={subtopic.totalCount}
-                            subject={subjectLabel}
-                            subjectGroup={
-                              props.subjectGroup
-                                ? props.subjectGroup
-                                : undefined
-                            }
-                          />
-                        </div>
-                      </Zoom>
-                    </Box>
-                  </XBlock>
-                )
-              } else {
-                return []
-              }
+              console.log(subtopic)
+
+              const subtopics = props.subjectGroup
+                ? subtopic.nodes.filter(
+                    node =>
+                      node.frontmatter.topic === props.topic &&
+                      node.frontmatter.subject === props.subject
+                  ).length
+                : subtopic.nodes.filter(
+                    node =>
+                      node.frontmatter.topic === props.topic &&
+                      node.frontmatter.subject === props.subject &&
+                      node.frontmatter.subjectGroup === props.subjectGroup
+                  ).length
+
+              if (subtopics === 0) return []
+
+              counter++
+              return (
+                <XBlock key={i}>
+                  <Box className={classes.card}>
+                    <Zoom
+                      in
+                      style={{
+                        transitionDelay: counter * 75 + "ms",
+                      }}
+                    >
+                      <div>
+                        <SubTopicCard
+                          subtopic={subtopic.fieldValue}
+                          topic={props.topic}
+                          articleCount={subtopics}
+                          subject={subjectLabel}
+                          subjectGroup={
+                            props.subjectGroup ? props.subjectGroup : undefined
+                          }
+                        />
+                      </div>
+                    </Zoom>
+                  </Box>
+                </XBlock>
+              )
             })}
           </XMasonry>
         )

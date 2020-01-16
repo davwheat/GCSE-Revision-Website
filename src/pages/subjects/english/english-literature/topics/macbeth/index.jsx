@@ -1,10 +1,10 @@
 import React from "react"
 
+import SubTopicList from "../../../../../../templates/SubTopicList"
 import Layout from "../../../../../../components/layout"
 import SEO from "../../../../../../components/seo"
 import Breadcrumbs from "../../../../../../components/Breadcrumbs"
 import { H1 } from "../../../../../../components/EasyText"
-import SubTopicList from "../../../../../../templates/SubTopicList"
 
 const EnglishLitMacbethArticleList = () => {
   return (
