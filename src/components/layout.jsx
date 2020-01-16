@@ -12,7 +12,6 @@ import CookieConsent from "react-cookie-consent"
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Cookies from "js-cookie"
 
 import theme from "../constants/theme"
 
@@ -245,6 +244,15 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
   }
 
   const overrideNotificationPopup = () => {
+    if (Notification.permission !== "granted") {
+      enqueueSnackbar(
+        `You've already enabled notifications, or your device doesn't support them.`,
+        { color: "warning" }
+      )
+      resetOverride()
+      return
+    }
+
     localStorage.removeItem("push-notifications-denied")
     resetOverride()
   }

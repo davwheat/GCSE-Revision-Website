@@ -35,7 +35,7 @@ body {
   overflow-x: hidden;
 }
 
-#gatsby-focus-wrapper {
+#gatsby-focus-wrapper .tl-wrapper {
   padding-bottom: 65px;
 }
 

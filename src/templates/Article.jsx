@@ -121,17 +121,21 @@ const Article = props => {
             }${subjectUrl}`,
           },
           {
-            label: "Topics",
-            href: `subjects/${
-              subjectGroupUrl ? subjectGroupUrl + "/" : ""
-            }${subjectUrl}/topics`,
-          },
-          {
             label: ConvertStringToLabel(post.frontmatter.topic),
             href: `subjects/${
               subjectGroupUrl ? subjectGroupUrl + "/" : ""
             }${subjectUrl}/topics/${ConvertStringToTopicUrl(
               ConvertStringToUrl(post.frontmatter.topic)
+            )}`,
+          },
+          {
+            label: ConvertStringToLabel(post.frontmatter.subtopic),
+            href: `subjects/${
+              subjectGroupUrl ? subjectGroupUrl + "/" : ""
+            }${subjectUrl}/topics/${ConvertStringToTopicUrl(
+              ConvertStringToUrl(post.frontmatter.topic)
+            )}/${ConvertStringToTopicUrl(
+              ConvertStringToUrl(post.frontmatter.subtopic)
             )}`,
           },
           { label: post.frontmatter.title },
@@ -279,6 +283,7 @@ export const query = graphql`
         subject
         subjectGroup
         topic
+        subtopic
       }
       fields {
         slug
