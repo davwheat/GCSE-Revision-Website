@@ -15,8 +15,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import theme from "../constants/theme"
 
-import "highlight.js"
-
 import Header from "./header"
 import {
   Box,
@@ -61,6 +59,11 @@ const Layout = ({ children, type }) => {
   useFirebase(firebase => {
     setFirebase(firebase)
   })
+
+  if (Firebase) {
+    Firebase.analytics().logEvent("app_rendered")
+    Firebase.performance()
+  }
 
   const notistackRef = React.createRef()
   const onClickDismiss = key => () => {
@@ -337,6 +340,9 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
       console.warn(
         "You're using a terrible browser that doesn't support the web's notification standard. SHAME! SHAME! SHAME! https://www.youtube.com/watch?v=SrDSqODtEFM"
       )
+      Firebase.analytics().setUserProperties({
+        allowed_notifications: "unsupported",
+      })
     }
   }
 
