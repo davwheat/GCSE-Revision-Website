@@ -89,7 +89,7 @@ module.exports = {
           storage: false,
           messaging: true,
           functions: false,
-          performance: false,
+          performance: true,
           analytics: true,
         },
       },
