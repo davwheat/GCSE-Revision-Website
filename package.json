@@ -28,7 +28,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-theme-material-ui": "^1.0.6",
     "gatsby-transformer-remark": "^2.6.48",
-    "gatsby-transformer-sharp": "^2.3.12",
+    "gatsby-transformer-sharp": "^2.3.13",
     "gsap": "^3.0.5",
     "highlight.js": "^9.17.1",
     "howler": "^2.1.3",
