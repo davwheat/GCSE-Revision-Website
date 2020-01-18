@@ -247,11 +247,30 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
   }
 
   const overrideNotificationPopup = () => {
-    if (Notification.permission !== "granted") {
+    if (Notification.permission === "denied") {
       enqueueSnackbar(
-        `You've already enabled notifications, or your device doesn't support them.`,
-        { color: "warning" }
+        `You've denied the notification permission: tap the padlock at the top of your screen, select 'Site Settings', then set Notifications to 'Allow'.`,
+        { variant: "error", persist: false, action: null }
       )
+      resetOverride()
+      return
+    } else if (Notification.permission === "granted") {
+      enqueueSnackbar(
+        `You've already allowed push notifications for our site.`,
+        {
+          variant: "success",
+          persist: false,
+          action: null,
+        }
+      )
+      resetOverride()
+      return
+    } else if (!Firebase.messaging.isSupported()) {
+      enqueueSnackbar(`Your browser doesn't support push notifications.`, {
+        variant: "info",
+        persist: false,
+        action: null,
+      })
       resetOverride()
       return
     }
@@ -288,6 +307,11 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
   }
 
   if (Firebase) {
+    if (override) {
+      overrideNotificationPopup()
+      return null
+    }
+
     if (Firebase.messaging.isSupported()) {
       if (!["granted", "denied"].includes(Notification.permission)) {
         let d = new Date()
@@ -317,8 +341,6 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
               variant: "info",
             }
           )
-        } else if (override) {
-          overrideNotificationPopup()
         }
       } else if (Notification.permission !== "denied") {
         const FCM = Firebase ? Firebase.messaging() : null
@@ -361,21 +383,17 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
       </DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
-          Enabling notifications allows us to notify you when new content or
-          features are available, or if we want your feedback about something.
+          If you enable notifications, you&apos;ll get a message on this device
+          whenever we release new content, before key dates, or if we want your
+          feedback about something.
           <br />
           <br />
-          You in?
+          You in? We won&apos;t spam you!
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button
-          onClick={rejectNotifications}
-          color="default"
-          variant="text"
-          autoFocus
-        >
-          No, I&apos;m a loser.
+        <Button onClick={rejectNotifications} color="default" variant="text">
+          No thanks
         </Button>
         <Button
           onClick={acceptNotifications}
@@ -383,7 +401,7 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
           variant="contained"
           autoFocus
         >
-          Yeah!
+          Hell yeah!
         </Button>
       </DialogActions>
     </Dialog>
