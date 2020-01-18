@@ -13,6 +13,7 @@ import {
   Box,
   makeStyles,
   Zoom,
+  Tooltip,
 } from "@material-ui/core"
 import TimerIcon from "mdi-react/TimerIcon"
 import TripleIcon from "mdi-react/Numeric3CircleOutlineIcon"
@@ -165,6 +166,21 @@ const PostCard = props => {
   const theme = useTheme()
   const classes = useStylesCard()
 
+  const wordsToTime = words => {
+    const wpm = 95
+
+    const mins = Math.floor(words / wpm)
+    const minuteFraction = Math.round((words / wpm - mins) * 2) / 2
+
+    const additive = minuteFraction === 0.5 ? "½" : ""
+
+    const finalMins = minuteFraction === 1 ? mins + 1 : mins
+
+    const out = `${finalMins}${additive}`
+
+    return out
+  }
+
   return (
     <Card>
       <CardActionArea
@@ -209,10 +225,13 @@ const PostCard = props => {
       </CardActionArea>
       <CardActions disableSpacing className={classes.cardActions}>
         <>
-          <TimerIcon
-            aria-label="estimated time to read"
-            color={theme.palette.text.secondary}
-          />
+          <Tooltip title="Estimated time to read" placement="top">
+            <span>
+              <TimerIcon
+                color={theme.palette.text.secondary}
+              />
+            </span>
+          </Tooltip>
           <P2
             color="textSecondary"
             style={{
@@ -220,7 +239,7 @@ const PostCard = props => {
               marginRight: theme.spacing(2.5),
             }}
           >
-            {Math.round(1.5 * timeToRead + 1)} mins
+            {wordsToTime(wordCount)} mins
           </P2>
           <P2 color="textSecondary" style={{ marginLeft: theme.spacing(0.5) }}>
             {wordCount} words
