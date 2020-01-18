@@ -6,7 +6,7 @@ module.exports = {
     title: `GCSE: Revise It!`,
     description: `A free revision website aimed at GCSE students.`,
     author: `@davwheat`,
-    siteUrl: "https://gcse-revision-site.firebaseapp.com",
+    siteUrl: "https://gcsereviseit.co.uk",
   },
   plugins: [
     `gatsby-plugin-transition-link`,
@@ -85,6 +85,18 @@ module.exports = {
           performance: true,
           analytics: true,
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        createLinkInHead: true,
+        sitemapSize: 10000,
+        // Exclude specific pages or groups of pages using glob parameters
+        // See: https://github.com/isaacs/minimatch
+        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
+        // exclude: ["/category/*", `/path/to/page`],
       },
     },
   ],
