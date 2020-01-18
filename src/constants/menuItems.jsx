@@ -2,6 +2,7 @@ import React from "react"
 
 import HomeIcon from "mdi-react/HomeOutlineIcon"
 import AboutIcon from "mdi-react/AboutOutlineIcon"
+import FeedbackIcon from "mdi-react/MessageAlertOutlineIcon"
 
 import SubjectInfo from "./subjectInfo"
 
@@ -23,5 +24,8 @@ SubjectInfo.forEach(o => {
 export default [
   [{ text: "Home", icon: <HomeIcon />, href: "/" }],
   [...subjectItems],
-  [{ text: "About Us", icon: <AboutIcon />, href: "/about-us" }],
+  [
+    { text: "About Us", icon: <AboutIcon />, href: "/about-us" },
+    { text: "Feedback", icon: <FeedbackIcon />, href: "/feedback" },
+  ],
 ]
