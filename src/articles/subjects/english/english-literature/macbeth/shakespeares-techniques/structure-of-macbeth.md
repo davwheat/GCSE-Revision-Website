@@ -39,7 +39,3 @@ Shakespeare leaves the audience in little doubt it's going to be a tragedy - but
 | Act 3, Scene 1 Banquo suspects that Macbeth killed Duncan. Macbeth plots to kill Banquo              | Will Banquo accuse Macbeth? Will Macbeth kill Banquo before he gets the chance? We don't find out until later in Act 3 |
 | Act 4, Scene 3 Macduff learns that his family have been murdered and vows to take revenge on Macbeth | Will Macduff kill Macbeth? We don't find out until Act 5.                                                              |
 | Act 5, the scenes alternate between Macbeth preparing for battle and the English army advancing.     | Who will win? What will happen to Macbeth? We don't find out until the end of the play.                                |
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

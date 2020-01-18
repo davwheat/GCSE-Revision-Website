@@ -34,7 +34,3 @@ subtopic: "characters"
 - Malcom's final judgement is that Lady Macbeth was like a devil - "fiend-like queen".
 - Invokes the powers of evil to help her influence her husband to commit murder and treason.
 - Raises the question about Shakespeare's ideas on the supernatural.
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

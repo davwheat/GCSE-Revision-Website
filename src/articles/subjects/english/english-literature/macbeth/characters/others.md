@@ -18,7 +18,3 @@ subtopic: "characters"
 
 - The Porter in Act 2 is there to relieve some tension between the darker and tragic parts in the play.
 - Three Murderers appear in Act 3. They show how ruthless Macbeth is but also that he is unwilling to commit more murders. They show how desperate and cruel Macbeth is.
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

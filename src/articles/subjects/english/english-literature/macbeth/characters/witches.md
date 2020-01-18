@@ -22,7 +22,3 @@ subtopic: "characters"
 - They predict he will be king - which pushes him to murder Duncan.
 - They confuse Macbeth using paradoxes - for example telling him Banquo will be "Lesser than Macbeth, and greater". By not being clear about what the future holds, they keep control of Macbeth.
 - They trick Macbeth by making predictions that give him a false sense of security, such as "none of woman born / Shall harm Macbeth".
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

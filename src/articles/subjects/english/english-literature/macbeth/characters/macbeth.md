@@ -35,7 +35,3 @@ subtopic: "characters"
 
 - He is easily influenced: Macbeth does what Lady Macbeth wants because he doesn't want to be seen as a "coward" and to be "more the man". Links to masculinity, strength and courage themes.
 - He is also influenced by the super-natural. The first time he meets the Witches he trusts them first time, saying "Two truths are told". He sees the dagger that leads him to kill Duncan. When the prophecies come true he relies on the witches even more.
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

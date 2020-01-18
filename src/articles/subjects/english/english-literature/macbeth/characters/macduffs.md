@@ -26,7 +26,3 @@ subtopic: "characters"
 - When he goes to England, she says he lacks "the natural touch" - she thinks his behaviour shows a lack of fatherly love.
 - She shows courage as she comforts her son, calling him "Poor bird". Her love and affection for him are clear. They speak in prose, which makes the scene feel natural and homely - this makes the murders even more shocking and horrible.
 - The above contrasts to Lady Macbeth who says "Have plucked my nipple from his boneless gums / And dashed the brains out" (about killing her own baby)
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

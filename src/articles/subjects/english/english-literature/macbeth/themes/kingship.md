@@ -26,7 +26,3 @@ subtopic: "themes"
 - Malcolm also says that a good ruler is holy - at the time, people believed the King was appointed by God.
 - The King Of England, Edward, has a "healing benediction" and uses "holy prayers" to cure sick people. He's surrounded by "blessings" that "speak him full of grace".
 - In contrast, Macbeth is "Devilish" - he commits murder and talks to evil Witches. He's not chosen King.
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.
