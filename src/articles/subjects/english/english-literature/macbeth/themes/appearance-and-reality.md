@@ -23,7 +23,3 @@ subtopic: "themes"
 - Duncan trusts Macbeth and dies for it, even though he made the same mistake by trusting the disloyal Thane of Cawdor. When this happens, Duncan says, "There's no art / To find the mind's construction in the face" - he thinks that there's no way of telling what someone is really like.
 - Macbeth knows that reality and appearances don't always match up, but he completely trusts the Witches' prophecies. This leads to his downfall.
 - In contrast, Malcolm is immediately sceptical that Duncan was murdered by his servants and suspects one of the thanes: "To show an unfelt sorrow is an office / Which the false man does easy". His awareness of what "false" men can do causes him to flee and probably saves his life.
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

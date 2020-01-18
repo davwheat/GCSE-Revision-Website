@@ -23,7 +23,3 @@ subtopic: "themes"
 - At first Macbeth makes a deliberate choice not to kill Duncan after he's considered the options: "We will proceed no further". He carefully weighs up the pros and cons, which suggest that he's in control.
 - Later, Macbeth acts on the Witches' prophecies despite Banquo's earlier warning that they're "instruments of darkness". Macbeth could do as Banquo does and accept the prophecies without acting.
 - Some of the prophecies are self-fulfilling - Macbeth only acts because he fears his future, so he causes it to happen. This suggests that he has free will.
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

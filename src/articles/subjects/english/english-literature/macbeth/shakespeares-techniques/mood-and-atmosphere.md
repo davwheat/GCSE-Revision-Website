@@ -45,7 +45,3 @@ By making the characters describe what they can see or hear, Shakespeare makes t
 # The Porter provides light relief - but also increases the tension
 - One of the few bits of comedy in the play comes in Act 2, Scene 3, when a drunken Porter rambles for a bit. This comic interlude delays the discovery of Duncan's body, which increases the tension.
 - Even the atmosphere here is dark - the Porter talks about "hell" and "Beelzebub" (the devil). He refers to Macbeth's castle as "hell-gate" and calls himself the "devil-porter". This suggests that the visitors are entering hell and to be greeted by the devil (Macbeth).
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.
