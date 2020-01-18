@@ -266,7 +266,7 @@ const useStyles = makeStyles(theme => ({
     },
     "& .questionTitle": {
       display: "block",
-      overflow: "auto",
+      overflow: "visible",
       paddingLeft: 16,
       lineHeight: "1.5em",
       "& > h6": {
