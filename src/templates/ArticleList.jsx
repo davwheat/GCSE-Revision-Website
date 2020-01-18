@@ -165,6 +165,21 @@ const PostCard = props => {
   const theme = useTheme()
   const classes = useStylesCard()
 
+  const wordsToTime = words => {
+    const wpm = 95
+
+    const mins = Math.floor(words / wpm)
+    const minuteFraction = Math.round((words / wpm - mins) * 2) / 2
+
+    const additive = minuteFraction === 0.5 ? "½" : ""
+
+    const finalMins = minuteFraction === 1 ? mins + 1 : mins
+
+    const out = `${finalMins}${additive}`
+
+    return out
+  }
+
   return (
     <Card>
       <CardActionArea
@@ -220,7 +235,7 @@ const PostCard = props => {
               marginRight: theme.spacing(2.5),
             }}
           >
-            {Math.round(1.5 * timeToRead + 1)} mins
+            {wordsToTime(wordCount)} mins
           </P2>
           <P2 color="textSecondary" style={{ marginLeft: theme.spacing(0.5) }}>
             {wordCount} words
