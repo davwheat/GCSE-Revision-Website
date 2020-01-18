@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@material-ui/core"
 
-import GatsbyLink from "gatsby-plugin-transition-link/AniLink"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
@@ -16,7 +16,7 @@ import ExternalLinkIcon from "mdi-react/ExternalLinkIcon"
 
 // eslint-disable-next-line react/display-name
 const AdapterLink = React.forwardRef((props, ref) => (
-  <GatsbyLink
+  <AniLink
     style={{ textDecoration: "none !important" }}
     innerRef={ref}
     cover
