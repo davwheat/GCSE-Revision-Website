@@ -26,7 +26,3 @@ subtopic: "themes"
 
 ## Key Quote:
 "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th' other."
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

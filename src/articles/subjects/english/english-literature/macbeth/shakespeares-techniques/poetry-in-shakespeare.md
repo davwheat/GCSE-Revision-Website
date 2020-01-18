@@ -44,7 +44,3 @@ subtopic: "shakespeare's techniques"
   - Macbeth's speech about killing Duncan in Act 1, Scene 7.
   - Macbeth seeing the dagger just before he kills Duncan in Act 2, Scene 1.
   - *There are lots more though!*
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

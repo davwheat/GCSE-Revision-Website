@@ -58,7 +58,3 @@ subtopic: "shakespeare's techniques"
 - Lady Macbeth's sleepwalking is a sign of her guilt - she can no longer sleep peacefully.
 - It is also suggested that Scotland can't eat or sleep - being unable to fulfil these basic needs shows how badly Macbeth's rule has affected the country. - "Give to our tables meat, sleep to our nights, / Free from our feasts and banquets bloody knives".
 - Clothing is symbolic too - at first, Macbeth is reluctant to wear the "borrowed robes" of the Thane of Cawdor. Banquo reinforces this, saying that the "New honours" are like "strange garments".
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

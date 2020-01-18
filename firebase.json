@@ -49,12 +49,5 @@
         ]
       }
     ],
-    "redirects": [
-      {
-        "source": "/ads.txt",
-        "destination": "https://srv.adstxtmanager.com/5532/gcse-revision-site.firebaseapp.com",
-        "type": 301
-      }
-    ]
   }
 }

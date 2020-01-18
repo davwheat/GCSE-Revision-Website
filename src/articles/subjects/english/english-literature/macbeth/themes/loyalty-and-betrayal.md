@@ -27,7 +27,3 @@ subtopic: "themes"
 - Macbeth is initially loyal to Duncan as "his kinsman and his subject" - this makes it even more shocking when he puts his own desires ahead of his loyalty to the king.
 - Lady Macbeth fakes an appearance of loyalty. She tells Duncan that she and Macbeth are "Your servants ever", even though they're plotting his murder. It shows how easily she can pretend to be loyal.
 - Shakespeare juxtaposes Lady Macbeth's plotting to kill Duncan with her welcoming him into their castle. This develops her character and makes her murderous intentions more dramatic.
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

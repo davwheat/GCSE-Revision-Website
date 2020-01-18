@@ -23,7 +23,3 @@ subtopic: "shakespeare's techniques"
 - Shakespeare uses paradoxes and oxymorons to heighten the tension.
 - The Witches' predictions are ambiguous. The things they predict seem impossible, and yet they come true. Macbeth describes their words as "lies like truth" - this is an oxymoron because lies are never truthful.
 - The Witches' often speak in paradoxes - "When the battle's lost and won". This makes them very ambiguous - the audience doesn't know what their motives are, or whether they can be trusted.
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.

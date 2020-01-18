@@ -23,7 +23,3 @@ subtopic: "themes"
 - Shakespeare uses battles to symbolise good and evil
 - In the opening scene, there's a battle between Scotland and Norway - the enemy army is lead by a traitor, "merciless Macdonald", whose "villanies of nature" show that he's evil.
 - The play ends with a battle, this time against Macbeth. Malcolm's men have "dear causes" and fight to "dew the sovereign flower" - in other words, to restore the rightful King. Macbeth is an "abhorred tyrant" who represents evil.
-
----
-
-This content is derived from [Casey William's](https://github.com/shnupta) GCSE Literature cheatsheets.
