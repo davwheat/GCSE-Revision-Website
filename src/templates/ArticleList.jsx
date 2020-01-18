@@ -13,6 +13,7 @@ import {
   Box,
   makeStyles,
   Zoom,
+  Tooltip,
 } from "@material-ui/core"
 import TimerIcon from "mdi-react/TimerIcon"
 import TripleIcon from "mdi-react/Numeric3CircleOutlineIcon"
@@ -224,10 +225,13 @@ const PostCard = props => {
       </CardActionArea>
       <CardActions disableSpacing className={classes.cardActions}>
         <>
-          <TimerIcon
-            aria-label="estimated time to read"
-            color={theme.palette.text.secondary}
-          />
+          <Tooltip title="Estimated time to read" placement="top">
+            <span>
+              <TimerIcon
+                color={theme.palette.text.secondary}
+              />
+            </span>
+          </Tooltip>
           <P2
             color="textSecondary"
             style={{
