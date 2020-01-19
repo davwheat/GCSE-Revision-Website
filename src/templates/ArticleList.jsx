@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 import { H4, Subtitle2, P, P2 } from "../components/EasyText"
 
@@ -14,6 +14,7 @@ import {
   makeStyles,
   Zoom,
   Tooltip,
+  LinearProgress,
 } from "@material-ui/core"
 import TimerIcon from "mdi-react/TimerIcon"
 import TripleIcon from "mdi-react/Numeric3CircleOutlineIcon"
@@ -42,82 +43,71 @@ const useStyles = makeStyles(theme => ({
 const ArticleList = props => {
   const classes = useStyles()
 
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allMarkdownRemark(
-            sort: { fields: [frontmatter___date], order: ASC }
-          ) {
-            edges {
-              node {
-                timeToRead
-                excerpt(pruneLength: 150, truncate: true)
-                fields {
-                  slug
-                }
-                frontmatter {
-                  title
-                  date(formatString: "dddd, DD MMMM YYYY")
-                  description
-                  topic
-                  subtopic
-                  subject
-                  tripleOnly
-                  higherOnly
-                }
-                wordCount {
-                  words
-                }
-              }
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
+        edges {
+          node {
+            excerpt(pruneLength: 150, truncate: true)
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              date(formatString: "dddd, DD MMMM YYYY")
+              description
+              topic
+              subtopic
+              subject
+              tripleOnly
+              higherOnly
+            }
+            wordCount {
+              words
             }
           }
         }
-      `}
-      render={data => {
-        const posts = data.allMarkdownRemark.edges
+      }
+    }
+  `)
 
-        let counter = -1
+  const posts = data.allMarkdownRemark.edges
+
+  let counter = -1
+
+  return (
+    <XMasonry
+      targetBlockWidth={375}
+      maxColumns={2}
+      className={classes.container}
+    >
+      {posts.map((post, i) => {
+        // If it's not the subject we want, ignore it
+        if (post.node.frontmatter.subject !== props.subject) return []
+
+        // If it's not the topic we want (and we have told the component a topic) ignore it
+        if (props.topic && post.node.frontmatter.topic !== props.topic)
+          return []
+
+        // If it's not the subtopic we want (and we have told the component a subtopic) ignore it
+        if (props.subtopic && post.node.frontmatter.subtopic !== props.subtopic)
+          return []
+
+        counter++
 
         return (
-          <XMasonry
-            targetBlockWidth={375}
-            maxColumns={2}
-            className={classes.container}
-          >
-            {posts.map((post, i) => {
-              // If it's not the subject we want, ignore it
-              if (post.node.frontmatter.subject !== props.subject) return []
-
-              // If it's not the topic we want (and we have told the component a topic) ignore it
-              if (props.topic && post.node.frontmatter.topic !== props.topic)
-                return []
-
-              // If it's not the subtopic we want (and we have told the component a subtopic) ignore it
-              if (
-                props.subtopic &&
-                post.node.frontmatter.subtopic !== props.subtopic
-              )
-                return []
-
-              counter++
-
-              return (
-                <XBlock key={i}>
-                  <Box className={classes.card}>
-                    <Zoom in style={{ transitionDelay: counter * 75 + "ms" }}>
-                      <div>
-                        <PostCard post={post} />
-                      </div>
-                    </Zoom>
-                  </Box>
-                </XBlock>
-              )
-            })}
-          </XMasonry>
+          <XBlock key={i}>
+            <Box className={classes.card}>
+              <Zoom in style={{ transitionDelay: counter * 75 + "ms" }}>
+                <div>
+                  <PostCard post={post} />
+                </div>
+              </Zoom>
+            </Box>
+          </XBlock>
         )
-      }}
-    />
+      })}
+    </XMasonry>
   )
 }
 
@@ -152,7 +142,7 @@ const useStylesCard = makeStyles(() => ({
 }))
 
 const PostCard = props => {
-  const { excerpt, timeToRead } = props.post.node
+  const { excerpt } = props.post.node
   const {
     date,
     description,
@@ -176,9 +166,17 @@ const PostCard = props => {
 
     const finalMins = minuteFraction === 1 ? mins + 1 : mins
 
-    const out = `${finalMins}${additive}`
+    console.log(finalMins)
 
-    return out
+    if (0 < finalMins && finalMins < 1) {
+      return `${finalMins} min`
+    } else if (finalMins === 1) {
+      return `${finalMins} min`
+    } else if (finalMins === 0) {
+      return `${additive} min`
+    } else {
+      return `${finalMins}${additive} mins`
+    }
   }
 
   return (
@@ -227,9 +225,7 @@ const PostCard = props => {
         <>
           <Tooltip title="Estimated time to read" placement="top">
             <span>
-              <TimerIcon
-                color={theme.palette.text.secondary}
-              />
+              <TimerIcon color={theme.palette.text.secondary} />
             </span>
           </Tooltip>
           <P2
@@ -239,7 +235,7 @@ const PostCard = props => {
               marginRight: theme.spacing(2.5),
             }}
           >
-            {wordsToTime(wordCount)} mins
+            {wordsToTime(wordCount)}
           </P2>
           <P2 color="textSecondary" style={{ marginLeft: theme.spacing(0.5) }}>
             {wordCount} words
