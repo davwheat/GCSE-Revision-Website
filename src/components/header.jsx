@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 
 import {
   makeStyles,
@@ -16,6 +16,8 @@ import {
   useTheme,
   Box,
   Tooltip,
+  useScrollTrigger,
+  Slide,
 } from "@material-ui/core"
 
 import { H6 } from "./EasyText"
@@ -29,11 +31,11 @@ import BellOutlineIcon from "mdi-react/BellOutlineIcon"
 import CssBaseline from "@material-ui/core/CssBaseline"
 
 import { MenuItems } from "../constants"
+import { IsMediumPerformanceOrWorse } from "../functions/performanceTest"
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    marginBottom: theme.spacing(4),
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -47,24 +49,32 @@ const useStyles = makeStyles(theme => ({
   navbar: {
     minWidth: 250,
   },
-  withScrollIndicator: {
-    position: "sticky",
-    marginTop: -32,
-    top: 0,
-    display: "block",
-    zIndex: 1001,
-    height: 3,
-    background: theme.palette.secondary.dark,
-    width: "100vw",
-    overflow: "hidden",
-    "&:after": {
-      content: "''",
-      display: "block",
-      position: "absolute",
+  headRoot: {
+    "& #scrollIndicator": {
       top: 0,
+      display: "block",
+      zIndex: 1001,
       height: 3,
-      width: "1rem", // initial size
-      background: theme.palette.secondary.main,
+      background: theme.palette.secondary.dark,
+      position: "fixed",
+      width: "100vw",
+      overflow: "hidden",
+      transform: "translateY(64px)",
+      transition: theme.transitions.create("transform", { duration: 225 }),
+      [theme.breakpoints.down("xs")]: {
+        transform: "translateY(56px)",
+      },
+      "&:after": {
+        content: "''",
+        display: "block",
+        top: 0,
+        height: 3,
+        width: "calc(var(--scroll-percentage) + 1rem)",
+        background: theme.palette.secondary.main,
+      },
+    },
+    "& header[style*='transform: '][style*='px'] ~ #scrollIndicator": {
+      transform: "translateY(0px)",
     },
   },
   nested: {
@@ -73,55 +83,40 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Header = ({ pageTitle, type, overrideNotificationPopup }) => {
-  const classes = useStyles()
-
-  useEffect(() => {
-    if (type === "article") {
-      const styleElem = document.head.appendChild(
-        document.createElement("style")
-      )
-
-      window.addEventListener("scroll", () => {
-        let h = document.documentElement,
-          b = document.body,
-          st = "scrollTop",
-          sh = "scrollHeight"
-
-        let scrollPercentage =
-          ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
-
-        styleElem.innerHTML = `#scrollIndicator:after {
-          width: calc(${scrollPercentage}% + 1rem);
-        }`
-      })
-    }
-  })
-
   return (
     <>
       <CssBaseline />
       <MakeAppBar
         overrideNotificationPopup={overrideNotificationPopup}
         title={pageTitle}
+        type={type}
       />
-
-      {type === "article" ? (
-        <Box
-          boxShadow={1}
-          id="scrollIndicator"
-          className={classes.withScrollIndicator}
-        />
-      ) : null}
     </>
   )
 }
 
-const MakeAppBar = ({ title, overrideNotificationPopup }) => {
+function HideOnScroll(props) {
+  const { children, window } = props
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined })
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  )
+}
+
+const MakeAppBar = ({ title, overrideNotificationPopup, type }) => {
   const classes = useStyles()
 
   const [state, setState] = React.useState({
     isDrawerOpen: false,
   })
+
+  const scrollIndicatorRef = useRef(null)
 
   const toggleDrawer = open => event => {
     if (
@@ -140,36 +135,79 @@ const MakeAppBar = ({ title, overrideNotificationPopup }) => {
       ? process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent)
       : false
 
+  const onScroll = () => {
+    let h = document.documentElement,
+      b = document.body,
+      st = "scrollTop",
+      sh = "scrollHeight"
+
+    let scrollPercentage =
+      ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
+
+    scrollIndicatorRef &&
+      scrollIndicatorRef.current.style.setProperty(
+        "--scroll-percentage",
+        scrollPercentage + "%"
+      )
+  }
+
+  useEffect(() => {
+    if (type === "article") {
+      window.removeEventListener("scroll", onScroll)
+
+      window.addEventListener("scroll", onScroll, { passive: true })
+
+      scrollIndicatorRef &&
+        scrollIndicatorRef.current.style.setProperty(
+          "--scroll-percentage",
+          "0%"
+        )
+    }
+  })
+
   return (
     <div className={classes.root}>
-      <AppBar position="sticky">
-        <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-            onClick={toggleDrawer(true)}
-            key={0}
-          >
-            <MenuIcon />
-          </IconButton>
-          <H6 key={1} className={classes.title}>
-            {title}
-          </H6>
-          <Tooltip title="Enable notifications">
-            <IconButton onClick={overrideNotificationPopup}>
-              <BellOutlineIcon color="black" />
-            </IconButton>
-          </Tooltip>
-        </Toolbar>
-      </AppBar>
+      <div className={classes.headRoot}>
+        <HideOnScroll>
+          <AppBar className={classes.appbar}>
+            <Toolbar>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+                key={0}
+              >
+                <MenuIcon />
+              </IconButton>
+              <H6 key={1} className={classes.title}>
+                {title}
+              </H6>
+              <Tooltip title="Enable notifications">
+                <IconButton onClick={overrideNotificationPopup}>
+                  <BellOutlineIcon color="black" />
+                </IconButton>
+              </Tooltip>
+            </Toolbar>
+          </AppBar>
+        </HideOnScroll>
+        {type === "article" ? (
+          <Box
+            boxShadow={1}
+            className={classes.scrollIndicator}
+            id="scrollIndicator"
+            ref={scrollIndicatorRef}
+          />
+        ) : null}
+      </div>
+      <Toolbar />
 
       <SwipeableDrawer
         open={state.isDrawerOpen}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
-        disableBackdropTransition={!iOS}
+        disableBackdropTransition={IsMediumPerformanceOrWorse}
         disableDiscovery={iOS}
       >
         <nav

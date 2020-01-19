@@ -14,8 +14,12 @@ import {
   makeStyles,
   Zoom,
   Tooltip,
-  LinearProgress,
+  TextField,
+  InputAdornment,
 } from "@material-ui/core"
+
+import ErrorIcon from "mdi-react/ErrorOutlineIcon"
+import SearchIcon from "mdi-react/SearchIcon"
 import TimerIcon from "mdi-react/TimerIcon"
 import TripleIcon from "mdi-react/Numeric3CircleOutlineIcon"
 import HigherIcon from "mdi-react/ArrowUpCircleOutlineIcon"
@@ -25,15 +29,9 @@ import Link from "../components/Link"
 import { XMasonry, XBlock } from "react-xmasonry"
 import clsx from "clsx"
 
-const useStyles = makeStyles(theme => ({
-  card: {
-    "& > div > div": {
-      margin: theme.spacing(1),
-      // minWidth: 325,
-    },
-    margin: `auto`,
-    // maxWidth: 400,
-  },
+import Fuse from "fuse.js"
+
+const useStyles = makeStyles(() => ({
   container: {
     margin: "0 auto",
     maxWidth: "100%",
@@ -43,12 +41,19 @@ const useStyles = makeStyles(theme => ({
 const ArticleList = props => {
   const classes = useStyles()
 
+  const [FuseSearch, setFuseSearch] = useState(null)
+  const [SearchQuery, setSearchQuery] = useState(null)
+  const [Timeout, setTimeoutId] = useState(null)
+
+  const [AllPosts, setAllPosts] = useState(null)
+
   const data = useStaticQuery(graphql`
-    query {
+    {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
         edges {
           node {
             excerpt(pruneLength: 150, truncate: true)
+            content: excerpt(pruneLength: 2147483647, truncate: false)
             fields {
               slug
             }
@@ -65,6 +70,9 @@ const ArticleList = props => {
             wordCount {
               words
             }
+            internal {
+              content
+            }
           }
         }
       }
@@ -75,40 +83,130 @@ const ArticleList = props => {
 
   let counter = -1
 
-  return (
-    <XMasonry
-      targetBlockWidth={375}
-      maxColumns={2}
-      className={classes.container}
-    >
-      {posts.map((post, i) => {
-        // If it's not the subject we want, ignore it
-        if (post.node.frontmatter.subject !== props.subject) return []
+  let tempPosts = []
 
-        // If it's not the topic we want (and we have told the component a topic) ignore it
-        if (props.topic && post.node.frontmatter.topic !== props.topic)
-          return []
+  const fuseJsOptions = {
+    id: "id",
+    shouldSort: true,
+    tokenize: true,
+    threshold: 0.95,
+    location: 0,
+    distance: 150,
+    maxPatternLength: 50,
+    minMatchCharLength: 2,
+    keys: [
+      { name: "title", weight: 0.45 },
+      { name: "description", weight: 0.35 },
+      { name: "content", weight: 0.2 },
+    ],
+  }
 
-        // If it's not the subtopic we want (and we have told the component a subtopic) ignore it
-        if (props.subtopic && post.node.frontmatter.subtopic !== props.subtopic)
-          return []
+  AllPosts &&
+    SearchQuery &&
+    !FuseSearch &&
+    setFuseSearch(new Fuse(AllPosts, fuseJsOptions))
 
-        counter++
+  const results =
+    SearchQuery && AllPosts && FuseSearch
+      ? FuseSearch.search(SearchQuery)
+      : null
 
-        return (
-          <XBlock key={i}>
-            <Box className={classes.card}>
-              <Zoom in style={{ transitionDelay: counter * 75 + "ms" }}>
-                <div>
-                  <PostCard post={post} />
-                </div>
-              </Zoom>
-            </Box>
-          </XBlock>
+  const renderPosts = (post, i) => {
+    if (!results) {
+      // If it's not the subject we want, ignore it
+      if (post.node.frontmatter.subject !== props.subject) return []
+
+      // If it's not the topic we want (and we have told the component a topic) ignore it
+      if (props.topic && post.node.frontmatter.topic !== props.topic) return []
+
+      // If it's not the subtopic we want (and we have told the component a subtopic) ignore it
+      if (props.subtopic && post.node.frontmatter.subtopic !== props.subtopic)
+        return []
+
+      counter++
+
+      if (!AllPosts) {
+        tempPosts.push({
+          id: i,
+          title: post.node.frontmatter.title,
+          description: post.node.frontmatter.description,
+          content: post.node.content,
+        })
+      }
+
+      return (
+        <XBlock key={i}>
+          <PostCard counter={counter} post={post} />
+        </XBlock>
+      )
+    } else {
+      const postInfo = posts[post]
+
+      return (
+        <XBlock key={i}>
+          <PostCard counter={counter} post={postInfo} />
+        </XBlock>
+      )
+    }
+  }
+
+  const out = (
+    <>
+      <TextField
+        placeholder="Search articles"
+        variant="outlined"
+        fullWidth
+        error={results && results.length === 0}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+        onInput={e => {
+          Timeout && clearTimeout(window.__article_search_timeout)
+
+          let targetVal = e.target.value
+
+          window.__article_search_timeout = setTimeout(() => {
+            setSearchQuery(targetVal)
+          }, 250) // don't search while typing
+        }}
+        style={{ marginBottom: 16 }}
+      />
+
+      {results ? (
+        results.length > 0 ? (
+          <XMasonry
+            targetBlockWidth={375}
+            maxColumns={2}
+            className={classes.container}
+          >
+            {results.map(renderPosts)}
+          </XMasonry>
+        ) : (
+          <>
+            <P align="center" color="error">
+              <ErrorIcon /> 0 results found for query &quot;{SearchQuery}&quot;
+            </P>
+          </>
         )
-      })}
-    </XMasonry>
+      ) : (
+        <XMasonry
+          targetBlockWidth={375}
+          maxColumns={2}
+          className={classes.container}
+        >
+          {posts.map(renderPosts)}
+        </XMasonry>
+      )}
+    </>
   )
+
+  if (!AllPosts) setAllPosts(tempPosts)
+
+  return out
 }
 
 ArticleList.propTypes = {
@@ -118,7 +216,15 @@ ArticleList.propTypes = {
   subtopic: PropTypes.string,
 }
 
-const useStylesCard = makeStyles(() => ({
+const useStylesCard = makeStyles(theme => ({
+  card: {
+    "& > div > div": {
+      margin: theme.spacing(1),
+      // minWidth: 325,
+    },
+    margin: `auto`,
+    // maxWidth: 400,
+  },
   cardActions: {
     whiteSpace: "nowrap",
     "@media (max-width: 768px)": {
@@ -153,6 +259,8 @@ const PostCard = props => {
   const { slug } = props.post.node.fields
   const wordCount = props.post.node.wordCount.words
 
+  const { counter } = props
+
   const theme = useTheme()
   const classes = useStylesCard()
 
@@ -166,8 +274,6 @@ const PostCard = props => {
 
     const finalMins = minuteFraction === 1 ? mins + 1 : mins
 
-    console.log(finalMins)
-
     if (0 < finalMins && finalMins < 1) {
       return `${finalMins} min`
     } else if (finalMins === 1) {
@@ -180,84 +286,94 @@ const PostCard = props => {
   }
 
   return (
-    <Card>
-      <CardActionArea
-        component={Link}
-        className={clsx("no-underline", "color-inherit")}
-        to={slug.substr(1)}
-      >
-        <CardContent>
-          <H4
-            component="h2"
-            color="primary"
-            className="keepColor"
-            style={{ marginBottom: theme.spacing(0.75) }}
-          >
-            {title}
-          </H4>
-          <Subtitle2 component="p" color="textSecondary" gutterBottom>
-            Published on {date}
-          </Subtitle2>
+    <Box className={classes.card}>
+      <Zoom in style={{ transitionDelay: counter * 75 + "ms" }}>
+        <div>
+          <Card>
+            <CardActionArea
+              component={Link}
+              className={clsx("no-underline", "color-inherit")}
+              to={slug.substr(1)}
+            >
+              <CardContent>
+                <H4
+                  component="h2"
+                  color="primary"
+                  className="keepColor"
+                  style={{ marginBottom: theme.spacing(0.75) }}
+                >
+                  {title}
+                </H4>
+                <Subtitle2 component="p" color="textSecondary" gutterBottom>
+                  Published on {date}
+                </Subtitle2>
 
-          {isTripleScience && isHigher ? (
-            <P paragraph align="center">
-              [<TripleIcon />
-              <HigherIcon /> <strong>Triple Science Higher only</strong>]
-            </P>
-          ) : null}
-          {isTripleScience && !isHigher ? (
-            <P paragraph align="center">
-              [<TripleIcon />
-              <strong>Triple Science only</strong>]
-            </P>
-          ) : null}
-          {!isTripleScience && isHigher ? (
-            <P paragraph align="center">
-              [<HigherIcon />
-              <strong>Higher only</strong>]
-            </P>
-          ) : null}
+                {isTripleScience && isHigher ? (
+                  <P paragraph align="center">
+                    [<TripleIcon />
+                    <HigherIcon /> <strong>Triple Science Higher only</strong>]
+                  </P>
+                ) : null}
+                {isTripleScience && !isHigher ? (
+                  <P paragraph align="center">
+                    [<TripleIcon />
+                    <strong>Triple Science only</strong>]
+                  </P>
+                ) : null}
+                {!isTripleScience && isHigher ? (
+                  <P paragraph align="center">
+                    [<HigherIcon />
+                    <strong>Higher only</strong>]
+                  </P>
+                ) : null}
 
-          <P>{description ? description : excerpt}</P>
-        </CardContent>
-      </CardActionArea>
-      <CardActions disableSpacing className={classes.cardActions}>
-        <>
-          <Tooltip title="Estimated time to read" placement="top">
-            <span>
-              <TimerIcon color={theme.palette.text.secondary} />
-            </span>
-          </Tooltip>
-          <P2
-            color="textSecondary"
-            style={{
-              marginLeft: theme.spacing(0.5),
-              marginRight: theme.spacing(2.5),
-            }}
-          >
-            {wordsToTime(wordCount)}
-          </P2>
-          <P2 color="textSecondary" style={{ marginLeft: theme.spacing(0.5) }}>
-            {wordCount} words
-          </P2>
-        </>
-        <div className={classes.actionSeparator} />
-        <Link
-          linkIsButton
-          color="primary"
-          to={slug.substr(1)}
-          className={classes.readButton}
-        >
-          Read article
-        </Link>
-      </CardActions>
-    </Card>
+                <P>{description ? description : excerpt}</P>
+              </CardContent>
+            </CardActionArea>
+            <CardActions disableSpacing className={classes.cardActions}>
+              <>
+                <Tooltip title="Estimated time to read" placement="top">
+                  <span>
+                    <TimerIcon color={theme.palette.text.secondary} />
+                  </span>
+                </Tooltip>
+                <P2
+                  color="textSecondary"
+                  style={{
+                    marginLeft: theme.spacing(0.5),
+                    marginRight: theme.spacing(2.5),
+                  }}
+                >
+                  {wordsToTime(wordCount)}
+                </P2>
+                <P2
+                  color="textSecondary"
+                  style={{ marginLeft: theme.spacing(0.5) }}
+                >
+                  {wordCount} words
+                </P2>
+              </>
+              <div className={classes.actionSeparator} />
+              <Link
+                linkIsButton
+                color="primary"
+                to={slug.substr(1)}
+                className={classes.readButton}
+              >
+                Read article
+              </Link>
+            </CardActions>
+          </Card>
+        </div>
+      </Zoom>
+    </Box>
   )
 }
 
 PostCard.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   post: PropTypes.object.isRequired,
+  counter: PropTypes.number.isRequired,
 }
 
 export default ArticleList

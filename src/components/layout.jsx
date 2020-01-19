@@ -13,6 +13,8 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import Cookies from "js-cookie"
+
 import theme from "../constants/theme"
 
 import Header from "./header"
@@ -29,6 +31,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
+  makeStyles,
 } from "@material-ui/core"
 
 import GitHubIcon from "mdi-react/GithubCircleIcon"
@@ -42,8 +45,45 @@ import { Body2 } from "./EasyText"
 import { SnackbarProvider, useSnackbar } from "notistack"
 
 import { useFirebase } from "gatsby-plugin-firebase"
+import { PerformanceTest } from "../functions/performanceTest"
+
+import cssVars from "css-vars-ponyfill"
+
+const layoutStyles = makeStyles(theme => ({
+  page: {
+    margin: `0 auto`,
+    padding: `0px 1.0875rem 1.45rem`,
+    marginBottom: theme.spacing(3),
+    background: theme.palette.background.default,
+  },
+}))
 
 const Layout = ({ children, type }) => {
+  cssVars({
+    watch: true,
+  })
+
+  /*
+
+ Run performance test on first load of site
+ ------------------------------------------
+ This is used to determine whether page
+ transitions should be used, along with a
+ multitude of other possibilities.
+
+ The resulting performance is stored as a
+ cookie named "performance" as one of these:
+ "low", "medium", or "high".
+
+ The value will be recalculated every 28 days,
+ as the cookie expires.
+
+  */
+
+  if (!Cookies.get("performance")) {
+    Cookies.set("performance", PerformanceTest(), { expires: 28 })
+  }
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -136,17 +176,8 @@ const Layout = ({ children, type }) => {
           setOverrideNotificationPopup(true)
         }}
       />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-          marginBottom: theme.spacing(3),
-          marginTop:
-            type === "article" ? theme.spacing(4) - 3 : theme.spacing(4), // -3 for articles to account for scroll indicator
-        }}
-      >
+
+      <PageContents type={type}>
         <Container maxWidth="md">
           <SnackbarProvider
             preventDuplicate
@@ -176,7 +207,7 @@ const Layout = ({ children, type }) => {
             {/* <div id="ezoic-pub-ad-placeholder-101" /> */}
           </SnackbarProvider>
         </Container>
-      </div>
+      </PageContents>
 
       {LargeScreen ? (
         <Paper
@@ -210,6 +241,20 @@ const Layout = ({ children, type }) => {
         </Paper>
       )}
     </MuiThemeProvider>
+  )
+}
+
+const PageContents = ({ type, children }) => {
+  const classes = layoutStyles()
+  return (
+    <div
+      className={classes.page}
+      style={{
+        marginTop: type === "article" ? theme.spacing(4) - 3 : theme.spacing(4), // -3 for articles to account for scroll indicator
+      }}
+    >
+      {children}
+    </div>
   )
 }
 

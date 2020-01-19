@@ -103,6 +103,21 @@ const Article = props => {
       ]
     : []
 
+  const subtopicBreadcrumb = post.frontmatter.subtopic
+    ? [
+        {
+          label: ConvertStringToLabel(post.frontmatter.subtopic),
+          href: `subjects/${
+            subjectGroupUrl ? subjectGroupUrl + "/" : ""
+          }${subjectUrl}/topics/${ConvertStringToTopicUrl(
+            ConvertStringToUrl(post.frontmatter.topic)
+          )}/${ConvertStringToTopicUrl(
+            ConvertStringToUrl(post.frontmatter.subtopic)
+          )}`,
+        },
+      ]
+    : []
+
   if (subjectLabel === "Chemistry") {
     post.headings.push({
       value: "Interactive Periodic Table",
@@ -139,16 +154,7 @@ const Article = props => {
               ConvertStringToUrl(post.frontmatter.topic)
             )}`,
           },
-          {
-            label: ConvertStringToLabel(post.frontmatter.subtopic),
-            href: `subjects/${
-              subjectGroupUrl ? subjectGroupUrl + "/" : ""
-            }${subjectUrl}/topics/${ConvertStringToTopicUrl(
-              ConvertStringToUrl(post.frontmatter.topic)
-            )}/${ConvertStringToTopicUrl(
-              ConvertStringToUrl(post.frontmatter.subtopic)
-            )}`,
-          },
+          ...subtopicBreadcrumb,
           { label: post.frontmatter.title },
         ]}
       />
