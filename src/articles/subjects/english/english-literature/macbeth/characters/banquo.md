@@ -24,7 +24,3 @@ subtopic: "characters"
 
 - Banquo suspects that Macbeth murdered Duncan - "I fear / Thou play'dst most foully". However he doesn't act on his suspicions as he remembers the predictions that he will be the "father / Of many kings". This shows that even the most honourable characters are influenced by ambition.
 - Macbeth sees Banquo as a threat - he says there is no one except Banquo "Whose being I do fear". When Banquo is assassinated he says "O, treachery!", showing that he didn't expect Macbeth to betray him.
-
----
-
-This content is derived from [Casey William](https://github.com/shnupta)'s GCSE Literature cheatsheets.
