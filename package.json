@@ -13,6 +13,7 @@
     "async": "^3.1.0",
     "clsx": "^1.0.4",
     "firebase": "^7.7.0",
+    "fuse.js": "^3.4.6",
     "gatsby": "^2.18.25",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-firebase": "^0.1.8",

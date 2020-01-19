@@ -82,8 +82,6 @@ const SubTopicList = props => {
             className={classes.container}
           >
             {subtopics.map((subtopic, i) => {
-              console.log(subtopic)
-
               const subtopics = props.subjectGroup
                 ? subtopic.nodes.filter(
                     node =>
