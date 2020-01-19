@@ -4,9 +4,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import clsx from "clsx"
-import _ from "lodash"
-
 import ReactMarkdown from "react-markdown/with-html"
 import JsxParser from "react-jsx-parser"
 
@@ -57,6 +54,7 @@ import Quote from "./Blockquote"
 import textToSafeId from "../functions/textToSafeId"
 import YouTubeEmbed from "./YouTubeEmbed"
 import KeyFact from "./KeyFact"
+import ExamQuestion from "./ExamQuestion"
 
 Lowlight.registerLanguage("js", js)
 Lowlight.registerLanguage("py", py)
@@ -126,205 +124,7 @@ const componentTransforms = classes => ({
   KeyFact,
 })
 
-const Collapser = ({ title, children, noSpace, solution }) => (
-  <ExpansionPanel
-    TransitionProps={{ mountOnEnter: true }}
-    style={{
-      marginTop: noSpace || solution ? 0 : 24,
-      background: solution ? "#f8f8f8" : null,
-      color: solution ? "#000" : null,
-      borderBottomLeftRadius: solution ? 4 : null,
-      borderBottomRightRadius: solution ? 4 : null,
-    }}
-  >
-    <ExpansionPanelSummary
-      expandIcon={<ExpandIcon color={solution ? "#000" : "#fff"} />}
-    >
-      {title}
-    </ExpansionPanelSummary>
-    <ExpansionPanelDetails style={{ display: "block" }}>
-      {children}
-    </ExpansionPanelDetails>
-  </ExpansionPanel>
-)
-
-const ExamQuestion = ({
-  questionNumber,
-  type,
-  marks,
-  marksText,
-  marksSquareBrackets,
-  lines,
-  answerLine,
-  children,
-  withSolution,
-  noSpace,
-}) => {
-  const usesNumberBoxes = type !== "no-box"
-
-  const str = `${questionNumber}`.split("")
-
-  if (usesNumberBoxes && typeof questionNumber === "number") {
-    if (questionNumber < 10) {
-      str.unshift("0")
-    }
-  }
-
-  const classes = useStyles()
-
-  return (
-    <Paper
-      className={classes.examQuestion}
-      style={{
-        borderBottomLeftRadius: withSolution ? 0 : null,
-        borderBottomRightRadius: withSolution ? 0 : null,
-        position: withSolution ? "relative" : null,
-        zIndex: withSolution ? 1 : null,
-        marginBottom: noSpace || withSolution ? 0 : 24,
-        marginTop: noSpace ? 0 : 24,
-      }}
-      elevation={2}
-    >
-      <div className={clsx("questionNumber", { numberBoxes: usesNumberBoxes })}>
-        {usesNumberBoxes ? (
-          str.map(s => <span key={s}>{s}</span>)
-        ) : (
-          <span>{questionNumber}</span>
-        )}
-      </div>
-      <div className="questionTitle">
-        <h6>{children}</h6>
-      </div>
-      <div
-        className={clsx("questionMarks", {
-          squareBrackets: !!marksSquareBrackets,
-          normalBrackets: !marksSquareBrackets,
-        })}
-      >
-        {marks}
-        {marksText ? (marks !== 1 ? " marks" : " mark") : ""}
-      </div>
-      <div className="questionAnswer">
-        {lines && lines !== 0
-          ? _.times(lines, () => <hr className="questionAnswerLine" />)
-          : null}
-        {answerLine ? <hr className="questionFinalAnswer" /> : null}
-      </div>
-    </Paper>
-  )
-}
-
-const StyledTableCell = withStyles(theme => ({
-  head: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
-    fontWeight: 700,
-    fontSize: 16,
-  },
-  body: {
-    fontSize: 16,
-    "&:not(:last-child)": {
-      borderRight: "1px solid rgba(81, 81, 81, 1)",
-    },
-  },
-}))(TableCell)
-
 const useStyles = makeStyles(theme => ({
-  examQuestion: {
-    marginTop: 24,
-    padding: 24,
-    background: "white",
-    color: "black",
-    "& > *": {
-      fontFamily: "Arial, Poppins, sans-serif !important",
-    },
-    "& .questionNumber": {
-      display: "block",
-      float: "left",
-      "&.numberBoxes span": {
-        border: "1px solid black",
-        width: "1.5em",
-      },
-      "&:not(.numberBoxes) span.additive::before": {
-        content: '"("',
-      },
-      "&:not(.numberBoxes) span.additive::after": {
-        content: '")"',
-      },
-      "& span": {
-        fontSize: "16px",
-        height: "1.5em",
-        width: 47,
-        display: "inline-block",
-        textAlign: "center",
-        lineHeight: "1.5em",
-        fontWeight: 700,
-      },
-      "&:not(.numberBoxes) span": {
-        transform: "translateX(-8px)",
-      },
-    },
-    "& .questionTitle": {
-      display: "block",
-      overflow: "visible",
-      paddingLeft: 16,
-      lineHeight: "1.5em",
-      "& > h6": {
-        fontSize: "16px",
-        fontWeight: "normal",
-        margin: 0,
-      },
-      "&::after": {
-        content: '""',
-        clear: "both",
-        display: "table",
-      },
-    },
-    "& .questionMarks": {
-      textAlign: "right",
-      fontWeight: 700,
-      "&.squareBrackets::before": {
-        content: '"["',
-      },
-      "&.squareBrackets::after": {
-        content: '"]"',
-      },
-      "&.normalBrackets::before": {
-        content: '"("',
-      },
-      "&.normalBrackets::after": {
-        content: '")"',
-      },
-    },
-    "& .questionAnswer": {
-      "& hr.questionAnswerLine": {
-        border: "none",
-        borderBottom: "2px solid #888",
-        paddingTop: "1.75em",
-        marginLeft: "64px",
-      },
-      "& hr.questionFinalAnswer": {
-        border: "none",
-        borderBottom: "2px solid #888",
-        paddingTop: "3em",
-        margin: "auto",
-        minWidth: 100,
-        width: "40%",
-        display: "block",
-        position: "relative",
-        overflow: "visible",
-        transform: "translate(8ch, 0)",
-        "&::before": {
-          position: "absolute",
-          content: '"Answer"',
-          display: "block",
-          bottom: -2,
-          left: "-7ch",
-        },
-      },
-    },
-  },
-
   embeddedList: {
     "& > li": {
       backgroundSize: 20,
@@ -366,6 +166,43 @@ const useStyles = makeStyles(theme => ({
     },
   },
 }))
+
+const Collapser = ({ title, children, noSpace, solution }) => (
+  <ExpansionPanel
+    TransitionProps={{ mountOnEnter: true }}
+    style={{
+      marginTop: noSpace || solution ? 0 : 24,
+      background: solution ? "#f8f8f8" : null,
+      color: solution ? "#000" : null,
+      borderBottomLeftRadius: solution ? 4 : null,
+      borderBottomRightRadius: solution ? 4 : null,
+    }}
+  >
+    <ExpansionPanelSummary
+      expandIcon={<ExpandIcon color={solution ? "#000" : "#fff"} />}
+    >
+      {title}
+    </ExpansionPanelSummary>
+    <ExpansionPanelDetails style={{ display: "block" }}>
+      {children}
+    </ExpansionPanelDetails>
+  </ExpansionPanel>
+)
+
+const StyledTableCell = withStyles(theme => ({
+  head: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+    fontWeight: 700,
+    fontSize: 16,
+  },
+  body: {
+    fontSize: 16,
+    "&:not(:last-child)": {
+      borderRight: "1px solid rgba(81, 81, 81, 1)",
+    },
+  },
+}))(TableCell)
 
 const HeadingLevelToComponent = (level, props, previousHeadings) => {
   // Start with H2 because H1 is generated automatically from the title in the MD doc
