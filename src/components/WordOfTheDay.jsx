@@ -132,28 +132,34 @@ const WordOfTheDay = () => {
   return (
     <Card className={classes.card}>
       <CardContent component={Box}>
-        {stateWord === null ? (
+        {!stateWord ? (
           <Box style={{ top: -8 }}>
-            <Skeleton height={28} width="25%" variant="text" />
-            <Skeleton
-              height={15}
-              width={60}
-              variant="text"
-              style={{ marginBottom: theme.spacing(1.75) }}
-            />
-            <Skeleton height={16} width={100} variant="text" />
-            <Skeleton
-              className={classes.skeletonIndent}
-              height={16}
-              width={`calc(100% - ${theme.spacing(3)}px)`}
-              style={{ marginBottom: theme.spacing(0.75) }}
-              variant="text"
-            />
-            <Skeleton
-              className={classes.skeletonIndent}
-              width={`calc(50% - ${theme.spacing(3)}px)`}
-              variant="text"
-            />
+            {stateWord === null ? (
+              <>
+                <Skeleton height={28} width="25%" variant="text" />
+                <Skeleton
+                  height={15}
+                  width={60}
+                  variant="text"
+                  style={{ marginBottom: theme.spacing(1.75) }}
+                />
+                <Skeleton height={16} width={100} variant="text" />
+                <Skeleton
+                  className={classes.skeletonIndent}
+                  height={16}
+                  width={`calc(100% - ${theme.spacing(3)}px)`}
+                  style={{ marginBottom: theme.spacing(0.75) }}
+                  variant="text"
+                />
+                <Skeleton
+                  className={classes.skeletonIndent}
+                  width={`calc(50% - ${theme.spacing(3)}px)`}
+                  variant="text"
+                />
+              </>
+            ) : (
+              <P align="center">Something went wrong.</P>
+            )}
           </Box>
         ) : (
           <>
@@ -169,27 +175,34 @@ const WordOfTheDay = () => {
                   "Arial",
                   "sans-serif",
                 ].join(","),
-                letterSpacing: -1.5,
+                letterSpacing: -1,
               }}
             >
-              {stateWord["word"]}
+              {stateWord ? stateWord["word"] : "Uh oh..."}
             </H4>
             <P className={classes.pos} color="primary">
-              {stateWord["phonetic"]}
+              {stateWord ? stateWord["phonetic"] : "hmmmmm"}
             </P>
             <P component="h4" className={classes.speechPart} gutterBottom>
-              {firstSpeechPart}
+              {stateWord ? firstSpeechPart : "How strange"}
             </P>
             <P2 variant="body2" className={classes.indent}>
-              {stateWord["meaning"][firstSpeechPart][0]["definition"]}
+              {stateWord
+                ? stateWord["meaning"][firstSpeechPart][0]["definition"]
+                : "Something's gone wrong here..."}
             </P2>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <P2
                 variant="body2"
                 className={clsx(classes.exampleText, classes.indent)}
               >
-                &quot;{stateWord["meaning"][firstSpeechPart][0]["example"]}
-                &quot;
+                {stateWord &&
+                stateWord["meaning"] &&
+                stateWord["meaning"][firstSpeechPart] &&
+                stateWord["meaning"][firstSpeechPart][0] &&
+                stateWord["meaning"][firstSpeechPart][0]["example"]
+                  ? `"${stateWord["meaning"][firstSpeechPart][0]["example"]}"`
+                  : `That's not meant to happen`}
                 <br />
               </P2>
               {stateWord["meaning"][firstSpeechPart][0]["synonyms"] ? (
