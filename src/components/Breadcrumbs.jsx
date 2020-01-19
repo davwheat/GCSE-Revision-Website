@@ -22,6 +22,16 @@ const CustomBreadcrumbs = ({ items }) => {
     paper: {
       padding: theme.spacing(1.5, 2.5),
       marginBottom: theme.spacing(4),
+      width: "90vw",
+      marginLeft: "calc(-90vw / 2 + 50%)",
+      [theme.breakpoints.down("md")]: {
+        width: "95vw",
+        marginLeft: "calc(-95vw / 2 + 50%)",
+      },
+      [theme.breakpoints.down("sm")]: {
+        width: "97.5vw",
+        marginLeft: "calc(-97.5vw / 2 + 50%)",
+      },
     },
   }))()
 
