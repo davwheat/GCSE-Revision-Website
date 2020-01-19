@@ -4,6 +4,8 @@ import HomeIcon from "mdi-react/HomeOutlineIcon"
 import AboutIcon from "mdi-react/AboutOutlineIcon"
 import FeedbackIcon from "mdi-react/MessageAlertOutlineIcon"
 
+import FeedbackDialog from "../components/FeedbackDialog"
+
 import SubjectInfo from "./subjectInfo"
 
 let subjectItems = []
@@ -26,6 +28,6 @@ export default [
   [...subjectItems],
   [
     { text: "About Us", icon: <AboutIcon />, href: "/about-us" },
-    { text: "Feedback", icon: <FeedbackIcon />, href: "/feedback" },
+    { text: "Feedback", icon: <FeedbackIcon />, component: FeedbackDialog },
   ],
 ]
