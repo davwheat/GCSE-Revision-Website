@@ -53,6 +53,7 @@ const layoutStyles = makeStyles(theme => ({
   page: {
     margin: `0 auto`,
     padding: `0px 1.0875rem 1.45rem`,
+    marginTop: theme.spacing(4),
     marginBottom: theme.spacing(3),
     background: theme.palette.background.default,
   },
@@ -246,16 +247,7 @@ const Layout = ({ children, type }) => {
 
 const PageContents = ({ type, children }) => {
   const classes = layoutStyles()
-  return (
-    <div
-      className={classes.page}
-      style={{
-        marginTop: type === "article" ? theme.spacing(4) - 3 : theme.spacing(4), // -3 for articles to account for scroll indicator
-      }}
-    >
-      {children}
-    </div>
-  )
+  return <div className={classes.page}>{children}</div>
 }
 
 Layout.propTypes = {
