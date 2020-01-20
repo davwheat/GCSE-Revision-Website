@@ -9,7 +9,7 @@
 
 import CookieConsent from "react-cookie-consent"
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
