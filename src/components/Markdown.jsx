@@ -343,7 +343,21 @@ function markdownRenderers(theme, classes, previousHeadings) {
         props.children.length === 1 &&
         props.children[0].props.value === props.href
       ) {
-        return <YouTubeEmbed url={props.href} />
+        if (IsYouTubeUrl(props.href)) return <YouTubeEmbed url={props.href} />
+        if (
+          props.href.startsWith("https://www.desmos.com/calculator/") &&
+          (props.href.endsWith("?embed") || props.href.endsWith("?embed&mini"))
+        )
+          return (
+            <iframe
+              title="embedded graph"
+              src={props.href.split("&mini")[0]}
+              width="100%"
+              height={props.href.split("&mini").length > 1 ? "300px" : "500px"}
+              style={{ marginBottom: 16 }}
+              frameBorder="0"
+            />
+          )
       } else {
         return <Link to={props.href}>{props.children}</Link>
       }
