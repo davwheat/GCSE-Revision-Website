@@ -81,9 +81,11 @@ const Layout = ({ children, type }) => {
 
   */
 
-  if (!Cookies.get("performance")) {
-    Cookies.set("performance", PerformanceTest(), { expires: 28 })
-  }
+  useEffect(() => {
+    if (!Cookies.get("performance")) {
+      Cookies.set("performance", PerformanceTest(), { expires: 28 })
+    }
+  })
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
