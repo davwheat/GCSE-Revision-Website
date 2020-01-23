@@ -148,102 +148,108 @@ const Layout = ({ children, type }) => {
   )
 
   return (
-    <MuiThemeProvider theme={theme}>
-      <CookieConsent
-        location="bottom"
-        enableDeclineButton={false}
-        buttonText="Sounds good!"
-        cookieName="cookieConsent"
-        style={{ background: "#2B373B" }}
-        expires={365} // consent expires in one year
-        // eslint-disable-next-line no-unused-vars
-        ButtonComponent={({ children, style, ...props }) => {
-          props["variant"] = "contained"
-          props["color"] = "primary"
-          props["style"] = { marginRight: theme.spacing() }
+    <React.StrictMode>
+      <MuiThemeProvider theme={theme}>
+        <CookieConsent
+          location="bottom"
+          enableDeclineButton={false}
+          buttonText="Sounds good!"
+          cookieName="cookieConsent"
+          style={{ background: "#2B373B" }}
+          expires={365} // consent expires in one year
+          // eslint-disable-next-line no-unused-vars
+          ButtonComponent={({ children, style, ...props }) => {
+            props["variant"] = "contained"
+            props["color"] = "primary"
+            props["style"] = { marginRight: theme.spacing() }
 
-          return React.createElement(Button, props, children)
-        }}
-      >
-        For this site to work properly, we need to store cookies on your device.{" "}
-        <span style={{ fontSize: "10px" }}>
-          <Link hasExternalLinkIcon={false} to="http://www.whatarecookies.com/">
-            Learn more about cookies
-          </Link>
-        </span>
-      </CookieConsent>
-      <Header
-        siteTitle={data.site.siteMetadata.title}
-        type={type}
-        overrideNotificationPopup={() => {
-          setOverrideNotificationPopup(true)
-        }}
-      />
+            return React.createElement(Button, props, children)
+          }}
+        >
+          For this site to work properly, we need to store cookies on your
+          device.{" "}
+          <span style={{ fontSize: "10px" }}>
+            <Link
+              hasExternalLinkIcon={false}
+              to="http://www.whatarecookies.com/"
+            >
+              Learn more about cookies
+            </Link>
+          </span>
+        </CookieConsent>
+        <Header
+          siteTitle={data.site.siteMetadata.title}
+          type={type}
+          overrideNotificationPopup={() => {
+            setOverrideNotificationPopup(true)
+          }}
+        />
 
-      <PageContents type={type}>
-        <Container maxWidth="md">
-          <SnackbarProvider
-            preventDuplicate
-            maxSnack={3}
-            autoHideDuration={5000}
-            dense={!LargeScreen}
-            ref={notistackRef}
-            action={key => (
-              <IconButton
-                aria-label="Dismiss notification"
-                onClick={onClickDismiss(key)}
-                size="small"
-                color="inherit"
-              >
-                <CloseIcon />
-              </IconButton>
-            )}
+        <PageContents type={type}>
+          <Container maxWidth="md">
+            <SnackbarProvider
+              preventDuplicate
+              maxSnack={3}
+              autoHideDuration={5000}
+              dense={!LargeScreen}
+              ref={notistackRef}
+              action={key => (
+                <IconButton
+                  aria-label="Dismiss notification"
+                  onClick={onClickDismiss(key)}
+                  size="small"
+                  color="inherit"
+                >
+                  <CloseIcon />
+                </IconButton>
+              )}
+            >
+              <NotificationPermission
+                Firebase={Firebase}
+                override={OverrideNotificationPopup}
+                resetOverride={() => {
+                  setOverrideNotificationPopup(false)
+                }}
+              />
+              <Box component="main">{children}</Box>
+              {/* <div id="ezoic-pub-ad-placeholder-101" /> */}
+            </SnackbarProvider>
+          </Container>
+        </PageContents>
+
+        {LargeScreen ? (
+          <Paper
+            component="footer"
+            style={{
+              position: "fixed",
+              bottom: 0,
+              padding: theme.spacing(1.5),
+              paddingBottom: theme.spacing(1.75),
+              width: "100vw",
+              zIndex: 99,
+            }}
+            elevation={4}
           >
-            <NotificationPermission
-              Firebase={Firebase}
-              override={OverrideNotificationPopup}
-              resetOverride={() => {
-                setOverrideNotificationPopup(false)
-              }}
-            />
-            <Box component="main">{children}</Box>
-            {/* <div id="ezoic-pub-ad-placeholder-101" /> */}
-          </SnackbarProvider>
-        </Container>
-      </PageContents>
-
-      {LargeScreen ? (
-        <Paper
-          component="footer"
-          style={{
-            position: "fixed",
-            bottom: 0,
-            padding: theme.spacing(1.5),
-            paddingBottom: theme.spacing(1.75),
-            width: "100vw",
-            zIndex: 99,
-          }}
-          elevation={4}
-        >
-          {FooterContent}
-        </Paper>
-      ) : (
-        <Paper
-          component="footer"
-          style={{
-            position: "fixed",
-            bottom: 0,
-            padding: theme.spacing(1),
-            paddingBottom: theme.spacing(1.25),
-            width: "100vw",
-            zIndex: 99,
-          }}
-          elevation={8}
-        >
-          {FooterContent}
-        </Paper>
-      )}
-    </MuiThemeProvider>
+            {FooterContent}
+          </Paper>
+        ) : (
+          <Paper
+            component="footer"
+            style={{
+              position: "fixed",
+              bottom: 0,
+              padding: theme.spacing(1),
+              paddingBottom: theme.spacing(1.25),
+              width: "100vw",
+              zIndex: 99,
+            }}
+            elevation={8}
+          >
+            {FooterContent}
+          </Paper>
+        )}
+      </MuiThemeProvider>
+    </React.StrictMode>
   )
 }
 

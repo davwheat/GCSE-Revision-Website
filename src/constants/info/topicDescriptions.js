@@ -12,6 +12,7 @@ export default {
     "English Literature": {
       Macbeth: `Macbeth is one of Shakespeare's most famous pieces of literature, and you'll have to know it for your GCSEs, unfortunately. Here's what we've got on it.`,
       "Power and Conflict": `The Power and Conflict cluster of poems is the most popular in schools nationwide, and we've got all you need to get through your exam.`,
+      "An Inspector Calls": `An Inspector Calls is a political diatribe written by J. B. Priestley written in 1945, but set in April 1912. It was first performed in 1945, in the Soviet Union.`,
     },
   },
   Science: {

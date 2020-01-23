@@ -119,11 +119,21 @@ const Article = props => {
     : []
 
   if (subjectLabel === "Chemistry") {
-    post.headings.push({
-      value: "Interactive Periodic Table",
-      depth: 1,
-      constant: true,
-    })
+    console.log(post.headings)
+
+    if (
+      !post.headings
+        .reduce(
+          (accumulator, currentValue) => [...accumulator, currentValue.value],
+          []
+        )
+        .includes("Interactive Periodic Table")
+    )
+      post.headings.push({
+        value: "Interactive Periodic Table",
+        depth: 1,
+        constant: true,
+      })
   }
 
   return (

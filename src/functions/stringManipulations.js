@@ -25,7 +25,7 @@ export function ConvertTagToString(s) {
   return s
     .replace(/\s/gi, "-")
     .split("-")
-    .map(s => {
+    .map((s, i) => {
       if (
         [
           "and",
@@ -42,7 +42,8 @@ export function ConvertTagToString(s) {
           "so",
           "on",
           "up",
-        ].includes(s)
+        ].includes(s) &&
+        i !== 0
       )
         return s
 
@@ -56,7 +57,7 @@ export function ConvertStringToLabel(s) {
 
   return s
     .split(" ")
-    .map(s => {
+    .map((s, i) => {
       if (
         [
           "and",
@@ -73,7 +74,8 @@ export function ConvertStringToLabel(s) {
           "so",
           "on",
           "up",
-        ].includes(s)
+        ].includes(s) &&
+        i !== 0
       )
         return s
 

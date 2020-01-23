@@ -34,10 +34,8 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     margin: theme.spacing(1),
-    maxWidth: 400,
     "@media (max-width: 768px)": {
       width: `calc(100% - ${theme.spacing(2)}px)`,
-      maxWidth: "unset",
     },
   },
   container: {
