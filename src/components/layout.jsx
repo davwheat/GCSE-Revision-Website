@@ -48,6 +48,7 @@ import { useFirebase } from "gatsby-plugin-firebase"
 import { PerformanceTest } from "../functions/performanceTest"
 
 import cssVars from "css-vars-ponyfill"
+import UpdateMessage from "./UpdateMessage"
 
 const layoutStyles = makeStyles(theme => ({
   page: {
@@ -212,7 +213,7 @@ const Layout = ({ children, type }) => {
                 }}
               />
               <Box component="main">{children}</Box>
-              {/* <div id="ezoic-pub-ad-placeholder-101" /> */}
+              <UpdateMessage />
             </SnackbarProvider>
           </Container>
         </PageContents>
