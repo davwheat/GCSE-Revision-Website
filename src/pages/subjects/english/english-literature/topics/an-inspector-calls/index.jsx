@@ -22,7 +22,7 @@ const EnglishLitMacbethArticleList = () => {
       <SubTopicList
         subjectGroup="english"
         subject="english literature"
-        topic="an-inspector-calls"
+        topic="an inspector calls"
       />
     </Layout>
   )

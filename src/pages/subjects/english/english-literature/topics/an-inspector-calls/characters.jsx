@@ -20,7 +20,7 @@ const EnglishLitMacbethCharactersArticleList = () => {
         ]}
       />
       <H1 gutterBottom>English Literature: An Inspector Calls Characters</H1>
-      <ArticleList subject="english literature" topic="an-inspector-calls" subtopic="characters" />
+      <ArticleList subject="english literature" topic="an inspector calls" subtopic="characters" />
     </Layout>
   )
 }
