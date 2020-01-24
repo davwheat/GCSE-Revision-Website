@@ -14,7 +14,7 @@ const AboutPage = () => (
     <SEO title="About Us" />
     <H1 gutterBottom>About Us</H1>
     <S1 paragraph>
-      <b>GCSE Revsision Website</b> is an <abbr>Open Source</abbr> revision tool
+      <b>GCSE Revise It</b> is an <abbr title="Anyone can access the code behind it.">Open Source</abbr> revision tool
       for many different subjects. Our aim is to make simple yet thorough
       revision materials for everyone.
     </S1>
