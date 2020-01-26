@@ -89,7 +89,7 @@ At the end of the end of the play it is still not clear who or what the Inspecto
 
 - The Inspector stands outside the class system making him a outsider in the play.
 - But he doesn't take a neutral position, he is on Eva/Daisy's side and tells the Birlings exactly what he thinks of them.
-- Priestley's own views are reflected in the opinions and actions of the Inspector. You could say that the Inspector is Priestley's "_mouthpiece_".
+- Priestley's own views are reflected in the opinions and actions of the Inspector. You could say that the Inspector is Priestley's socialist mouthpiece.
 - This is most apparent in the Inspectors final speech as the speech is aimed at the Birlings but could also apply to the audience.
 - The play has a strong message about looking out for one another and the Inspector is the one delivering this message
 
