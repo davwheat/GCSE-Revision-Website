@@ -11,6 +11,11 @@ export default function HTML(props) {
         {props.headComponents}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <script
+          data-ad-client="ca-pub-2701335557132384"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
