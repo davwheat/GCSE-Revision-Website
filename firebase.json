@@ -13,6 +13,24 @@
         ]
       },
       {
+        "source": "**/*.webmanifest",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "icons/**/*.@(png|jpg)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
         "source": "page-data/**/*.json",
         "headers": [
           {
@@ -23,6 +41,15 @@
       },
       {
         "source": "**/*.@(js|css|js.map|css.map)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "*.@(js|css|js.map|css.map)",
         "headers": [
           {
             "key": "Cache-Control",

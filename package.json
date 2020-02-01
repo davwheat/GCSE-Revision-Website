@@ -19,6 +19,8 @@
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-offline": "^3.0.34",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-preload-link-crossorigin": "^1.0.2",
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-remove-console": "0.0.2",
     "gatsby-plugin-sharp": "^2.4.5",
@@ -53,7 +55,6 @@
     "remark-math": "^2.0.0",
     "seedrandom": "^3.0.5",
     "typeface-fira-mono": "0.0.72",
-    "typeface-poppins": "0.0.72",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {

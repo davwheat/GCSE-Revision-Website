@@ -1,11 +1,12 @@
 import { lightBlue, orange } from "@material-ui/core/colors"
 import { responsiveFontSizes, createMuiTheme } from "@material-ui/core"
 
-import "typeface-poppins"
-import "typeface-fira-mono"
+const HeadingFamily = "Poppins"
+const BodyFamily = "Poppins"
 
 const normalFonts = [
-  "Poppins",
+  BodyFamily,
+  HeadingFamily,
   "Roboto",
   '"Helvetica Neue"',
   '"Segoe UI"',
@@ -14,7 +15,8 @@ const normalFonts = [
 ].join(",")
 
 const headingFonts = [
-  "Poppins",
+  HeadingFamily,
+  BodyFamily,
   "Roboto",
   '"Helvetica Neue"',
   '"Segoe UI"',
