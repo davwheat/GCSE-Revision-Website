@@ -12,7 +12,11 @@ const ArticleAdvert = () => {
   return (
     <ins
       className="adsbygoogle"
-      style="display:block;text-align:center;margin:12px auto 12px auto;"
+      style={{
+        display: "block",
+        textAlign: "center",
+        margin: "12px auto 12px auto",
+      }}
       data-ad-layout="in-article"
       data-ad-format="fluid"
       data-ad-client="ca-pub-2701335557132384"
@@ -27,7 +31,10 @@ const BlockAdvert = () => {
   return (
     <ins
       className="adsbygoogle"
-      style="display:block;margin:16px auto 16px auto;"
+      style={{
+        display: "block",
+        margin: "16px auto 16px auto",
+      }}
       data-ad-client="ca-pub-2701335557132384"
       data-ad-slot="6152603288"
       data-ad-format="auto"
@@ -42,7 +49,10 @@ const FeedAdvert = () => {
   return (
     <ins
       className="adsbygoogle"
-      style="display:block;margin:16px auto 16px auto;"
+      style={{
+        display: "block",
+        margin: "16px auto 16px auto",
+      }}
       data-ad-format="fluid"
       data-ad-layout-key="-gr+5+w-6p+au"
       data-ad-client="ca-pub-2701335557132384"
