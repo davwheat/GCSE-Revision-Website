@@ -372,7 +372,6 @@ const PostCard = props => {
           </div>
         </Zoom>
       </Box>
-      <BlockAdvert />
     </>
   )
 }
