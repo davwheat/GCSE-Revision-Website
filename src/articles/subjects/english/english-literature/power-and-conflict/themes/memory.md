@@ -31,6 +31,10 @@ Senses are used to describe the memories, he heard "_the cries_... _of the man's
 
 The way that his hands "_tremble_" suggest that remembering the scenes is hard for him, the memories of conflict seem to affect him more the events they are from.
 
+```react
+<Advert />
+```
+
 # Memories can also be described vividly
 
 ## The Emigrée
@@ -60,3 +64,7 @@ The narrator is troubled by his memories of the mountain.
 ## Poppies
 
 The narrator clings to the memory of her son (as a boy **and** when he leaves for the army).
+
+```react
+<Advert />
+```

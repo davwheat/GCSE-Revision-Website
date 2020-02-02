@@ -34,6 +34,10 @@ There are suggestions that the conflict is the reason for the speakers loss, the
 Although the pilot chose to avoid dying in the war, his family still lose him. Their shame causes them to treat him as if he "_no longer existed_".
 The daughter's statement he "_was no longer the father we loved_" hints at the emotional pain that this loss caused both the pilot and his family.
 
+```react
+<Advert />
+```
+
 # People without power often feel hopeless
 
 ## London
@@ -50,6 +54,10 @@ The men in the trenches have no hope of things improving. The dejected line, "_W
 
 Even thinking about home provides no hope for the men, they understand that they are "_dying_" and know that at home "_the doors are closed_" to them.
 
+```react
+<Advert />
+```
+
 # Other poems
 
 ## The Charge of the Light Brigade
@@ -59,3 +67,7 @@ Emphasis on the loss of life "_the six hundred_".
 ## My Last Duchess
 
 The duke however doesn't seem to feel loss, despite the death of his wife.
+
+```react
+<Advert />
+```

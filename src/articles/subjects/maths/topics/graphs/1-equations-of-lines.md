@@ -66,6 +66,10 @@ Give the coordinates where the line <TeX math="y=2x+3"></TeX> crosses the y-axis
 </Collapser>
 ```
 
+```react
+<Advert />
+```
+
 # Equation of a line from two points
 
 The $y=mx+c$ equation is used for many graph-related things, including finding the equation of a line from two points.
@@ -83,29 +87,40 @@ Give your answer in the form <TeX math="y=mx+c"></TeX>. Do <b>not</b> use a grap
 It looks pretty tricky, but, trust me, if you take it one step at a time, you'll be fine.
 
 1. You have to work out the **gradient** of the line, first. To do this, we use:
+
 $$
 \text{gradient}=\frac{\text{change in y}}{\text{change in x}}
 $$
+
 1. We put our **coordinates** into this equation: $\frac{9-3}{4-1}=\frac{6}{3}=\frac{2}{1}=2$. Our **gradient** is $2$, so we can start our equation.
+
 $$
 y=2x+c
 $$
+
 3. After, we **swap** out $x$ and $y$ with the $x$ and $y$ values of **one of the coordinates** to get the **y-intercept** value.
+
 $$
 3=2(1)+c
 $$
+
 $$
 3=2+c
 $$
+
 $$
 c=1
 $$
+
 4. So now we can **complete the equation** because we have the **gradient** and **y-intercept**:
+
 $$
 y=2x+1
 $$
 
-
+```react
+<Advert />
+```
 
 ### Example questions
 
@@ -161,4 +176,8 @@ Even though our y-intercept is <TeX math="0"/>, we must still include it in the 
 <TeX math="y=\frac{4}{3}x+0"/>
 </P>
 </Collapser>
+```
+
+```react
+<Advert />
 ```

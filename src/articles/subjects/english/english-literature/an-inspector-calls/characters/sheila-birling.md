@@ -22,6 +22,10 @@ Sheila's not heard the old saying 'start as you mean to go on'. At the beginning
 - When she gets the ring she's very excited, and looks to her mother for a royal when she says "_Look mummy isn't it a beauty?_".
 - She jokes with Gerald, but the stage directions say that she's "_half serious, half playful_". Her childishness might be a way to hide "_serious_" concerns about her relationship with Gerald.
 
+```react
+<Advert />
+```
+
 # She's more mature than the audience first think
 
 ## Sheila behaves childishly at the beginning, but what she learns over the evening makes her feel she has to be herself and break away from her parents.
@@ -42,6 +46,10 @@ Sheila's not heard the old saying 'start as you mean to go on'. At the beginning
 - After the Inspector goes, her parents want everything to return to the way it was. Sheila, along with Eric, are the only ones who see that they all have to change.
 - Out of all the characters in the play Sheila's the one who changes the most.
 
+```react
+<Advert />
+```
+
 # Sheila becomes a bit like the Inspector herself
 
 ## It's not surprising that Sheila takes the Inspector's side in a lot of this, and even seems to help the Inspector's investigations. They're both after the truth. She adopts some of the Inspector's techniques:
@@ -59,3 +67,7 @@ Sheila's not heard the old saying 'start as you mean to go on'. At the beginning
 - Sharp: "_he's giving us the rope, so that we'll hang ourselves_"
 - Selfish: "_you used the power you had ... to punish the girl_"
 - Moral: "_But these girls aren't cheap labour, they're people_"
+
+```react
+<Advert />
+```

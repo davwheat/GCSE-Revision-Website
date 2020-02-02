@@ -31,6 +31,10 @@ Where $r$ is the **radius of the circle**.
 
 For example, $x^2+y^2=25$ would be a circle with **centre** $(0,0)$ and **radius 5**, as $\sqrt{25}=5$.
 
+```react
+<Advert />
+```
+
 ## Exam-style question
 
 ```react
@@ -78,3 +82,7 @@ Find the equation of the tangent to the circle <TeX math="x^2+y^2=25"></TeX> at 
    3. The answer to this is $y=\frac{3}{4}x+\frac{25}{4}$.
 
 Usually, the exam board tends to use circles with radius $5$ as they work nicely with the tangents, due to being a pythagorean triple $(3,4,5)$.
+
+```react
+<Advert />
+```

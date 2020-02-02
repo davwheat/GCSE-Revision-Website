@@ -17,6 +17,10 @@ The atom has had (and still has!) many different models which have advanced as t
 
 There are a few different parts which all come together to make what we know as an atom. You have the **nucleus** and the **electrons**.
 
+```react
+<Advert />
+```
+
 ## The nucleus
 
 - It is in the **middle** of the atom
@@ -50,6 +54,10 @@ Each particle has a different mass and charge
 >
 > Electrons are **tiny** and **negatively charged**.
 
+```react
+<Advert />
+```
+
 ## Number of Protons = Number of Electrons
 
 Atoms are **neutral** because they have **no overall charge**, unlike ions, because they have an **equal number of protons and electrons**. Electron charges are the same size as proton charges, just **opposite**, so each charge **cancels out**.
@@ -69,3 +77,7 @@ The **mass number** of an atom tells you the total number of protons and neutron
 To calculate the **number of neutrons**, subtract the **atomic number** from the **mass number**.
 
 ![Example of element from periodic table](articles/chemistry/nuclear-symbol-example.png)
+
+```react
+<Advert />
+```

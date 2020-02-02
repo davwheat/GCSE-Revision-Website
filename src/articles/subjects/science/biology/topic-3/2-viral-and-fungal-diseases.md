@@ -34,6 +34,10 @@ There are loads of diseases caused by viruses and fungi, but let's just stick to
 - If the body's immune system is badly damaged, it can't cope with other infections or cancers
   - At this stage, the virus is called _"late stage HIV"_ or _"AIDS"_
 
+```react
+<Advert />
+```
+
 # Tobacco Mosaic Virus (TMV)
 
 - TMV is a **virus** that affects many species of **plants**, including **tomatoes**
@@ -47,3 +51,7 @@ There are loads of diseases caused by viruses and fungi, but let's just stick to
   - Less leaves means **less photosynthesis**, preventing good plant growth
 - It spreads through the environment via **water** or **air** (the wind)
 - Can be treated with **fungicides** and **stripping the plant of affected leaves** and **destroying** the leaves so it doesn't spread to other plants
+
+```react
+<Advert />
+```

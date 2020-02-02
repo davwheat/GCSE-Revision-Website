@@ -29,6 +29,10 @@ Antibodies aren't just used inside the immune system. _Fancy-schmancy_ scientist
 
 ![A diagram showing the process of creating monoclonal antibodies](articles/biology/topic-3/monoclonal-antibodies.jpg)
 
+```react
+<Advert />
+```
+
 # What are they used in?
 
 _Fancy-schmancy_ scientists have engineered monoclonal antibodies for lots of different uses, such as **pregnancy tests**, **identifying substances**, or **treating diseases**.
@@ -51,4 +55,10 @@ A hormone called **HCG** is found only in the **urine of pregnant women**. **Pre
 
 # Freesciencelessons videos
 
+```react
 <YouTubeCollapses titles="[`Monoclonal antibodies`,`Uses of monoclonal antibodies`]" urls="[`https://www.youtube.com/watch?v=4AYzuejK_aM`,`https://www.youtube.com/watch?v=Bgde7orTxD8`]" />
+```
+
+```react
+<Advert />
+```

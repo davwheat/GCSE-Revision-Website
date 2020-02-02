@@ -26,6 +26,10 @@ Your calculator can tell you any integer's prime factors. This can also be used 
 4. The prime factor is shown on the display, in this example, $5^2$.
 5. If it still shows the same number, then it is prime.
 
+```react
+<Advert />
+```
+
 # 2. Easy Pythagoras and Trig
 
 Sometimes, it just requires that little bit too much effort to write out a whole Pythagoras equation in your calculator just to find the hypotenuse of a triangle, such as:
@@ -67,6 +71,10 @@ $$
 2.  Press the reciprocal button ($x^{-1}$), followed by `=`
 3.  As this question requires a decimal, press `S⬄D` to get $0.625$
 
+```react
+<Advert />
+```
+
 # 4. n-th term tables and graph coordinates
 
 Calculating values for an $n^{\text{th}}$ term table can take upwards of 5 minutes if you have to substitute the value for $x$ every time. What many people don't realise is that most scientific calculators have a way to do this for you.
@@ -104,3 +112,7 @@ $$
 7.  Enter your end value, then press `=` (ours is $4$ as that is the highest value of $x$).
 8.  Enter the step value, then press `=` (ours is $1$ as the values of $x$ increase by $1$ each time)
 9.  The table then shows the value of $x$ and $y$ (shown as $f(x)$).
+
+```react
+<Advert />
+```

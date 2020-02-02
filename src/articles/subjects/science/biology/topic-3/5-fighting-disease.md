@@ -25,6 +25,10 @@ The body has some remarkable ways to prevent 'nasties' getting inside in the fir
 - **Stomach**
   - produces **hydrochloric acid** ($\text{HCl}$) that **kills pathogens** that make it to the stomach
 
+```react
+<Advert />
+```
+
 # Immune System
 
 If pathogens make it into your body, you **immune system** fires up. The most important part of your immune system is the **white blood cells**.
@@ -56,6 +60,10 @@ _Note: all of the info below also applies to antitoxins as well as antibodies!_
 
 ![Diagram describing the process of antibody production](articles/biology/topic-3/lymphocyte-antibodies.png)
 
-# FreeScienceLessons Video
+# Freesciencelessons video
 
 https://www.youtube.com/watch?v=HSrrPdJDqxM
+
+```react
+<Advert />
+```

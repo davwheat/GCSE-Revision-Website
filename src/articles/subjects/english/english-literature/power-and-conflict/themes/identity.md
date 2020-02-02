@@ -33,6 +33,10 @@ These pages are treasured, they are "_smoothed and stroked_", almost as if they 
 
 The repetition of this phrase later in the poem, in reference to the "_grand design_" of a human body, shows how important family history and heritage is in forming a identity.
 
+```react
+<Advert />
+```
+
 # National identity and patriotism has a large influence on people
 
 ## Checking Out Me History
@@ -56,3 +60,7 @@ The end of the poem shows the tension between the family identity and national i
 ## The Charge of the Light Brigade
 
 Believes the men should be honoured as national heroes. He commends them for their bravery and for following orders without question.
+
+```react
+<Advert />
+```

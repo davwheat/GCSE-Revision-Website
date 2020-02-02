@@ -25,6 +25,10 @@ In _Figure 1_, two **identical** bulbs are connected **in series** with a 12 V b
 - The total potential difference of the power supply is shared between each component, _n_: $V_{supply}=V_{1}+V_{2}+...+V_{n}$
 - The total resistance of two components is equal to the sum of each components' resistance: $R_{total} = R_{1} + R_{2}$
 
+```react
+<Advert />
+```
+
 ### Example
 
 ![Two resistors (5 ohm & 10 ohm) connected in series with each other.](articles/physics/topic-2/resistance.svg)
@@ -58,3 +62,7 @@ Calculate the **total resistance** between **X** and **Y** to 2 decimal places.
 $\frac{1}{R_{\text{total}}}=\frac{1}{5 ohms}+\frac{1}{10 ohms}=0.1+0.2=\frac{1}{0.3}=3.33333... ohms$
 
 The total resistance between **X** and **Y** is **3.33 ohms**.
+
+```react
+<Advert />
+```

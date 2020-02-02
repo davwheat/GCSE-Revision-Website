@@ -101,24 +101,35 @@ const componentTransforms = classes => ({
       </span>
     </Tooltip>
   ),
-  YouTubeCollapses: ({ titles, urls }) => (
-    <>
-      {eval(titles).map((_, i) => (
-        <ExpansionPanel
-          key={eval(titles)[i]}
-          TransitionProps={{ mountOnEnter: true }}
-          style={{ overflow: "hidden" }}
-        >
-          <ExpansionPanelSummary expandIcon={<ExpandIcon />}>
-            {eval(titles)[i]}
-          </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
-            <YouTubeEmbed url={eval(urls)[i]} />
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
-      ))}
-    </>
-  ),
+  YouTubeCollapses: ({ titles, urls }) => {
+    const eTitles = eval(titles)
+    return (
+      <>
+        {eTitles.map((_, i) => {
+          let last = i + 1 === eTitles.length
+
+          return (
+            <ExpansionPanel
+              key={eTitles[i]}
+              TransitionProps={{ mountOnEnter: true }}
+              style={{
+                overflow: "hidden",
+                borderBottomRightRadius: last ? 4 : 0,
+                borderBottomLeftRadius: last ? 4 : 0,
+              }}
+            >
+              <ExpansionPanelSummary expandIcon={<ExpandIcon />}>
+                {eTitles[i]}
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails>
+                <YouTubeEmbed url={eval(urls)[i]} />
+              </ExpansionPanelDetails>
+            </ExpansionPanel>
+          )
+        })}
+      </>
+    )
+  },
   Collapser,
   ExamQuestion,
   TeX,

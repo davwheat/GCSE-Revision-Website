@@ -8,7 +8,11 @@ topic: "power and conflict"
 subtopic: "themes"
 ---
 
-Below is a table so you can see which poems match which theme.
+Below is a table you can use to identify which poems have which themes.
+
+```react
+<Advert />
+```
 
 # Table
 
@@ -29,3 +33,7 @@ Below is a table so you can see which poems match which theme.
 |   The Prelude, _Extract from_   |                 |        ✓        |                     |                     |                  |   ✓    |       |       |  ✓   |   ✓   |          |           ✓            |
 |             Tissue              |        ✓        |        ✓        |                     |                     |                  |        |       |       |      |       |    ✓     |                        |
 |        War Photographer         |                 |                 |          ✓          |          ✓          |                  |   ✓    |   ✓   |   ✓   |      |       |          |           ✓            |
+
+```react
+<Advert />
+```

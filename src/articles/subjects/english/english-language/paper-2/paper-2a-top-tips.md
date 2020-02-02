@@ -60,6 +60,10 @@ Choose <b>four</b> statements below which are <b>true</b>.
 - Are you looking for **true** statements?
 - **Only. Shade. Four.**
 
+```react
+<Advert />
+```
+
 ## Question 2
 
 You are advised to spend about **10 minutes** on this question. It is worth **8 marks**. This question is all about **identifying differences or similarities** between the sources.
@@ -113,6 +117,10 @@ How does the writer use language to describe her first experiences of cycling?
 - **Close-word analysis** is just as effective as noticing a fancy technique
 - You **must** comment on the **effect of language** for your response to be above Level 1
 
+```react
+<Advert />
+```
+
 ## Question 4
 
 You are advised to spend about **20 minutes** on this question. It is worth **16 marks**. This question is all about **the writers' differing/similar perspectives**.
@@ -157,3 +165,7 @@ In your answer, you could:
     - Repeat formula for paragraph 2
   - Final paragraph
     - An overall statement about the writers' attitudes
+
+```react
+<Advert />
+```

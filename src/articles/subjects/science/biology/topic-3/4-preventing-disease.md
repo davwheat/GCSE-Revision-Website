@@ -29,3 +29,8 @@ Pathogens love to just infect and infect and infect... but there are measures we
 
 - **Vaccinating people and animals** against communicable diseases means they **can't catch the infection** and pass it on
   - For example, most UK **poultry** are given a **vaccination** against _Salmonella_, a bacteria that causes a type of food poisoning
+- However, a greater proportion of parents, dubbed "antivaxxers", are refusing to immunise their children for a multitude of reasons, allowing previously eradicated diseases to return to the UK
+
+```react
+<Advert />
+```

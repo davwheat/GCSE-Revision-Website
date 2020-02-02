@@ -19,6 +19,10 @@ Titrations are used to work out exactly what volume of an acid is required to ne
 
 In this method, we'll be calculating the concentration of an **alkali**. If you wanted to do this for an acid, just swap "alkali" and "acid" around in the method.
 
+```react
+<Advert />
+```
+
 ## Equipment
 
 - Burette
@@ -37,6 +41,10 @@ In this method, we'll be calculating the concentration of an **alkali**. If you 
 4. The indicator will change colour when all the alkali has been neutralised. (e.g. phenolphtalein is pink in alkaline conditions, but colourless in acidic conditions).
 5. Record the final volume in the burette.
 6. Use the final and initial volumes to calculate the volume of acid used to neutralise the alkali.
+
+```react
+<Advert />
+```
 
 ## Repeat and Find Averages
 
@@ -57,3 +65,7 @@ During a titration, you want to see a **sudden colour change** at the end-point 
 - phenolphthalein (**colourless** in acid; <span style="color:#ff7fe7">**pink**</span> in alkalis)
 - litmus (<span style="color:#ff4a4a">**red**</span> in acid; <span style="color:#2e97ff">**blue**</span> in alkalis)
 - methyl orange (<span style="color:#ff4a4a">**red**</span> in acid; <span style="color:yellow">**yellow**</span> in alkalis)
+
+```react
+<Advert />
+```

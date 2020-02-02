@@ -23,6 +23,10 @@ Thompson named the new theory the _"plum pudding model"_. The model shows the at
 
 ![Mmmmm... plum pudding...](articles/chemistry/topic-1/plum-pudding.jpg)
 
+```react
+<Advert />
+```
+
 # Early 20th Century - Ernest Rutherford & Ernest Marsden
 
 ## Alpha Particle Scattering
@@ -43,6 +47,10 @@ When the alpha particles came near the concentrated, positive charge of the nucl
 
 ![Rutherford and Marsden's Alpha Particle Scattering Experiment.](articles/chemistry/topic-1/rutherfords-model.png)
 
+```react
+<Advert />
+```
+
 # Early 20th Century - Bohr's Nuclear Model
 
 ![Portrait of Niels Bohr](articles/chemistry/topic-1/niels-bohr.jpg)
@@ -53,12 +61,9 @@ Niels Bohr filled this gap by suggesting that all electrons were contained in **
 
 ![Bohr's Nuclear Model](articles/chemistry/topic-1/bohrs-nuclear-model.png)
 
-# Freesciencelessons Videos
+# Freesciencelessons videos
 
-## Alpha Particle Scattering
-
-https://www.youtube.com/watch?v=KEuAcoCai_E
-
-## The Nuclear Model
-
-https://www.youtube.com/watch?v=Yf-WhHZuqes
+```react
+<YouTubeCollapses titles="[`Alpha Particle Scattering`,`The Nuclear Model`]" urls="[`https://www.youtube.com/watch?v=KEuAcoCai_E`,`https://www.youtube.com/watch?v=Yf-WhHZuqes`]" />
+<Advert />
+```

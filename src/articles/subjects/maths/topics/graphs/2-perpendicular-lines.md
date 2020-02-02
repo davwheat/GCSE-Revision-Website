@@ -24,6 +24,10 @@ One phrase scares some students and makes them lose confidence when learning abo
 
 So to find the **equation** of a **line perpendicular** to $y=2x$, we'd find the negative reciprocal of the gradient ($2$) which is $-\frac{1}{2}$, and put that back in where the original gradient was to get $y=-\frac{1}{2}x$.
 
+```react
+<Advert />
+```
+
 ### Walkthrough 1
 
 ```react
@@ -57,6 +61,10 @@ Find the negative reciprocal of <TeX math="-\frac{4}{3}"></TeX>.
 The negative reciprocal of $-\frac{4}{3}$ is $\frac{3}{4}$. We can see this if we plot $y=-\frac{4}{3}x$ and $y=\frac{3}{4}x$ on a graph:
 
 https://www.desmos.com/calculator/7eaunlqo3h?embed
+
+```react
+<Advert />
+```
 
 # Exam-style questions
 
@@ -98,4 +106,8 @@ Work out the gradient of the line perpendicular to <b>AB</b>.
 <TeX math="-\frac{1}{2}\to+\frac{1}{2}"/>
 </P>
 </Collapser>
+```
+
+```react
+<Advert />
 ```

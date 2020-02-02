@@ -31,6 +31,10 @@ His isolation in the war zone is enlarged by the face that it's a "_strangers fe
 
 The quote "_they do not care_" highlights how different he feels from everyone else, the elusiveness of who "_they_" are hints that he feels isolated from the rest of the world.
 
+```react
+<Advert />
+```
+
 # Individuals have unique experiences of places
 
 ## London
@@ -58,3 +62,7 @@ Alone in her experience of how the city was before.
 ## Remains
 
 One soldiers experience and how much he struggles with it.
+
+```react
+<Advert />
+```

@@ -39,6 +39,10 @@ Furthermore, calculators to be used in exams may not...
 - be borrowed from another candidate during an examination for any reason
 - have retrievable information stored in them, such as: databanks; dictionaries; mathematical formulas; or text.
 
+```react
+<Advert />
+```
+
 # Calculators that meet the regulations
 
 There are many calculators that meet all of these regulations, but here are a subset of them:
@@ -52,6 +56,10 @@ There are many calculators that meet all of these regulations, but here are a su
 |  fx-991 EX   | The latest CASIO calculator with the ability to solve quadratic equations, differentiate, perform matrix calculations and more. | [£26.93 @ Amazon UK](https://www.amazon.co.uk/dp/B00ZZ93346) |
 
 All prices are correct as of 03/10/2019.
+
+```react
+<Advert />
+```
 
 # The best calculator
 
@@ -67,7 +75,7 @@ If you want to buy this calculator, I highly recommend contacting your school's 
 
 When contacting my school's exams officer, I received this response:
 
-> Hi &lt;name>,
+> Hi &lt;name&gt;,
 >
 > Firstly well done for doing your research. As you can appreciate there are so many different calculators on the market it is impossible to maintain a list of those calculators that are/aren’t allowed in exams. The key is to check the JCQ regulations which you have done. As long as your calculator does not offer any of the following facilities...
 >
@@ -83,3 +91,7 @@ When contacting my school's exams officer, I received this response:
 ---
 
 <sub>Please note that this page contains affiliate links and we may receive a small cut of the value of any purchases you make through these links. This is of no extra cost to you and allows us to keep running for free.</sub>
+
+```react
+<Advert />
+```

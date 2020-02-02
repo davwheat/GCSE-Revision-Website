@@ -21,6 +21,10 @@ subtopic: "characters"
 - At the start he is described as a "_valiant_" warrior. Ross compares him to "_Bellona's bridegroom_" - a comparison to the God of War (Mars).
 - He impresses the King and shows his loyalty. Macbeth is most comfortable on the battlefield where he doesn't have to worry about his guilty conscience or morality of his actions.
 
+```react
+<Advert />
+```
+
 # He is a brutal murderer
 
 - He is a brutal murderer. "_I am settled and bend up_ / _Each corporal agent to this terrible feat_". He kills Duncan, the Macduffs and Banquo.
@@ -35,3 +39,7 @@ subtopic: "characters"
 
 - He is easily influenced: Macbeth does what Lady Macbeth wants because he doesn't want to be seen as a "_coward_" and to be "_more the man_". Links to masculinity, strength and courage themes.
 - He is also influenced by the super-natural. The first time he meets the Witches he trusts them first time, saying "_Two truths are told_". He sees the dagger that leads him to kill Duncan. When the prophecies come true he relies on the witches even more.
+
+```react
+<Advert />
+```

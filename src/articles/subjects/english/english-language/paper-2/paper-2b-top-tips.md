@@ -44,6 +44,10 @@ Unlike Paper 1, there is only **one option**. You will have only be given one of
 - Use **techniques**, but use them _wisely_
   - Examiners _don't like statistics_ because they're _fake_
 
+```react
+<Advert />
+```
+
 ## Question 5
 
 You are advised to spend about **45 minutes** on this question, including **5 minutes** for **planning**, and another **5 minutes** for **proofreading** your work.

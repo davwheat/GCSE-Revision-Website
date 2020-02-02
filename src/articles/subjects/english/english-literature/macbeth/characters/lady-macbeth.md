@@ -21,6 +21,10 @@ subtopic: "characters"
 - Macbeth has succumbed to her, and treats her as a equal, "_my dearest partner of greatness_".
 - Macbeth compliments her on the fact that she uses her strength like a man - "_Bring forth men-children only!_" - showing that she there is nothing 'soft' or feminine about her.
 
+```react
+<Advert />
+```
+
 # She is cunning
 
 - Gains Duncan's trust "_our honoured hostess_" and "_Fair and noble hostess_".
@@ -34,3 +38,7 @@ subtopic: "characters"
 - Malcom's final judgement is that Lady Macbeth was like a devil - "_fiend-like queen_".
 - Invokes the powers of evil to help her influence her husband to commit murder and treason.
 - Raises the question about Shakespeare's ideas on the supernatural.
+
+```react
+<Advert />
+```
