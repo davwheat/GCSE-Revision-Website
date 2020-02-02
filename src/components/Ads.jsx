@@ -1,13 +1,9 @@
 import React, { useEffect } from "react"
 
-const pushAds = () => {
-  useEffect(() => {
-    ;(adsbygoogle = window.adsbygoogle || []).push({})
-  })
-}
-
 const ArticleAdvert = () => {
-  pushAds()
+  useEffect(() => {
+    (adsbygoogle = window.adsbygoogle || []).push({})
+  })
 
   return (
     <ins
@@ -26,7 +22,9 @@ const ArticleAdvert = () => {
 }
 
 const BlockAdvert = () => {
-  pushAds()
+  useEffect(() => {
+    (adsbygoogle = window.adsbygoogle || []).push({})
+  })
 
   return (
     <ins
@@ -44,7 +42,9 @@ const BlockAdvert = () => {
 }
 
 const FeedAdvert = () => {
-  pushAds()
+  useEffect(() => {
+    (adsbygoogle = window.adsbygoogle || []).push({})
+  })
 
   return (
     <ins
