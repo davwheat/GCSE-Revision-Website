@@ -2,7 +2,9 @@ import React, { useEffect } from "react"
 
 const ArticleAdvert = () => {
   useEffect(() => {
-    (adsbygoogle = window.adsbygoogle || []).push({})
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({})
+    } catch {}
   })
 
   return (
@@ -23,7 +25,9 @@ const ArticleAdvert = () => {
 
 const BlockAdvert = () => {
   useEffect(() => {
-    (adsbygoogle = window.adsbygoogle || []).push({})
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({})
+    } catch {}
   })
 
   return (
@@ -43,7 +47,9 @@ const BlockAdvert = () => {
 
 const FeedAdvert = () => {
   useEffect(() => {
-    (adsbygoogle = window.adsbygoogle || []).push({})
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({})
+    } catch {}
   })
 
   return (
