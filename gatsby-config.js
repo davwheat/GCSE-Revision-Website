@@ -15,6 +15,11 @@ const workboxConfig = {
       handler: `NetworkFirst`,
     },
     {
+      // AdSense
+      urlPattern: /^https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js$/,
+      handler: `NetworkOnly`,
+    },
+    {
       // Add runtime caching of various other page resources
       urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
       handler: `StaleWhileRevalidate`,

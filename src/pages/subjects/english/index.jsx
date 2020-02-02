@@ -10,6 +10,7 @@ import WordOfTheDay from "../../../components/WordOfTheDay"
 import { Descriptions } from "../../../constants/subjectInfo"
 import { List, ListItemText, ListItem } from "@material-ui/core"
 import Link from "../../../components/Link"
+import { BlockAdvert } from "../../../components/Ads"
 
 const SubjectsEnglishPage = () => {
   return (
@@ -41,6 +42,8 @@ const SubjectsEnglishPage = () => {
           <ListItemText>English Literature</ListItemText>
         </ListItem>
       </List>
+
+      <BlockAdvert />
     </Layout>
   )
 }
