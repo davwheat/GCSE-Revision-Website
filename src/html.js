@@ -14,8 +14,11 @@ export default function HTML(props) {
         <script
           data-ad-client="ca-pub-2701335557132384"
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         />
+        <script>
+          {`(window.adsbygoogle = window.adsbygoogle || []).push({});`}
+        </script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
