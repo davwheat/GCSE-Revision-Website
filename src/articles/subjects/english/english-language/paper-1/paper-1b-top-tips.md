@@ -64,3 +64,7 @@ Remember these writing rules!
 - Draw a line under your plan and cross it out so it isn't marked
 - Actually plan (And go back to it!)
 - Keep your quotes consistent (don't mix "double" and 'single')
+
+```react
+<Advert />
+```

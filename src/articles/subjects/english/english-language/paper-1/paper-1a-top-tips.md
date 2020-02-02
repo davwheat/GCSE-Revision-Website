@@ -47,6 +47,10 @@ You are advised to spend about **5 minutes** on this question. It is worth **4 m
 - **Quote** directly from the text
 - **Only list four things**! If you list more, only the first four answers will be considered.
 
+```react
+<Advert />
+```
+
 ## Question 2
 
 You are advised to spend about **10 minutes** on this question. It is worth **8 marks**. This question is all about **language**.
@@ -79,6 +83,10 @@ You are advised to spend about **10 minutes** on this question. It is worth **8 
 - Aim for _3 paragraphs_: one each for the **beginning**, **middle**, and **end**
   - If you're running out of time, just go for 2 paragraphs: **beginning** and **end**
 
+```react
+<Advert />
+```
+
 ## Question 4
 
 You are advised to spend about **20 minutes** on this question. It is worth **20 marks**. This question is all about **evaluating the use of language _and_ structure**.
@@ -92,48 +100,6 @@ You are advised to spend about **20 minutes** on this question. It is worth **20
 - Use **synonyms**
   - If the statement says _"a darker and more chilling tone"_, don't just repeat _darker_ or _chilling_: use other words like _devastating_, _cataclysmic_, _brooding_, _mysterious_, _foreboding_.
 
-# Section B (Question 5)
-
-You are advised to spend about **45 minutes** on this question. It is worth **40 marks**. This question is all about **your ability to produce creative writing**.
-
-1. **Decide which task you will do**
-   1. You can be given a choice between a narrative and descriptive task, or you could be given two narrative, or two descriptive.
-   2. You will always have a photo if there is a descriptive task.
-   3. Write down your first ideas about the photo. Even if you don't decide to do the descriptive, you can get some great ideas for your narrative.
-   4. Both tasks (narrative and descriptive) are _marked using the same mark scheme_. You can use elements of both in either task and you **will not** be penalised.
-2. **Plan your response**
-   1. There are a range of ways you can plan your response: box planning, grid planning, 4 quarters, _"narrative rollercoaster"_.
-   2. Think about your **structure**: _in medias res_ (start at climax, then flash back); _chronological_; _cyclical_ (start at end, then flash back to start).
-   3. **Check the question**: do you have to write an opening, short story, or is it up to you?
-   4. Don't use more than three characters. It will get complicated quickly.
-   5. **Sketch** out your characters, if it helps!
-   6. Use **people you know**! The examiner won't know.
-   7. Give each character a **unique characteristic**
-      1. **skills**
-         1. _computer skills_
-         2. _utter genius because they used an amazing revision site_
-      2. **personality**
-         1. _eats fish fingers and custard_
-         2. _shy_
-         3. _sarcastic_
-      3. **physical attribute or description**
-         1. _wears vintage Adidas trainers_
-         2. _never seen without a top hat_
-3. **Write**
-   1. You can frame your descriptive writing inside a narrative and vice versa
-   2. Set the structure and tone from the start
-   3. Remember to describe your setting and characters
-   4. Mix up your sentence structure and paragraphs
-      5. Start with an adverb
-      6. Use a fragment sentence
-      7. Use a mix of simple, compound, and complex sentences
-      8. Use embedded clauses
-
-## Don't forget!
-
-Remember these writing rules!
-
-- New speaker, new line
-- Draw a line under your plan and cross it out so it isn't marked
-- Actually plan (And go back to it!)
-- Keep your quotes consistent (don't mix "double" and 'single')
+```react
+<Advert />
+```
