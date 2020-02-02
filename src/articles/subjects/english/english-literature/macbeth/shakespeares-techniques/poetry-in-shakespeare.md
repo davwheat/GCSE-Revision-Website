@@ -29,6 +29,10 @@ subtopic: "shakespeare's techniques"
 - The way they speak emphasises the fact that they are different to other characters - they exist outside of the natural order so they speak unnaturally.
 - Lady Macbeth occasionally speaks in rhyme - usually to make two lines of speech sound more final or to emphasise that it's important. (Or is she the fourth witch...)
 
+```react
+<Advert />
+```
+
 # Shakespeare uses different rhythms to show different emotions
 
 - Shakespeare often changes the rhythm of lines by messing around with the punctuation and choice of words.
@@ -49,3 +53,7 @@ subtopic: "shakespeare's techniques"
   - Macbeth's speech about killing Duncan in Act 1, Scene 7.
   - Macbeth seeing the dagger just before he kills Duncan in Act 2, Scene 1.
   - _There are lots more though!_
+
+```react
+<Advert />
+```

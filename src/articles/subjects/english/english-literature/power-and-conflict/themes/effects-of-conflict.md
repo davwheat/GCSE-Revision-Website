@@ -35,6 +35,10 @@ However the conflict does leaves a psychological impact on the soldier which he 
 
 Then final stanza of the poem changes from the normal 4 lines down to 2 this shows the soldier's breakdown.
 
+```react
+<Advert />
+```
+
 # Effect on those not fighting
 
 ## Poppies
@@ -51,6 +55,10 @@ There is a contrast between how the photographer hands are steady when taking th
 
 His view of home is also affected by what he has seen, the "_ordinary pain_" of England contrasts starkly with the "_running children in nightmare heat_" in the war zone.
 
+```react
+<Advert />
+```
+
 # Other poems
 
 ## Kamikaze
@@ -65,3 +73,6 @@ There are hints that conflict was the reason why the speaker left the city.
 
 Show how ideals are lost during war.
 
+```react
+<Advert />
+```

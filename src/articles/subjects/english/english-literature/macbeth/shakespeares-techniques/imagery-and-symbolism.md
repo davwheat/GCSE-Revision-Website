@@ -27,6 +27,10 @@ subtopic: "shakespeare's techniques"
 - Here Macbeth personifies life, comparing it to a "_walking shadow_" and an actor whose influence is limited to his time upon the stage. This shows that Macbeth now thinks life is pointless and brief.
 - "_the earth_ / _Was **feverous** and did **shake**_" - Here, the earth is personified as a person with a fever to show that Duncan's death was unnatural.
 
+```react
+<Advert />
+```
+
 # Light symbolises good, dark symbolises evil
 
 - Macbeth and Lady Macbeth both use images of darkness when they talk about evil deeds. They also use darkness to represent blindness and ignorance, and light to represent sight and knowledge.
@@ -48,6 +52,10 @@ subtopic: "shakespeare's techniques"
 - Macduff sees Macbeth's reign as causing injury to Scotland - "_Bleed, bleed, poor country_", "_It weeps, it bleeds; and each new day a gash_ / _Is added to her wounds._"
 - Malcolm is later described as the "_med'cine_" that will cure Scotland, which reinforces the belief that he is the rightful king.
 
+```react
+<Advert />
+```
+
 # Images of blood and water symbolise guilt and innocence
 
 - Shakespeare uses images of blood to represent guilt - from the blood-stained daggers that Lady Macbeth plants on Duncan's guards to the "_damned spot_" that she imagines on her hands.
@@ -66,3 +74,7 @@ subtopic: "shakespeare's techniques"
 - Lady Macbeth's sleepwalking is a sign of her guilt - she can no longer sleep peacefully.
 - It is also suggested that Scotland can't eat or sleep - being unable to fulfil these basic needs shows how badly Macbeth's rule has affected the country. - "_Give to our tables meat, sleep to our nights,_ / _Free from our feasts and banquets bloody knives_".
 - Clothing is symbolic too - at first, Macbeth is reluctant to wear the "_borrowed robes_" of the Thane of Cawdor. Banquo reinforces this, saying that the "_New honours_" are like "_strange garments_".
+
+```react
+<Advert />
+```

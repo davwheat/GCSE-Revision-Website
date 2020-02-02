@@ -28,3 +28,7 @@ subtopic: "characters"
 - He isn't a soldier like Macbeth or Macduff. He's gentle and doesn't fight for himself, but sensibly sends his best soldiers.
 - He's not afraid to be emotional. He shows "_drops of sorrow_" because he's so happy and talks about his "_gentle senses_" - it could be seen as unmanly.
 - The fact that Duncan is depicted as a model king but not necessarily manly, leads the audience to question whether a good leader needs to be a vicious warrior.
+
+```react
+<Advert />
+```

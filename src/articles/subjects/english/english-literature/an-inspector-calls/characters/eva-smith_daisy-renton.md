@@ -23,6 +23,10 @@ Who was Eva Smith? No idea. Were Eva Smith and Daisy Renton the same person? Was
 3. Prostitute and mistress to Gerald — he rescued from the life of a prostitute but dropped her when it suited him.
 4. Prostitute — she can't make a living this way after Eric forced her to have sex and got her pregnant while he was drunk.
 
+```react
+<Advert />
+```
+
 # She never sought revenge, so the Inspector does it for her
 
 - Priestley has made Eva/Daisy a silent offstage character, so in the play she represents the silent, invisible and powerless members of society.
@@ -45,6 +49,10 @@ Who was Eva Smith? No idea. Were Eva Smith and Daisy Renton the same person? Was
 - Take her second name — Smith: it's a very common last name, and it's from the word for a tradesman.
 - That's it — Eva Smith represents all **ordinary**, **working-class women**.
 
+```react
+<Advert />
+```
+
 # Eva Smith is central to the play's message
 
 - The inspector says that there are "_millions of Eva Smiths and John Smiths still left_" and that their chances of happiness are "_intertwined with our lives_".
@@ -57,3 +65,7 @@ Who was Eva Smith? No idea. Were Eva Smith and Daisy Renton the same person? Was
 - Honourable: "_she didn't want to take any more money from him_"
 - Working-class: "_Girls of that class_", "_a girl of that sort_"
 - A Prostitute: "_There was some woman who wanted her go there_"
+
+```react
+<Advert />
+```

@@ -24,6 +24,10 @@ Sybil's proud of her reputation and social status. She'll do anything to protect
 - Sybil's always reminding her family to have better manners. For example when she tells Sheila off for using slang.
 - Sybil won't let anyone boss her around. She warns the Inspector, "_You have no power to make me change my mind_".
 
+```react
+<Advert />
+```
+
 # She lives by strict standards
 
 - Sybil's social standards make her prejudiced against people from a lower class. She thinks that they have lower standards and can't imagine her son being involved with women "_of that sort_".
@@ -44,6 +48,10 @@ Sybil's proud of her reputation and social status. She'll do anything to protect
 - She won't accept responsibility for her actions, and claims that she did the right thing, "_I accept no blame for it at all_".
 - She doesn't learn from the Inspector's message. She only regrets not having "_asked him a few questions_" proving that she wants to be in control.
 
+```react
+<Advert />
+```
+
 # The stage directions show that she has made up her mind
 
 ## Even when her language is polite, her tone is severe and superior:
@@ -58,3 +66,7 @@ Sybil's proud of her reputation and social status. She'll do anything to protect
 - Proud "_I was the only one of you who didn't give in to him_".
 - Prejudiced: "_As if a girl of that sort would ever refuse money!_".
 - Cruel: "_I used my influence to have it refused_".
+
+```react
+<Advert />
+```

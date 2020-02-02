@@ -21,6 +21,10 @@ Definition:
 4. Your body has many systems to regulate internal environment, including both nervous and hormonal communication systems
 5. Automatic control systems components: receptors, coordination centres (including the brain, spinal cord, pancreas) and effectors
 
+```react
+<Advert />
+```
+
 ## Feedback Loops
 
 Feedback loops are used to ensure that your body maintains a stable internal environment. For example your blood glucose level is controlled via a feedback loop.
@@ -36,3 +40,7 @@ The opposite reaction happens if your blood glucose level is too low.
 The **effectors** continues producing the response as long as they are **stimulated** by the **coordination centre**. Unfortunately, this can cause the opposite problem making the level change too much from the ideal. To combat this, the **receptor detects** if the level changes too much and the **opposite** reaction starts.
 
 This process happens without you thinking about it — it's completely automated. Clever, _huh_?
+
+```react
+<Advert />
+```

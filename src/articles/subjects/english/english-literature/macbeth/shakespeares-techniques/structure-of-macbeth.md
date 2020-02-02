@@ -27,6 +27,10 @@ Shakespeare uses short scenes to speed up the action and make the play more exci
   Long scenes let Shakespeare explore his characters' emotions and reveal their true characters:
 - In Act 4, Scene 3, Malcolm tests Macduff by claiming to be unfit to be King. Macduff's reaction shows he is loyal to Malcolm and his country. Later in that scene Macduff hears about his family too and the grief he shows, tells the audience that he cares for his family also.
 
+```react
+<Advert />
+```
+
 # Foreshadowing
 
 Shakespeare hints at a lot of things that happen later in the play, especially near the start:
@@ -45,3 +49,7 @@ Shakespeare leaves the audience in little doubt it's going to be a tragedy - but
 | Act 3, Scene 1 Banquo suspects that Macbeth killed Duncan. Macbeth plots to kill Banquo              | Will Banquo accuse Macbeth? Will Macbeth kill Banquo before he gets the chance? We don't find out until later in Act 3 |
 | Act 4, Scene 3 Macduff learns that his family have been murdered and vows to take revenge on Macbeth | Will Macduff kill Macbeth? We don't find out until Act 5.                                                              |
 | Act 5, the scenes alternate between Macbeth preparing for battle and the English army advancing.     | Who will win? What will happen to Macbeth? We don't find out until the end of the play.                                |
+
+```react
+<Advert />
+```

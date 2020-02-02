@@ -22,6 +22,10 @@ Eric is a troubled soul. He has turned away from his family and taken up drinkin
 - He interrupts Sheila and Gerald when he "_suddenly guffaws_", but says he doesn't know why he's laughing. He finds things his family say funny, even when there's no joke.
 - When Gerald says, "_Unless Eric's been up to something,_" Eric acts suspiciously and seriously - "_I don't think it's very funny,_" he says "_still uneasy_", and also answers "_defiantly_".
 
+```react
+<Advert />
+```
+
 # Eric's been hiding some dirty secrets
 
 ## Eric's drunkenness and bad behaviour represent the dark side of family life.
@@ -42,6 +46,10 @@ Eric is a troubled soul. He has turned away from his family and taken up drinkin
 - His parents don't want a scandal. They don't care about him as much as they care about what other people will think of them.
 - Eric's laugh interrupts the polite conversation earlier in the play. It's the same when his behaviour disrupts the polite middle-class illusion of respectability. They're all keeping up appearances - but Eric's making it obvious that there's something murky underneath.
 
+```react
+<Advert />
+```
+
 # Eric is a villain and a victim
 
 - Eric feels isolated and unsupported - he's had to find comfort elsewhere.
@@ -54,3 +62,7 @@ Eric is a troubled soul. He has turned away from his family and taken up drinkin
 - Unloved: "_You don't understand anything. You never did._"
 - Sensitive: "_My God - I'm not likely to forget_"
 - An alcoholic: "_I was in that state when a chap easily turns nasty_"
+
+```react
+<Advert />
+```

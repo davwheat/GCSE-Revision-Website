@@ -37,6 +37,10 @@ His anger leads him to juxtapose the British pantomime and nursery rhyme charact
 
 He has made these comparisons ridiculous on purpose to emphasise his frustration with "_Dem_".
 
+```react
+<Advert />
+```
+
 # Guilt as a result of war
 
 ## Remains
@@ -54,3 +58,7 @@ The shift of voice from first person plural "_we_" to first person singular "_I_
 There is a sense that he photographer feels guilty about the ease of life in England. The phrase "_Ordinary pain which simple weather can dispel_", shows how different life in England is to the war zone.
 
 He refers to taking the picture as doing "_what someone must_". There's a sense of guilt in his words, he knows that taking photographs may seem insensitive, but he feels a duty to show the world their suffering.
+
+```react
+<Advert />
+```

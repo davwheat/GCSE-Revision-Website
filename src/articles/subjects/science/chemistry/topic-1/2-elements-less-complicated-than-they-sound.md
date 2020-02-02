@@ -30,3 +30,7 @@ Atoms of each element can be respresented by a symbol made from letters. It's a 
 Some element symbols make perfect sense, such as Oxygen (O), Carbon (C), or Helium (He), but some make less sense, such as Sodium (Na), Lead (Pb) or Mercury (Hg). These symbols (along with the name of the element, its atomic number and mass number) are shown on the **periodic table**, which you'll get a copy of for both of your exams.
 
 You can find a copy of the periodic table you'll get during your exams on the AQA website, [download it off of our website](/files/periodic-table-insert.pdf), or see a copy of it in every chemistry article on our site.
+
+```react
+<Advert />
+```

@@ -15,17 +15,21 @@ DNA is made up of four different bases: A, T, C, and G. **A will always pair up 
 
 <br />
 
- - DNA is found in a **double helix shape** (like a twisted ladder).
- - The edges of the double helix are made from **ribose sugar**. 
- - There are two halves to DNA: the **coding strand**, and the **complimentary strand**.
-   - The coding strand is the actual DNA coding (the information that is read and actually used).
-   - The complimentary strand purely exists to provide support to the coding strand and make the DNA polymer more stable.
+- DNA is found in a **double helix shape** (like a twisted ladder).
+- The edges of the double helix are made from **ribose sugar**.
+- There are two halves to DNA: the **coding strand**, and the **complimentary strand**.
+  - The coding strand is the actual DNA coding (the information that is read and actually used).
+  - The complimentary strand purely exists to provide support to the coding strand and make the DNA polymer more stable.
 
 ```react
 <KeyFact
     title="Fun Fact"
     body="Each molecule of ribose sugar connect with an angled bond. This weird angled bond is the only thing which makes DNA go 'curly'!"
 />
+```
+
+```react
+<Advert />
 ```
 
 # The Bases
@@ -46,7 +50,7 @@ The only reason you never find C-T or A-G pairs is because of the physical shape
 
 Proteins are made in the cell cytoplasm on tiny structures named **ribosomes**. To be able to make proteins, ribosomes use the code in the DNA. As DNA is found in the nucleus and is too big to fit through the gaps, **mRNA** (messenger RNA) is created.
 
-mRNA can be thought of as 'half a stick' of DNA: instead of having the coding *and* complimentary strand, it only has **one strand**. This means it **cannot last long before breaking**: it is temporary.
+mRNA can be thought of as 'half a stick' of DNA: instead of having the coding _and_ complimentary strand, it only has **one strand**. This means it **cannot last long before breaking**: it is temporary.
 
 1. The **coding strand** of a section of DNA is **copied** as **mRNA**.
    - When copying, the bases become the **opposite base** (e.g. G becomes C, T becomes A).
@@ -68,4 +72,8 @@ Steps 1 to 4 are shown in this diagram.
 <KeyFact
     body="It's very easy to forget that T's don't exist in mRNA. When DNA is copied, the opposite base is taken (for an A, you'd expect this to be a T). Instead, a U base replaces any T bases that would have been formed."
 />
+```
+
+```react
+<Advert />
 ```

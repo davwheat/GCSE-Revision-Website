@@ -17,6 +17,10 @@ The **Nervous System** allows humans to **react** to their surroundings and **co
 2. Single-celled organisms can respond to their environment on their own but multicellular organism, like us, need to communicate with each other first
 3. Multicellular organisms have evolved to develop nervous and hormonal communication systems
 
+```react
+<Advert />
+```
+
 ## The Parts of the Nervous System
 
 ### Central Nervous System
@@ -34,6 +38,10 @@ The **nerves** (or **neurons**) that carry electrical impulses from the **CNS** 
 ### Effector Organs
 
 _All_ muscles and glands are **effector organs**. They respond to the impulses from your **motor nerves**.
+
+```react
+<Advert />
+```
 
 ## Receptors and Effectors can form part of Complex Organs
 
@@ -60,6 +68,10 @@ Imagine a toddler in the kitchen...
 6. The toddler's muscles contract and they runs towards the chocolate (and their parents aren't too happy...)
 
 ![Naughty, naughty...](articles/biology/homeostasis-toddler-eating-chocolate.png)
+
+```react
+<Advert />
+```
 
 ## Synapses
 
@@ -95,6 +107,10 @@ They are a way for the body to automatically respond to a stimulus to minimise d
 5. The **motor nerve** sends impulses to the **effector**.
 6. The **effector** produces a **response** (e.g. contracts muscles to move hand away from the flame).
 
+```react
+<Advert />
+```
+
 ## Confusion
 
 Some students get confused about reflex actions and call conscious action reflexes.
@@ -111,6 +127,10 @@ Yes, you can!
 
 When picking up a hot plate or tray (don't try it!), the reflex action will make you drop it almost immediately. However, it is possible to consciously override these reflexes.
 
-You don't need to know this but the way the brain prevents the reflexes is by sending signals through inhibitionary nerves to prevent nerves firing.
+You don't need to know this but the way the brain prevents the reflexes is by sending signals through inhibitory nerves to prevent nerves firing.
 
 You can learn more about how animals inhibit reflex actions [here](https://biology.stackexchange.com/questions/39768/how-are-reflexes-suppressed).
+
+```react
+<Advert />
+```

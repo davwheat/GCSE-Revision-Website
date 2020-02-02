@@ -36,3 +36,7 @@ DNA is stored inside a cell's **nucleus** in very long strands called **chromoso
     body="A single sperm cell contains approximately 37.5 MB of information (~3 mins of 1080p HD YouTube). This means that an average ejaculation represents approximately 1587 GB of data all in about 3 seconds (~92 DAYS of 1080p HD YouTube)... And you thought 4G was fast..."
 />
 ```
+
+```react
+<Advert />
+```

@@ -24,6 +24,10 @@ A lot of the scenes take place in and around Macbeth's castles in Scotland. This
 
 Most of Act 5 takes place as Malcolm's army advances, which highlights the violence that occurs throughout the play.
 
+```react
+<Advert />
+```
+
 # Language sets the scene and creates atmosphere
 
 - In Act 1, Scene 1, the Witches appear in "_fog and filthy air_". This creates a gloomy atmosphere and also makes them seem ambiguous as they can't be seen properly.
@@ -42,6 +46,10 @@ By making the characters describe what they can see or hear, Shakespeare makes t
 - On the night of Duncan's murder, Lennox hears "_strange screams of death_", which create a dark, frightening atmosphere.
 - The army approaches to the sound of a "_Drum_". The sounds of the battle highlight the violence that happens throughout the play.
 
+```react
+<Advert />
+```
+
 # Unnatural and supernatural events create tension
 
 - Seemingly supernatural events, such as the dagger Macbeth sees and Banquo's ghost, create a tense, uneasy atmosphere. It's uncomfortable as its not clear if these visions exist or if Macbeth is going mad.
@@ -52,3 +60,7 @@ By making the characters describe what they can see or hear, Shakespeare makes t
 
 - One of the few bits of comedy in the play comes in Act 2, Scene 3, when a drunken Porter rambles for a bit. This comic interlude delays the discovery of Duncan's body, which increases the tension.
 - Even the atmosphere here is dark - the Porter talks about "_hell_" and "_Beelzebub_" (the devil). He refers to Macbeth's castle as "_hell-gate_" and calls himself the "_devil-porter_". This suggests that the visitors are entering hell and to be greeted by the devil (Macbeth).
+
+```react
+<Advert />
+```

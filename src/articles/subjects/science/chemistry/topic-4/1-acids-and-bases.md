@@ -19,6 +19,10 @@ pH is a measurement of the **acidity** of a solution. The scale ranges from **0 
 
 There are two main ways that pH is **measured**: through **indicators**, or with **electronic probes**. Here's the low-down.
 
+```react
+<Advert />
+```
+
 ## Indicators
 
 An **indicator** (not like the ones on a car) is a **dye** that **changes colour** depending on whether the substance is **above** or **below a certain pH**.
@@ -37,6 +41,10 @@ A **pH probe** attached to a **pH meter** is the **most accurate** method of mea
 - A **base** is any substance that **reacts** with an **acid** to form a **neutral salt** (pH 7).
 - An **alkali** is a base that **dissolves** in water to form a **solution** with a pH of **greater than 7**. Alkalis form $\text{OH}^-$ ions in water.
 
+```react
+<Advert />
+```
+
 The reaction between an acid and a base is called **neutralisation**:
 
 $$
@@ -52,3 +60,7 @@ $$
 _**Hydrogen ions react with hydroxide ions to form water, a neutral molecule.**_
 
 When an acid neutralises a base (or vice versa), the **products** are **neutral**. An indicator (or pH probe) can be used to show that a neutralisation reaction is over.
+
+```react
+<Advert />
+```

@@ -28,6 +28,10 @@ The island is inhabitable because nothing can grow there. The earth is "_wizened
 
 What the islanders really fear is the nature. Words that connote war are used to suggest that the island is under attack from nature. It's "_bombarded by the empty air_" and the wind "_strafes_" it.
 
+```react
+<Advert />
+```
+
 # Natures effect on humans
 
 ## Kamikaze
@@ -50,6 +54,10 @@ The power of the mountain also convinces the speaker to return the stolen boat s
 
 The phrase "_a trouble to my dreams_" at the end of the poem, shows how nature has changed the speaker from his experience and the "_pleasant images_" of nature, have now been replace with more sinister ones.
 
+```react
+<Advert />
+```
+
 # Other poems
 
 ## Ozymandias
@@ -63,3 +71,7 @@ The power of nature outlives the ruler.
 Nature is stronger than humans.
 
 The sunlight breaks through the map and "_shines through_" showing it overpowers the humans.
+
+```react
+<Advert />
+```

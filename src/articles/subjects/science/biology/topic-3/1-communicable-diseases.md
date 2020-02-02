@@ -1,7 +1,7 @@
 ---
 title: "Communicable disease & types and spreading of pathogens"
 date: "2019-11-21"
-description: "\"ARGH! GET AWAY FROM ME!\" is what you'd scream if someone had a communicable disease. Communicable diseases are just diseases that can spread. Done!"
+description: '"ARGH! GET AWAY FROM ME!" is what you''d scream if someone had a communicable disease. Communicable diseases are just diseases that can spread. Done!'
 subject: "biology"
 subjectGroup: "science"
 topic: "topic 3: infection and response"
@@ -43,6 +43,10 @@ You need to know these four types of pathogen.
 
 ![No, not that Vector.](articles/biology/topic-3/vector.png)
 
+```react
+<Advert />
+```
+
 ## Fungi
 
 Oh, stop it! I'm blushing!
@@ -67,3 +71,7 @@ Some pathogens can be transported through the air and **breathed in**. This incl
 ## Direct Contact
 
 Some pathogens can be picked up by touching contaminated surfaces, including the **skin**. For example, _athlete's foot_ is a fungal infection which makes the _skin itch and flake off_ like a well baked French croissant (don't write that in your exam, please). It's usually spread by _sharing things_ with an infected person, like _shower floors_ and _towels_.
+
+```react
+<Advert />
+```

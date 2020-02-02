@@ -53,31 +53,18 @@ Calculating the value of $\tan$ for an angle is slightly trickier.
 
 In this case you have to take the value for the $\sin$ of that angle, then divide it by the $\cos$.
 
+```react
+<Advert />
+```
+
 ### Example
 
-$$
-\text{What is the value of }\tan30\degree\text{?}
-
-\\[0.25cm]
-
-\def\arraystretch{1.5}
-\frac{\begin{array}{c}
-\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{ }{\small 0\degree\text{  }\text{ }30\degree\text{ }45\degree\text{ }60\degree\text{ }90\degree}\\
-\begin{matrix}\sin\\\cos\end{matrix}\sqrt{\begin{array}{ccccc}
-0 & 1 & 2 & 3 & 4 \\
-4 & 3 & 2 & 1 & 0 \\
-\end{array}}\\
-\end{array}}{2}
-
-\\[0.6cm]
-
-\sin30=\frac{\sqrt{1}}{2}=\frac{1}{2}
-\\[0.25cm]
-\cos30=\frac{\sqrt{3}}{2}
-\\[0.6cm]
-\tan30=\frac{1}{2}\div\frac{\sqrt{3}}{2}
-\\[0.25cm]
-\therefore \tan30=\frac{1}{2}\times\frac{2}{\sqrt{3}}=\frac{2}{2\sqrt{3}}=\frac{1}{\sqrt{3}}
-\\[0.25cm]
-\therefore \tan30=\frac{1}{\sqrt{3}}
-$$
+```react
+<ExamQuestion withSolution type="no-box" questionNumber={1} marks={1} marksSquareBrackets marksText lines={1} answerLine>
+What is the value of <TeX math="\tan30\degree"></TeX>?
+</ExamQuestion>
+<Collapser title="Solution" solution>
+<TeX block math="\def\arraystretch{1.5}\frac{\begin{array}{c}\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{  }\text{ }{\small 0\degree\text{  }\text{ }30\degree\text{ }45\degree\text{ }60\degree\text{ }90\degree}\\\begin{matrix}\sin\\\cos\end{matrix}\sqrt{\begin{array}{ccccc}0 & 1 & 2 & 3 & 4 \\4 & 3 & 2 & 1 & 0 \\\end{array}}\\\end{array}}{2}\\[0.6cm]\sin30=\frac{\sqrt{1}}{2}=\frac{1}{2}\\[0.25cm]\cos30=\frac{\sqrt{3}}{2}\\[0.6cm]\tan30=\frac{1}{2}\div\frac{\sqrt{3}}{2}\\[0.25cm]\therefore \tan30=\frac{1}{2}\times\frac{2}{\sqrt{3}}=\frac{2}{2\sqrt{3}}=\frac{1}{\sqrt{3}}\\[0.25cm]\therefore \tan30=\frac{1}{\sqrt{3}}"/>
+</Collapser>
+<Advert />
+```

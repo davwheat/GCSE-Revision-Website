@@ -25,3 +25,7 @@ They are Duncan's sons. Malcolm is the eldest, and is therefore heir to the thro
 - He becomes confident, and earns the trust of the Scottish thanes, who say they will "_give obedience where 'tis truly owed_". They follow Malcolm because he's the rightful King.
 - He proves he's clever when he returns to Scotland by hiding the soldiers with trees. He leads them to victory, proving he is a strong leader.
 - He rewards everyone who fought with him, like Duncan he's generous.
+
+```react
+<Advert />
+```

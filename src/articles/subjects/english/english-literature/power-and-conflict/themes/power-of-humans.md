@@ -35,6 +35,10 @@ The metaphors of blindness "_Blind me to me own identity_", show how the speaker
 
 Poem is written with historical abuse of power in mind, it talks of real figures from Caribbean history who has stood against slavery and European colonisation.
 
+```react
+<Advert />
+```
+
 # Human power is temporary
 
 ## Ozymandias
@@ -64,3 +68,7 @@ Frustration to the misuse of human power, speaker feels it is used to control in
 ## Storm on the Island
 
 The power of the storm is more then any human power.
+
+```react
+<Advert />
+```

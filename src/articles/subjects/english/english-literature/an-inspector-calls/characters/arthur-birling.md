@@ -22,6 +22,10 @@ Arthur Birling is the head of the Birling family. He is the the boss of his own 
 - Birling thinks he is a successful because he is a "_hard-headed, practical man of business_". He has the same attitude to all areas of his life.
 - He is very optimistic about the future. He thinks that strikes won't be a problem for his company and dismisses any fear of war as just some "_silly little war scares_".
 
+```react
+<Advert />
+```
+
 # Lack of responsibility over Eva's death
 
 - Birling finds it difficult to think about other people. He doesn't believe in "_community and all that nonsense_", instead seeing other people as "_cheap labour_".
@@ -40,6 +44,10 @@ Arthur Birling is the head of the Birling family. He is the the boss of his own 
 - Birling tries to make himself seem important by drawing attention to his connections with influential people. For example he plays golf with the Chief Inspector.
 - The Inspector threatens Birling's middle-class values the reputation of his company, his important connections. Birling is rattled by this. He has spent his entire life believing that these things matter.
 
+```react
+<Advert />
+```
+
 # He uses his authoritative language to be in control
 
 ## Priestley uses stage directions and careful language choices to help create Birling's character:
@@ -54,3 +62,7 @@ Arthur Birling is the head of the Birling family. He is the the boss of his own 
 - Business-minded: "_a hard-headed, practical man of business_"
 - Selfish: "_a man has to make his own way_"
 - Anxious: "_there'll be a public scandal ... unless we're lucky_"
+
+```react
+<Advert />
+```

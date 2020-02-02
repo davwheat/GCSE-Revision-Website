@@ -41,7 +41,7 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 |                                         Equation                                         |                                           Symbol Equation                                           | Units                                                                                                                   |
 | :--------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------- |
 |                             **Work Done**<br/><br/> ${W=Fs}$                             |                       ${\text{work done}=\text{force}\times\text{distance}}$                        | $W = \text{J (Joules)}$<br/>$F = \text{N (Newtons)}$<br/>$s = \text{m (metres)}$                                        |
-|                   **Kinetic Energy**<br/><br/>${E_k=\frac{1}{2}mv^2}$                    |             ${\text{kinetic energy}=\frac{1}{2}\times\text{mass}\times\text{velocity}^2}$             | ${E_k = \text{J (Joules)}}\\{m = \text{kg (kilograms)}}\\{v = \text{m/s (metres per second)}}$                          |
+|                   **Kinetic Energy**<br/><br/>${E_k=\frac{1}{2}mv^2}$                    |            ${\text{kinetic energy}=\frac{1}{2}\times\text{mass}\times\text{velocity}^2}$            | ${E_k = \text{J (Joules)}}\\{m = \text{kg (kilograms)}}\\{v = \text{m/s (metres per second)}}$                          |
 |                 **Gravitational Potential Energy**<br/><br/>${E_p=mgh}$                  | ${\text{gravitational potential energy}=\text{mass}\times\text{field strength}\times\text{height}}$ | ${E_p = \text{J (Joules)}}\\{m = \text{kg (kilograms)}}\\{g = \text{N/kg (Newtons/kilogram)}}\\{h = \text{m (metres)}}$ |
 |                      **Power** (energy)<br/><br/>${P=\frac{E}{t}}$                       |                   ${\text{power}=\frac{\text{energy transferred}}{\text{time}}}$                    | $W = \text{J (Joules)}$<br/>$F = \text{N (Newtons)}$<br/>$s = \text{m (metres)}$                                        |
 |                     **Power** (work done)<br/><br/>${P=\frac{W}{t}}$                     |                        ${\text{power}=\frac{\text{work done}}{\text{time}}}$                        | ${W = \text{J (Joules)}}\\{F = \text{N (Newtons)}}\\{s = \text{m (metres)}}$                                            |
@@ -53,6 +53,10 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 
 ```react
 <YouTubeCollapses titles="[`Work Done & Energy Transfer`,`Kinetic Energy`,`Gravitational Potential Energy`, `Power`, `Efficiency`]" urls="[`https://www.youtube.com/watch?v=PY80j_iNT9Y`,`https://www.youtube.com/watch?v=-zy9eWzmGe4`,`https://www.youtube.com/watch?v=63OTIdNb-TE`,`https://www.youtube.com/watch?v=EDT0DPhaaMY`, `https://www.youtube.com/watch?v=NI5jaeBrIgQ`]" />
+```
+
+```react
+<Advert />
 ```
 
 # Topic 2: Electricity
@@ -87,6 +91,10 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 <YouTubeCollapses titles="[`Charge Flow`,`Resistance`,`Electrical Power`,`Efficiency of Electrical Appliances`]" urls="[`https://www.youtube.com/watch?v=ts7WumFAaSg`,`https://www.youtube.com/watch?v=cx9xLwa7Gco`,`https://www.youtube.com/watch?v=LOyJdI41aCU`,`https://www.youtube.com/watch?v=KrlDMZQtzoU`]"/>
 ```
 
+```react
+<Advert />
+```
+
 # Topic 3: Particle Model of Matter
 
 ```react
@@ -112,6 +120,10 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 
 ```react
 <YouTubeCollapses titles="[`Density`,`Specific Latent Heat`,`Specific Heat Capacity`,`Pressure in Gases`]" urls="[`https://www.youtube.com/watch?v=EZmXVOSa20`,`https://www.youtube.com/watch?v=x7GZ2DXef84`,`https://www.youtube.com/watch?v=Hs5x0-IU2F4`,`https://www.youtube.com/watch?v=RuoZqmNiMEo`]" />
+```
+
+```react
+<Advert />
 ```
 
 # Topic 5: Forces
@@ -149,6 +161,10 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 <YouTubeCollapses titles="[`Weight`,`Work Done by a Force`,`Forces & Elasticity`,`Moments`,`Acceleration`,`Resultant Forces`,`Momentum`,`Pressure in Liquids`,`Changes in momentum`]" urls="[`https://www.youtube.com/watch?v=W2aBVbcHr_k`,`https://www.youtube.com/watch?v=JHEmPZ-YnrU`,`https://www.youtube.com/watch?v=ACDbJ8rsQDo`,`https://www.youtube.com/watch?v=5kJBi2_BAPs`,`https://www.youtube.com/watch?v=r5iXzDCRMsE`,`https://www.youtube.com/watch?v=PL8ATKipoB4`,`https://www.youtube.com/watch?v=ZtQhlwPxE28`,`https://www.youtube.com/watch?v=P08-lYPy1hI`,`https://www.youtube.com/watch?v=6yx0fQrK3fA`]" />
 ```
 
+```react
+<Advert />
+```
+
 # Topic 6: Waves
 
 ```react
@@ -175,6 +191,10 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 <YouTubeCollapses titles="[`The Wave Equation`,`Wave Properties`]" urls="[`https://www.youtube.com/watch?v=W2aBVbcHr_k`,`https://www.youtube.com/watch?v=ITe6snlZBp8`]" />
 ```
 
+```react
+<Advert />
+```
+
 # Topic 7: Magnetism & Electromagnetism
 
 ```react
@@ -199,4 +219,8 @@ https://www.youtube.com/watch?v=G3K6ZdtFZlg
 
 ```react
 <YouTubeCollapses titles="[`Electromagnets`]" urls="[`https://www.youtube.com/watch?v=0yYGXgkOC7w`]" />
+```
+
+```react
+<Advert />
 ```

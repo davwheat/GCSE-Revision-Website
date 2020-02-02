@@ -1,5 +1,5 @@
 ---
-title: "Paper 1: Top Tips!"
+title: "Paper 1, Section A: Top Tips!"
 date: "2019-11-09"
 description: "Paper 1 seems challenging at first, but often students just overthink it. Read through these short top tips to top-up your knowledge."
 subject: "english language"
