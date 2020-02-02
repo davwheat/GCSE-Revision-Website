@@ -145,6 +145,7 @@ const MakeAppBar = ({ title, overrideNotificationPopup, type }) => {
       ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100
 
     scrollIndicatorRef &&
+      scrollIndicatorRef.current &&
       scrollIndicatorRef.current.style.setProperty(
         "--scroll-percentage",
         scrollPercentage + "%"
