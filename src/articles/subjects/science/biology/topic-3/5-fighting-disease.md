@@ -60,7 +60,7 @@ _Note: all of the info below also applies to antitoxins as well as antibodies!_
 
 ![Diagram describing the process of antibody production](articles/biology/topic-3/lymphocyte-antibodies.png)
 
-# Freesciencelessons Video
+# Freesciencelessons video
 
 https://www.youtube.com/watch?v=HSrrPdJDqxM
 
