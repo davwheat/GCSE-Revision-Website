@@ -3,7 +3,6 @@ import React from "react"
 import ArticleList from "../../../../../templates/ArticleList"
 import Layout from "../../../../../components/layout"
 import SEO from "../../../../../components/seo"
-import Ad from "../../../../../components/Advert"
 import Breadcrumbs from "../../../../../components/Breadcrumbs"
 import { H1 } from "../../../../../components/EasyText"
 
@@ -22,7 +21,6 @@ const PhysicsTopic2ArticleList = () => {
       />
       <H1 gutterBottom>Physics, Topic 2: Electricity</H1>
       <ArticleList subject="physics" topic="topic 2: electricity" />
-      <Ad />
     </Layout>
   )
 }

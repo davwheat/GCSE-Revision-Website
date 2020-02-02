@@ -5,6 +5,7 @@ import SEO from "../../../components/seo"
 import { H1, P } from "../../../components/EasyText"
 import Breadcrumbs from "../../../components/Breadcrumbs"
 import BaseConverter from "../../../components/BaseConverter"
+import { BlockAdvert } from "../../../components/Ads"
 
 const ComputingBitmapEditorPage = () => {
   return (
@@ -23,10 +24,11 @@ const ComputingBitmapEditorPage = () => {
       <br />
       <br />
       <P paragraph>
-        Please note that the maximum supported number is <code>9007199254740991</code>. I
-        have no clue why you&apos;d ever need to calculate a number this large
-        but there it is.
+        Please note that the maximum supported number is{" "}
+        <code>9007199254740991</code>. I have no clue why you&apos;d ever need
+        to calculate a number this large but there it is.
       </P>
+      <BlockAdvert />
     </Layout>
   )
 }

@@ -2,7 +2,6 @@ import React from "react"
 import ArticleList from "../../../../../templates/ArticleList"
 import Layout from "../../../../../components/layout"
 import SEO from "../../../../../components/seo"
-import Ad from "../../../../../components/Advert"
 import Breadcrumbs from "../../../../../components/Breadcrumbs"
 import { H1 } from "../../../../../components/EasyText"
 
@@ -21,7 +20,6 @@ const MathsArticleList = () => {
 
       <H1 gutterBottom>Computing, Topic 4: Computer Systems</H1>
       <ArticleList subject="computer science" topic="computer systems" />
-      <Ad />
     </Layout>
   )
 }

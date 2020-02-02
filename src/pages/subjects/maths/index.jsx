@@ -5,7 +5,6 @@ import SEO from "../../../components/seo"
 import { H1, H2, P } from "../../../components/EasyText"
 import TopicList from "../../../templates/TopicList"
 import Breadcrumbs from "../../../components/Breadcrumbs"
-import Ad from "../../../components/Advert"
 
 import { Descriptions } from "../../../constants/subjectInfo"
 
@@ -21,7 +20,6 @@ const SubjectsMathsPage = () => {
       <P paragraph>{Descriptions["Maths"]}</P>
       <H2 gutterBottom>Topics</H2>
       <TopicList subject="maths" />
-      <Ad />
     </Layout>
   )
 }

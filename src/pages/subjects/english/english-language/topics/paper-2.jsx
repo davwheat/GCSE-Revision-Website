@@ -3,7 +3,6 @@ import React from "react"
 import ArticleList from "../../../../../templates/ArticleList"
 import Layout from "../../../../../components/layout"
 import SEO from "../../../../../components/seo"
-import Ad from "../../../../../components/Advert"
 import Breadcrumbs from "../../../../../components/Breadcrumbs"
 import { H1 } from "../../../../../components/EasyText"
 
@@ -21,7 +20,6 @@ const EnglishLangPaper2ArticleList = () => {
       />
       <H1 gutterBottom>English Language: Paper 2</H1>
       <ArticleList subject="english language" topic="paper 2" />
-      <Ad />
     </Layout>
   )
 }

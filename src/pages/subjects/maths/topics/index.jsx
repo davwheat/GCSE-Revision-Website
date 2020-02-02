@@ -1,12 +1,9 @@
 import React from "react"
 
 import Layout from "../../../../components/layout"
-
 import TopicList from "../../../../templates/TopicList"
-
 import { H1 } from "../../../../components/EasyText"
 import SEO from "../../../../components/seo"
-import Ad from "../../../../components/Advert"
 import Breadcrumbs from "../../../../components/Breadcrumbs"
 
 const MathsArticleList = () => {
@@ -23,7 +20,6 @@ const MathsArticleList = () => {
 
       <H1 gutterBottom>Maths Topics</H1>
       <TopicList subject="maths" backUrl="subjects/maths" />
-      <Ad />
     </Layout>
   )
 }

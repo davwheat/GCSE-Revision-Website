@@ -8,6 +8,7 @@ import Breadcrumbs from "../../../components/Breadcrumbs"
 
 import { Descriptions } from "../../../constants/subjectInfo"
 import TopicList from "../../../templates/TopicList"
+import { BlockAdvert } from "../../../components/Ads"
 
 const SubjectsComputingPage = () => {
   return (
@@ -46,6 +47,8 @@ const SubjectsComputingPage = () => {
           Open Base Converter
         </Link>
       </P>
+      
+      <BlockAdvert />
     </Layout>
   )
 }

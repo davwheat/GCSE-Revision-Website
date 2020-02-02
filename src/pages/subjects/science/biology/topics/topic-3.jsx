@@ -3,11 +3,10 @@ import React from "react"
 import ArticleList from "../../../../../templates/ArticleList"
 import Layout from "../../../../../components/layout"
 import SEO from "../../../../../components/seo"
-import Ad from "../../../../../components/Advert"
 import Breadcrumbs from "../../../../../components/Breadcrumbs"
 import { H1 } from "../../../../../components/EasyText"
 
-const BioTopic5ArticleList = () => {
+const BioTopic3ArticleList = () => {
   return (
     <Layout>
       <SEO title="Biology: Infection & Response" />
@@ -22,9 +21,8 @@ const BioTopic5ArticleList = () => {
       />
       <H1 gutterBottom>Biology, Topic 3: Infection &amp; Response</H1>
       <ArticleList subject="biology" topic="topic 3: infection and response" />
-      <Ad />
     </Layout>
   )
 }
 
-export default BioTopic5ArticleList
+export default BioTopic3ArticleList

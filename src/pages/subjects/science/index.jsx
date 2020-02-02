@@ -5,10 +5,10 @@ import SEO from "../../../components/seo"
 import { H1, H2, P } from "../../../components/EasyText"
 import Link from "../../../components/Link"
 import Breadcrumbs from "../../../components/Breadcrumbs"
-import Ad from "../../../components/Advert"
 
 import { Descriptions } from "../../../constants/subjectInfo"
 import { List, ListItem, ListItemText } from "@material-ui/core"
+import { BlockAdvert } from "../../../components/Ads"
 
 const SubjectsSciencePage = () => {
   return (
@@ -31,7 +31,8 @@ const SubjectsSciencePage = () => {
           <ListItemText>Physics</ListItemText>
         </ListItem>
       </List>
-      <Ad />
+
+      <BlockAdvert />
     </Layout>
   )
 }

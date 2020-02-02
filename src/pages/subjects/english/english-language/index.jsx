@@ -2,9 +2,8 @@ import React from "react"
 
 import Layout from "../../../../components/layout"
 import SEO from "../../../../components/seo"
-import { H1, H2, H3, P } from "../../../../components/EasyText"
+import { H1, H2,  P } from "../../../../components/EasyText"
 import Breadcrumbs from "../../../../components/Breadcrumbs"
-import Ad from "../../../../components/Advert"
 import TopicList from "../../../../templates/TopicList"
 
 import { Descriptions } from "../../../../constants/subjectInfo"
@@ -50,7 +49,6 @@ const SubjectsBiologyPage = () => {
       </P>
       <H2 gutterBottom>Papers</H2>
       <TopicList subject="english language" subjectGroup="english" />
-      <Ad />
     </Layout>
   )
 }

@@ -5,6 +5,7 @@ import SEO from "../../../components/seo"
 import { H1 } from "../../../components/EasyText"
 import Breadcrumbs from "../../../components/Breadcrumbs"
 import BitmapEditor from "../../../components/BitmapEditor"
+import { BlockAdvert } from "../../../components/Ads"
 
 const ComputingBitmapEditorPage = () => {
   return (
@@ -19,6 +20,7 @@ const ComputingBitmapEditorPage = () => {
       />
       <H1 gutterBottom>Computing Bitmap Editor</H1>
       <BitmapEditor />
+      <BlockAdvert />
     </Layout>
   )
 }

@@ -55,6 +55,7 @@ import textToSafeId from "../functions/textToSafeId"
 import YouTubeEmbed from "./YouTubeEmbed"
 import KeyFact from "./KeyFact"
 import ExamQuestion from "./ExamQuestion"
+import { ArticleAdvert as Advert } from "./Ads"
 
 Lowlight.registerLanguage("js", js)
 Lowlight.registerLanguage("py", py)
@@ -122,6 +123,7 @@ const componentTransforms = classes => ({
   ExamQuestion,
   TeX,
   KeyFact,
+  Advert,
 })
 
 const useStyles = makeStyles(theme => ({

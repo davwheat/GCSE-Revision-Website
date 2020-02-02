@@ -27,6 +27,7 @@ import {
 import { XMasonry, XBlock } from "react-xmasonry"
 
 import { TopicDescriptions } from "../constants/subjectInfo"
+import { BlockAdvert } from "../components/Ads"
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -76,54 +77,59 @@ const SubTopicList = props => {
         let counter = -1
 
         return (
-          <XMasonry
-            targetBlockWidth={375}
-            maxColumns={2}
-            className={classes.container}
-          >
-            {subtopics.map((subtopic, i) => {
-              const subtopics = props.subjectGroup
-                ? subtopic.nodes.filter(
-                    node =>
-                      node.frontmatter.topic === props.topic &&
-                      node.frontmatter.subject === props.subject
-                  ).length
-                : subtopic.nodes.filter(
-                    node =>
-                      node.frontmatter.topic === props.topic &&
-                      node.frontmatter.subject === props.subject &&
-                      node.frontmatter.subjectGroup === props.subjectGroup
-                  ).length
+          <>
+            <XMasonry
+              targetBlockWidth={375}
+              maxColumns={2}
+              className={classes.container}
+            >
+              {subtopics.map((subtopic, i) => {
+                const subtopics = props.subjectGroup
+                  ? subtopic.nodes.filter(
+                      node =>
+                        node.frontmatter.topic === props.topic &&
+                        node.frontmatter.subject === props.subject
+                    ).length
+                  : subtopic.nodes.filter(
+                      node =>
+                        node.frontmatter.topic === props.topic &&
+                        node.frontmatter.subject === props.subject &&
+                        node.frontmatter.subjectGroup === props.subjectGroup
+                    ).length
 
-              if (subtopics === 0) return []
+                if (subtopics === 0) return []
 
-              counter++
-              return (
-                <XBlock key={i}>
-                  <Box className={classes.card}>
-                    <Zoom
-                      in
-                      style={{
-                        transitionDelay: counter * 75 + "ms",
-                      }}
-                    >
-                      <div>
-                        <SubTopicCard
-                          subtopic={subtopic.fieldValue}
-                          topic={props.topic}
-                          articleCount={subtopics}
-                          subject={subjectLabel}
-                          subjectGroup={
-                            props.subjectGroup ? props.subjectGroup : undefined
-                          }
-                        />
-                      </div>
-                    </Zoom>
-                  </Box>
-                </XBlock>
-              )
-            })}
-          </XMasonry>
+                counter++
+                return (
+                  <XBlock key={i}>
+                    <Box className={classes.card}>
+                      <Zoom
+                        in
+                        style={{
+                          transitionDelay: counter * 75 + "ms",
+                        }}
+                      >
+                        <div>
+                          <SubTopicCard
+                            subtopic={subtopic.fieldValue}
+                            topic={props.topic}
+                            articleCount={subtopics}
+                            subject={subjectLabel}
+                            subjectGroup={
+                              props.subjectGroup
+                                ? props.subjectGroup
+                                : undefined
+                            }
+                          />
+                        </div>
+                      </Zoom>
+                    </Box>
+                  </XBlock>
+                )
+              })}
+            </XMasonry>
+            <BlockAdvert />
+          </>
         )
       }}
     />

@@ -1,14 +1,10 @@
 import React from "react"
 
 import Layout from "../../../../../components/layout"
-
 import TopicList from "../../../../../templates/TopicList"
-
 import { H1 } from "../../../../../components/EasyText"
 import SEO from "../../../../../components/seo"
-import Ad from "../../../../../components/Advert"
 import Breadcrumbs from "../../../../../components/Breadcrumbs"
-
 import { Descriptions } from "../../../../../constants/subjectInfo"
 
 const EnglishLitTopics = () => {
@@ -28,7 +24,6 @@ const EnglishLitTopics = () => {
       />
       <H1 gutterBottom>English Literature</H1>
       <TopicList subject="english literature" subjectGroup="english" />
-      <Ad />
     </Layout>
   )
 }

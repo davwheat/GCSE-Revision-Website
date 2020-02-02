@@ -30,6 +30,7 @@ import { XMasonry, XBlock } from "react-xmasonry"
 import clsx from "clsx"
 
 import Fuse from "fuse.js"
+import { BlockAdvert } from "../components/Ads"
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -201,6 +202,8 @@ const ArticleList = props => {
           {posts.map(renderPosts)}
         </XMasonry>
       )}
+
+      <BlockAdvert />
     </>
   )
 
@@ -286,87 +289,91 @@ const PostCard = props => {
   }
 
   return (
-    <Box className={classes.card}>
-      <Zoom in style={{ transitionDelay: counter * 75 + "ms" }}>
-        <div>
-          <Card>
-            <CardActionArea
-              component={Link}
-              className={clsx("no-underline", "color-inherit")}
-              to={slug.substr(1)}
-            >
-              <CardContent>
-                <H4
-                  component="h2"
-                  color="primary"
-                  className="keepColor"
-                  style={{ marginBottom: theme.spacing(0.75) }}
-                >
-                  {title}
-                </H4>
-                <Subtitle2 component="p" color="textSecondary" gutterBottom>
-                  Published on {date}
-                </Subtitle2>
-
-                {isTripleScience && isHigher ? (
-                  <P paragraph align="center">
-                    [<TripleIcon />
-                    <HigherIcon /> <strong>Triple Science Higher only</strong>]
-                  </P>
-                ) : null}
-                {isTripleScience && !isHigher ? (
-                  <P paragraph align="center">
-                    [<TripleIcon />
-                    <strong>Triple Science only</strong>]
-                  </P>
-                ) : null}
-                {!isTripleScience && isHigher ? (
-                  <P paragraph align="center">
-                    [<HigherIcon />
-                    <strong>Higher only</strong>]
-                  </P>
-                ) : null}
-
-                <P>{description ? description : excerpt}</P>
-              </CardContent>
-            </CardActionArea>
-            <CardActions disableSpacing className={classes.cardActions}>
-              <>
-                <Tooltip title="Estimated time to read" placement="top">
-                  <span>
-                    <TimerIcon color={theme.palette.text.secondary} />
-                  </span>
-                </Tooltip>
-                <P2
-                  color="textSecondary"
-                  style={{
-                    marginLeft: theme.spacing(0.5),
-                    marginRight: theme.spacing(2.5),
-                  }}
-                >
-                  {wordsToTime(wordCount)}
-                </P2>
-                <P2
-                  color="textSecondary"
-                  style={{ marginLeft: theme.spacing(0.5) }}
-                >
-                  {wordCount} words
-                </P2>
-              </>
-              <div className={classes.actionSeparator} />
-              <Link
-                linkIsButton
-                color="primary"
+    <>
+      <Box className={classes.card}>
+        <Zoom in style={{ transitionDelay: counter * 75 + "ms" }}>
+          <div>
+            <Card>
+              <CardActionArea
+                component={Link}
+                className={clsx("no-underline", "color-inherit")}
                 to={slug.substr(1)}
-                className={classes.readButton}
               >
-                Read article
-              </Link>
-            </CardActions>
-          </Card>
-        </div>
-      </Zoom>
-    </Box>
+                <CardContent>
+                  <H4
+                    component="h2"
+                    color="primary"
+                    className="keepColor"
+                    style={{ marginBottom: theme.spacing(0.75) }}
+                  >
+                    {title}
+                  </H4>
+                  <Subtitle2 component="p" color="textSecondary" gutterBottom>
+                    Published on {date}
+                  </Subtitle2>
+
+                  {isTripleScience && isHigher ? (
+                    <P paragraph align="center">
+                      [<TripleIcon />
+                      <HigherIcon /> <strong>Triple Science Higher only</strong>
+                      ]
+                    </P>
+                  ) : null}
+                  {isTripleScience && !isHigher ? (
+                    <P paragraph align="center">
+                      [<TripleIcon />
+                      <strong>Triple Science only</strong>]
+                    </P>
+                  ) : null}
+                  {!isTripleScience && isHigher ? (
+                    <P paragraph align="center">
+                      [<HigherIcon />
+                      <strong>Higher only</strong>]
+                    </P>
+                  ) : null}
+
+                  <P>{description ? description : excerpt}</P>
+                </CardContent>
+              </CardActionArea>
+              <CardActions disableSpacing className={classes.cardActions}>
+                <>
+                  <Tooltip title="Estimated time to read" placement="top">
+                    <span>
+                      <TimerIcon color={theme.palette.text.secondary} />
+                    </span>
+                  </Tooltip>
+                  <P2
+                    color="textSecondary"
+                    style={{
+                      marginLeft: theme.spacing(0.5),
+                      marginRight: theme.spacing(2.5),
+                    }}
+                  >
+                    {wordsToTime(wordCount)}
+                  </P2>
+                  <P2
+                    color="textSecondary"
+                    style={{ marginLeft: theme.spacing(0.5) }}
+                  >
+                    {wordCount} words
+                  </P2>
+                </>
+                <div className={classes.actionSeparator} />
+                <Link
+                  linkIsButton
+                  color="primary"
+                  to={slug.substr(1)}
+                  className={classes.readButton}
+                >
+                  Read article
+                </Link>
+              </CardActions>
+            </Card>
+          </div>
+        </Zoom>
+      </Box>
+      <BlockAdvert />
+    </>
   )
 }
 

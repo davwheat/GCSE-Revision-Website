@@ -22,6 +22,7 @@ import { H1, H4, P2, P, H2 } from "../components/EasyText"
 import Link from "../components/Link"
 
 import { XMasonry, XBlock } from "react-xmasonry"
+import { BlockAdvert } from "../components/Ads"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -58,6 +59,7 @@ const IndexPage = () => {
       <br />
       <H2>Subjects</H2>
       <br />
+      
       <XMasonry
         targetBlockWidth={375}
         maxColumns={2}
@@ -75,6 +77,8 @@ const IndexPage = () => {
           </XBlock>
         ))}
       </XMasonry>
+
+      <BlockAdvert />
     </Layout>
   )
 }

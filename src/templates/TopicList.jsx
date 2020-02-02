@@ -27,6 +27,7 @@ import {
 import { XMasonry, XBlock } from "react-xmasonry"
 
 import { TopicDescriptions } from "../constants/subjectInfo"
+import { BlockAdvert } from "../components/Ads"
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -75,50 +76,53 @@ const TopicList = props => {
         let counter = -1
 
         return (
-          <XMasonry
-            targetBlockWidth={375}
-            maxColumns={2}
-            className={classes.container}
-          >
-            {topics.map((topic, i) => {
-              if (
-                (!props.subjectGroup &&
-                  topic.nodes[0].frontmatter.subject === props.subject) ||
-                (topic.nodes[0].frontmatter.subject === props.subject &&
-                  topic.nodes[0].frontmatter.subjectGroup ===
-                    props.subjectGroup)
-              ) {
-                counter++
-                return (
-                  <XBlock key={i}>
-                    <Box className={classes.card}>
-                      <Zoom
-                        in
-                        style={{
-                          transitionDelay: counter * 75 + "ms",
-                        }}
-                      >
-                        <div>
-                          <TopicCard
-                            topic={topic.fieldValue}
-                            articleCount={topic.totalCount}
-                            subject={subjectLabel}
-                            subjectGroup={
-                              props.subjectGroup
-                                ? props.subjectGroup
-                                : undefined
-                            }
-                          />
-                        </div>
-                      </Zoom>
-                    </Box>
-                  </XBlock>
-                )
-              } else {
-                return []
-              }
-            })}
-          </XMasonry>
+          <>
+            <XMasonry
+              targetBlockWidth={375}
+              maxColumns={2}
+              className={classes.container}
+            >
+              {topics.map((topic, i) => {
+                if (
+                  (!props.subjectGroup &&
+                    topic.nodes[0].frontmatter.subject === props.subject) ||
+                  (topic.nodes[0].frontmatter.subject === props.subject &&
+                    topic.nodes[0].frontmatter.subjectGroup ===
+                      props.subjectGroup)
+                ) {
+                  counter++
+                  return (
+                    <XBlock key={i}>
+                      <Box className={classes.card}>
+                        <Zoom
+                          in
+                          style={{
+                            transitionDelay: counter * 75 + "ms",
+                          }}
+                        >
+                          <div>
+                            <TopicCard
+                              topic={topic.fieldValue}
+                              articleCount={topic.totalCount}
+                              subject={subjectLabel}
+                              subjectGroup={
+                                props.subjectGroup
+                                  ? props.subjectGroup
+                                  : undefined
+                              }
+                            />
+                          </div>
+                        </Zoom>
+                      </Box>
+                    </XBlock>
+                  )
+                } else {
+                  return []
+                }
+              })}
+            </XMasonry>
+            <BlockAdvert />
+          </>
         )
       }}
     />

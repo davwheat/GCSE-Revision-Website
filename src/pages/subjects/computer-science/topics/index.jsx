@@ -6,7 +6,6 @@ import TopicList from "../../../../templates/TopicList"
 
 import { H1, P, H2 } from "../../../../components/EasyText"
 import SEO from "../../../../components/seo"
-import Ad from "../../../../components/Advert"
 import Breadcrumbs from "../../../../components/Breadcrumbs"
 
 const ComputingArticleList = () => {
@@ -52,7 +51,6 @@ const ComputingArticleList = () => {
       </P>
 
       <TopicList subject="computer science" />
-      <Ad />
     </Layout>
   )
 }

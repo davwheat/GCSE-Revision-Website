@@ -4,7 +4,6 @@ import Layout from "../../../components/layout"
 import SEO from "../../../components/seo"
 import { H1, H2, P } from "../../../components/EasyText"
 import Breadcrumbs from "../../../components/Breadcrumbs"
-import Ad from "../../../components/Advert"
 
 import WordOfTheDay from "../../../components/WordOfTheDay"
 
@@ -42,7 +41,6 @@ const SubjectsEnglishPage = () => {
           <ListItemText>English Literature</ListItemText>
         </ListItem>
       </List>
-      <Ad />
     </Layout>
   )
 }
