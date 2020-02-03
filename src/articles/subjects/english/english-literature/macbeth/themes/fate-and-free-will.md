@@ -1,5 +1,5 @@
 ---
-title: "Ambition"
+title: "Fate and Free Will"
 date: "2020-01-15"
 description: "Were the Witches' prophecies destiny, free will, or a combination of both?"
 subject: "english literature"
