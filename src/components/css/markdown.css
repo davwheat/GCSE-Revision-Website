@@ -24,10 +24,3 @@ p .jsx-parser svg.mdi-icon {
   margin: 0 0.05em 0 0.1em;
   vertical-align: -0.1em;
 }
-
-mark, .highlight {
-background: url("/img/highlight-stain.svg");
-background-repeat: no-repeat;
-background-size: 100% 95%;
-padding: 8px 0;
-}
