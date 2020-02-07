@@ -8,7 +8,7 @@ topic: "computer systems"
 
 # Tom Scott Video
 
-To be completely honest, this whole article is summed up in an amazing video by [Tom Scott](https://www.youtube.com/user/enyay), which you can watch below. This article will still contain some content that may not be mentioned in the video that you'll need to know.
+To be completely honest, this whole article is summed up in an amazing video by <mark>[Tom Scott](https://www.youtube.com/user/enyay)</mark>, which you can watch below. This article will still contain some content that may not be mentioned in the video that you'll need to know.
 
 https://www.youtube.com/watch?v=Z5JC9Ve1sfI
 
