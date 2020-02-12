@@ -50,7 +50,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Home" description="GCSE Revise It offers hundreds of revision articles for a multitude of subjects. Revise it today!" />
       <Breadcrumbs items={[{ label: "Home" }]} />
       <H1 gutterBottom>Welcome</H1>
       <P paragraph>
