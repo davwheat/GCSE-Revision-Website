@@ -18,7 +18,7 @@
     "gatsby-plugin-firebase": "^0.1.8",
     "gatsby-plugin-manifest": "^2.2.41",
     "gatsby-plugin-material-ui": "^2.1.6",
-    "gatsby-plugin-offline": "^3.0.34",
+    "gatsby-plugin-offline": "^3.0.35",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-preload-link-crossorigin": "^1.0.2",
     "gatsby-plugin-react-helmet": "^3.1.22",
