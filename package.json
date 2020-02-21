@@ -11,7 +11,7 @@
     "@material-ui/lab": "^4.0.0-alpha.43",
     "clsx": "^1.1.0",
     "css-vars-ponyfill": "^2.2.1",
-    "firebase": "^7.9.0",
+    "firebase": "^7.9.1",
     "fuse.js": "^3.4.6",
     "gatsby": "^2.19.19",
     "gatsby-image": "^2.2.41",
