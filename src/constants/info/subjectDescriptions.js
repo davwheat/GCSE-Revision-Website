@@ -29,4 +29,6 @@ export default {
   articles for every topic in the book!`,
   Physics: `We offer both Triple and Combined Science reference
   articles for every topic in the book!`,
+  Business: `Business is mainly just common sense, but there are
+  some definite key things that you need to learn.`
 }

@@ -32,6 +32,7 @@ import { P, P2, H4 } from "./EasyText"
 import SeededRandom from "seedrandom"
 
 import "./css/WordOfTheDay.css"
+import ErrorOutlineIcon from "mdi-react/ErrorOutlineIcon"
 
 const MakeUrl = word =>
   "https://api.dictionaryapi.dev/api/v1/entries/en/" + word
@@ -159,7 +160,10 @@ const WordOfTheDay = () => {
                 />
               </>
             ) : (
-              <P align="center">Something went wrong.</P>
+              <P color="error" align="center">
+                <ErrorOutlineIcon />{" "}
+                Uh oh, something went wrong!
+              </P>
             )}
           </Box>
         ) : (

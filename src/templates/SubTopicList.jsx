@@ -87,13 +87,13 @@ const SubTopicList = props => {
                   ? subtopic.nodes.filter(
                       node =>
                         node.frontmatter.topic === props.topic &&
-                        node.frontmatter.subject === props.subject
+                        node.frontmatter.subject === props.subject &&
+                        node.frontmatter.subjectGroup === props.subjectGroup
                     ).length
                   : subtopic.nodes.filter(
                       node =>
                         node.frontmatter.topic === props.topic &&
-                        node.frontmatter.subject === props.subject &&
-                        node.frontmatter.subjectGroup === props.subjectGroup
+                        node.frontmatter.subject === props.subject
                     ).length
 
                 if (subtopics === 0) return []

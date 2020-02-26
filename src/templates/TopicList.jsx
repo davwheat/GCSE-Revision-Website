@@ -85,12 +85,33 @@ const TopicList = props => {
               {topics.map((topic, i) => {
                 if (
                   (!props.subjectGroup &&
-                    topic.nodes[0].frontmatter.subject === props.subject) ||
-                  (topic.nodes[0].frontmatter.subject === props.subject &&
-                    topic.nodes[0].frontmatter.subjectGroup ===
-                      props.subjectGroup)
+                    topic.nodes.some(
+                      node => node.frontmatter.subject === props.subject
+                    )) ||
+                  (topic.nodes.some(
+                    node => node.frontmatter.subject === props.subject
+                  ) &&
+                    topic.nodes.some(
+                      node =>
+                        node.frontmatter.subjectGroup === props.subjectGroup
+                    ))
                 ) {
                   counter++
+
+                  const articleCount = topic.nodes.reduce(
+                    (accumulator, currentVal) =>
+                      props.subjectGroup
+                        ? currentVal.frontmatter.subjectGroup ===
+                            props.subjectGroup &&
+                          currentVal.frontmatter.subject === props.subject
+                          ? accumulator + 1
+                          : accumulator
+                        : currentVal.frontmatter.subject === props.subject
+                        ? accumulator + 1
+                        : accumulator,
+                    0
+                  )
+
                   return (
                     <XBlock key={i}>
                       <Box className={classes.card}>
@@ -103,13 +124,9 @@ const TopicList = props => {
                           <div>
                             <TopicCard
                               topic={topic.fieldValue}
-                              articleCount={topic.totalCount}
+                              articleCount={articleCount}
                               subject={subjectLabel}
-                              subjectGroup={
-                                props.subjectGroup
-                                  ? props.subjectGroup
-                                  : undefined
-                              }
+                              subjectGroup={props.subjectGroup}
                             />
                           </div>
                         </Zoom>

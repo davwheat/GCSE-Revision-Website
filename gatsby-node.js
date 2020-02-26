@@ -37,11 +37,9 @@ exports.createPages = async ({ graphql, actions }) => {
       articles: allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
-        edges {
-          node {
-            fields {
-              slug
-            }
+        nodes {
+          fields {
+            slug
           }
         }
       }
@@ -49,7 +47,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
 
   // Create article pages
-  result.data.articles.edges.forEach(({ node }) => {
+  result.data.articles.nodes.forEach(node => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/Article.jsx`),

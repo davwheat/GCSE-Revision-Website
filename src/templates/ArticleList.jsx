@@ -73,12 +73,28 @@ const ArticleList = props => {
               content
             }
           }
+          frontmatter {
+            title
+            date(formatString: "dddd, DD MMMM YYYY")
+            description
+            topic
+            subtopic
+            subject
+            tripleOnly
+            higherOnly
+          }
+          wordCount {
+            words
+          }
+          internal {
+            content
+          }
         }
       }
     }
   `)
 
-  const posts = data.allMarkdownRemark.edges
+  const posts = data.allMarkdownRemark.nodes
 
   let counter = -1
 
@@ -113,13 +129,13 @@ const ArticleList = props => {
   const renderPosts = (post, i) => {
     if (!results) {
       // If it's not the subject we want, ignore it
-      if (post.node.frontmatter.subject !== props.subject) return []
+      if (post.frontmatter.subject !== props.subject) return []
 
       // If it's not the topic we want (and we have told the component a topic) ignore it
-      if (props.topic && post.node.frontmatter.topic !== props.topic) return []
+      if (props.topic && post.frontmatter.topic !== props.topic) return []
 
       // If it's not the subtopic we want (and we have told the component a subtopic) ignore it
-      if (props.subtopic && post.node.frontmatter.subtopic !== props.subtopic)
+      if (props.subtopic && post.frontmatter.subtopic !== props.subtopic)
         return []
 
       counter++
@@ -255,9 +271,9 @@ const PostCard = props => {
     title,
     tripleOnly: isTripleScience,
     higherOnly: isHigher,
-  } = props.post.node.frontmatter
-  const { slug } = props.post.node.fields
-  const wordCount = props.post.node.wordCount.words
+  } = props.post.frontmatter
+  const { slug } = props.post.fields
+  const wordCount = props.post.wordCount.words
 
   const { counter } = props
 

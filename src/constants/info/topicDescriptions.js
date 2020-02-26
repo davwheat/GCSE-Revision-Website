@@ -35,4 +35,8 @@ export default {
   "Computer Science": {
     "Computer Systems": `Everything to do with computers in general, including hardware, boolean logic, etc.`,
   },
+  Business: {
+    "Paper 1": `Paper 1 (J204/01) is all about what businesses do, how they market to consumers, and how people interact, work with, and create businesses.`,
+    "Paper 2": ``,
+  },
 }

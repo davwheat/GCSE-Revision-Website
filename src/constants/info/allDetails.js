@@ -9,6 +9,7 @@ import ScienceIcon from "mdi-react/TestTubeIcon"
 import BiologyIcon from "mdi-react/BacteriaOutlineIcon"
 import ChemistryIcon from "mdi-react/FlaskOutlineIcon"
 import PhysicsIcon from "mdi-react/AtomVariantIcon"
+import BusinessIcon from "mdi-react/StoreOutlineIcon"
 
 export default [
   {
@@ -61,5 +62,12 @@ export default [
         icon: <PhysicsIcon />,
       },
     ],
+  },
+  {
+    name: "Business",
+    description: Descriptions["Business"],
+    url: "subjects/business",
+    unreleased: false,
+    icon: <BusinessIcon />,
   },
 ]

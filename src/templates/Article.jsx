@@ -113,8 +113,6 @@ const Article = props => {
     : []
 
   if (subjectLabel === "Chemistry") {
-    console.log(post.headings)
-
     if (
       !post.headings
         .reduce(
@@ -149,6 +147,12 @@ const Article = props => {
             href: `subjects/${
               subjectGroupUrl ? subjectGroupUrl + "/" : ""
             }${subjectUrl}`,
+          },
+          {
+            label: "Topics",
+            href: `subjects/${
+              subjectGroupUrl ? subjectGroupUrl + "/" : ""
+            }${subjectUrl}/topics`,
           },
           {
             label: ConvertStringToLabel(post.frontmatter.topic),
