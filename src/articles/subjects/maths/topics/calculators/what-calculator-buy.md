@@ -67,15 +67,15 @@ In my opinion, the best calculator is the fx-991 EX as it provides you with a ma
 
 ![CASIO Classwiz fx-991 EX](articles/fx-991ex.png)
 
-The fx-991 EX (991, for short) offers many features, including the ability to: solve quadratic equations, solve simultaneous equations, differentiate, integrate, solve equations (e.g. $2x + 5 = 15 \\times x$), solve matrix calculations, solve quadratic inequalities, calculator the equation of a line (using a calculator 'hack'), generate QR codes to scan with a phone to view graphs and explain how to solve problems you enter into it, and much more.
+The fx-991 EX (991, for short) offers many features, including the ability to: solve quadratic equations, solve simultaneous equations, differentiate, integrate, solve equations (e.g. $2x + 5 = 15 \times x$), solve matrix calculations, solve quadratic inequalities, calculator the equation of a line (using a calculator 'hack'), generate QR codes to scan with a phone to view graphs and explain how to solve problems you enter into it, and much more.
 
-Some people do say, however, that it is unsuitable for GCSEs due to the fact it has differentiation and integration. This is not true. The regulations state that the calculator must not have **symbolic** differentiation and integration, which the 991 does not. It is possible that your school may not allow you to have this as they believe it is against the regulations.
+Some people do say, however, that it is unsuitable for GCSEs due to the fact it has differentiation and integration. **This is not true.** The regulations state that the calculator must not have **symbolic** differentiation and integration, which the 991 does not. It is possible that your school may not allow you to have this as they believe it is against the regulations.
 
 If you want to buy this calculator, I highly recommend contacting your school's exams officer, presenting the evidence that this calculator is allowed according to the JCQ _Instructions for completing examinations_ document so that they are aware that the calculator is allowed.
 
 When contacting my school's exams officer, I received this response:
 
-> Hi &lt;name&gt;,
+> Hi <i>&lt;name&gt;</i>,
 >
 > Firstly well done for doing your research. As you can appreciate there are so many different calculators on the market it is impossible to maintain a list of those calculators that are/aren’t allowed in exams. The key is to check the JCQ regulations which you have done. As long as your calculator does not offer any of the following facilities...
 >
