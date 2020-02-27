@@ -1,5 +1,5 @@
 ---
-title: "Redemption"
+title: "The Christmas Spirit"
 date: "2020-02-26"
 description: "The Christmas Spirit is what Scrooge despises most, at least at the start of the book."
 subject: "english literature"
