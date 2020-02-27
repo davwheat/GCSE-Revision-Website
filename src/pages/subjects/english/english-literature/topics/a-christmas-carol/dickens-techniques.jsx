@@ -27,7 +27,7 @@ const EnglishLitACCTechniquesArticleList = () => {
       <ArticleList
         subject="english literature"
         topic="a christmas carol"
-        subtopic="shakespeare's techniques"
+        subtopic="dickens' techniques"
       />
     </Layout>
   )
