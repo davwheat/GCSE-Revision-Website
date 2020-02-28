@@ -68,7 +68,11 @@ const Image = props => {
     <StaticQuery
       query={graphql`
         query {
-          images: allFile {
+          images: allFile(
+            filter: {
+              extension: { regex: "/(gif|jpe?g|tiff|png|webp|bmp|svg)$/i" }
+            }
+          ) {
             nodes {
               relativePath
               childImageSharp {
