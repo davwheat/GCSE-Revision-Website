@@ -79,10 +79,10 @@ When contacting my school's exams officer, I received this response:
 >
 > Firstly well done for doing your research. As you can appreciate there are so many different calculators on the market it is impossible to maintain a list of those calculators that are/aren’t allowed in exams. The key is to check the JCQ regulations which you have done. As long as your calculator does not offer any of the following facilities...
 >
-> · language translators
-> · symbolic algebra manipulation
-> · symbolic differentiation or integration
-> · communication with other machines or the internet
+> - language translators
+> - symbolic algebra manipulation
+> - symbolic differentiation or integration
+> - communication with other machines or the internet
 >
 > ... and does not have retrievable information stored within it then it will be acceptable for use in an exam.
 >
