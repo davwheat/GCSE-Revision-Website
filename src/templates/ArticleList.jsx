@@ -60,7 +60,7 @@ const ArticleList = props => {
             }
             frontmatter {
               title
-              date(formatString: "dddd, DD MMMM YYYY")
+              date(formatString: "DD MMM 'YY")
               description
               topic
               subtopic

@@ -305,7 +305,7 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         title
-        date(formatString: "DD/MM/YYYY")
+        date(formatString: "DD MMM 'YY")
         description
         subject
         subjectGroup
