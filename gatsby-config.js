@@ -154,6 +154,6 @@ module.exports = {
         // exclude: ["/category/*", `/path/to/page`],
       },
     },
-    `gatsby-plugin-preload-link-crossorigin`,
+    //`gatsby-plugin-preload-link-crossorigin`,
   ],
 }
