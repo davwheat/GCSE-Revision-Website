@@ -53,8 +53,6 @@ const ArticleList = props => {
       allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
         edges {
           node {
-            excerpt(pruneLength: 150, truncate: true)
-            content: excerpt(pruneLength: 2147483647, truncate: false)
             fields {
               slug
             }
@@ -131,7 +129,7 @@ const ArticleList = props => {
           id: i,
           title: post.node.frontmatter.title,
           description: post.node.frontmatter.description,
-          content: post.node.content,
+          content: post.node.internal.content,
         })
       }
 
@@ -251,7 +249,6 @@ const useStylesCard = makeStyles(theme => ({
 }))
 
 const PostCard = props => {
-  const { excerpt } = props.post.node
   const {
     date,
     description,
@@ -332,7 +329,7 @@ const PostCard = props => {
                     </P>
                   ) : null}
 
-                  <P>{description ? description : excerpt}</P>
+                  <P>{description ? description : ""}</P>
                 </CardContent>
               </CardActionArea>
               <CardActions disableSpacing className={classes.cardActions}>
