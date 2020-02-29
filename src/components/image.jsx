@@ -87,7 +87,9 @@ const Image = props => {
           }
         }
       `}
-      render={data => {
+      render={images => {
+        const data = images.images
+
         const image = data.nodes.find(n => {
           return n.relativePath.includes(props.filename)
         })
