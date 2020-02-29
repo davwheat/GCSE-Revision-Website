@@ -59,7 +59,6 @@ const SubTopicList = props => {
           subtopics: allMarkdownRemark {
             group(field: frontmatter___subtopic) {
               fieldValue
-              totalCount
               nodes {
                 frontmatter {
                   subjectGroup
