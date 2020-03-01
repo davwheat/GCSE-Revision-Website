@@ -1,6 +1,6 @@
 import React from "react"
 
-import SubTopicList from "../../../../../../templates/SubTopicList"
+import SubTopicList from "../../../../../../templates/Lists/English Literature/SubTopicList"
 import Layout from "../../../../../../components/layout"
 import SEO from "../../../../../../components/seo"
 import Breadcrumbs from "../../../../../../components/Breadcrumbs"
@@ -19,7 +19,11 @@ const EnglishLitMacbethArticleList = () => {
         ]}
       />
       <H1 gutterBottom>English Literature: Macbeth</H1>
-      <SubTopicList subjectGroup="english" subject="english literature" topic="macbeth" />
+      <SubTopicList
+        subjectGroup="english"
+        subject="english literature"
+        topic="macbeth"
+      />
     </Layout>
   )
 }

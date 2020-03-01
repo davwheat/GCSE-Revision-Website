@@ -38,31 +38,6 @@ module.exports = {
     siteUrl: "https://gcsereviseit.co.uk",
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Poppins`,
-            subsets: [`latin-ext`],
-            variants: [
-              `400`,
-              `400i`,
-              `500`,
-              `500i`,
-              `600`,
-              `600i`,
-              `700`,
-              `700i`,
-            ],
-          },
-          {
-            family: `Fira Mono`,
-            variants: [`400`, `400i`, `700`, `700i`],
-          },
-        ],
-      },
-    },
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-react-helmet`,
