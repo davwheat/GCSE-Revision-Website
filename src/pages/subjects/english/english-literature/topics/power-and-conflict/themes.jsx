@@ -4,7 +4,7 @@ import Layout from "../../../../../../components/layout"
 import SEO from "../../../../../../components/seo"
 import Breadcrumbs from "../../../../../../components/Breadcrumbs"
 import { H1 } from "../../../../../../components/EasyText"
-import ArticleList from "../../../../../../templates/ArticleList"
+import ArticleList from "../../../../../../templates/Lists/English Literature/ArticleList"
 
 const EnglishLitPowerAndConflictThemesArticleList = () => {
   return (

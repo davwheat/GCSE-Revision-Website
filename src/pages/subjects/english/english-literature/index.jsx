@@ -4,12 +4,12 @@ import Layout from "../../../../components/layout"
 import SEO from "../../../../components/seo"
 import { H1, H2, P, P2 } from "../../../../components/EasyText"
 import Breadcrumbs from "../../../../components/Breadcrumbs"
-import TopicList from "../../../../templates/TopicList"
+import TopicList from "../../../../templates/Lists/English Literature/TopicList"
 
 import { Descriptions } from "../../../../constants/subjectInfo"
 import Link from "../../../../components/Link"
 
-const SubjectsBiologyPage = () => {
+const EnglishLiteratureTopicsListPage = () => {
   return (
     <Layout>
       <SEO
@@ -64,4 +64,4 @@ const SubjectsBiologyPage = () => {
   )
 }
 
-export default SubjectsBiologyPage
+export default EnglishLiteratureTopicsListPage

@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../../../../../components/layout"
-import TopicList from "../../../../../templates/TopicList"
+import TopicList from "../../../../../templates/Lists/English Literature/TopicList"
 import { H1 } from "../../../../../components/EasyText"
 import SEO from "../../../../../components/seo"
 import Breadcrumbs from "../../../../../components/Breadcrumbs"
