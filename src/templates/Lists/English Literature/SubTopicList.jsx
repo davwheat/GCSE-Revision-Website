@@ -1,9 +1,8 @@
 /* eslint-disable indent */
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql, StaticQuery } from "gatsby"
 
-import { H4, P2 } from "../components/EasyText"
+import { H4, P2 } from "../../../components/EasyText"
 import {
   Card,
   CardContent,
@@ -16,18 +15,19 @@ import {
 } from "@material-ui/core"
 import ArticlesIcon from "mdi-react/NewspaperVariantMultipleOutlineIcon"
 
-import Link from "../components/Link"
+import Link from "../../../components/Link"
 
 import {
   ConvertStringToUrl,
   ConvertStringToTopicUrl,
   ConvertTagToString,
-} from "../functions/stringManipulations"
+} from "../../../functions/stringManipulations"
 
 import { XMasonry, XBlock } from "react-xmasonry"
 
-import { TopicDescriptions } from "../constants/subjectInfo"
-import { BlockAdvert } from "../components/Ads"
+import { TopicDescriptions } from "../../../constants/subjectInfo"
+import { BlockAdvert } from "../../../components/Ads"
+import SubtopicListQuery from "../../Queries/English Literature/subtopiclist-query"
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -52,87 +52,47 @@ const SubTopicList = props => {
 
   const classes = useStyles()
 
-  return (
-    <StaticQuery
-      query={graphql`
-        {
-          subtopics: allMarkdownRemark {
-            group(field: frontmatter___subtopic) {
-              fieldValue
-              nodes {
-                frontmatter {
-                  subjectGroup
-                  subject
-                  topic
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => {
-        const subtopics = data.subtopics.group
+  function renderCallback(data) {
+    return (
+      <>
+        <XMasonry
+          targetBlockWidth={375}
+          maxColumns={2}
+          className={classes.container}
+        >
+          {data.map((subtopic, i) => {
+            return (
+              <XBlock key={i}>
+                <Box className={classes.card}>
+                  <Zoom
+                    in
+                    style={{
+                      transitionDelay: i * 75 + "ms",
+                    }}
+                  >
+                    <div>
+                      <SubTopicCard
+                        subtopic={subtopic.name}
+                        topic={props.topic}
+                        articleCount={subtopic.articleCount}
+                        subject={subjectLabel}
+                        subjectGroup={
+                          props.subjectGroup ? props.subjectGroup : undefined
+                        }
+                      />
+                    </div>
+                  </Zoom>
+                </Box>
+              </XBlock>
+            )
+          })}
+        </XMasonry>
+        <BlockAdvert />
+      </>
+    )
+  }
 
-        let counter = -1
-
-        return (
-          <>
-            <XMasonry
-              targetBlockWidth={375}
-              maxColumns={2}
-              className={classes.container}
-            >
-              {subtopics.map((subtopic, i) => {
-                const subtopics = props.subjectGroup
-                  ? subtopic.nodes.filter(
-                      node =>
-                        node.frontmatter.topic === props.topic &&
-                        node.frontmatter.subject === props.subject
-                    ).length
-                  : subtopic.nodes.filter(
-                      node =>
-                        node.frontmatter.topic === props.topic &&
-                        node.frontmatter.subject === props.subject &&
-                        node.frontmatter.subjectGroup === props.subjectGroup
-                    ).length
-
-                if (subtopics === 0) return []
-
-                counter++
-                return (
-                  <XBlock key={i}>
-                    <Box className={classes.card}>
-                      <Zoom
-                        in
-                        style={{
-                          transitionDelay: counter * 75 + "ms",
-                        }}
-                      >
-                        <div>
-                          <SubTopicCard
-                            subtopic={subtopic.fieldValue}
-                            topic={props.topic}
-                            articleCount={subtopics}
-                            subject={subjectLabel}
-                            subjectGroup={
-                              props.subjectGroup
-                                ? props.subjectGroup
-                                : undefined
-                            }
-                          />
-                        </div>
-                      </Zoom>
-                    </Box>
-                  </XBlock>
-                )
-              })}
-            </XMasonry>
-            <BlockAdvert />
-          </>
-        )
-      }}
-    />
-  )
+  return <SubtopicListQuery topic={props.topic} callback={renderCallback} />
 }
 
 SubTopicList.propTypes = {
