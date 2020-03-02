@@ -29,6 +29,7 @@ export default {
     Physics: {
       "Key Ideas": `You'll need to know about these for every paper, so make sure you learn them!`,
       "Topic 2: Electricity": `It'll make you loopy at first, but you'll soon get into the flow of it. Just learn a handful rules, a spoonful of equations, and a sprinkle of diagrams and you'll be all set.`,
+      "Topic 6: Waves": `Waves, frequency, lenses: it all gives me headaches. Some people might say it... megahertz...`,
     },
   },
   "Computer Science": {
