@@ -65,7 +65,7 @@
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-flowtype": "^4.6.0",
-    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "firebase-tools": "^7.14.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.8",
