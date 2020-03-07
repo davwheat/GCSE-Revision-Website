@@ -11,18 +11,18 @@ import Breadcrumbs from "../../../../../components/Breadcrumbs"
 const PhysicsTopicList = () => {
   return (
     <Layout>
-      <SEO title="Chemistry Topics" />
+      <SEO title="Physics Topics" />
       <Breadcrumbs
         items={[
           { label: "Home", href: "" },
           { label: "Science", href: "subjects/science" },
-          { label: "Chemistry", href: "subjects/science/chemistry" },
+          { label: "Physics", href: "subjects/science/physics" },
           { label: "Topics" },
         ]}
       />
 
-      <H1 gutterBottom>Chemistry Topics</H1>
-      <TopicList subject="chemistry" subjectGroup="science" />
+      <H1 gutterBottom>Physics Topics</H1>
+      <TopicList subject="physics" subjectGroup="science" />
     </Layout>
   )
 }
