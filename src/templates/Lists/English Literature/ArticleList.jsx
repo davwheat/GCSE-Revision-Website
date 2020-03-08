@@ -42,7 +42,6 @@ const ArticleList = props => {
 
   const [FuseSearch, setFuseSearch] = useState(null)
   const [SearchQuery, setSearchQuery] = useState(null)
-  const [Timeout, setTimeoutId] = useState(null)
 
   const [AllPosts, setAllPosts] = useState(null)
 
