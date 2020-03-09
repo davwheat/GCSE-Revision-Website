@@ -10,7 +10,7 @@ subtopic: "dickens' techniques"
 
 # Dickens uses symbols to develop his ideas
 
-- Marley's chain was forged him "_link by link_" of his "_own free will_". The fact that it's made out of cash-boxes, keys, padlocks and ledgers symbolises Marley's obsession with money and how that led him to selfishly ignore his "_fellowmen_".
+- Marley's chain was forged "_link by link_" from his "_own free will_". The fact that it's made out of '_cash-boxes_', '_keys_', '_padlocks_' and '_ledgers_' symbolises Marley's obsession with money and how that led him to selfishly ignore his "_fellowmen_".
 - The children, Ignorance and Want, are clear symbols in the novel. They personify the problems caused by society's neglect of the poor.
 - There are many symbols associated with the ghosts, for example:
   - The "_bright, clear jet of light_" that shines from the Ghost of Christmas Past's head could symbolise the truth that can be found in memories.
