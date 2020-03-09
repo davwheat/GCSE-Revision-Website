@@ -55,7 +55,7 @@
     "remark-math": "^2.0.0",
     "seedrandom": "^3.0.5",
     "typeface-fira-mono": "0.0.72",
-    "whatwg-fetch": "^3.0.0"
+    "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.12.0",
