@@ -12,7 +12,7 @@
     "clsx": "^1.1.0",
     "css-vars-ponyfill": "^2.2.1",
     "firebase": "^7.10.0",
-    "fuse.js": "^3.6.0",
+    "fuse.js": "^3.6.1",
     "gatsby": "^2.19.32",
     "gatsby-image": "^2.2.43",
     "gatsby-plugin-firebase": "^0.1.8",
@@ -37,7 +37,7 @@
     "js-cookie": "^2.2.1",
     "katex": "^0.11.1",
     "mdi-react": "^7.0.0",
-    "notistack": "^0.9.8",
+    "notistack": "^0.9.9",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-anchor-link-smooth-scroll": "git+https://github.com/john555/react-anchor-link-smooth-scroll.git",
@@ -55,7 +55,7 @@
     "remark-math": "^2.0.0",
     "seedrandom": "^3.0.5",
     "typeface-fira-mono": "0.0.72",
-    "whatwg-fetch": "^2.0.4"
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.12.0",
