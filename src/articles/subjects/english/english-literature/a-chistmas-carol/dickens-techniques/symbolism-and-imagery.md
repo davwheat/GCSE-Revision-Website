@@ -10,7 +10,7 @@ subtopic: "dickens' techniques"
 
 # Dickens uses symbols to develop his ideas
 
-- Marley's chain was forged him "_link by link_" of his "_own free will_". The fact that it's made out of cash-boxes, keys, padlocks and ledgers symbolises Marley's obsession with money and how that led him to selfishly ignore his "_fellowmen_".
+- Marley's chain was forged "_link by link_" from his "_own free will_". The fact that it's made out of '_cash-boxes_', '_keys_', '_padlocks_' and '_ledgers_' symbolises Marley's obsession with money and how that led him to selfishly ignore his "_fellowmen_".
 - The children, Ignorance and Want, are clear symbols in the novel. They personify the problems caused by society's neglect of the poor.
 - There are many symbols associated with the ghosts, for example:
   - The "_bright, clear jet of light_" that shines from the Ghost of Christmas Past's head could symbolise the truth that can be found in memories.
@@ -23,7 +23,7 @@ subtopic: "dickens' techniques"
 - Several of these images of fire and brightness are shown to Scrooge by the Ghost of Christmas Present. It shows miners "_assembled round a glowing fire_" and the lighthouse men's fire that throws out a "_ray of brightness on the awful sea_". All of these images use fire as a symbol of comfort and celebration.
 - This idea is developed further when Scrooge and the spirit travel along the streets, they see the "_brightness of the roaring fires_" lighting up kitchens and parlours, and the "_flickering of the blaze_" that reveals preparations for "_cosy_" dinners. All these joyful scenes take place in the glow of fires.
 - In contrast, Scrooge keeps his rooms dark because "_darkness is cheap_". He has "_a very small fire_" in his offices and "_a very low fire_" at home. The lack of warmth and light in Scrooge's life symbolises his lack of joy and companionship.
-  At the end, Scrooge tells Bob to "_make up the fires_". This is symbolic of Scrooge's transformation, and ie fact that he has learnt to understand the importance of showing kindness and generosity to others.
+  At the end, Scrooge tells Bob to "_make up the fires_". This is symbolic of Scrooge's transformation, and represents the fact that he has learnt to understand the importance of showing kindness and generosity to others.
 
 ```react
 <Advert />
@@ -31,7 +31,7 @@ subtopic: "dickens' techniques"
 
 # Music is an important symbol of celebration and happiness
 
-- Music is central to the Christmas celebrations at Fezziwig's party and at Fred's house, and Dickens also mentions the singing of Tiny Tim, the miners and the lighthouse men.
+- Music is central to the Christmas celebrations at Fezziwig's party and at Fred's house, and Dickens also mentions the singing of Tiny Tim, the miners, and the lighthouse men.
 - There's a strong contrast between the joy and happiness of Fred's "_musical family_" and the lonely, miserable Scrooge, whose life is without music (this is emphasised when Scrooge scares away the carol singer in Chapter One).
 - Music is also shown to have a powerful emotional effect. When Scrooge hears some music performed by his niece (Fred's wife), he wonders whether if he'd been able to listen to it more, "_he might have cultivated the kindnesses of life for his own happiness with his own hands_". Dickens is arguing that music is so powerful in creating happiness that it could've transformed Scrooge's life.
 
