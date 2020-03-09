@@ -34,7 +34,7 @@ import {
   makeStyles,
 } from "@material-ui/core"
 
-import GitHubIcon from "mdi-react/GithubCircleIcon"
+import GitHubIcon from "mdi-react/GithubIcon"
 import CloseIcon from "mdi-react/CloseIcon"
 
 import Link from "./Link"
