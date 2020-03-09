@@ -318,14 +318,12 @@ const PostCard = props => {
                   ) : null}
                   {isTripleScience && !isHigher ? (
                     <P paragraph align="center">
-                      [<TripleIcon />
-                      <strong>Triple Science only</strong>]
+                      [<TripleIcon /> <strong>Triple Science only</strong>]
                     </P>
                   ) : null}
                   {!isTripleScience && isHigher ? (
                     <P paragraph align="center">
-                      [<HigherIcon />
-                      <strong>Higher only</strong>]
+                      [<HigherIcon /> <strong>Higher only</strong>]
                     </P>
                   ) : null}
 
