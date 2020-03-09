@@ -19,7 +19,7 @@ import {
 
 import ErrorIcon from "mdi-react/ErrorOutlineIcon"
 import SearchIcon from "mdi-react/SearchIcon"
-import TimerIcon from "mdi-react/TimerIcon"
+import TimerIcon from "mdi-react/TimerOutlineIcon"
 
 import Link from "../../../components/Link"
 
