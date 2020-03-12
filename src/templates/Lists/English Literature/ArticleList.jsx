@@ -63,11 +63,10 @@ const ArticleList = props => {
     }
 
     const posts = data.allMarkdownRemark.nodes.filter(
-      post => (
+      post =>
         post.frontmatter.topic === props.topic &&
-        post.frontmatter.subtopic === props.subtopic
-      )
-    ) 
+        (!props.subtopic || post.frontmatter.subtopic === props.subtopic)
+    )
 
     let tempPosts = []
 

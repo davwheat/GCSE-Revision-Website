@@ -1,9 +1,9 @@
 import React from "react"
-import ArticleList from "../../../../../templates/ArticleList"
-import Layout from "../../../../../components/layout"
-import SEO from "../../../../../components/seo"
-import Breadcrumbs from "../../../../../components/Breadcrumbs"
-import { H1 } from "../../../../../components/EasyText"
+import ArticleList from "../../../../templates/Lists/Maths/ArticleList"
+import Layout from "../../../../components/layout"
+import SEO from "../../../../components/seo"
+import Breadcrumbs from "../../../../components/Breadcrumbs"
+import { H1 } from "../../../../components/EasyText"
 
 const MathsArticleList = () => {
   return (

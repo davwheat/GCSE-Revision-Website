@@ -4,7 +4,7 @@ import Layout from "../../../../components/layout"
 import SEO from "../../../../components/seo"
 import { H1, H2,  P } from "../../../../components/EasyText"
 import Breadcrumbs from "../../../../components/Breadcrumbs"
-import TopicList from "../../../../templates/TopicList"
+import TopicList from "../../../../templates/Lists/English Language/TopicList"
 
 import { Descriptions } from "../../../../constants/subjectInfo"
 import Link from "../../../../components/Link"

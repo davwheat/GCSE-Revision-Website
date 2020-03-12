@@ -7,7 +7,12 @@ export default function ArticleListQuery({ callback }) {
     {
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: ASC }
-        filter: { frontmatter: { subject: { eq: "english literature" } } }
+        filter: {
+          frontmatter: {
+            subjectGroup: { eq: "english" }
+            subject: { eq: "english literature" }
+          }
+        }
       ) {
         nodes {
           fields {
