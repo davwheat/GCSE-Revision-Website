@@ -10,7 +10,7 @@ export default function ArticleListQuery({ callback }) {
         filter: {
           frontmatter: {
             subjectGroup: { eq: "english" }
-            subject: { eq: "english literature" }
+            subject: { eq: "english language" }
           }
         }
       ) {
