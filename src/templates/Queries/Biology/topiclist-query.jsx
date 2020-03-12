@@ -2,21 +2,20 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 
-export default function SubtopicListQuery({ callback, topic }) {
+export default function TopicListQuery({ callback }) {
   const data = useStaticQuery(graphql`
     {
-      subtopics: allMarkdownRemark(
-        sort: { fields: frontmatter___subtopic, order: ASC }
+      topics: allMarkdownRemark(
+        sort: { fields: frontmatter___topic, order: ASC }
         filter: {
           frontmatter: {
             subjectGroup: { eq: "science" }
-            subject: { eq: "physics" }
+            subject: { eq: "biology" }
           }
         }
       ) {
         nodes {
           frontmatter {
-            subtopic
             topic
           }
         }
@@ -24,20 +23,17 @@ export default function SubtopicListQuery({ callback, topic }) {
     }
   `)
 
-  const filteredData = data.subtopics.nodes.reduce((acc, current) => {
-    // skip articles if they're in the wrong topic
-    if (current.frontmatter.topic !== topic) return acc
-
+  const filteredData = data.topics.nodes.reduce((acc, current) => {
     let output = acc
-    let subtopicNameMap = output.map(function(e) {
+    let topicNameMap = output.map(function(e) {
       return e.name
     })
-    let index = subtopicNameMap.indexOf(current.frontmatter.subtopic)
+    let index = topicNameMap.indexOf(current.frontmatter.topic)
 
     if (index === -1) {
       // If topic isn't in the list yet, add it!
       output.push({
-        name: current.frontmatter.subtopic,
+        name: current.frontmatter.topic,
         articleCount: 1,
       })
     } else {
@@ -51,7 +47,6 @@ export default function SubtopicListQuery({ callback, topic }) {
   return <>{callback(filteredData)}</>
 }
 
-SubtopicListQuery.propTypes = {
+TopicListQuery.propTypes = {
   callback: PropTypes.func.isRequired,
-  topic: PropTypes.string.isRequired,
 }
