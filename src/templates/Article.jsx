@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 
@@ -33,7 +33,7 @@ import {
 } from "../functions/stringManipulations"
 import PeriodicTable from "../components/PeriodicTable"
 import Link from "../components/Link"
-import { useFirebase } from "gatsby-plugin-firebase"
+import firebase from "gatsby-plugin-firebase"
 
 String.prototype.trimRight = function(charList) {
   if (charList === undefined) charList = "s"
@@ -62,15 +62,9 @@ const useShareBtnStyles = makeStyles(theme => ({
 }))
 
 const Article = props => {
-  const [Firebase, setFirebase] = useState(null)
-
-  useFirebase(firebase => {
-    setFirebase(firebase)
+  useEffect(() => {
+    firebase.analytics().logEvent("article_rendered")
   })
-
-  if (Firebase) {
-    Firebase.analytics().logEvent("article_rendered")
-  }
 
   const classes = useShareBtnStyles()
   const theme = useTheme()

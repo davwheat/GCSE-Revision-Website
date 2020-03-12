@@ -6,7 +6,11 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-// You can delete this file if you're not using it
+if (typeof window !== "undefined") {
+  require("firebase/performance")
+  require("firebase/analytics")
+  require("firebase/messaging")
+}
 
 const React = require("react"),
   { renderToString } = require("react-dom/server"),
