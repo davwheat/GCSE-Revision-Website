@@ -34,8 +34,9 @@ module.exports = {
   siteMetadata: {
     title: `GCSE: Revise It!`,
     description: `A free revision website aimed at GCSE students.`,
-    author: `@davwheat`,
+    author: `David Wheatley`,
     siteUrl: "https://gcsereviseit.co.uk",
+    version: `1.0.0a-beta`,
   },
   plugins: [
     {
@@ -130,15 +131,15 @@ module.exports = {
     {
       resolve: "gatsby-plugin-firebase",
       options: {
-        features: {
-          auth: false,
-          database: false,
-          firestore: false,
-          storage: false,
-          messaging: true,
-          functions: false,
-          performance: true,
-          analytics: true,
+        credentials: {
+          apiKey: "AIzaSyAUsSHGZ3LabYNchpn3mrCGd1hmzraTqus",
+          authDomain: "gcse-revision-site.firebaseapp.com",
+          databaseURL: "https://gcse-revision-site.firebaseio.com",
+          projectId: "gcse-revision-site",
+          storageBucket: "gcse-revision-site.appspot.com",
+          messagingSenderId: "362657041117",
+          appId: "1:362657041117:web:0a4feb1735a34648166934",
+          measurementId: "G-NNZ4B2E33G",
         },
       },
     },

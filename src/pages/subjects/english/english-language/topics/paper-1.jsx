@@ -1,6 +1,6 @@
 import React from "react"
 
-import ArticleList from "../../../../../templates/ArticleList"
+import ArticleList from "../../../../../templates/Lists/English Language/ArticleList"
 import Layout from "../../../../../components/layout"
 import SEO from "../../../../../components/seo"
 import Breadcrumbs from "../../../../../components/Breadcrumbs"

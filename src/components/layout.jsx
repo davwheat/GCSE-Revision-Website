@@ -34,7 +34,6 @@ import {
   makeStyles,
 } from "@material-ui/core"
 
-import GitHubIcon from "mdi-react/GithubIcon"
 import CloseIcon from "mdi-react/CloseIcon"
 
 import Link from "./Link"
@@ -44,7 +43,7 @@ import { Body2 } from "./EasyText"
 
 import { SnackbarProvider, useSnackbar } from "notistack"
 
-import { useFirebase } from "gatsby-plugin-firebase"
+import firebase from "gatsby-plugin-firebase"
 import { PerformanceTest } from "../functions/performanceTest"
 
 import cssVars from "css-vars-ponyfill"
@@ -93,21 +92,16 @@ const Layout = ({ children, type }) => {
       site {
         siteMetadata {
           title
+          version
         }
       }
     }
   `)
 
-  const [Firebase, setFirebase] = useState(null)
-
-  useFirebase(firebase => {
-    setFirebase(firebase)
+  useEffect(() => {
+    firebase.analytics().logEvent("app_rendered")
+    firebase.performance()
   })
-
-  if (Firebase) {
-    Firebase.analytics().logEvent("app_rendered")
-    Firebase.performance()
-  }
 
   const notistackRef = React.createRef()
   const onClickDismiss = key => () => {
@@ -117,31 +111,16 @@ const Layout = ({ children, type }) => {
   const LargeScreen = useMediaQuery("(min-width:600px)")
 
   const FooterContent = (
-    <>
-      {LargeScreen ? (
-        <Box textAlign="center">
-          <Body2>
-            &copy; {new Date().getFullYear()}
-            {"   "}|{"   "}
-            <Link to="https://github.com/davwheat" hasExternalLinkIcon={false}>
-              <GitHubIcon size={20} className="footer-icon" />
-              davwheat
-            </Link>
-          </Body2>
-        </Box>
-      ) : (
-        <Box textAlign="center">
-          <Body2 style={{ fontSize: 13 }}>
-            &copy; {new Date().getFullYear()}
-            {"   "}|{"   "}
-            <Link to="https://github.com/davwheat" hasExternalLinkIcon={false}>
-              <GitHubIcon size={18} className="footer-icon" />
-              davwheat
-            </Link>
-          </Body2>
-        </Box>
-      )}
-    </>
+    <Box textAlign="center">
+      <Body2>
+        &copy; {new Date().getFullYear()}{" "}
+        <Link to="https://github.com/davwheat" hasExternalLinkIcon={false}>
+          David Wheatley
+        </Link>{" "}
+        | {LargeScreen ? `Version ` : `v`}
+        {data.site.siteMetadata.version}
+      </Body2>
+    </Box>
   )
 
   const [OverrideNotificationPopup, setOverrideNotificationPopup] = useState(
@@ -206,7 +185,7 @@ const Layout = ({ children, type }) => {
               )}
             >
               <NotificationPermission
-                Firebase={Firebase}
+                Firebase={firebase}
                 override={OverrideNotificationPopup}
                 resetOverride={() => {
                   setOverrideNotificationPopup(false)
@@ -218,37 +197,20 @@ const Layout = ({ children, type }) => {
           </Container>
         </PageContents>
 
-        {LargeScreen ? (
-          <Paper
-            component="footer"
-            style={{
-              position: "fixed",
-              bottom: 0,
-              padding: theme.spacing(1.5),
-              paddingBottom: theme.spacing(1.75),
-              width: "100vw",
-              zIndex: 99,
-            }}
-            elevation={4}
-          >
-            {FooterContent}
-          </Paper>
-        ) : (
-          <Paper
-            component="footer"
-            style={{
-              position: "fixed",
-              bottom: 0,
-              padding: theme.spacing(1),
-              paddingBottom: theme.spacing(1.25),
-              width: "100vw",
-              zIndex: 99,
-            }}
-            elevation={8}
-          >
-            {FooterContent}
-          </Paper>
-        )}
+        <Paper
+          component="footer"
+          style={{
+            position: "absolute",
+            bottom: 0,
+            padding: theme.spacing(1.5),
+            paddingBottom: theme.spacing(1.75),
+            width: "100vw",
+            zIndex: 99,
+          }}
+          elevation={0}
+        >
+          {FooterContent}
+        </Paper>
       </MuiThemeProvider>
     </React.StrictMode>
   )
@@ -266,12 +228,13 @@ Layout.propTypes = {
 
 export default Layout
 
-const NotificationPermission = ({ Firebase, override, resetOverride }) => {
+const NotificationPermission = ({ override, resetOverride }) => {
   const { enqueueSnackbar, closeSnackbar } = useSnackbar()
   const [Open, setOpen] = useState(false)
+  const [FCM, setFcmToken] = useState(null)
 
   const getToken = async () => {
-    const FCM = Firebase ? Firebase.messaging() : null
+    const FCM = firebase.messaging()
 
     const token = await FCM.getToken()
 
@@ -352,13 +315,13 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
     // hideNotificationDialog()
   }
 
-  if (Firebase) {
+  useEffect(() => {
     if (override) {
       overrideNotificationPopup()
       return null
     }
 
-    if (Firebase.messaging.isSupported()) {
+    if (firebase.messaging.isSupported()) {
       if (!["granted", "denied"].includes(Notification.permission)) {
         let d = new Date()
 
@@ -389,7 +352,7 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
           )
         }
       } else if (Notification.permission !== "denied") {
-        const FCM = Firebase ? Firebase.messaging() : null
+        const FCM = firebase.messaging()
 
         // Callback fired if Instance ID token is updated.
         FCM &&
@@ -398,21 +361,25 @@ const NotificationPermission = ({ Firebase, override, resetOverride }) => {
             await getToken()
           })
 
-        Firebase.analytics().setUserProperties({ allowed_notifications: "yes" })
+        firebase.analytics().setUserProperties({
+          allowed_notifications: "yes",
+        })
 
         getToken()
       } else {
-        Firebase.analytics().setUserProperties({ allowed_notifications: "no" })
+        firebase.analytics().setUserProperties({
+          allowed_notifications: "no",
+        })
       }
     } else {
       console.warn(
         "You're using a terrible browser that doesn't support the web's notification standard. SHAME! SHAME! SHAME! https://www.youtube.com/watch?v=SrDSqODtEFM"
       )
-      Firebase.analytics().setUserProperties({
+      firebase.analytics().setUserProperties({
         allowed_notifications: "unsupported",
       })
     }
-  }
+  })
 
   return (
     <Dialog

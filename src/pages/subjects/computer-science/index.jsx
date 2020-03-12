@@ -7,7 +7,7 @@ import Link from "../../../components/Link"
 import Breadcrumbs from "../../../components/Breadcrumbs"
 
 import { Descriptions } from "../../../constants/subjectInfo"
-import TopicList from "../../../templates/TopicList"
+import TopicList from "../../../templates/Lists/Computing/TopicList"
 import { BlockAdvert } from "../../../components/Ads"
 
 const SubjectsComputingPage = () => {
