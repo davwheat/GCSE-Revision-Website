@@ -34,7 +34,7 @@ import SeededRandom from "seedrandom"
 import "./css/WordOfTheDay.css"
 
 const MakeUrl = word =>
-  "https://googledictionaryapi.eu-gb.mybluemix.net/?define=" + word
+  "https://api.dictionaryapi.dev/api/v1/entries/en/" + word
 
 const WordOfTheDay = () => {
   const theme = useTheme()
@@ -132,7 +132,8 @@ const WordOfTheDay = () => {
   return (
     <Card className={classes.card}>
       <CardContent component={Box}>
-        {!stateWord ? (
+        {!stateWord ||
+        (stateWord.title && stateWord.title === `Word not found`) ? (
           <Box style={{ top: -8 }}>
             {stateWord === null ? (
               <>
