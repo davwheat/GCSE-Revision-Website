@@ -34,7 +34,6 @@ import {
   makeStyles,
 } from "@material-ui/core"
 
-import GitHubIcon from "mdi-react/GithubIcon"
 import CloseIcon from "mdi-react/CloseIcon"
 
 import Link from "./Link"
@@ -93,6 +92,7 @@ const Layout = ({ children, type }) => {
       site {
         siteMetadata {
           title
+          version
         }
       }
     }
@@ -117,31 +117,15 @@ const Layout = ({ children, type }) => {
   const LargeScreen = useMediaQuery("(min-width:600px)")
 
   const FooterContent = (
-    <>
-      {LargeScreen ? (
-        <Box textAlign="center">
-          <Body2>
-            &copy; {new Date().getFullYear()}
-            {"   "}|{"   "}
-            <Link to="https://github.com/davwheat" hasExternalLinkIcon={false}>
-              <GitHubIcon size={20} className="footer-icon" />
-              davwheat
-            </Link>
-          </Body2>
-        </Box>
-      ) : (
-        <Box textAlign="center">
-          <Body2 style={{ fontSize: 13 }}>
-            &copy; {new Date().getFullYear()}
-            {"   "}|{"   "}
-            <Link to="https://github.com/davwheat" hasExternalLinkIcon={false}>
-              <GitHubIcon size={18} className="footer-icon" />
-              davwheat
-            </Link>
-          </Body2>
-        </Box>
-      )}
-    </>
+    <Box textAlign="center">
+      <Body2>
+        &copy; {new Date().getFullYear()}{" "}
+        <Link to="https://github.com/davwheat" hasExternalLinkIcon={false}>
+          David Wheatley
+        </Link>{" "}
+        | {LargeScreen ? `Version ` : `v`}{data.site.siteMetadata.version}
+      </Body2>
+    </Box>
   )
 
   const [OverrideNotificationPopup, setOverrideNotificationPopup] = useState(
@@ -218,37 +202,20 @@ const Layout = ({ children, type }) => {
           </Container>
         </PageContents>
 
-        {LargeScreen ? (
-          <Paper
-            component="footer"
-            style={{
-              position: "fixed",
-              bottom: 0,
-              padding: theme.spacing(1.5),
-              paddingBottom: theme.spacing(1.75),
-              width: "100vw",
-              zIndex: 99,
-            }}
-            elevation={4}
-          >
-            {FooterContent}
-          </Paper>
-        ) : (
-          <Paper
-            component="footer"
-            style={{
-              position: "fixed",
-              bottom: 0,
-              padding: theme.spacing(1),
-              paddingBottom: theme.spacing(1.25),
-              width: "100vw",
-              zIndex: 99,
-            }}
-            elevation={8}
-          >
-            {FooterContent}
-          </Paper>
-        )}
+        <Paper
+          component="footer"
+          style={{
+            position: "absolute",
+            bottom: 0,
+            padding: theme.spacing(1.5),
+            paddingBottom: theme.spacing(1.75),
+            width: "100vw",
+            zIndex: 99,
+          }}
+          elevation={0}
+        >
+          {FooterContent}
+        </Paper>
       </MuiThemeProvider>
     </React.StrictMode>
   )
