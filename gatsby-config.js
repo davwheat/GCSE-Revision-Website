@@ -34,8 +34,9 @@ module.exports = {
   siteMetadata: {
     title: `GCSE: Revise It!`,
     description: `A free revision website aimed at GCSE students.`,
-    author: `@davwheat`,
+    author: `David Wheatley`,
     siteUrl: "https://gcsereviseit.co.uk",
+    version: `1.0.0a-beta`,
   },
   plugins: [
     {
