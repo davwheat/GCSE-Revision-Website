@@ -6,7 +6,7 @@ export default function SubtopicListQuery({ callback, topic }) {
   const data = useStaticQuery(graphql`
     {
       subtopics: allMarkdownRemark(
-        sort: { fields: frontmatter___date, order: DESC }
+        sort: { fields: frontmatter___subtopic, order: ASC }
         filter: {
           frontmatter: {
             subjectGroup: { eq: "english" }

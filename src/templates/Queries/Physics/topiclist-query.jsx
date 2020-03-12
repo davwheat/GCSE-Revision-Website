@@ -6,7 +6,7 @@ export default function TopicListQuery({ callback }) {
   const data = useStaticQuery(graphql`
     {
       topics: allMarkdownRemark(
-        sort: { fields: frontmatter___date, order: DESC }
+        sort: { fields: frontmatter___topic, order: ASC }
         filter: {
           frontmatter: {
             subjectGroup: { eq: "science" }
