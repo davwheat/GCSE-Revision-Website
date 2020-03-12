@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../../../../components/layout"
 
-import TopicList from "../../../../templates/TopicList"
+import TopicList from "../../../../templates/Lists/Computing/TopicList"
 
 import { H1, P, H2 } from "../../../../components/EasyText"
 import SEO from "../../../../components/seo"
