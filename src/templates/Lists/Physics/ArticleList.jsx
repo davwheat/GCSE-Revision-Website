@@ -265,19 +265,19 @@ const PostCard = props => {
                     Published on {date}
                   </Subtitle2>
 
-                  { &&  ? (
+                  {tripleOnly && higherOnly ? (
                     <P paragraph align="center">
                       [<TripleIcon />
                       <HigherIcon /> <strong>Triple Science Higher only</strong>
                       ]
                     </P>
                   ) : null}
-                  {tripleOnly && !isHigher ? (
+                  {tripleOnly && !higherOnly ? (
                     <P paragraph align="center">
                       [<TripleIcon /> <strong>Triple Science only</strong>]
                     </P>
                   ) : null}
-                  {!tripleOnly && isHigher ? (
+                  {!tripleOnly && higherOnly ? (
                     <P paragraph align="center">
                       [<HigherIcon /> <strong>Higher only</strong>]
                     </P>
