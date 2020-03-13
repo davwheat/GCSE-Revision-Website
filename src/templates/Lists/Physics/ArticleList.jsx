@@ -124,7 +124,7 @@ const ArticleList = props => {
             ),
           }}
           onInput={e => {
-            Timeout && clearTimeout(window.__article_search_timeout)
+            window.__article_search_timeout && clearTimeout(window.__article_search_timeout)
 
             let targetVal = e.target.value
 
@@ -213,7 +213,13 @@ const useStylesCard = makeStyles(theme => ({
 }))
 
 const PostCard = props => {
-  const { date, description, title, tripleOnly, higherOnly } = props.post.frontmatter
+  const {
+    date,
+    description,
+    title,
+    tripleOnly,
+    higherOnly,
+  } = props.post.frontmatter
   const { slug } = props.post.fields
   const wordCount = props.post.wordCount.words
 

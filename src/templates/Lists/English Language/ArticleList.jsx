@@ -122,7 +122,7 @@ const ArticleList = props => {
             ),
           }}
           onInput={e => {
-            Timeout && clearTimeout(window.__article_search_timeout)
+            window.__article_search_timeout && clearTimeout(window.__article_search_timeout)
 
             let targetVal = e.target.value
 
