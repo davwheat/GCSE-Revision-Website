@@ -223,12 +223,20 @@ const WordOfTheDay = () => {
                       variant="body2"
                       className={clsx(classes.exampleText, classes.indent)}
                     >
-                      &quot;{meaning["example"]}&quot;
-                      <br />
+                      {meaning["example"] ? (
+                        <>
+                          &quot;{meaning["example"]}&quot;
+                          <br />
+                        </>
+                      ) : (
+                        ``
+                      )}
                     </P2>
                     {meaning["synonyms"] ? (
                       <Synonyms words={meaning["synonyms"]} />
-                    ) : null}
+                    ) : (
+                      <div style={{ height: 16 }} /> // spacer
+                    )}
                   </>
                 )
               })}
@@ -258,12 +266,16 @@ const WordOfTheDay = () => {
                               classes.indent
                             )}
                           >
-                            &quot;{meaning["example"]}&quot;
+                            {meaning["example"]
+                              ? `"${meaning["example"]}"`
+                              : ``}
                             <br />
                           </P2>
                           {meaning["synonyms"] ? (
                             <Synonyms words={meaning["synonyms"]} />
-                          ) : null}
+                          ) : (
+                            <br />
+                          )}
                         </>
                       )
                     })}
