@@ -20,6 +20,8 @@ import {
 import ErrorIcon from "mdi-react/ErrorOutlineIcon"
 import SearchIcon from "mdi-react/SearchIcon"
 import TimerIcon from "mdi-react/TimerOutlineIcon"
+import TripleIcon from "mdi-react/Numeric3CircleOutlineIcon"
+import HigherIcon from "mdi-react/ArrowUpCircleOutlineIcon"
 
 import Link from "../../../components/Link"
 
