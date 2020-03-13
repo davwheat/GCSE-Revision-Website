@@ -211,7 +211,7 @@ const useStylesCard = makeStyles(theme => ({
 }))
 
 const PostCard = props => {
-  const { date, description, title } = props.post.frontmatter
+  const { date, description, title, tripleOnly, higherOnly } = props.post.frontmatter
   const { slug } = props.post.fields
   const wordCount = props.post.wordCount.words
 
@@ -265,19 +265,19 @@ const PostCard = props => {
                     Published on {date}
                   </Subtitle2>
 
-                  {isTripleScience && isHigher ? (
+                  { &&  ? (
                     <P paragraph align="center">
                       [<TripleIcon />
                       <HigherIcon /> <strong>Triple Science Higher only</strong>
                       ]
                     </P>
                   ) : null}
-                  {isTripleScience && !isHigher ? (
+                  {tripleOnly && !isHigher ? (
                     <P paragraph align="center">
                       [<TripleIcon /> <strong>Triple Science only</strong>]
                     </P>
                   ) : null}
-                  {!isTripleScience && isHigher ? (
+                  {!tripleOnly && isHigher ? (
                     <P paragraph align="center">
                       [<HigherIcon /> <strong>Higher only</strong>]
                     </P>
