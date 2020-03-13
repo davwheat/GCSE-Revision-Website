@@ -44,7 +44,6 @@ const ArticleList = props => {
 
   const [FuseSearch, setFuseSearch] = useState(null)
   const [SearchQuery, setSearchQuery] = useState(null)
-  const [Timeout, setTimeoutId] = useState(null)
 
   const [AllPosts, setAllPosts] = useState(null)
 
@@ -164,7 +163,8 @@ const ArticleList = props => {
           ),
         }}
         onInput={e => {
-          Timeout && clearTimeout(window.__article_search_timeout)
+          window.__article_search_timeout &&
+            clearTimeout(window.__article_search_timeout)
 
           let targetVal = e.target.value
 

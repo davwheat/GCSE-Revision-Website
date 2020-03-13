@@ -25,6 +25,8 @@ export default function ArticleListQuery({ callback }) {
             topic
             subtopic
             subject
+            higherOnly
+            tripleOnly
           }
           wordCount {
             words

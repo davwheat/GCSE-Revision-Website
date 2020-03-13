@@ -20,6 +20,8 @@ import {
 import ErrorIcon from "mdi-react/ErrorOutlineIcon"
 import SearchIcon from "mdi-react/SearchIcon"
 import TimerIcon from "mdi-react/TimerOutlineIcon"
+import TripleIcon from "mdi-react/Numeric3CircleOutlineIcon"
+import HigherIcon from "mdi-react/ArrowUpCircleOutlineIcon"
 
 import Link from "../../../components/Link"
 
@@ -122,7 +124,8 @@ const ArticleList = props => {
             ),
           }}
           onInput={e => {
-            Timeout && clearTimeout(window.__article_search_timeout)
+            window.__article_search_timeout &&
+              clearTimeout(window.__article_search_timeout)
 
             let targetVal = e.target.value
 
@@ -211,7 +214,13 @@ const useStylesCard = makeStyles(theme => ({
 }))
 
 const PostCard = props => {
-  const { date, description, title } = props.post.frontmatter
+  const {
+    date,
+    description,
+    title,
+    tripleOnly,
+    higherOnly,
+  } = props.post.frontmatter
   const { slug } = props.post.fields
   const wordCount = props.post.wordCount.words
 
@@ -264,6 +273,24 @@ const PostCard = props => {
                   <Subtitle2 component="p" color="textSecondary" gutterBottom>
                     Published on {date}
                   </Subtitle2>
+
+                  {tripleOnly && higherOnly ? (
+                    <P paragraph align="center">
+                      [<TripleIcon />
+                      <HigherIcon /> <strong>Triple Science Higher only</strong>
+                      ]
+                    </P>
+                  ) : null}
+                  {tripleOnly && !higherOnly ? (
+                    <P paragraph align="center">
+                      [<TripleIcon /> <strong>Triple Science only</strong>]
+                    </P>
+                  ) : null}
+                  {!tripleOnly && higherOnly ? (
+                    <P paragraph align="center">
+                      [<HigherIcon /> <strong>Higher only</strong>]
+                    </P>
+                  ) : null}
 
                   <P>{description ? description : ""}</P>
                 </CardContent>
