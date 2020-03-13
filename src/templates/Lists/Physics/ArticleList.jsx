@@ -265,6 +265,24 @@ const PostCard = props => {
                     Published on {date}
                   </Subtitle2>
 
+                  {isTripleScience && isHigher ? (
+                    <P paragraph align="center">
+                      [<TripleIcon />
+                      <HigherIcon /> <strong>Triple Science Higher only</strong>
+                      ]
+                    </P>
+                  ) : null}
+                  {isTripleScience && !isHigher ? (
+                    <P paragraph align="center">
+                      [<TripleIcon /> <strong>Triple Science only</strong>]
+                    </P>
+                  ) : null}
+                  {!isTripleScience && isHigher ? (
+                    <P paragraph align="center">
+                      [<HigherIcon /> <strong>Higher only</strong>]
+                    </P>
+                  ) : null}
+
                   <P>{description ? description : ""}</P>
                 </CardContent>
               </CardActionArea>
