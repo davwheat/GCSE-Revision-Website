@@ -9,8 +9,7 @@ export default function TopicListQuery({ callback }) {
         sort: { fields: frontmatter___topic, order: ASC }
         filter: {
           frontmatter: {
-            subjectGroup: { eq: "science" }
-            subject: { eq: "chemistry" }
+            subject: { eq: "computer science" }
           }
         }
       ) {

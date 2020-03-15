@@ -9,8 +9,7 @@ export default function ArticleListQuery({ callback }) {
         sort: { fields: [frontmatter___date], order: ASC }
         filter: {
           frontmatter: {
-            subjectGroup: { eq: "science" }
-            subject: { eq: "chemistry" }
+            subject: { eq: "computer science" }
           }
         }
       ) {
