@@ -1,20 +1,22 @@
-name: Build
+name: Build & Deploy
 
 on:
+  schedule:
+    - cron: "0 3 * * *"
   push:
     branches:
-    - master
-    - development
-    - feature/*
-    - hotfix/*
-    - release/*
+      - master
+      - development
+      - feature/*
+      - hotfix/*
+      - release/*
   pull_request:
     branches:
-    - master
-    - development
-    - feature/*
-    - hotfix/*
-    - release/*
+      - master
+      - development
+      - feature/*
+      - hotfix/*
+      - release/*
 
 jobs:
   skip_ci_test:
@@ -22,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check for skip
+      - name: Check for CI Skip
         if: "contains(github.event.head_commit.message, '[ci skip]')"
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
@@ -35,11 +37,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version: [10, 12]
+        node_version: [12, 13]
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -48,9 +50,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
-        env:
-          CI: true
+          npm ci
 
       - name: Gatsby build
         run: |
@@ -59,9 +59,9 @@ jobs:
           CI: true
 
       - name: Firebase deploy
-        if: github.event_name == 'push' && matrix.node_version == 10 && github.ref == 'refs/heads/master'
-        run: |
-          ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+        if: github.event_name == 'push' && matrix.node_version == 12 && github.ref == 'refs/heads/master'
+        uses: w9jds/firebase-action@v1.3.0
+        with:
+          args: deploy --only hosting
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
