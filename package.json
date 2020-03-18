@@ -45,7 +45,7 @@
     "react-dom": "^16.13.0",
     "react-easy-panzoom": "^0.4.4",
     "react-helmet": "^5.2.1",
-    "react-images": "^1.1.0-beta.3",
+    "react-images": "^1.1.0",
     "react-jsx-parser": "^1.21.0",
     "react-katex": "^2.0.2",
     "react-lowlight": "^2.0.0",
