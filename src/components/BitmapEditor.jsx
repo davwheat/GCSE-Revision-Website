@@ -208,7 +208,7 @@ const BitmapImageEditor = () => {
             ChangePixelColour(y, x)
           }}
           onKeyPress={e => {
-            if (e.key = "Enter" || e.key = " " || e.which == 13 || e.which == 32) {
+            if (e.key === "Enter" || e.key === " " || e.which === 13 || e.which === 32) {
               ChangePixelColour(y, x)
             }
           }}
