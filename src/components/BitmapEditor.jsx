@@ -207,7 +207,13 @@ const BitmapImageEditor = () => {
           onClick={() => {
             ChangePixelColour(y, x)
           }}
+          onKeyPress={e => {
+            if (e.key = "Enter" || e.key = " " || e.which == 13 || e.which == 32) {
+              ChangePixelColour(y, x)
+            }
+          }}
           style={{ whiteSpace: "nowrap" }}
+          tabindex="0"
         >
           {data.showValues ? data.pixelStates[y][x] : null}
         </td>
