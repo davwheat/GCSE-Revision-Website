@@ -210,6 +210,7 @@ const BitmapImageEditor = () => {
           onKeyPress={e => {
             if (e.key === "Enter" || e.key === " " || e.which === 13 || e.which === 32) {
               ChangePixelColour(y, x)
+              e.preventDefault()
             }
           }}
           style={{ whiteSpace: "nowrap" }}
