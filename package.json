@@ -42,7 +42,7 @@
     "react": "^16.13.1",
     "react-anchor-link-smooth-scroll": "git+https://github.com/john555/react-anchor-link-smooth-scroll.git",
     "react-cookie-consent": "^3.0.0",
-    "react-dom": "^16.13.0",
+    "react-dom": "^16.13.1",
     "react-easy-panzoom": "^0.4.4",
     "react-helmet": "^5.2.1",
     "react-images": "^1.1.0",
