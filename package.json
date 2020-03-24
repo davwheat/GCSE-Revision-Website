@@ -52,7 +52,7 @@
     "react-markdown": "^4.3.1",
     "react-share": "^4.1.0",
     "react-twemoji": "^0.2.3",
-    "remark-math": "^2.0.0",
+    "remark-math": "^2.0.1",
     "seedrandom": "^3.0.5",
     "typeface-fira-mono": "0.0.72",
     "whatwg-fetch": "^2.0.4"
