@@ -8,7 +8,7 @@
     "@matejmazur/react-katex": "^3.0.2",
     "@material-ui/core": "^4.9.7",
     "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.45",
+    "@material-ui/lab": "^4.0.0-alpha.46",
     "clsx": "^1.1.0",
     "css-vars-ponyfill": "^2.2.1",
     "firebase": "^7.13.1",
