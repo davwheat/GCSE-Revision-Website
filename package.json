@@ -13,7 +13,7 @@
     "css-vars-ponyfill": "^2.2.1",
     "firebase": "^7.14.0",
     "fuse.js": "^3.6.1",
-    "gatsby": "^2.20.20",
+    "gatsby": "^2.21.0",
     "gatsby-image": "^2.3.2",
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-manifest": "^2.3.3",
