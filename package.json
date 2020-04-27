@@ -24,7 +24,7 @@
     "gatsby-plugin-react-helmet": "^3.2.2",
     "gatsby-plugin-remove-console": "0.0.2",
     "gatsby-plugin-sharp": "^2.5.4",
-    "gatsby-plugin-sitemap": "^2.3.2",
+    "gatsby-plugin-sitemap": "^2.4.0",
     "gatsby-plugin-transition-link": "^1.18.0",
     "gatsby-remark-images": "^3.2.2",
     "gatsby-source-filesystem": "^2.2.2",
