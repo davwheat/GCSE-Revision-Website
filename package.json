@@ -44,7 +44,7 @@
     "react-cookie-consent": "^5.0.1",
     "react-dom": "^16.13.1",
     "react-easy-panzoom": "^0.4.4",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.0.0",
     "react-images": "^1.1.7",
     "react-jsx-parser": "^1.24.1",
     "react-katex": "^2.0.2",
