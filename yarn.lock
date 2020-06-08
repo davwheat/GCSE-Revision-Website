@@ -5351,7 +5351,7 @@ core-js-pure@^3.0.0:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.6.5.tgz#c79e75f5e38dbc85a662d91eea52b8256d53b813"
   integrity sha512-lacdXOimsiD0QyNf9BC/mxivNJ/ybBGJXQFKzRekp1WTHoVUWsUHEn+2T8GJAzzIhyOuXA+gOxCVN3l+5PLPUA==
 
-core-js@3.6.5, core-js@^3.4.1:
+core-js@3.6.5, core-js@^3.4.1, core-js@^3.6.5:
   version "3.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
   integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==
@@ -14727,13 +14727,14 @@ react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1, react-i
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-jsx-parser@^1.25.0:
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/react-jsx-parser/-/react-jsx-parser-1.25.0.tgz#0a5c9c3368332efde3f910ccd54b3e4147020957"
-  integrity sha512-FBI8pNH8+LGVQtRmZ4yzhomIad5SuqnoieG5M1c/Pj6u8ZwvsptaELD5s1+YssmjGLgw0sm2Yi16TzKpzhX+rA==
+react-jsx-parser@^1.25.1:
+  version "1.25.1"
+  resolved "https://registry.yarnpkg.com/react-jsx-parser/-/react-jsx-parser-1.25.1.tgz#5c2928733aaeef3c8be59d21a7f8c91729c81da9"
+  integrity sha512-lCHAw7iOocnPSpjfsHXZQGLyPpr9wlk3qtkVN44hZs0PwQuxcH8MWbLY+j6pqB9QSijM7qtulDLgFIYbAcqSmQ==
   dependencies:
     acorn "^7.2.0"
     acorn-jsx "^5.2.0"
+    core-js "^3.6.5"
 
 react-katex@^2.0.2:
   version "2.0.2"
