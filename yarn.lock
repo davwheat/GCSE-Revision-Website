@@ -8413,12 +8413,12 @@ gatsby-plugin-preload-link-crossorigin@^1.0.2:
   dependencies:
     "@babel/runtime" "^7.4.3"
 
-gatsby-plugin-react-helmet@^3.1.2, gatsby-plugin-react-helmet@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.3.tgz#85f2c2b1ee404dfc35e1f7596edba7438900fc56"
-  integrity sha512-GaNBEZlOUY0kYGMjlh3Cpretn5yBkgQZi+Z2ZpJL7VdxlrgTl7B5lccGZDxteMu5QAgrM/WVkeEOvkKUE6ZxrQ==
+gatsby-plugin-react-helmet@^3.1.2, gatsby-plugin-react-helmet@^3.3.14:
+  version "3.3.14"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.3.14.tgz#6eac5854e24d008352742783fe68817b18e24151"
+  integrity sha512-5GsIVZIVOax2V9g1UL8row1TG3p2zPY2I+8Rq52H0R5xD9QoMTPde2Q4N0Y2td+qzfRdcfkbSj/kokK2I5owPw==
   dependencies:
-    "@babel/runtime" "^7.10.2"
+    "@babel/runtime" "^7.11.2"
 
 gatsby-plugin-remove-console@0.0.2:
   version "0.0.2"
