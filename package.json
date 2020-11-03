@@ -49,7 +49,7 @@
     "react-jsx-parser": "^1.26.3",
     "react-katex": "^2.0.2",
     "react-lowlight": "^2.0.0",
-    "react-markdown": "^4.3.1",
+    "react-markdown": "^5.0.2",
     "react-share": "^4.1.0",
     "react-twemoji": "^0.2.3",
     "remark-math": "^2.0.1",
