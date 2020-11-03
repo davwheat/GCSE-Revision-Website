@@ -8284,10 +8284,10 @@ gatsby-link@^2.4.16:
     "@types/reach__router" "^1.3.6"
     prop-types "^15.7.2"
 
-gatsby-material-ui-components@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-material-ui-components/-/gatsby-material-ui-components-1.0.0.tgz#06015ab449de4501ae4f65225ecf9a45283910d3"
-  integrity sha512-/Wa5S6+hL3u3aAoq7qlh/WhQYkgkEcuXr4uCjY55RFNlz5Q1fvx8vOvdRNf8lSzt5t8RmhkguHlJKGa3SXw3kQ==
+gatsby-material-ui-components@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-material-ui-components/-/gatsby-material-ui-components-1.0.3.tgz#9fa92a386e434f4b454e9cea47b6a1e124424449"
+  integrity sha512-5GcSIzo9lLaVLupq1H/hWLTrUqbvJsuSH7hutSkOZ4CJ088KfADBGwxU7ze7pqAI0jsQm/pFi0HWa4baVQwllQ==
 
 gatsby-page-utils@^0.2.29:
   version "0.2.29"
@@ -8327,7 +8327,7 @@ gatsby-plugin-manifest@^2.4.37:
     semver "^7.3.2"
     sharp "^0.25.4"
 
-gatsby-plugin-material-ui@^2.1.4, gatsby-plugin-material-ui@^2.1.9:
+gatsby-plugin-material-ui@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-material-ui/-/gatsby-plugin-material-ui-2.1.9.tgz#f0e4366f99475ba4ca4c7a6c6026c7546e25170e"
   integrity sha512-bvfAEOugCyDgVY9ZNadnC+RP20qA/G2mMDnoj25hRf98fcTtP128s1DshoeYZF61w46Mqp6ACB+uZtrG6iWDfQ==
@@ -8463,10 +8463,10 @@ gatsby-plugin-utils@^0.2.40:
   dependencies:
     joi "^17.2.1"
 
-gatsby-plugin-webfonts@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-webfonts/-/gatsby-plugin-webfonts-1.1.2.tgz#e2a26d4191d916e275d741da55419ae66bb54241"
-  integrity sha512-gdX4ghPSk25Rv5ol4KxGjE7hkfJb0TJLiCzzYfAlY49QC2+GNULZ58/NBYWyQQc4yvKWOSuHZsSPtDWQHNRzHg==
+gatsby-plugin-webfonts@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-webfonts/-/gatsby-plugin-webfonts-1.1.3.tgz#429bed411e1be861920cb0963f2376fc75aa4b4f"
+  integrity sha512-L9BwptbT1i3bBv4ZAgDt10br/cpdosecRttm1TLzsQdiqt02uKjaP2tr4qLjUlEzu4YQQ8d8394Rm3ZCnvO8cA==
   dependencies:
     axios "^0.19.0"
     cssnano "^4.1.10"
@@ -8614,24 +8614,24 @@ gatsby-telemetry@^1.3.38:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-gatsby-theme-material-ui-top-layout@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-material-ui-top-layout/-/gatsby-theme-material-ui-top-layout-1.0.2.tgz#fdbb1b00af1a6e322fac76c1f99162f15970cb95"
-  integrity sha512-EY4kiJRYa+Hj2EbusfZUNIBLYvli64zW6WdyjPWuJuL32UotGJlQafX+HiOx/f4jNcqNphCIVNAasQnn93Mn6g==
+gatsby-theme-material-ui-top-layout@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-material-ui-top-layout/-/gatsby-theme-material-ui-top-layout-1.0.3.tgz#b065959aecaf26ae1def90570cc580b384d2c018"
+  integrity sha512-mVnBDZTcQuy45EmM8cntP0CPAzhqH02HeYEhEBno+8dMnfsu6CX7tm1wlkBsWCLtD4ZZFH+SHm/xLEsyKPAH0w==
   dependencies:
     gatsby-plugin-react-helmet "^3.1.2"
 
-gatsby-theme-material-ui@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-material-ui/-/gatsby-theme-material-ui-1.0.10.tgz#87a49dd3f9cb62731d45d899369679c63739e776"
-  integrity sha512-5qtBtE9nDtsD+UHRaus+YvyROV1zr0w73VgjqDt7O0mKV4mqZR8RDxS3lk2oul8COc168/Q4OddWguJTMq1Q5Q==
+gatsby-theme-material-ui@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-material-ui/-/gatsby-theme-material-ui-1.0.13.tgz#2c73aa9eede3021c0bf6133a388866c8c0747e74"
+  integrity sha512-8abDu/7BIjBkmVwNJu/qsLJIhIKxBX5ozIQJua/A20IEf94Jnh0berhPp3wnhuaasWi9WwJo48fuclVwJcLz3Q==
   dependencies:
-    gatsby-material-ui-components "^1.0.0"
+    gatsby-material-ui-components "^1.0.3"
     gatsby-plugin-compile-es6-packages "^2.1.0"
-    gatsby-plugin-material-ui "^2.1.4"
-    gatsby-plugin-webfonts "^1.1.2"
-    gatsby-theme-material-ui-top-layout "^1.0.2"
-    react-helmet "^6.0.0"
+    gatsby-plugin-material-ui "^2.1.9"
+    gatsby-plugin-webfonts "^1.1.3"
+    gatsby-theme-material-ui-top-layout "^1.0.3"
+    react-helmet "^6.1.0"
 
 gatsby-transformer-remark@^2.8.47:
   version "2.8.47"
@@ -14672,7 +14672,7 @@ react-full-screen@^0.2.4:
     "@types/react" "*"
     fscreen "^1.0.1"
 
-react-helmet@^6.0.0, react-helmet@^6.1.0:
+react-helmet@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-6.1.0.tgz#a750d5165cb13cf213e44747502652e794468726"
   integrity sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==
