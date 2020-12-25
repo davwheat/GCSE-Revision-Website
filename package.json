@@ -71,7 +71,7 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
     "prettier": "^2.0.5",
     "react-xmasonry": "^3.0.3",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^4.3.0"
   },
   "keywords": [
     "gatsby",
