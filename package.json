@@ -69,7 +69,7 @@
     "eslint-plugin-react-hooks": "^4.0.4",
     "firebase-tools": "^8.14.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.13",
-    "prettier": "^2.0.5",
+    "prettier": "^2.2.1",
     "react-xmasonry": "^3.0.3",
     "webpack-cli": "^3.3.11"
   },
