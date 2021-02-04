@@ -39,7 +39,7 @@
     "mdi-react": "^7.4.0",
     "notistack": "^0.9.16",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-anchor-link-smooth-scroll": "git+https://github.com/john555/react-anchor-link-smooth-scroll.git",
     "react-cookie-consent": "^5.2.0",
     "react-dom": "^16.13.1",
