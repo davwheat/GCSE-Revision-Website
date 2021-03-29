@@ -54,7 +54,7 @@
     "react-twemoji": "^0.2.3",
     "remark-math": "^2.0.1",
     "seedrandom": "^3.0.5",
-    "typeface-fira-mono": "0.0.72",
+    "typeface-fira-mono": "1.1.13",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
