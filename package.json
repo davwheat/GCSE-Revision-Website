@@ -51,7 +51,7 @@
     "react-lowlight": "^2.0.0",
     "react-markdown": "^4.3.1",
     "react-share": "^4.4.0",
-    "react-twemoji": "^0.2.3",
+    "react-twemoji": "^0.3.0",
     "remark-math": "^2.0.1",
     "seedrandom": "^3.0.5",
     "typeface-fira-mono": "0.0.72",
